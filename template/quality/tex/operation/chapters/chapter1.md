@@ -1,1 +1,0 @@
-# Operational planning and control
