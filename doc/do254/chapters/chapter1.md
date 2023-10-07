@@ -1,0 +1,3 @@
+# INTRODUCCIÓN
+
+Los sistemas de criptografía asimétrica o de clave pública utilizan dos claves distintas: una de ellas puede ser pública, la otra es privada. La posesión de la clave pública no proporciona suficiente información para determinar cuál es la clave privada. Este tipo de sistemas se basa en la dificultad de encontrar la solución a ciertos problemas matemáticos. Uno de estos problemas es el llamado logaritmo discreto. Encontrar el valor de b dada la ecuación a^b^=c, cuando a y c son valores conocidos, puede ser un problema de complejidad exponencial para ciertos grupos finitos de gran tamaño; mientras el problema inverso, la exponenciación discreta puede ser evaluado eficientemente usando por ejemplo exponenciación binaria.

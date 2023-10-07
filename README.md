@@ -1,6 +1,6 @@
-# Papers
+# MPSoC-DSA
 ## QueenField
 
 ![QueenField](../main/icon.jpg)
 
-**Theory Papers**
+**Digital Signature Algorithm for a Multi-Processor System on Chip**
