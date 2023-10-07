@@ -4,10 +4,10 @@ use ieee.numeric_std.all;
 
 use std.env.finish;
 
-entity axi_fifo_tb is
-end axi_fifo_tb; 
+entity axi_fifo_testbench is
+end axi_fifo_testbench; 
 
-architecture sim of axi_fifo_tb is
+architecture sim of axi_fifo_testbench is
 
   -- Testbench constants
   constant clock_period : time := 10 ns;
