@@ -67,10 +67,10 @@ module peripheral_testbench;
     ip1 = 0;
     ip2 = 0;
     rst = 0;
-    #2ns;
+    #2;
     rst = 1;
 
-    #2ns;
+    #2;
     rst = 0;
     #10;
 

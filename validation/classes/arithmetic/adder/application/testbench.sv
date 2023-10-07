@@ -61,19 +61,19 @@ module testbench;
 
     clk = 0;
 
-    ip1= 0;
-    ip2= 0;
+    ip1 = 0;
+    ip2 = 0;
 
     rst = 0;
-    #2ns;
+    #2;
     rst = 1;
     
-    #2ns;
+    #2;
     rst = 0;
     #10;
     
-    ip1= 5;
-    ip2= 2;
+    ip1 = 5;
+    ip2 = 2;
     #5;
     $display("End.");
     $finish;
