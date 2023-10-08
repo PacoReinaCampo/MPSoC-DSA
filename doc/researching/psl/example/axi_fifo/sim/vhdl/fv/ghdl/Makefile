@@ -2,6 +2,7 @@
 # Type 'make synth' to run synthesis
 
 DUT  = axi_fifo
+PATH = ../../../../rtl/vhdl
 SRC += $(DUT).vhd
 
 
