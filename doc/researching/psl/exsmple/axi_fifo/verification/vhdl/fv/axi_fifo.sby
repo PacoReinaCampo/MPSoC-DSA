@@ -17,4 +17,3 @@ prep -top axi_fifo
 [files]
 axi_fifo.psl
 axi_fifo.vhd
-
