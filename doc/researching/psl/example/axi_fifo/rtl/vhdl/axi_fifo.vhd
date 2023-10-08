@@ -6,38 +6,40 @@ entity axi_fifo is
   generic (
     ram_width : natural;
     ram_depth : natural
-  );
+    );
   port (
     clk : in std_logic;
     rst : in std_logic;
 
     -- AXI input interface
     in_ready : out std_logic;
-    in_valid : in std_logic;
-    in_data : in std_logic_vector(ram_width - 1 downto 0);
+    in_valid : in  std_logic;
+    in_data  : in  std_logic_vector(ram_width - 1 downto 0);
 
     -- AXI output interface
-    out_ready : in std_logic;
+    out_ready : in  std_logic;
     out_valid : out std_logic;
-    out_data : out std_logic_vector(ram_width - 1 downto 0)
-  );
+    out_data  : out std_logic_vector(ram_width - 1 downto 0)
+    );
 end axi_fifo;
 
 architecture rtl of axi_fifo is
 
   -- The FIFO is full when the RAM contains ram_depth - 1 elements
   type ram_type is array (0 to ram_depth - 1) of std_logic_vector(in_data'range);
+
   signal ram : ram_type;
 
   -- Newest element at head, oldest element at tail
   subtype index_type is natural range ram_type'range;
-  signal head : index_type;
-  signal tail : index_type;
-  signal count : index_type;
+
+  signal head     : index_type;
+  signal tail     : index_type;
+  signal count    : index_type;
   signal count_p1 : index_type;
 
   -- Internal versions of entity signals with mode "out"
-  signal in_ready_i : std_logic;
+  signal in_ready_i  : std_logic;
   signal out_valid_i : std_logic;
 
   -- True the clock cycle after a simultaneous read and write
@@ -61,45 +63,47 @@ architecture rtl of axi_fifo is
   end function;
 
   -- Logic for handling the head and tail signals
-  procedure index_proc(
-    signal clk : in std_logic;
-    signal rst : in std_logic;
+  procedure index_process(
+    signal index_clk : in std_logic;
+    signal index_rst : in std_logic;
+
     signal index : inout index_type;
+
     signal ready : in std_logic;
     signal valid : in std_logic) is
   begin
-      if rising_edge(clk) then
-        if rst = '1' then
-          index <= index_type'low;
-        else
-          index <= next_index(index, ready, valid);
-        end if;
+    if rising_edge(index_clk) then
+      if index_rst = '1' then
+        index <= index_type'low;
+      else
+        index <= next_index(index, ready, valid);
       end if;
+    end if;
   end procedure;
 
 begin
 
   -- Copy internal signals to output
-  in_ready <= in_ready_i;
+  in_ready  <= in_ready_i;
   out_valid <= out_valid_i;
 
   -- Update head index on write
-  PROC_HEAD : index_proc(clk, rst, head, in_ready_i, in_valid);
+  PROCESS_HEAD : index_process(clk, rst, head, in_ready_i, in_valid);
 
   -- Update tail index on read
-  PROC_TAIL : index_proc(clk, rst, tail, out_ready, out_valid_i);
+  PROCESS_TAIL : index_process(clk, rst, tail, out_ready, out_valid_i);
 
   -- Write to and read from the RAM
-  PROC_RAM : process(clk)
+  PROCESS_RAM : process(clk)
   begin
     if rising_edge(clk) then
       ram(head) <= in_data;
-      out_data <= ram(next_index(tail, out_ready, out_valid_i));
+      out_data  <= ram(next_index(tail, out_ready, out_valid_i));
     end if;
   end process;
 
   -- Find the number of elements in the RAM
-  PROC_COUNT : process(head, tail)
+  PROCESS_COUNT : process(head, tail)
   begin
     if head < tail then
       count <= head - tail + ram_depth;
@@ -109,7 +113,7 @@ begin
   end process;
 
   -- Delay the count by one clock cycles
-  PROC_COUNT_P1 : process(clk)
+  PROCESS_COUNT_P1 : process(clk)
   begin
     if rising_edge(clk) then
       if rst = '1' then
@@ -121,7 +125,7 @@ begin
   end process;
 
   -- Set in_ready when the RAM isn't full
-  PROC_IN_READY : process(count)
+  PROCESS_IN_READY : process(count)
   begin
     if count < ram_depth - 1 then
       in_ready_i <= '1';
@@ -131,7 +135,7 @@ begin
   end process;
 
   -- Detect simultaneous read and write operations
-  PROC_READ_WHILE_WRITE_P1: process(clk)
+  PROCESS_READ_WHILE_WRITE_P1 : process(clk)
   begin
     if rising_edge(clk) then
       if rst = '1' then
@@ -148,7 +152,7 @@ begin
   end process;
 
   -- Set out_valid when the RAM outputs valid data
-  PROC_OUT_VALID : process(count, count_p1, read_while_write_p1)
+  PROCESS_OUT_VALID : process(count, count_p1, read_while_write_p1)
   begin
     out_valid_i <= '1';
 
