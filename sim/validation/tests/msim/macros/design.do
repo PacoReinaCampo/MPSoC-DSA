@@ -30,7 +30,7 @@ alias ecdsa_sha512_compilation_exec {
 
 alias ecdsa_adder_compilation_exec {
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_adder.vhd
 }
 
 ###################################################################################################
@@ -39,7 +39,7 @@ alias ecdsa_adder_compilation_exec {
 
 alias ecdsa_inverter_compilation_exec {
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_inverter.vhd
 }
 
 ###################################################################################################
@@ -48,7 +48,7 @@ alias ecdsa_inverter_compilation_exec {
 
 alias ecdsa_multiplier_compilation_exec {
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_multiplier.vhd
 }
 
 ###################################################################################################
@@ -57,9 +57,9 @@ alias ecdsa_multiplier_compilation_exec {
 
 alias ecdsa_point_adder_compilation_exec {
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_multiplier.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_adder.vhd
 }
 
@@ -69,9 +69,9 @@ alias ecdsa_point_adder_compilation_exec {
 
 alias ecdsa_point_doubler_compilation_exec {
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_multiplier.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_doubler.vhd
 }
 
@@ -81,9 +81,9 @@ alias ecdsa_point_doubler_compilation_exec {
 
 alias ecdsa_point_generator_compilation_exec {
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_multiplier.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_adder.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_doubler.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_generator.vhd
@@ -97,10 +97,10 @@ alias ecdsa_sign_compilation_exec {
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_sha512_pkg.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/ecdsa_sha512.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_mod.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_mod.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_multiplier.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_adder.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_doubler.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_generator.vhd
@@ -115,10 +115,10 @@ alias ecdsa_verify_compilation_exec {
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_sha512_pkg.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/ecdsa_sha512.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_mod.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_mod.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_multiplier.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_adder.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_doubler.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_generator.vhd
@@ -133,10 +133,10 @@ alias ecdsa_top_compilation_exec {
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_sha512_pkg.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/ecdsa_sha512.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_mod.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_mod.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_multiplier.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_adder.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_doubler.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_generator.vhd
@@ -151,10 +151,10 @@ alias kcdsa_sign_compilation_exec {
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_sha512_pkg.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/ecdsa_sha512.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_mod.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_mod.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_multiplier.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_adder.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_doubler.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_generator.vhd
@@ -169,10 +169,10 @@ alias kcdsa_verify_compilation_exec {
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_sha512_pkg.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/ecdsa_sha512.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_mod.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_mod.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_multiplier.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_adder.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_doubler.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_generator.vhd
@@ -187,10 +187,10 @@ alias kcdsa_top_compilation_exec {
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_sha512_pkg.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/ecdsa_sha512.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_mod.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/definition/ecdsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_mod.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_multiplier.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_adder.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_doubler.vhd
   vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_generator.vhd
