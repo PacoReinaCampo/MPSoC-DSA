@@ -14,7 +14,7 @@ cd yosys
 make
 sudo make install
 cd ..
-  
+
 git clone https://github.com/YosysHQ/SymbiYosys
 cd SymbiYosys
 sudo make install
@@ -35,7 +35,7 @@ cd ghdl
 make
 sudo make install
 cd ..
-  
+
 git clone https://github.com/ghdl/ghdl-yosys-plugin
 cd ghdl-yosys-plugin
 make

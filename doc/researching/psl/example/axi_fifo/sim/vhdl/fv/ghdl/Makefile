@@ -5,7 +5,6 @@ DUT  = axi_fifo
 PATH = ../../../../rtl/vhdl
 SRC += $(DUT).vhd
 
-
 #######################
 # Formal verification
 #######################
@@ -19,7 +18,6 @@ $(DUT)_cover/PASS: $(DUT).sby $(DUT).psl $(SRC)
 show_prove:
 	gtkwave $(DUT)_prove/engine_0/trace_induct.vcd $(DUT).gtkw
 
-
 #######################
 # Cleanup
 #######################
@@ -29,4 +27,3 @@ clean:
 	rm -rf $(DUT)_cover/
 	rm -rf $(DUT)_bmc/
 	rm -rf work-obj08.cf
-
