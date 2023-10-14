@@ -1,5 +1,5 @@
 @echo off
 call ../../../../../../settings64_msim.bat
 
-gtkwave ecdsa_sign_testbench.vcd
+gtkwave ecdsa_multiplier_testbench.vcd
 pause

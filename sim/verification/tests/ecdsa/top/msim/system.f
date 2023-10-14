@@ -61,4 +61,4 @@
 
 ../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_sign_pkg.vhd
 ../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_sign_stimulus.vhd
-../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_sign_testbench.vhd
+../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_top_testbench.vhd

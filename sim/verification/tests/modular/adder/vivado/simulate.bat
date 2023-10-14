@@ -46,6 +46,6 @@
 call ../../../../../../settings64_vivado.bat
 
 xvhdl -prj system.prj
-xelab ecdsa_sign_testbench
-xsim -R ecdsa_sign_testbench
+xelab ecdsa_adder_testbench
+xsim -R ecdsa_adder_testbench
 pause

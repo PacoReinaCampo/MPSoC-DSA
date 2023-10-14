@@ -17,4 +17,4 @@ ghdl -a --std=08 ../../../../../../rtl/vhdl/core/kcdsa/kcdsa_top.vhd
 
 ghdl -a --std=08 ../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_sign_pkg.vhd
 ghdl -a --std=08 ../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_sign_stimulus.vhd
-ghdl -a --std=08 ../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_sign_testbench.vhd
+ghdl -a --std=08 ../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_inverter_testbench.vhd

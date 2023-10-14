@@ -1,5 +1,5 @@
 @echo off
 call ../../../../../../settings64_vivado.bat
 
-gtkwave ecdsa_sign_testbench.vcd
+gtkwave ecdsa_verify_testbench.vcd
 pause
