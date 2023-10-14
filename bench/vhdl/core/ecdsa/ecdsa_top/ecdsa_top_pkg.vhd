@@ -51,56 +51,7 @@ use std.textio.all;
 --library modelsim_lib;
 --use modelsim_lib.util.all;
 
-package testbench_miera_pkg is
-
-  -------------------------------------------------------------------------------
-  -- TEST VECTORS
-  -------------------------------------------------------------------------------
-
-  signal ECDSA_SHA256_TEST          : boolean := false;
-  signal ECDSA_SHA512_TEST          : boolean := false;
-  signal ECDSA_ADDER_TEST           : boolean := false;
-  signal ECDSA_INVERTER_TEST        : boolean := false;
-  signal ECDSA_MULTIPLIER_TEST      : boolean := false;
-  signal ECDSA_POINT_ADDER_TEST     : boolean := false;
-  signal ECDSA_POINT_DOUBLER_TEST   : boolean := false;
-  signal ECDSA_POINT_GENERATOR_TEST : boolean := false;
-  signal ECDSA_SIGN_TEST            : boolean := false;
-  signal ECDSA_VERIFY_TEST          : boolean := false;
-  signal ECDSA_TOP_TEST             : boolean := false;
-  signal KCDSA_SIGN_TEST            : boolean := false;
-  signal KCDSA_VERIFY_TEST          : boolean := false;
-  signal KCDSA_TOP_TEST             : boolean := false;
-
-  -------------------------------------------------------------------------------
-  -- CASE VECTORS
-  -------------------------------------------------------------------------------
-
-  signal ECDSA_SHA512_CASE_1 : boolean := false;
-  signal ECDSA_SHA512_CASE_2 : boolean := false;
-
-  signal ECDSA_SHA256_CASE_1 : boolean := false;
-  signal ECDSA_SHA256_CASE_2 : boolean := false;
-
-  signal ECDSA_ADDER_CASE_1           : boolean := false;
-  signal ECDSA_SUBTRACTOR_CASE_1      : boolean := false;
-  signal ECDSA_INVERTER_CASE_1        : boolean := false;
-  signal ECDSA_MULTIPLIER_CASE_1      : boolean := false;
-  signal ECDSA_POINT_ADDER_CASE_1     : boolean := false;
-  signal ECDSA_POINT_DOUBLER_CASE_1   : boolean := false;
-  signal ECDSA_POINT_GENERATOR_CASE_1 : boolean := false;
-  signal ECDSA_SIGN_CASE_1            : boolean := false;
-  signal ECDSA_SIGN_CASE_2            : boolean := false;
-  signal ECDSA_VERIFY_CASE_1          : boolean := false;
-  signal ECDSA_VERIFY_CASE_2          : boolean := false;
-  signal ECDSA_TOP_CASE_1             : boolean := false;
-  signal ECDSA_TOP_CASE_2             : boolean := false;
-  signal KCDSA_SIGN_CASE_1            : boolean := false;
-  signal KCDSA_SIGN_CASE_2            : boolean := false;
-  signal KCDSA_VERIFY_CASE_1          : boolean := false;
-  signal KCDSA_VERIFY_CASE_2          : boolean := false;
-  signal KCDSA_TOP_CASE_1             : boolean := false;
-  signal KCDSA_TOP_CASE_2             : boolean := false;
+package ecdsa_top_pkg is
 
   ------------------------------------------------------------------------------
   -- TYPES
@@ -278,58 +229,8 @@ package testbench_miera_pkg is
   constant TOP_SIGNATURE_R : std_logic_vector(DATA_SIZE-1 downto 0) := X"795bfae624839f52e202993651afa2f25dc0f6f83e9fce4f72592b3f05209d5e2510fc3760cd90de1d8f6b7e82bb9db340b972314a9fa95b12191e63ef40dce2";
   constant TOP_SIGNATURE_S : std_logic_vector(DATA_SIZE-1 downto 0) := X"83f8619376135ca53f718ade2b620d8160eefff6963de08368c8bd5ad61625bbc2baa3be9628cef91f71885a58c42b47d66ded276fd835e43589a00a35133fdd";
 
-  -- KCDSA-SIGN --
+end ecdsa_top_pkg;
 
-  -- Test Case 1
-  constant SIGN_PRIVATE_KEY_KCDSA   : std_logic_vector(DATA_SIZE-1 downto 0) := X"6b1565c2466dfaf5dc545a560d0aeb6f5f4a1f866de4f168562aae68e7e1e2ca6e09acf92db233e9be279d64e38f1834d546831693e7a283971cfe4e9de1ea07";
-  constant SIGN_GENERATED_KEY_KCDSA : std_logic_vector(DATA_SIZE-1 downto 0) := X"483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b879be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798";
+package body ecdsa_top_pkg is
 
-  constant SIGN_DATA_BLOCK_SIZE_KCDSA : std_logic_vector(BLOCK_SIZE-1 downto 0)   := X"1";
-  constant SIGN_MESSAGE_KCDSA         : std_logic_vector(0 to 16*WORD_SIZE_512-1) := X"6162638000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000018";
-  constant SIGN_HASH_KCDSA            : std_logic_vector(DATA_SIZE-1 downto 0)    := X"ddaf35a193617abacc417349ae20413112e6fa4e89a97ea20a9eeee64b55d39a2192992a274fc1a836ba3c23a3feebbd454d4423643ce80e2a9ac94fa54ca49f";
-
-  constant SIGN_SIGNATURE_R_KCDSA : std_logic_vector(DATA_SIZE-1 downto 0) := X"90884d211e23b9b8b180bea96f91d07e7449bd8b5cd669dda187da207e63867023f109aba14f01e13fc9fa912307ff0948517c33d53841f1804f0075c18821a5";
-  constant SIGN_SIGNATURE_S_KCDSA : std_logic_vector(DATA_SIZE-1 downto 0) := X"815C80530C3E941DF1C479574B2303FA7D2150F5F0008524E18A52C580F0C01AC98F7553743E2D1CB1FA22DDA0C69D6845C8A2817115DB145AC38A80F8C18732";
-
-  -- KCDSA-VERIFY --
-
-  -- Test Case 1
-  constant VERIFY_PUBLIC_KEY_X_KCDSA : std_logic_vector(DATA_SIZE-1 downto 0) := X"5448891e9a3538c7f19e4fe5e40089a7b3ebc9e8dcef6e77e4e5c67223fe42fd8408ce953d275bfa92b1c604b7288dc768218148249543d2d3c0235b0a5cb20a";
-  constant VERIFY_PUBLIC_KEY_Y_KCDSA : std_logic_vector(DATA_SIZE-1 downto 0) := X"78a655aacfd36585f6701afc52d37e6383ad336f57251f9efcb5b91cfdd94f485f4ecd968a23ab8ac5762795b2499bca93236006ecafaaa94709031b2ea9b427";
-
-  constant VERIFY_DATA_BLOCK_SIZE_KCDSA : std_logic_vector(BLOCK_SIZE-1 downto 0)   := X"1";
-  constant VERIFY_MESSAGE_KCDSA         : std_logic_vector(0 to 16*WORD_SIZE_512-1) := X"6162638000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000018";
-  constant VERIFY_HASH_KCDSA            : std_logic_vector(DATA_SIZE-1 downto 0)    := X"ddaf35a193617abacc417349ae20413112e6fa4e89a97ea20a9eeee64b55d39a2192992a274fc1a836ba3c23a3feebbd454d4423643ce80e2a9ac94fa54ca49f";
-
-  constant VERIFY_SIGNATURE_R_KCDSA : std_logic_vector(DATA_SIZE-1 downto 0) := X"90884d211e23b9b8b180bea96f91d07e7449bd8b5cd669dda187da207e63867023f109aba14f01e13fc9fa912307ff0948517c33d53841f1804f0075c18821a5";
-  constant VERIFY_SIGNATURE_S_KCDSA : std_logic_vector(DATA_SIZE-1 downto 0) := X"815C80530C3E941DF1C479574B2303FA7D2150F5F0008524E18A52C580F0C01AC98F7553743E2D1CB1FA22DDA0C69D6845C8A2817115DB145AC38A80F8C18732";
-
-  -- KCDSA-TOP --
-
-  -- Test Case 1
-  constant TOP_PRIVATE_KEY_KCDSA   : std_logic_vector(DATA_SIZE-1 downto 0) := X"6b1565c2466dfaf5dc545a560d0aeb6f5f4a1f866de4f168562aae68e7e1e2ca6e09acf92db233e9be279d64e38f1834d546831693e7a283971cfe4e9de1ea07";
-  constant TOP_GENERATED_KEY_KCDSA : std_logic_vector(DATA_SIZE-1 downto 0) := X"483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b879be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798";
-
-  constant TOP_PUBLIC_KEY_X_KCDSA : std_logic_vector(DATA_SIZE-1 downto 0) := X"5448891e9a3538c7f19e4fe5e40089a7b3ebc9e8dcef6e77e4e5c67223fe42fd8408ce953d275bfa92b1c604b7288dc768218148249543d2d3c0235b0a5cb20a";
-  constant TOP_PUBLIC_KEY_Y_KCDSA : std_logic_vector(DATA_SIZE-1 downto 0) := X"78a655aacfd36585f6701afc52d37e6383ad336f57251f9efcb5b91cfdd94f485f4ecd968a23ab8ac5762795b2499bca93236006ecafaaa94709031b2ea9b427";
-
-  constant TOP_DATA_BLOCK_SIZE_KCDSA : std_logic_vector(BLOCK_SIZE-1 downto 0)   := X"1";
-  constant TOP_MESSAGE_KCDSA         : std_logic_vector(0 to 16*WORD_SIZE_512-1) := X"6162638000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000018";
-  constant TOP_HASH_KCDSA            : std_logic_vector(DATA_SIZE-1 downto 0)    := X"ddaf35a193617abacc417349ae20413112e6fa4e89a97ea20a9eeee64b55d39a2192992a274fc1a836ba3c23a3feebbd454d4423643ce80e2a9ac94fa54ca49f";
-
-  constant TOP_SIGNATURE_R_KCDSA : std_logic_vector(DATA_SIZE-1 downto 0) := X"90884d211e23b9b8b180bea96f91d07e7449bd8b5cd669dda187da207e63867023f109aba14f01e13fc9fa912307ff0948517c33d53841f1804f0075c18821a5";
-  constant TOP_SIGNATURE_S_KCDSA : std_logic_vector(DATA_SIZE-1 downto 0) := X"815C80530C3E941DF1C479574B2303FA7D2150F5F0008524E18A52C580F0C01AC98F7553743E2D1CB1FA22DDA0C69D6845C8A2817115DB145AC38A80F8C18732";
-
-  -------------------------------------------------------------------------------
-  -- MONITORS TEST 
-  -------------------------------------------------------------------------------
-
-  signal MONITOR_TEST    : string(25 downto 1) := "                         ";
-  signal MONITOR_CASE    : string(25 downto 1) := "                         ";
-  signal MONITOR_SUBCASE : string(25 downto 1) := "                         ";
-
-end testbench_miera_pkg;
-
-package body testbench_miera_pkg is
-
-end testbench_miera_pkg;
+end ecdsa_top_pkg;
