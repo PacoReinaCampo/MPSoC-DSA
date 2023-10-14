@@ -164,6 +164,7 @@ begin
   -------------------------------------------------------
 
   main_test : process
+  begin
 
     -- CONTROL
     KCDSA_TOP_MODE           <= '1';

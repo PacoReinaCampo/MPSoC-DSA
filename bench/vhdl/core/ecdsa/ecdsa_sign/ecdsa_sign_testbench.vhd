@@ -154,7 +154,7 @@ architecture ecdsa_sign_testbench_architecture of ecdsa_sign_testbench is
 begin
 
   -- ***************************************************************************
-  -- ************************ ecdsa_sign_stimulus ************************
+  -- *************************** ecdsa_sign_stimulus ***************************
   -- ***************************************************************************
 
   ecdsa_sign_stimulus_i : ecdsa_sign_stimulus

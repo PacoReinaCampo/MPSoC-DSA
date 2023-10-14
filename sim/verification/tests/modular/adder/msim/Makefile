@@ -49,10 +49,10 @@ build:
 	vcom -2008 -f system.f
 
 simulate:
-	vsim -c -do run.do work.ecdsa_sign_testbench
+	vsim -c -do run.do work.ecdsa_adder_testbench
 
 test:
-	gtkwave ecdsa_sign_testbench.vcd
+	gtkwave ecdsa_adder_testbench.vcd
 
 clean:
 	rm -rf work transcript
