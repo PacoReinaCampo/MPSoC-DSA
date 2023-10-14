@@ -15,6 +15,6 @@ ghdl -a --std=08 ../../../../rtl/vhdl/core/kcdsa/kcdsa_sign.vhd
 ghdl -a --std=08 ../../../../rtl/vhdl/core/kcdsa/kcdsa_verify.vhd
 ghdl -a --std=08 ../../../../rtl/vhdl/core/kcdsa/kcdsa_top.vhd
 
-ghdl -a --std=08 ../../../../bench/vhdl/testbench_miera_pkg.vhd
-ghdl -a --std=08 ../../../../bench/vhdl/testbench_miera_stimulus.vhd
-ghdl -a --std=08 ../../../../bench/vhdl/testbench_miera_top.vhd
+ghdl -a --std=08 ../../../../bench/vhdl/peripheral/testbench_miera_pkg.vhd
+ghdl -a --std=08 ../../../../bench/vhdl/peripheral/testbench_miera_stimulus.vhd
+ghdl -a --std=08 ../../../../bench/vhdl/peripheral/testbench_miera_top.vhd
