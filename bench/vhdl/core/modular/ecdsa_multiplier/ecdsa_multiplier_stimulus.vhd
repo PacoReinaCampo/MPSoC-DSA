@@ -55,7 +55,7 @@ entity ecdsa_multiplier_stimulus is
     BLOCK_SIZE    : integer := 4;
     WORD_SIZE_256 : integer := 32;
     WORD_SIZE_512 : integer := 64
-  );
+    );
   port (
     -------------------------------------------------------
     -- GLOBAL
@@ -76,7 +76,7 @@ entity ecdsa_multiplier_stimulus is
     ECDSA_MULTIPLIER_DATA_A_IN : out std_logic_vector(DATA_SIZE-1 downto 0);
     ECDSA_MULTIPLIER_DATA_B_IN : out std_logic_vector(DATA_SIZE-1 downto 0);
     ECDSA_MULTIPLIER_DATA_OUT  : in  std_logic_vector(DATA_SIZE-1 downto 0)
-  );
+    );
 end entity;
 
 architecture ecdsa_multiplier_stimulus_architecture of ecdsa_multiplier_stimulus is

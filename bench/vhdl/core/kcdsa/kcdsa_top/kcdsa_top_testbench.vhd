@@ -53,7 +53,7 @@ entity kcdsa_top_testbench is
     BLOCK_SIZE    : integer := 4;
     WORD_SIZE_256 : integer := 32;
     WORD_SIZE_512 : integer := 64
-  );
+    );
 end kcdsa_top_testbench;
 
 architecture kcdsa_top_testbench_architecture of kcdsa_top_testbench is
@@ -64,7 +64,7 @@ architecture kcdsa_top_testbench_architecture of kcdsa_top_testbench is
       BLOCK_SIZE    : integer := 4;
       WORD_SIZE_256 : integer := 32;
       WORD_SIZE_512 : integer := 64
-    );
+      );
     port (
 
       -------------------------------------------------------
@@ -104,7 +104,7 @@ architecture kcdsa_top_testbench_architecture of kcdsa_top_testbench is
 
       KCDSA_TOP_SIGNATURE_R : in std_logic_vector(DATA_SIZE-1 downto 0);
       KCDSA_TOP_SIGNATURE_S : in std_logic_vector(DATA_SIZE-1 downto 0)
-    );
+      );
   end component kcdsa_top_stimulus;
 
   component kcdsa_top is
@@ -112,7 +112,7 @@ architecture kcdsa_top_testbench_architecture of kcdsa_top_testbench is
       DATA_SIZE  : integer := 512;
       BLOCK_SIZE : integer := 4;
       WORD_SIZE  : integer := 64
-    );
+      );
     port (
       -- GLOBAL
       CLK : in std_logic;
@@ -137,14 +137,14 @@ architecture kcdsa_top_testbench_architecture of kcdsa_top_testbench is
 
       DATA_BLOCK_SIZE : in std_logic_vector(BLOCK_SIZE-1 downto 0);
 
-      MESSAGE : in  std_logic_vector(0 to 16*WORD_SIZE_512-1);
+      MESSAGE : in std_logic_vector(0 to 16*WORD_SIZE_512-1);
 
       SIGNATURE_R_CHECK : in std_logic_vector(DATA_SIZE-1 downto 0);
       SIGNATURE_S_CHECK : in std_logic_vector(DATA_SIZE-1 downto 0);
 
       SIGNATURE_R : out std_logic_vector(DATA_SIZE-1 downto 0);
       SIGNATURE_S : out std_logic_vector(DATA_SIZE-1 downto 0)
-    );
+      );
   end component;
 
   signal clk : std_logic;
@@ -191,7 +191,7 @@ begin
       BLOCK_SIZE    => BLOCK_SIZE,
       WORD_SIZE_256 => WORD_SIZE_256,
       WORD_SIZE_512 => WORD_SIZE_512
-    )
+      )
     port map (
 
       -------------------------------------------------------
@@ -231,49 +231,49 @@ begin
 
       KCDSA_TOP_SIGNATURE_R => signature_r_top_int,
       KCDSA_TOP_SIGNATURE_S => signature_s_top_int
-    );
+      );
 
   -- ***************************************************************************
   -- ********************************* kcdsa_top *******************************
   -- ***************************************************************************
 
-    kcdsa_top_dut : kcdsa_top
-      generic map (
-        DATA_SIZE  => DATA_SIZE,
-        BLOCK_SIZE => BLOCK_SIZE,
-        WORD_SIZE  => WORD_SIZE_512
+  kcdsa_top_dut : kcdsa_top
+    generic map (
+      DATA_SIZE  => DATA_SIZE,
+      BLOCK_SIZE => BLOCK_SIZE,
+      WORD_SIZE  => WORD_SIZE_512
       )
-      port map (
-        -- GLOBAL
-        CLK => clk,
-        RST => rst,
+    port map (
+      -- GLOBAL
+      CLK => clk,
+      RST => rst,
 
-        -- CONTROL
-        START => start_top_int,
-        READY => ready_top_int,
+      -- CONTROL
+      START => start_top_int,
+      READY => ready_top_int,
 
-        DATA_IN_ENABLE  => data_in_enable_top_int,
-        DATA_OUT_ENABLE => data_out_enable_top_int,
+      DATA_IN_ENABLE  => data_in_enable_top_int,
+      DATA_OUT_ENABLE => data_out_enable_top_int,
 
-        MODE => mode_top_int,
-        FAIL => fail_top_int,
+      MODE => mode_top_int,
+      FAIL => fail_top_int,
 
-        -- DATA
-        PRIVATE_KEY   => private_key_top_int,
-        GENERATED_KEY => generated_key_top_int,
+      -- DATA
+      PRIVATE_KEY   => private_key_top_int,
+      GENERATED_KEY => generated_key_top_int,
 
-        PUBLIC_KEY_X_CHECK => public_key_x_check_top_int,
-        PUBLIC_KEY_Y_CHECK => public_key_y_check_top_int,
+      PUBLIC_KEY_X_CHECK => public_key_x_check_top_int,
+      PUBLIC_KEY_Y_CHECK => public_key_y_check_top_int,
 
-        DATA_BLOCK_SIZE => data_block_size_top_int,
+      DATA_BLOCK_SIZE => data_block_size_top_int,
 
-        MESSAGE => message_top_int,
+      MESSAGE => message_top_int,
 
-        SIGNATURE_R_CHECK => signature_r_check_top_int,
-        SIGNATURE_S_CHECK => signature_s_check_top_int,
+      SIGNATURE_R_CHECK => signature_r_check_top_int,
+      SIGNATURE_S_CHECK => signature_s_check_top_int,
 
-        SIGNATURE_R => signature_r_top_int,
-        SIGNATURE_S => signature_s_top_int
+      SIGNATURE_R => signature_r_top_int,
+      SIGNATURE_S => signature_s_top_int
       );
 
 end architecture kcdsa_top_testbench_architecture;

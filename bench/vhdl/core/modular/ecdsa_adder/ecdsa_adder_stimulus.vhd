@@ -55,7 +55,7 @@ entity ecdsa_adder_stimulus is
     BLOCK_SIZE    : integer := 4;
     WORD_SIZE_256 : integer := 32;
     WORD_SIZE_512 : integer := 64
-  );
+    );
   port (
     -------------------------------------------------------
     -- GLOBAL
@@ -78,7 +78,7 @@ entity ecdsa_adder_stimulus is
     ECDSA_ADDER_DATA_A_IN : out std_logic_vector(DATA_SIZE-1 downto 0);
     ECDSA_ADDER_DATA_B_IN : out std_logic_vector(DATA_SIZE-1 downto 0);
     ECDSA_ADDER_DATA_OUT  : in  std_logic_vector(DATA_SIZE-1 downto 0)
-  );
+    );
 end entity;
 
 architecture ecdsa_adder_stimulus_architecture of ecdsa_adder_stimulus is

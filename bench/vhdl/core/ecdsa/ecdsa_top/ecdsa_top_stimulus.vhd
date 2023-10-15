@@ -55,7 +55,7 @@ entity ecdsa_top_stimulus is
     BLOCK_SIZE    : integer := 4;
     WORD_SIZE_256 : integer := 32;
     WORD_SIZE_512 : integer := 64
-  );
+    );
   port (
     -------------------------------------------------------
     -- GLOBAL
@@ -94,7 +94,7 @@ entity ecdsa_top_stimulus is
 
     ECDSA_TOP_SIGNATURE_R : in std_logic_vector(DATA_SIZE-1 downto 0);
     ECDSA_TOP_SIGNATURE_S : in std_logic_vector(DATA_SIZE-1 downto 0)
-  );
+    );
 end entity;
 
 architecture ecdsa_top_stimulus_architecture of ecdsa_top_stimulus is

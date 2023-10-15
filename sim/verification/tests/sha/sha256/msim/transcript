@@ -1,0 +1,13 @@
+# vsim -c -do "run.do" work.ecdsa_sha256_testbench 
+# Start time: 14:35:33 on Oct 15,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.ecdsa_sha256_pkg(body)
+# Loading work.ecdsa_sha256_testbench(ecdsa_sha256_testbench_architecture)
+# Loading work.ecdsa_sha256_stimulus(ecdsa_sha256_stimulus_architecture)
+# ** Warning: (vsim-3473) Component instance "ecdsa_sha256_dut : ecdsa_sha256" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /ecdsa_sha256_testbench File: ../../../../../../bench/vhdl/core/sha/ecdsa_sha256/ecdsa_sha256_testbench.vhd
+# do run.do

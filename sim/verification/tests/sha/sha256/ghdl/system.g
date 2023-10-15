@@ -15,6 +15,6 @@ ghdl -a --std=08 ../../../../../../rtl/vhdl/core/kcdsa/kcdsa_sign.vhd
 ghdl -a --std=08 ../../../../../../rtl/vhdl/core/kcdsa/kcdsa_verify.vhd
 ghdl -a --std=08 ../../../../../../rtl/vhdl/core/kcdsa/kcdsa_top.vhd
 
-ghdl -a --std=08 ../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_sign_pkg.vhd
-ghdl -a --std=08 ../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_sign_stimulus.vhd
-ghdl -a --std=08 ../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_sha256_testbench.vhd
+ghdl -a --std=08 ../../../../../../bench/vhdl/core/sha/ecdsa_sha256/ecdsa_sha256_pkg.vhd
+ghdl -a --std=08 ../../../../../../bench/vhdl/core/sha/ecdsa_sha256/ecdsa_sha256_stimulus.vhd
+ghdl -a --std=08 ../../../../../../bench/vhdl/core/sha/ecdsa_sha256/ecdsa_sha256_testbench.vhd

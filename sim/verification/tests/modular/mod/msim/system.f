@@ -59,6 +59,6 @@
 ../../../../../../rtl/vhdl/core/kcdsa/kcdsa_verify.vhd
 ../../../../../../rtl/vhdl/core/kcdsa/kcdsa_top.vhd
 
-../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_sign_pkg.vhd
-../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_sign_stimulus.vhd
-../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_modular_testbench.vhd
+../../../../../../bench/vhdl/core/modular/ecdsa_mod/ecdsa_mod_pkg.vhd
+../../../../../../bench/vhdl/core/modular/ecdsa_mod/ecdsa_mod_stimulus.vhd
+../../../../../../bench/vhdl/core/modular/ecdsa_mod/ecdsa_mod_testbench.vhd

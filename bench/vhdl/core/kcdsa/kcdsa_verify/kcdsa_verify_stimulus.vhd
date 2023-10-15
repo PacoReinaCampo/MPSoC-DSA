@@ -55,7 +55,7 @@ entity kcdsa_verify_stimulus is
     BLOCK_SIZE    : integer := 4;
     WORD_SIZE_256 : integer := 32;
     WORD_SIZE_512 : integer := 64
-  );
+    );
   port (
     -------------------------------------------------------
     -- GLOBAL
@@ -87,7 +87,7 @@ entity kcdsa_verify_stimulus is
 
     KCDSA_VERIFY_SIGNATURE_R : out std_logic_vector(DATA_SIZE-1 downto 0);
     KCDSA_VERIFY_SIGNATURE_S : out std_logic_vector(DATA_SIZE-1 downto 0)
-  );
+    );
 end entity;
 
 architecture kcdsa_verify_stimulus_architecture of kcdsa_verify_stimulus is
@@ -163,14 +163,14 @@ begin
     KCDSA_VERIFY_DATA_IN_ENABLE <= '0';
 
     -- DATA
-    KCDSA_VERIFY_PUBLIC_KEY_X <= VERIFY_PUBLIC_KEY_X;
-    KCDSA_VERIFY_PUBLIC_KEY_Y <= VERIFY_PUBLIC_KEY_Y;
+    KCDSA_VERIFY_PUBLIC_KEY_X <= VERIFY_PUBLIC_KEY_X_KCDSA;
+    KCDSA_VERIFY_PUBLIC_KEY_Y <= VERIFY_PUBLIC_KEY_Y_KCDSA;
 
-    KCDSA_VERIFY_DATA_BLOCK_SIZE <= VERIFY_DATA_BLOCK_SIZE;
-    KCDSA_VERIFY_MESSAGE         <= VERIFY_MESSAGE;
+    KCDSA_VERIFY_DATA_BLOCK_SIZE <= VERIFY_DATA_BLOCK_SIZE_KCDSA;
+    KCDSA_VERIFY_MESSAGE         <= VERIFY_MESSAGE_KCDSA;
 
-    KCDSA_VERIFY_SIGNATURE_R <= VERIFY_SIGNATURE_R;
-    KCDSA_VERIFY_SIGNATURE_S <= VERIFY_SIGNATURE_S;
+    KCDSA_VERIFY_SIGNATURE_R <= VERIFY_SIGNATURE_R_KCDSA;
+    KCDSA_VERIFY_SIGNATURE_S <= VERIFY_SIGNATURE_S_KCDSA;
 
     wait for 1 ms;
 

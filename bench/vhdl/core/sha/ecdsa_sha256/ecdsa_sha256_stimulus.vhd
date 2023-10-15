@@ -47,15 +47,15 @@ use std.textio.all;
 --library modelsim_lib;
 --use modelsim_lib.util.all;
 
-use work.testbench_miera_pkg.all;
+use work.ecdsa_sha256_pkg.all;
 
-entity testbench_miera_stimulus is
+entity ecdsa_sha256_stimulus is
   generic (
     --ECDSA-SIZE
     BLOCK_SIZE    : integer := 4;
     WORD_SIZE_256 : integer := 32;
-    WORD_SIZE_256 : integer := 64
-  );
+    WORD_SIZE_512 : integer := 64
+    );
   port (
     -------------------------------------------------------
     -- GLOBAL
@@ -80,10 +80,10 @@ entity testbench_miera_stimulus is
 
     ECDSA_SHA256_DATA_IN  : out std_logic_vector(0 to 16*WORD_SIZE_256-1);
     ECDSA_SHA256_DATA_OUT : in  std_logic_vector(WORD_SIZE_256*8-1 downto 0)
-  );
+    );
 end entity;
 
-architecture testbench_miera_stimulus_architecture of testbench_miera_stimulus is
+architecture ecdsa_sha256_stimulus_architecture of ecdsa_sha256_stimulus is
 
   -- GLOBAL
   signal clk_int : std_logic;
@@ -163,4 +163,4 @@ begin
 
   end process main_test;
 
-end architecture testbench_miera_stimulus_architecture;
+end architecture ecdsa_sha256_stimulus_architecture;

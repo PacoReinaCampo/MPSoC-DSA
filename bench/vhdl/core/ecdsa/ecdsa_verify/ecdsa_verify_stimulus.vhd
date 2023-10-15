@@ -55,7 +55,7 @@ entity ecdsa_verify_stimulus is
     BLOCK_SIZE    : integer := 4;
     WORD_SIZE_256 : integer := 32;
     WORD_SIZE_512 : integer := 64
-  );
+    );
   port (
     -------------------------------------------------------
     -- GLOBAL
@@ -87,7 +87,7 @@ entity ecdsa_verify_stimulus is
 
     ECDSA_VERIFY_SIGNATURE_R : out std_logic_vector(DATA_SIZE-1 downto 0);
     ECDSA_VERIFY_SIGNATURE_S : out std_logic_vector(DATA_SIZE-1 downto 0)
-  );
+    );
 end entity;
 
 architecture ecdsa_verify_stimulus_architecture of ecdsa_verify_stimulus is

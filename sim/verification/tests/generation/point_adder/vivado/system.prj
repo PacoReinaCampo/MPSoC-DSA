@@ -59,6 +59,6 @@ vhdl2008 work ../../../../../../rtl/vhdl/core/kcdsa/kcdsa_sign.vhd
 vhdl2008 work ../../../../../../rtl/vhdl/core/kcdsa/kcdsa_verify.vhd
 vhdl2008 work ../../../../../../rtl/vhdl/core/kcdsa/kcdsa_top.vhd
 
-vhdl2008 work ../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_sign_pkg.vhd
-vhdl2008 work ../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_sign_stimulus.vhd
-vhdl2008 work ../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_point_adder_testbench.vhd
+vhdl2008 work ../../../../../../bench/vhdl/core/generation/ecdsa_point_adder/ecdsa_point_adder_pkg.vhd
+vhdl2008 work ../../../../../../bench/vhdl/core/generation/ecdsa_point_adder/ecdsa_point_adder_stimulus.vhd
+vhdl2008 work ../../../../../../bench/vhdl/core/generation/ecdsa_point_adder/ecdsa_point_adder_testbench.vhd

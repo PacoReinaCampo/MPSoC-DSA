@@ -15,6 +15,6 @@ ghdl -a --std=08 ../../../../../../rtl/vhdl/core/kcdsa/kcdsa_sign.vhd
 ghdl -a --std=08 ../../../../../../rtl/vhdl/core/kcdsa/kcdsa_verify.vhd
 ghdl -a --std=08 ../../../../../../rtl/vhdl/core/kcdsa/kcdsa_top.vhd
 
-ghdl -a --std=08 ../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_sign_pkg.vhd
-ghdl -a --std=08 ../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_sign_stimulus.vhd
-ghdl -a --std=08 ../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_point_generator_testbench.vhd
+ghdl -a --std=08 ../../../../../../bench/vhdl/core/generation/ecdsa_point_generator/ecdsa_point_generator_pkg.vhd
+ghdl -a --std=08 ../../../../../../bench/vhdl/core/generation/ecdsa_point_generator/ecdsa_point_generator_stimulus.vhd
+ghdl -a --std=08 ../../../../../../bench/vhdl/core/generation/ecdsa_point_generator/ecdsa_point_generator_testbench.vhd

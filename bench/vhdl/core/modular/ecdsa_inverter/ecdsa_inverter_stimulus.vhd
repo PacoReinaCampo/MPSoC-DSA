@@ -55,7 +55,7 @@ entity ecdsa_inverter_stimulus is
     BLOCK_SIZE    : integer := 4;
     WORD_SIZE_256 : integer := 32;
     WORD_SIZE_512 : integer := 64
-  );
+    );
   port (
     -------------------------------------------------------
     -- GLOBAL
@@ -75,7 +75,7 @@ entity ecdsa_inverter_stimulus is
     -- DATA
     ECDSA_INVERTER_DATA_IN  : out std_logic_vector(DATA_SIZE-1 downto 0);
     ECDSA_INVERTER_DATA_OUT : in  std_logic_vector(DATA_SIZE-1 downto 0)
-  );
+    );
 end entity;
 
 architecture ecdsa_inverter_stimulus_architecture of ecdsa_inverter_stimulus is

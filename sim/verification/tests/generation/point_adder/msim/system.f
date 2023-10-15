@@ -59,6 +59,6 @@
 ../../../../../../rtl/vhdl/core/kcdsa/kcdsa_verify.vhd
 ../../../../../../rtl/vhdl/core/kcdsa/kcdsa_top.vhd
 
-../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_sign_pkg.vhd
-../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_sign_stimulus.vhd
-../../../../../../bench/vhdl/core/ecdsa/ecdsa_sign/ecdsa_point_adder_testbench.vhd
+../../../../../../bench/vhdl/core/generation/ecdsa_point_adder/ecdsa_point_adder_pkg.vhd
+../../../../../../bench/vhdl/core/generation/ecdsa_point_adder/ecdsa_point_adder_stimulus.vhd
+../../../../../../bench/vhdl/core/generation/ecdsa_point_adder/ecdsa_point_adder_testbench.vhd

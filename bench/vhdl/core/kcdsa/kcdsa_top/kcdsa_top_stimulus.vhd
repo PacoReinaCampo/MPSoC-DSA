@@ -55,7 +55,7 @@ entity kcdsa_top_stimulus is
     BLOCK_SIZE    : integer := 4;
     WORD_SIZE_256 : integer := 32;
     WORD_SIZE_512 : integer := 64
-  );
+    );
   port (
     -------------------------------------------------------
     -- GLOBAL
@@ -94,7 +94,7 @@ entity kcdsa_top_stimulus is
 
     KCDSA_TOP_SIGNATURE_R : in std_logic_vector(DATA_SIZE-1 downto 0);
     KCDSA_TOP_SIGNATURE_S : in std_logic_vector(DATA_SIZE-1 downto 0)
-  );
+    );
 end entity;
 
 architecture kcdsa_top_stimulus_architecture of kcdsa_top_stimulus is
@@ -171,17 +171,17 @@ begin
     KCDSA_TOP_DATA_IN_ENABLE <= '0';
 
     -- DATA
-    KCDSA_TOP_PRIVATE_KEY   <= TOP_PRIVATE_KEY;
-    KCDSA_TOP_GENERATED_KEY <= TOP_GENERATED_KEY;
+    KCDSA_TOP_PRIVATE_KEY   <= TOP_PRIVATE_KEY_KCDSA;
+    KCDSA_TOP_GENERATED_KEY <= TOP_GENERATED_KEY_KCDSA;
 
-    KCDSA_TOP_PUBLIC_KEY_X_CHECK <= TOP_PUBLIC_KEY_X;
-    KCDSA_TOP_PUBLIC_KEY_Y_CHECK <= TOP_PUBLIC_KEY_Y;
+    KCDSA_TOP_PUBLIC_KEY_X_CHECK <= TOP_PUBLIC_KEY_X_KCDSA;
+    KCDSA_TOP_PUBLIC_KEY_Y_CHECK <= TOP_PUBLIC_KEY_Y_KCDSA;
 
-    KCDSA_TOP_DATA_BLOCK_SIZE <= TOP_DATA_BLOCK_SIZE;
+    KCDSA_TOP_DATA_BLOCK_SIZE <= TOP_DATA_BLOCK_SIZE_KCDSA;
     KCDSA_TOP_MESSAGE         <= DATA_INPUT_512_1;
 
-    KCDSA_TOP_SIGNATURE_R_CHECK <= TOP_SIGNATURE_R;
-    KCDSA_TOP_SIGNATURE_S_CHECK <= TOP_SIGNATURE_S;
+    KCDSA_TOP_SIGNATURE_R_CHECK <= TOP_SIGNATURE_R_KCDSA;
+    KCDSA_TOP_SIGNATURE_S_CHECK <= TOP_SIGNATURE_S_KCDSA;
 
     wait for 1 ms;
 

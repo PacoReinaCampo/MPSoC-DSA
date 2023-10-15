@@ -49,10 +49,10 @@ build:
 	vcom -2008 -f system.f
 
 simulate:
-	vsim -c -do run.do work.ecdsa_modular_testbench
+	vsim -c -do run.do work.ecdsa_mod_testbench
 
 test:
-	gtkwave ecdsa_modular_testbench.vcd
+	gtkwave ecdsa_mod_testbench.vcd
 
 clean:
 	rm -rf work transcript

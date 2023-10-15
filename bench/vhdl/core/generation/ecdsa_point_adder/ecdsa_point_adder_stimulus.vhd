@@ -55,7 +55,7 @@ entity ecdsa_point_adder_stimulus is
     BLOCK_SIZE    : integer := 4;
     WORD_SIZE_256 : integer := 32;
     WORD_SIZE_512 : integer := 64
-  );
+    );
   port (
     -------------------------------------------------------
     -- GLOBAL
@@ -79,7 +79,7 @@ entity ecdsa_point_adder_stimulus is
     ECDSA_POINT_IN_QY_ADDER  : out std_logic_vector(DATA_SIZE-1 downto 0);
     ECDSA_POINT_OUT_RX_ADDER : in  std_logic_vector(DATA_SIZE-1 downto 0);
     ECDSA_POINT_OUT_RY_ADDER : in  std_logic_vector(DATA_SIZE-1 downto 0)
-  );
+    );
 end entity;
 
 architecture ecdsa_point_adder_stimulus_architecture of ecdsa_point_adder_stimulus is
