@@ -69,7 +69,7 @@ entity testbench_miera_top is
     BLOCK_SIZE    : integer := 4;
     WORD_SIZE_256 : integer := 32;
     WORD_SIZE_512 : integer := 64
-  );
+    );
 end testbench_miera_top;
 
 architecture testbench_miera_top_architecture of testbench_miera_top is
@@ -80,7 +80,7 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
       BLOCK_SIZE    : integer := 4;
       WORD_SIZE_256 : integer := 32;
       WORD_SIZE_512 : integer := 64
-    );
+      );
     port (
       CLK : out std_logic;
       RST : out std_logic;
@@ -358,14 +358,14 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
 
       KCDSA_TOP_SIGNATURE_R : in std_logic_vector(DATA_SIZE-1 downto 0);
       KCDSA_TOP_SIGNATURE_S : in std_logic_vector(DATA_SIZE-1 downto 0)
-    );
+      );
   end component testbench_miera_stimulus;
 
   component ecdsa_sha256 is
     generic (
       BLOCK_SIZE : integer := 4;
       WORD_SIZE  : integer := 32
-    );
+      );
     port (
       -- GLOBAL
       CLK : in std_logic;
@@ -383,14 +383,14 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
 
       DATA_IN  : in  std_logic_vector(0 to 16*WORD_SIZE-1);
       DATA_OUT : out std_logic_vector(WORD_SIZE*8-1 downto 0)
-    );
+      );
   end component;
 
   component ecdsa_sha512 is
     generic (
       BLOCK_SIZE : integer := 4;
       WORD_SIZE  : integer := 64
-    );
+      );
     port (
       -- GLOBAL
       CLK : in std_logic;
@@ -408,13 +408,13 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
 
       DATA_IN  : in  std_logic_vector(0 to 16*WORD_SIZE-1);
       DATA_OUT : out std_logic_vector(WORD_SIZE*8-1 downto 0)
-    );
+      );
   end component;
 
   component ecdsa_adder is
     generic (
       DATA_SIZE : integer := 256
-    );
+      );
     port (
       -- GLOBAL
       CLK : in std_logic;
@@ -431,13 +431,13 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
       DATA_A_IN : in  std_logic_vector(DATA_SIZE-1 downto 0);
       DATA_B_IN : in  std_logic_vector(DATA_SIZE-1 downto 0);
       DATA_OUT  : out std_logic_vector(DATA_SIZE-1 downto 0)
-    );
+      );
   end component;
 
   component ecdsa_inverter is
     generic (
       DATA_SIZE : integer := 256
-    );
+      );
     port (
       -- GLOBAL
       CLK : in std_logic;
@@ -451,13 +451,13 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
       MODULO   : in  std_logic_vector(DATA_SIZE-1 downto 0);
       DATA_IN  : in  std_logic_vector(DATA_SIZE-1 downto 0);
       DATA_OUT : out std_logic_vector(DATA_SIZE-1 downto 0)
-    );
+      );
   end component;
 
   component ecdsa_multiplier is
     generic (
       DATA_SIZE : integer := 256
-    );
+      );
     port (
       -- GLOBAL
       CLK : in std_logic;
@@ -472,13 +472,13 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
       DATA_A_IN : in  std_logic_vector(DATA_SIZE-1 downto 0);
       DATA_B_IN : in  std_logic_vector(DATA_SIZE-1 downto 0);
       DATA_OUT  : out std_logic_vector(DATA_SIZE-1 downto 0)
-    );
+      );
   end component;
 
   component ecdsa_point_adder is
     generic (
       DATA_SIZE : integer := 256
-    );
+      );
     port (
       -- GLOBAL
       CLK : in std_logic;
@@ -495,13 +495,13 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
       POINT_IN_QY  : in  std_logic_vector(DATA_SIZE-1 downto 0);
       POINT_OUT_RX : out std_logic_vector(DATA_SIZE-1 downto 0);
       POINT_OUT_RY : out std_logic_vector(DATA_SIZE-1 downto 0)
-    );
+      );
   end component;
 
   component ecdsa_point_doubler is
     generic (
       DATA_SIZE : integer := 256
-    );
+      );
     port (
       -- GLOBAL
       CLK : in std_logic;
@@ -516,13 +516,13 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
       POINT_IN_PY  : in  std_logic_vector(DATA_SIZE-1 downto 0);
       POINT_OUT_RX : out std_logic_vector(DATA_SIZE-1 downto 0);
       POINT_OUT_RY : out std_logic_vector(DATA_SIZE-1 downto 0)
-    );
+      );
   end component;
 
   component ecdsa_point_generator is
     generic (
       DATA_SIZE : integer := 256
-    );
+      );
     port (
       -- GLOBAL
       CLK : in std_logic;
@@ -539,7 +539,7 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
       POINT_IN_Y  : in  std_logic_vector(DATA_SIZE-1 downto 0);
       POINT_OUT_X : out std_logic_vector(DATA_SIZE-1 downto 0);
       POINT_OUT_Y : out std_logic_vector(DATA_SIZE-1 downto 0)
-    );
+      );
   end component;
 
   component ecdsa_sign is
@@ -547,7 +547,7 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
       DATA_SIZE  : integer := 512;
       BLOCK_SIZE : integer := 4;
       WORD_SIZE  : integer := 64
-    );
+      );
     port (
       -- GLOBAL
       CLK : in std_logic;
@@ -568,11 +568,11 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
 
       DATA_BLOCK_SIZE : in std_logic_vector(BLOCK_SIZE-1 downto 0);
 
-      MESSAGE : in  std_logic_vector(0 to 16*WORD_SIZE_512-1);
+      MESSAGE : in std_logic_vector(0 to 16*WORD_SIZE_512-1);
 
       SIGNATURE_R : out std_logic_vector(DATA_SIZE-1 downto 0);
       SIGNATURE_S : out std_logic_vector(DATA_SIZE-1 downto 0)
-    );
+      );
   end component;
 
   component ecdsa_verify is
@@ -580,7 +580,7 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
       DATA_SIZE  : integer := 512;
       BLOCK_SIZE : integer := 4;
       WORD_SIZE  : integer := 64
-    );
+      );
     port (
       -- GLOBAL
       CLK : in std_logic;
@@ -601,11 +601,11 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
 
       DATA_BLOCK_SIZE : in std_logic_vector(BLOCK_SIZE-1 downto 0);
 
-      MESSAGE : in  std_logic_vector(0 to 16*WORD_SIZE_512-1);
+      MESSAGE : in std_logic_vector(0 to 16*WORD_SIZE_512-1);
 
       SIGNATURE_R : in std_logic_vector(DATA_SIZE-1 downto 0);
       SIGNATURE_S : in std_logic_vector(DATA_SIZE-1 downto 0)
-    );
+      );
   end component;
 
   component ecdsa_top is
@@ -613,7 +613,7 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
       DATA_SIZE  : integer := 512;
       BLOCK_SIZE : integer := 4;
       WORD_SIZE  : integer := 64
-    );
+      );
     port (
       -- GLOBAL
       CLK : in std_logic;
@@ -638,14 +638,14 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
 
       DATA_BLOCK_SIZE : in std_logic_vector(BLOCK_SIZE-1 downto 0);
 
-      MESSAGE : in  std_logic_vector(0 to 16*WORD_SIZE_512-1);
+      MESSAGE : in std_logic_vector(0 to 16*WORD_SIZE_512-1);
 
       SIGNATURE_R_CHECK : in std_logic_vector(DATA_SIZE-1 downto 0);
       SIGNATURE_S_CHECK : in std_logic_vector(DATA_SIZE-1 downto 0);
 
       SIGNATURE_R : out std_logic_vector(DATA_SIZE-1 downto 0);
       SIGNATURE_S : out std_logic_vector(DATA_SIZE-1 downto 0)
-    );
+      );
   end component;
 
   component kcdsa_sign is
@@ -653,7 +653,7 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
       DATA_SIZE  : integer := 512;
       BLOCK_SIZE : integer := 4;
       WORD_SIZE  : integer := 64
-    );
+      );
     port (
       -- GLOBAL
       CLK : in std_logic;
@@ -674,11 +674,11 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
 
       DATA_BLOCK_SIZE : in std_logic_vector(BLOCK_SIZE-1 downto 0);
 
-      MESSAGE : in  std_logic_vector(0 to 16*WORD_SIZE_512-1);
+      MESSAGE : in std_logic_vector(0 to 16*WORD_SIZE_512-1);
 
       SIGNATURE_R : out std_logic_vector(DATA_SIZE-1 downto 0);
       SIGNATURE_S : out std_logic_vector(DATA_SIZE-1 downto 0)
-    );
+      );
   end component;
 
   component kcdsa_verify is
@@ -686,7 +686,7 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
       DATA_SIZE  : integer := 512;
       BLOCK_SIZE : integer := 4;
       WORD_SIZE  : integer := 64
-    );
+      );
     port (
       -- GLOBAL
       CLK : in std_logic;
@@ -707,11 +707,11 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
 
       DATA_BLOCK_SIZE : in std_logic_vector(BLOCK_SIZE-1 downto 0);
 
-      MESSAGE : in  std_logic_vector(0 to 16*WORD_SIZE_512-1);
+      MESSAGE : in std_logic_vector(0 to 16*WORD_SIZE_512-1);
 
       SIGNATURE_R : in std_logic_vector(DATA_SIZE-1 downto 0);
       SIGNATURE_S : in std_logic_vector(DATA_SIZE-1 downto 0)
-    );
+      );
   end component;
 
   component kcdsa_top is
@@ -719,7 +719,7 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
       DATA_SIZE  : integer := 512;
       BLOCK_SIZE : integer := 4;
       WORD_SIZE  : integer := 64
-    );
+      );
     port (
       -- GLOBAL
       CLK : in std_logic;
@@ -744,14 +744,14 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
 
       DATA_BLOCK_SIZE : in std_logic_vector(BLOCK_SIZE-1 downto 0);
 
-      MESSAGE : in  std_logic_vector(0 to 16*WORD_SIZE_512-1);
+      MESSAGE : in std_logic_vector(0 to 16*WORD_SIZE_512-1);
 
       SIGNATURE_R_CHECK : in std_logic_vector(DATA_SIZE-1 downto 0);
       SIGNATURE_S_CHECK : in std_logic_vector(DATA_SIZE-1 downto 0);
 
       SIGNATURE_R : out std_logic_vector(DATA_SIZE-1 downto 0);
       SIGNATURE_S : out std_logic_vector(DATA_SIZE-1 downto 0)
-    );
+      );
   end component;
 
   --
@@ -874,7 +874,7 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
 
   signal data_in_enable_sign_int  : std_logic;
   signal data_out_enable_sign_int : std_logic;
-  
+
   signal private_key_sign_int   : std_logic_vector(DATA_SIZE-1 downto 0);
   signal generated_key_sign_int : std_logic_vector(DATA_SIZE-1 downto 0);
 
@@ -947,7 +947,7 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
 
   signal data_in_enable_kcdsa_sign_int  : std_logic;
   signal data_out_enable_kcdsa_sign_int : std_logic;
-  
+
   signal private_key_kcdsa_sign_int   : std_logic_vector(DATA_SIZE-1 downto 0);
   signal generated_key_kcdsa_sign_int : std_logic_vector(DATA_SIZE-1 downto 0);
 
@@ -1021,7 +1021,7 @@ begin
       BLOCK_SIZE    => BLOCK_SIZE,
       WORD_SIZE_256 => WORD_SIZE_256,
       WORD_SIZE_512 => WORD_SIZE_512
-    )
+      )
     port map (
 
       -------------------------------------------------------
@@ -1304,7 +1304,7 @@ begin
 
       KCDSA_TOP_SIGNATURE_R => signature_r_kcdsa_top_int,
       KCDSA_TOP_SIGNATURE_S => signature_s_kcdsa_top_int
-    );
+      );
 
   -- ***************************************************************************
   -- ***************************** ecdsa_sha256 ********************************
@@ -1315,7 +1315,7 @@ begin
       generic map (
         BLOCK_SIZE => BLOCK_SIZE,
         WORD_SIZE  => WORD_SIZE_256
-      )
+        )
       port map (
         -- GLOBAL
         CLK => clk,
@@ -1333,7 +1333,7 @@ begin
 
         DATA_IN  => data_in_sha256_int,
         DATA_OUT => data_out_sha256_int
-      );
+        );
   end generate ecdsa_sha256_if;
 
   -- ***************************************************************************
@@ -1345,7 +1345,7 @@ begin
       generic map (
         BLOCK_SIZE => BLOCK_SIZE,
         WORD_SIZE  => WORD_SIZE_512
-      )
+        )
       port map (
         -- GLOBAL
         CLK => clk,
@@ -1363,7 +1363,7 @@ begin
 
         DATA_IN  => data_in_sha512_int,
         DATA_OUT => data_out_sha512_int
-      );
+        );
   end generate ecdsa_sha512_if;
 
   -- ***************************************************************************
@@ -1374,7 +1374,7 @@ begin
     ecdsa_adder_dut : ecdsa_adder
       generic map (
         DATA_SIZE => DATA_SIZE
-      )
+        )
       port map (
         -- GLOBAL
         CLK => clk,
@@ -1391,7 +1391,7 @@ begin
         DATA_A_IN => data_a_in_adder_int,
         DATA_B_IN => data_b_in_adder_int,
         DATA_OUT  => data_out_adder_int
-      );
+        );
   end generate ecdsa_adder_if;
 
   -- ***************************************************************************
@@ -1402,7 +1402,7 @@ begin
     ecdsa_inverter_dut : ecdsa_inverter
       generic map (
         DATA_SIZE => DATA_SIZE
-      )
+        )
       port map (
         -- GLOBAL
         CLK => clk,
@@ -1416,7 +1416,7 @@ begin
         MODULO   => BLACKPOOL512_P,
         DATA_IN  => data_in_inverter_int,
         DATA_OUT => data_out_inverter_int
-      );
+        );
   end generate ecdsa_inverter_if;
 
   -- ***************************************************************************
@@ -1427,7 +1427,7 @@ begin
     ecdsa_multiplier_dut : ecdsa_multiplier
       generic map (
         DATA_SIZE => DATA_SIZE
-      )
+        )
       port map (
         -- GLOBAL
         CLK => clk,
@@ -1442,7 +1442,7 @@ begin
         DATA_A_IN => data_a_in_multiplier_int,
         DATA_B_IN => data_b_in_multiplier_int,
         DATA_OUT  => data_out_multiplier_int
-      );
+        );
   end generate ecdsa_multiplier_if;
 
   -- ***************************************************************************
@@ -1453,7 +1453,7 @@ begin
     ecdsa_point_adder_dut : ecdsa_point_adder
       generic map (
         DATA_SIZE => DATA_SIZE
-      )
+        )
       port map (
         -- GLOBAL
         CLK => clk,
@@ -1470,7 +1470,7 @@ begin
         POINT_IN_QY  => point_in_qy_adder_int,
         POINT_OUT_RX => point_out_rx_adder_int,
         POINT_OUT_RY => point_out_ry_adder_int
-      );
+        );
   end generate ecdsa_point_adder_if;
 
   -- ***************************************************************************
@@ -1481,7 +1481,7 @@ begin
     ecdsa_point_doubler_dut : ecdsa_point_doubler
       generic map (
         DATA_SIZE => DATA_SIZE
-      )
+        )
       port map (
         -- GLOBAL
         CLK => clk,
@@ -1496,7 +1496,7 @@ begin
         POINT_IN_PY  => point_in_py_doubler_int,
         POINT_OUT_RX => point_out_rx_doubler_int,
         POINT_OUT_RY => point_out_ry_doubler_int
-      );
+        );
   end generate ecdsa_point_doubler_if;
 
   -- ***************************************************************************
@@ -1507,7 +1507,7 @@ begin
     ecdsa_point_generator_dut : ecdsa_point_generator
       generic map (
         DATA_SIZE => DATA_SIZE
-      )
+        )
       port map (
         -- GLOBAL
         CLK => clk,
@@ -1525,7 +1525,7 @@ begin
 
         POINT_OUT_X => point_out_x_generator_int,
         POINT_OUT_Y => point_out_y_generator_int
-      );
+        );
   end generate ecdsa_point_generator_if;
 
   -- ***************************************************************************
@@ -1538,7 +1538,7 @@ begin
         DATA_SIZE  => DATA_SIZE,
         BLOCK_SIZE => BLOCK_SIZE,
         WORD_SIZE  => WORD_SIZE_512
-      )
+        )
       port map (
         -- GLOBAL
         CLK => clk,
@@ -1563,7 +1563,7 @@ begin
 
         SIGNATURE_R => signature_r_sign_int,
         SIGNATURE_S => signature_s_sign_int
-      );
+        );
   end generate ecdsa_sign_if;
 
   -- ***************************************************************************
@@ -1576,7 +1576,7 @@ begin
         DATA_SIZE  => DATA_SIZE,
         BLOCK_SIZE => BLOCK_SIZE,
         WORD_SIZE  => WORD_SIZE_512
-      )
+        )
       port map (
         -- GLOBAL
         CLK => clk,
@@ -1601,7 +1601,7 @@ begin
 
         SIGNATURE_R => signature_r_verify_int,
         SIGNATURE_S => signature_s_verify_int
-      );
+        );
   end generate ecdsa_verify_if;
 
   -- ***************************************************************************
@@ -1614,7 +1614,7 @@ begin
         DATA_SIZE  => DATA_SIZE,
         BLOCK_SIZE => BLOCK_SIZE,
         WORD_SIZE  => WORD_SIZE_512
-      )
+        )
       port map (
         -- GLOBAL
         CLK => clk,
@@ -1646,7 +1646,7 @@ begin
 
         SIGNATURE_R => signature_r_top_int,
         SIGNATURE_S => signature_s_top_int
-      );
+        );
   end generate ecdsa_top_if;
 
   -- ***************************************************************************
@@ -1659,7 +1659,7 @@ begin
         DATA_SIZE  => DATA_SIZE,
         BLOCK_SIZE => BLOCK_SIZE,
         WORD_SIZE  => WORD_SIZE_512
-      )
+        )
       port map (
         -- GLOBAL
         CLK => clk,
@@ -1684,7 +1684,7 @@ begin
 
         SIGNATURE_R => signature_r_kcdsa_sign_int,
         SIGNATURE_S => signature_s_kcdsa_sign_int
-      );
+        );
   end generate kcdsa_sign_if;
 
   -- ***************************************************************************
@@ -1697,7 +1697,7 @@ begin
         DATA_SIZE  => DATA_SIZE,
         BLOCK_SIZE => BLOCK_SIZE,
         WORD_SIZE  => WORD_SIZE_512
-      )
+        )
       port map (
         -- GLOBAL
         CLK => clk,
@@ -1722,7 +1722,7 @@ begin
 
         SIGNATURE_R => signature_r_kcdsa_verify_int,
         SIGNATURE_S => signature_s_kcdsa_verify_int
-      );
+        );
   end generate kcdsa_verify_if;
 
   -- ***************************************************************************
@@ -1735,7 +1735,7 @@ begin
         DATA_SIZE  => DATA_SIZE,
         BLOCK_SIZE => BLOCK_SIZE,
         WORD_SIZE  => WORD_SIZE_512
-      )
+        )
       port map (
         -- GLOBAL
         CLK => clk,
@@ -1767,6 +1767,6 @@ begin
 
         SIGNATURE_R => signature_r_kcdsa_top_int,
         SIGNATURE_S => signature_s_kcdsa_top_int
-      );
+        );
   end generate kcdsa_top_if;
 end architecture testbench_miera_top_architecture;

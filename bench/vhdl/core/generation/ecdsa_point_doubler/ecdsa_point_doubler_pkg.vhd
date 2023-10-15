@@ -159,16 +159,6 @@ package ecdsa_point_doubler_pkg is
   constant MULTIPLIER_DATA_B_IN : std_logic_vector(DATA_SIZE-1 downto 0) := X"237c710f6e0bcb17f32fa5b611b9f0a5acff27966ebc07ab77a4bbd790cd51682e059f9cf821eb2516bdece645d667461961737f2869ea6b975d05adb8ee9009";
   constant MULTIPLIER_DATA_OUT  : std_logic_vector(DATA_SIZE-1 downto 0) := X"14b54ce2adde1e952a1dfff78fa0b248349dc215839cfa964995f6930053770dd184ba24a26015124760cc678d3a7d9536f711017182f0a8813f263c8d2b45f0";
 
-  -- ECDSA-POINT_ADDER --
-
-  -- Test Case 1
-  constant POINT_ADDER_IN_PX  : std_logic_vector(DATA_SIZE-1 downto 0) := X"968585ca02542195330b93c76fe058be5b4e33b8a72c740f355b21244eb85c1555066ce4b725eba96aa5b9cbf53956a379e408bc93213b8df35dbbb042e80fb7";
-  constant POINT_ADDER_IN_PY  : std_logic_vector(DATA_SIZE-1 downto 0) := X"237c710f6e0bcb17f32fa5b611b9f0a5acff27966ebc07ab77a4bbd790cd51682e059f9cf821eb2516bdece645d667461961737f2869ea6b975d05adb8ee9009";
-  constant POINT_ADDER_IN_QX  : std_logic_vector(DATA_SIZE-1 downto 0) := X"199560dbf7945ade5d41eb9716a42619385db9d4f6c8a5fd6197c68aa3f3f14640143129495f3f8ff1d3d41c2e56651e1aeeb7b63852ba3b29aa42bc27e7f368";
-  constant POINT_ADDER_IN_QY  : std_logic_vector(DATA_SIZE-1 downto 0) := X"8c6c5131418cda5d31fdfaeb24df1a5ba534300c02384e7827f992b2f81f44f574db44cc8d5608f06a4ea4a9ec0e8cbb46ac87305050eb25ce76ad002d3d9f66";
-  constant POINT_ADDER_OUT_RX : std_logic_vector(DATA_SIZE-1 downto 0) := X"53f82eff94c8c8755fc47fa159e88edebc8d4bc8a24ed07c9b1c46fe0c303499d8a0ec5c46832baa808677feaa473644912b19605fad795bb6de8977b67a2dcf";
-  constant POINT_ADDER_OUT_RY : std_logic_vector(DATA_SIZE-1 downto 0) := X"8f942748e67129bf65e72f87993312fcbe8f04d64d05659d1bc1f81f63da91ed72a3ca25c0cc1c2291387e0732c4cd984415fa6c76987e104e700d7ba6f83523";
-
   -- ECDSA-POINT_DOUBLER --
 
   -- Test Case 1
