@@ -182,4 +182,19 @@ begin
       POINT_OUT_RY => point_out_ry_doubler_int
       );
 
+  scalar_assertion : process (clk, rst)
+  begin
+    if rising_edge(clk) then
+      if (ready_point_doubler_int = '1') then
+        assert point_out_rx_doubler_int = POINT_DOUBLER_OUT_RX
+          report "SCALAR DOUBLER: CALCULATED = " & to_string(point_out_rx_doubler_int) & "; CORRECT = " & to_string(POINT_DOUBLER_OUT_RX)
+          severity error;
+
+        assert point_out_ry_doubler_int = POINT_DOUBLER_OUT_RY
+          report "SCALAR DOUBLER: CALCULATED = " & to_string(point_out_ry_doubler_int) & "; CORRECT = " & to_string(POINT_DOUBLER_OUT_RY)
+          severity error;
+      end if;
+    end if;
+  end process scalar_assertion;
+
 end architecture ecdsa_point_doubler_testbench_architecture;

@@ -232,4 +232,19 @@ begin
       SIGNATURE_S => signature_s_sign_int
       );
 
+  scalar_assertion : process (clk, rst)
+  begin
+    if rising_edge(clk) then
+      if (ready_sign_int = '1') then
+        assert signature_r_sign_int = SIGN_SIGNATURE_R
+          report "SCALAR SIGN: CALCULATED = " & to_string(signature_r_sign_int) & "; CORRECT = " & to_string(SIGN_SIGNATURE_R)
+          severity error;
+
+        assert signature_s_sign_int = SIGN_SIGNATURE_S
+          report "SCALAR SIGN: CALCULATED = " & to_string(signature_s_sign_int) & "; CORRECT = " & to_string(SIGN_SIGNATURE_S)
+          severity error;
+      end if;
+    end if;
+  end process scalar_assertion;
+
 end architecture ecdsa_sign_testbench_architecture;

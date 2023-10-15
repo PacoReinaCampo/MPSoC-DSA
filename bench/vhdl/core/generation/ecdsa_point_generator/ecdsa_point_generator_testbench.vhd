@@ -193,4 +193,19 @@ begin
       POINT_OUT_Y => point_out_y_generator_int
       );
 
+  scalar_assertion : process (clk, rst)
+  begin
+    if rising_edge(clk) then
+      if (ready_point_generator_int = '1') then
+        assert point_out_x_generator_int = POINT_GENERATOR_OUT_X
+          report "SCALAR GENERATOR: CALCULATED = " & to_string(point_out_x_generator_int) & "; CORRECT = " & to_string(POINT_GENERATOR_OUT_X)
+          severity error;
+
+        assert point_out_y_generator_int = POINT_GENERATOR_OUT_Y
+          report "SCALAR GENERATOR: CALCULATED = " & to_string(point_out_y_generator_int) & "; CORRECT = " & to_string(POINT_GENERATOR_OUT_Y)
+          severity error;
+      end if;
+    end if;
+  end process scalar_assertion;
+
 end architecture ecdsa_point_generator_testbench_architecture;

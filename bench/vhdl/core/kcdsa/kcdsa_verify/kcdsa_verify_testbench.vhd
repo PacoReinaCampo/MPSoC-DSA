@@ -236,4 +236,19 @@ begin
       SIGNATURE_S => signature_s_verify_int
       );
 
+  scalar_assertion : process (clk, rst)
+  begin
+    if rising_edge(clk) then
+      if (ready_verify_int = '1') then
+        assert signature_r_verify_int = VERIFY_SIGNATURE_R_KCDSA
+          report "SCALAR VERIFY: CALCULATED = " & to_string(signature_r_verify_int) & "; CORRECT = " & to_string(VERIFY_SIGNATURE_R_KCDSA)
+          severity error;
+
+        assert signature_s_verify_int = VERIFY_SIGNATURE_S_KCDSA
+          report "SCALAR VERIFY: CALCULATED = " & to_string(signature_s_verify_int) & "; CORRECT = " & to_string(VERIFY_SIGNATURE_S_KCDSA)
+          severity error;
+      end if;
+    end if;
+  end process scalar_assertion;
+
 end architecture kcdsa_verify_testbench_architecture;

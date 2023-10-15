@@ -179,4 +179,15 @@ begin
       DATA_OUT  => data_out_multiplier_int
       );
 
+  scalar_assertion : process (clk, rst)
+  begin
+    if rising_edge(clk) then
+      if (ready_multiplier_int = '1') then
+        assert data_out_multiplier_int = MULTIPLIER_DATA_OUT
+          report "SCALAR MULTIPLIER: CALCULATED = " & to_string(data_out_multiplier_int) & "; CORRECT = " & to_string(MULTIPLIER_DATA_OUT)
+          severity error;
+      end if;
+    end if;
+  end process scalar_assertion;
+
 end architecture ecdsa_multiplier_testbench_architecture;

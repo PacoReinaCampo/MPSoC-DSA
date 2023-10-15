@@ -189,4 +189,15 @@ begin
       DATA_OUT  => data_out_adder_int
       );
 
+  scalar_assertion : process (clk, rst)
+  begin
+    if rising_edge(clk) then
+      if (ready_adder_int = '1') then
+        assert data_out_adder_int = ADDER_DATA_OUT
+          report "SCALAR ADDER: CALCULATED = " & to_string(data_out_adder_int) & "; CORRECT = " & to_string(ADDER_DATA_OUT)
+          severity error;
+      end if;
+    end if;
+  end process scalar_assertion;
+
 end architecture ecdsa_adder_testbench_architecture;

@@ -174,4 +174,15 @@ begin
       DATA_OUT => data_out_mod_int
       );
 
+  scalar_assertion : process (clk, rst)
+  begin
+    if rising_edge(clk) then
+      if (ready_mod_int = '1') then
+        assert data_out_mod_int = MOD_DATA_OUT
+          report "SCALAR MOD: CALCULATED = " & to_string(data_out_mod_int) & "; CORRECT = " & to_string(MOD_DATA_OUT)
+          severity error;
+      end if;
+    end if;
+  end process scalar_assertion;
+
 end architecture ecdsa_mod_testbench_architecture;
