@@ -167,7 +167,7 @@ begin
     KCDSA_SIGN_DATA_BLOCK_SIZE <= SIGN_DATA_BLOCK_SIZE_KCDSA;
     KCDSA_SIGN_MESSAGE         <= SIGN_MESSAGE_KCDSA;
 
-    wait for 1 ms;
+    wait for 100 ms;
 
   end process main_test;
 

@@ -172,7 +172,7 @@ begin
     ECDSA_VERIFY_SIGNATURE_R <= VERIFY_SIGNATURE_R;
     ECDSA_VERIFY_SIGNATURE_S <= VERIFY_SIGNATURE_S;
 
-    wait for 1 ms;
+    wait for 100 ms;
 
   end process main_test;
 

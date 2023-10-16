@@ -199,4 +199,15 @@ begin
       DATA_OUT => data_out_sha256_int
       );
 
+  scalar_assertion : process (clk, rst)
+  begin
+    if rising_edge(clk) then
+      if (ready_sha256_int = '1') then
+        assert data_out_sha256_int = DATA_OUTPUT_256_1
+          report "SCALAR SHA256: CALCULATED = " & to_string(data_out_sha256_int) & "; CORRECT = " & to_string(DATA_OUTPUT_256_1)
+          severity error;
+      end if;
+    end if;
+  end process scalar_assertion;
+
 end architecture ecdsa_sha256_testbench_architecture;

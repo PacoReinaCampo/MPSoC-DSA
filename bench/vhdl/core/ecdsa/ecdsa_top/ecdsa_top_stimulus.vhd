@@ -183,7 +183,7 @@ begin
     ECDSA_TOP_SIGNATURE_R_CHECK <= TOP_SIGNATURE_R;
     ECDSA_TOP_SIGNATURE_S_CHECK <= TOP_SIGNATURE_S;
 
-    wait for 1 ms;
+    wait for 100 ms;
 
   end process main_test;
 

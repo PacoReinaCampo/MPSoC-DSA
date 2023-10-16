@@ -172,7 +172,7 @@ begin
     KCDSA_VERIFY_SIGNATURE_R <= VERIFY_SIGNATURE_R_KCDSA;
     KCDSA_VERIFY_SIGNATURE_S <= VERIFY_SIGNATURE_S_KCDSA;
 
-    wait for 1 ms;
+    wait for 100 ms;
 
   end process main_test;
 

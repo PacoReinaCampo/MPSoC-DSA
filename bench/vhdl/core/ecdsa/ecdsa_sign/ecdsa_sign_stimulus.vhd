@@ -167,7 +167,7 @@ begin
     ECDSA_SIGN_DATA_BLOCK_SIZE <= SIGN_DATA_BLOCK_SIZE;
     ECDSA_SIGN_MESSAGE         <= SIGN_MESSAGE;
 
-    wait for 1 ms;
+    wait for 100 ms;
 
   end process main_test;
 
