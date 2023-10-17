@@ -866,7 +866,7 @@ begin
         ECDSA_TOP_SIGNATURE_R_CHECK <= TOP_SIGNATURE_R;
         ECDSA_TOP_SIGNATURE_S_CHECK <= TOP_SIGNATURE_S;
 
-        wait for 200000000 ns;
+        wait for 250000000 ns;
 
       end if;
 
@@ -892,7 +892,7 @@ begin
         ECDSA_TOP_SIGNATURE_R_CHECK <= TOP_SIGNATURE_R;
         ECDSA_TOP_SIGNATURE_S_CHECK <= TOP_SIGNATURE_S;
 
-        wait for 200000000 ns;
+        wait for 250000000 ns;
 
       end if;
     end if;
