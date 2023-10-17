@@ -4,11 +4,11 @@ build:
 	sh system.g
 
 simulate:
-	ghdl -e --std=08 testbench_miera_top
-	ghdl -r --std=08 testbench_miera_top --ieee-asserts=disable-at-0 --vcd=testbench_miera_top.vcd --wave=testbench_miera_top.ghw --stop-time=1ms
+	ghdl -e --std=08 peripheral_dsa_testbench
+	ghdl -r --std=08 peripheral_dsa_testbench --ieee-asserts=disable-at-0 --vcd=peripheral_dsa_testbench.vcd --wave=peripheral_dsa_testbench.ghw --stop-time=1ms
 
 test:
-	gtkwave testbench_miera_top.ghw
+	gtkwave peripheral_dsa_testbench.ghw
 
 clean:
 	rm -rf *.cf *.vcd *.ghw

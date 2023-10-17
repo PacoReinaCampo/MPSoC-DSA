@@ -44,9 +44,9 @@ use ieee.numeric_std.all;
 
 use std.textio.all;
 
-use work.testbench_miera_pkg.all;
+use work.peripheral_dsa_pkg.all;
 
-entity testbench_miera_top is
+entity peripheral_dsa_testbench is
   generic (
     --ECDSA-FUNCTIONALITY
     C_ECDSA_SHA256_TEST          : boolean := false;
@@ -70,11 +70,11 @@ entity testbench_miera_top is
     WORD_SIZE_256 : integer := 32;
     WORD_SIZE_512 : integer := 64
     );
-end testbench_miera_top;
+end peripheral_dsa_testbench;
 
-architecture testbench_miera_top_architecture of testbench_miera_top is
+architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench is
 
-  component testbench_miera_stimulus is
+  component peripheral_dsa_stimulus is
     generic (
       --ECDSA-SIZE
       BLOCK_SIZE    : integer := 4;
@@ -359,7 +359,7 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
       KCDSA_TOP_SIGNATURE_R : in std_logic_vector(DATA_SIZE-1 downto 0);
       KCDSA_TOP_SIGNATURE_S : in std_logic_vector(DATA_SIZE-1 downto 0)
       );
-  end component testbench_miera_stimulus;
+  end component peripheral_dsa_stimulus;
 
   component ecdsa_sha256 is
     generic (
@@ -1012,10 +1012,10 @@ architecture testbench_miera_top_architecture of testbench_miera_top is
 begin
 
   -- ***************************************************************************
-  -- ************************ testbench_miera_stimulus ************************
+  -- ************************ peripheral_dsa_stimulus ************************
   -- ***************************************************************************
 
-  testbench_miera_stimulus_i : testbench_miera_stimulus
+  peripheral_dsa_stimulus_i : peripheral_dsa_stimulus
     generic map (
       --ECDSA-SIZE
       BLOCK_SIZE    => BLOCK_SIZE,
@@ -1334,6 +1334,17 @@ begin
         DATA_IN  => data_in_sha256_int,
         DATA_OUT => data_out_sha256_int
         );
+
+    ecdsa_sha256_assertion : process (clk, rst)
+    begin
+      if rising_edge(clk) then
+        if (ready_sha256_int = '1') then
+          assert data_out_sha256_int = DATA_OUTPUT_256_1
+            report "SCALAR SHA256: CALCULATED = " & to_string(data_out_sha256_int) & "; CORRECT = " & to_string(DATA_OUTPUT_256_1)
+            severity error;
+        end if;
+      end if;
+    end process ecdsa_sha256_assertion;
   end generate ecdsa_sha256_if;
 
   -- ***************************************************************************
@@ -1364,6 +1375,17 @@ begin
         DATA_IN  => data_in_sha512_int,
         DATA_OUT => data_out_sha512_int
         );
+
+    ecdsa_sha512_assertion : process (clk, rst)
+    begin
+      if rising_edge(clk) then
+        if (ready_sha512_int = '1') then
+          assert data_out_sha512_int = DATA_OUTPUT_512_1
+            report "SCALAR SHA512: CALCULATED = " & to_string(data_out_sha512_int) & "; CORRECT = " & to_string(DATA_OUTPUT_512_1)
+            severity error;
+        end if;
+      end if;
+    end process ecdsa_sha512_assertion;
   end generate ecdsa_sha512_if;
 
   -- ***************************************************************************
@@ -1392,6 +1414,17 @@ begin
         DATA_B_IN => data_b_in_adder_int,
         DATA_OUT  => data_out_adder_int
         );
+
+    ecdsa_adder_assertion : process (clk, rst)
+    begin
+      if rising_edge(clk) then
+        if (ready_adder_int = '1') then
+          assert data_out_adder_int = ADDER_DATA_OUT
+            report "SCALAR ADDER: CALCULATED = " & to_string(data_out_adder_int) & "; CORRECT = " & to_string(ADDER_DATA_OUT)
+            severity error;
+        end if;
+      end if;
+    end process ecdsa_adder_assertion;
   end generate ecdsa_adder_if;
 
   -- ***************************************************************************
@@ -1417,6 +1450,17 @@ begin
         DATA_IN  => data_in_inverter_int,
         DATA_OUT => data_out_inverter_int
         );
+
+    ecdsa_inverter_assertion : process (clk, rst)
+    begin
+      if rising_edge(clk) then
+        if (ready_inverter_int = '1') then
+          assert data_out_inverter_int = INVERTER_DATA_OUT
+            report "SCALAR INVERTER: CALCULATED = " & to_string(data_out_inverter_int) & "; CORRECT = " & to_string(INVERTER_DATA_OUT)
+            severity error;
+        end if;
+      end if;
+    end process ecdsa_inverter_assertion;
   end generate ecdsa_inverter_if;
 
   -- ***************************************************************************
@@ -1443,6 +1487,17 @@ begin
         DATA_B_IN => data_b_in_multiplier_int,
         DATA_OUT  => data_out_multiplier_int
         );
+
+    ecdsa_multiplier_assertion : process (clk, rst)
+    begin
+      if rising_edge(clk) then
+        if (ready_multiplier_int = '1') then
+          assert data_out_multiplier_int = MULTIPLIER_DATA_OUT
+            report "SCALAR MULTIPLIER: CALCULATED = " & to_string(data_out_multiplier_int) & "; CORRECT = " & to_string(MULTIPLIER_DATA_OUT)
+            severity error;
+        end if;
+      end if;
+    end process ecdsa_multiplier_assertion;
   end generate ecdsa_multiplier_if;
 
   -- ***************************************************************************
@@ -1471,6 +1526,21 @@ begin
         POINT_OUT_RX => point_out_rx_adder_int,
         POINT_OUT_RY => point_out_ry_adder_int
         );
+
+    ecdsa_point_adder_assertion : process (clk, rst)
+    begin
+      if rising_edge(clk) then
+        if (ready_point_adder_int = '1') then
+          assert point_out_rx_adder_int = POINT_ADDER_OUT_RX
+            report "SCALAR ADDER: CALCULATED = " & to_string(point_out_rx_adder_int) & "; CORRECT = " & to_string(POINT_ADDER_OUT_RX)
+            severity error;
+
+          assert point_out_ry_adder_int = POINT_ADDER_OUT_RY
+            report "SCALAR ADDER: CALCULATED = " & to_string(point_out_ry_adder_int) & "; CORRECT = " & to_string(POINT_ADDER_OUT_RY)
+            severity error;
+        end if;
+      end if;
+    end process ecdsa_point_adder_assertion;
   end generate ecdsa_point_adder_if;
 
   -- ***************************************************************************
@@ -1497,6 +1567,21 @@ begin
         POINT_OUT_RX => point_out_rx_doubler_int,
         POINT_OUT_RY => point_out_ry_doubler_int
         );
+
+    ecdsa_point_doubler_assertion : process (clk, rst)
+    begin
+      if rising_edge(clk) then
+        if (ready_point_doubler_int = '1') then
+          assert point_out_rx_doubler_int = POINT_DOUBLER_OUT_RX
+            report "SCALAR DOUBLER: CALCULATED = " & to_string(point_out_rx_doubler_int) & "; CORRECT = " & to_string(POINT_DOUBLER_OUT_RX)
+            severity error;
+
+          assert point_out_ry_doubler_int = POINT_DOUBLER_OUT_RY
+            report "SCALAR DOUBLER: CALCULATED = " & to_string(point_out_ry_doubler_int) & "; CORRECT = " & to_string(POINT_DOUBLER_OUT_RY)
+            severity error;
+        end if;
+      end if;
+    end process ecdsa_point_doubler_assertion;
   end generate ecdsa_point_doubler_if;
 
   -- ***************************************************************************
@@ -1526,6 +1611,21 @@ begin
         POINT_OUT_X => point_out_x_generator_int,
         POINT_OUT_Y => point_out_y_generator_int
         );
+
+    ecdsa_point_generator_assertion : process (clk, rst)
+    begin
+      if rising_edge(clk) then
+        if (ready_point_generator_int = '1') then
+          assert point_out_x_generator_int = POINT_GENERATOR_OUT_X
+            report "SCALAR GENERATOR: CALCULATED = " & to_string(point_out_x_generator_int) & "; CORRECT = " & to_string(POINT_GENERATOR_OUT_X)
+            severity error;
+
+          assert point_out_y_generator_int = POINT_GENERATOR_OUT_Y
+            report "SCALAR GENERATOR: CALCULATED = " & to_string(point_out_y_generator_int) & "; CORRECT = " & to_string(POINT_GENERATOR_OUT_Y)
+            severity error;
+        end if;
+      end if;
+    end process ecdsa_point_generator_assertion;
   end generate ecdsa_point_generator_if;
 
   -- ***************************************************************************
@@ -1564,6 +1664,21 @@ begin
         SIGNATURE_R => signature_r_sign_int,
         SIGNATURE_S => signature_s_sign_int
         );
+
+    ecdsa_sign_assertion : process (clk, rst)
+    begin
+      if rising_edge(clk) then
+        if (ready_sign_int = '1') then
+          assert signature_r_sign_int = SIGN_SIGNATURE_R
+            report "SCALAR SIGN: CALCULATED = " & to_string(signature_r_sign_int) & "; CORRECT = " & to_string(SIGN_SIGNATURE_R)
+            severity error;
+
+          assert signature_s_sign_int = SIGN_SIGNATURE_S
+            report "SCALAR SIGN: CALCULATED = " & to_string(signature_s_sign_int) & "; CORRECT = " & to_string(SIGN_SIGNATURE_S)
+            severity error;
+        end if;
+      end if;
+    end process ecdsa_sign_assertion;
   end generate ecdsa_sign_if;
 
   -- ***************************************************************************
@@ -1602,6 +1717,21 @@ begin
         SIGNATURE_R => signature_r_verify_int,
         SIGNATURE_S => signature_s_verify_int
         );
+
+    ecdsa_verify_assertion : process (clk, rst)
+    begin
+      if rising_edge(clk) then
+        if (ready_verify_int = '1') then
+          assert signature_r_verify_int = VERIFY_SIGNATURE_R
+            report "SCALAR VERIFY: CALCULATED = " & to_string(signature_r_verify_int) & "; CORRECT = " & to_string(VERIFY_SIGNATURE_R)
+            severity error;
+
+          assert signature_s_verify_int = VERIFY_SIGNATURE_S
+            report "SCALAR VERIFY: CALCULATED = " & to_string(signature_s_verify_int) & "; CORRECT = " & to_string(VERIFY_SIGNATURE_S)
+            severity error;
+        end if;
+      end if;
+    end process ecdsa_verify_assertion;
   end generate ecdsa_verify_if;
 
   -- ***************************************************************************
@@ -1647,6 +1777,21 @@ begin
         SIGNATURE_R => signature_r_top_int,
         SIGNATURE_S => signature_s_top_int
         );
+
+    ecdsa_top_assertion : process (clk, rst)
+    begin
+      if rising_edge(clk) then
+        if (ready_top_int = '1') then
+          assert signature_r_top_int = TOP_SIGNATURE_R
+            report "SCALAR TOP: CALCULATED = " & to_string(signature_r_top_int) & "; CORRECT = " & to_string(TOP_SIGNATURE_R)
+            severity error;
+
+          assert signature_s_top_int = TOP_SIGNATURE_S
+            report "SCALAR TOP: CALCULATED = " & to_string(signature_s_top_int) & "; CORRECT = " & to_string(TOP_SIGNATURE_S)
+            severity error;
+        end if;
+      end if;
+    end process ecdsa_top_assertion;
   end generate ecdsa_top_if;
 
   -- ***************************************************************************
@@ -1685,6 +1830,21 @@ begin
         SIGNATURE_R => signature_r_kcdsa_sign_int,
         SIGNATURE_S => signature_s_kcdsa_sign_int
         );
+
+    kcdsa_sign_assertion : process (clk, rst)
+    begin
+      if rising_edge(clk) then
+        if (ready_sign_int = '1') then
+          assert signature_r_sign_int = SIGN_SIGNATURE_R_KCDSA
+            report "SCALAR SIGN: CALCULATED = " & to_string(signature_r_sign_int) & "; CORRECT = " & to_string(SIGN_SIGNATURE_R_KCDSA)
+            severity error;
+
+          assert signature_s_sign_int = SIGN_SIGNATURE_S_KCDSA
+            report "SCALAR SIGN: CALCULATED = " & to_string(signature_s_sign_int) & "; CORRECT = " & to_string(SIGN_SIGNATURE_S_KCDSA)
+            severity error;
+        end if;
+      end if;
+    end process kcdsa_sign_assertion;
   end generate kcdsa_sign_if;
 
   -- ***************************************************************************
@@ -1723,6 +1883,21 @@ begin
         SIGNATURE_R => signature_r_kcdsa_verify_int,
         SIGNATURE_S => signature_s_kcdsa_verify_int
         );
+
+    kcdsa_verify_assertion : process (clk, rst)
+    begin
+      if rising_edge(clk) then
+        if (ready_verify_int = '1') then
+          assert signature_r_verify_int = VERIFY_SIGNATURE_R_KCDSA
+            report "SCALAR VERIFY: CALCULATED = " & to_string(signature_r_verify_int) & "; CORRECT = " & to_string(VERIFY_SIGNATURE_R_KCDSA)
+            severity error;
+
+          assert signature_s_verify_int = VERIFY_SIGNATURE_S_KCDSA
+            report "SCALAR VERIFY: CALCULATED = " & to_string(signature_s_verify_int) & "; CORRECT = " & to_string(VERIFY_SIGNATURE_S_KCDSA)
+            severity error;
+        end if;
+      end if;
+    end process kcdsa_verify_assertion;
   end generate kcdsa_verify_if;
 
   -- ***************************************************************************
@@ -1768,5 +1943,20 @@ begin
         SIGNATURE_R => signature_r_kcdsa_top_int,
         SIGNATURE_S => signature_s_kcdsa_top_int
         );
+
+    kcdsa_top_assertion : process (clk, rst)
+    begin
+      if rising_edge(clk) then
+        if (ready_top_int = '1') then
+          assert signature_r_top_int = TOP_SIGNATURE_R_KCDSA
+            report "SCALAR TOP: CALCULATED = " & to_string(signature_r_top_int) & "; CORRECT = " & to_string(TOP_SIGNATURE_R_KCDSA)
+            severity error;
+
+          assert signature_s_top_int = TOP_SIGNATURE_S_KCDSA
+            report "SCALAR TOP: CALCULATED = " & to_string(signature_s_top_int) & "; CORRECT = " & to_string(TOP_SIGNATURE_S_KCDSA)
+            severity error;
+        end if;
+      end if;
+    end process kcdsa_top_assertion;
   end generate kcdsa_top_if;
-end architecture testbench_miera_top_architecture;
+end architecture peripheral_dsa_testbench_architecture;

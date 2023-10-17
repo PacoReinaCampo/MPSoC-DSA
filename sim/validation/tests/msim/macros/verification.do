@@ -17,17 +17,17 @@ mkdir wlf
 alias run_ecdsa_sha256_test {
   echo "TEST: ECDSA_SHA256_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_top.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
 
-  vsim -g /testbench_miera_top/C_ECDSA_SHA256_TEST=true -t ps +notimingchecks -L unisim work.testbench_miera_top
+  vsim -g /peripheral_dsa_testbench/C_ECDSA_SHA256_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
   #MACROS
-  add log -r sim:/testbench_miera_top/*
+  add log -r sim:/peripheral_dsa_testbench/*
 
-  force -freeze sim:/testbench_miera_pkg/ECDSA_SHA256_TEST true 0
-  force -freeze sim:/testbench_miera_pkg/ECDSA_SHA256_CASE_2 true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_SHA256_TEST true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_SHA256_CASE_2 true 0
 
   onbreak {resume}
   run -all
@@ -42,17 +42,17 @@ alias run_ecdsa_sha256_test {
 alias run_ecdsa_sha512_test {
   echo "TEST: ECDSA_SHA512_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_top.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
 
-  vsim -g /testbench_miera_top/C_ECDSA_SHA512_TEST=true -t ps +notimingchecks -L unisim work.testbench_miera_top
+  vsim -g /peripheral_dsa_testbench/C_ECDSA_SHA512_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
   #MACROS
-  add log -r sim:/testbench_miera_top/*
+  add log -r sim:/peripheral_dsa_testbench/*
 
-  force -freeze sim:/testbench_miera_pkg/ECDSA_SHA512_TEST true 0
-  force -freeze sim:/testbench_miera_pkg/ECDSA_SHA512_CASE_2 true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_SHA512_TEST true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_SHA512_CASE_2 true 0
 
   onbreak {resume}
   run -all
@@ -67,17 +67,17 @@ alias run_ecdsa_sha512_test {
 alias run_ecdsa_adder_test {
   echo "TEST: ECDSA_ADDER_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_top.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
 
-  vsim -g /testbench_miera_top/C_ECDSA_ADDER_TEST=true -t ps +notimingchecks -L unisim work.testbench_miera_top
+  vsim -g /peripheral_dsa_testbench/C_ECDSA_ADDER_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
   #MACROS
-  add log -r sim:/testbench_miera_top/*
+  add log -r sim:/peripheral_dsa_testbench/*
 
-  force -freeze sim:/testbench_miera_pkg/ECDSA_ADDER_TEST true 0
-  force -freeze sim:/testbench_miera_pkg/ECDSA_ADDER_CASE_1 true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_ADDER_TEST true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_ADDER_CASE_1 true 0
 
   onbreak {resume}
   run -all
@@ -92,17 +92,17 @@ alias run_ecdsa_adder_test {
 alias run_ecdsa_inverter_test {
   echo "TEST: ECDSA_INVERTER_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_top.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
 
-  vsim -g /testbench_miera_top/C_ECDSA_INVERTER_TEST=true -t ps +notimingchecks -L unisim work.testbench_miera_top
+  vsim -g /peripheral_dsa_testbench/C_ECDSA_INVERTER_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
   #MACROS
-  add log -r sim:/testbench_miera_top/*
+  add log -r sim:/peripheral_dsa_testbench/*
 
-  force -freeze sim:/testbench_miera_pkg/ECDSA_INVERTER_TEST true 0
-  force -freeze sim:/testbench_miera_pkg/ECDSA_INVERTER_CASE_1 true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_INVERTER_TEST true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_INVERTER_CASE_1 true 0
 
   onbreak {resume}
   run -all
@@ -117,17 +117,17 @@ alias run_ecdsa_inverter_test {
 alias run_ecdsa_multiplier_test {
   echo "TEST: ECDSA_MULTIPLIER_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_top.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
 
-  vsim -g /testbench_miera_top/C_ECDSA_MULTIPLIER_TEST=true -t ps +notimingchecks -L unisim work.testbench_miera_top
+  vsim -g /peripheral_dsa_testbench/C_ECDSA_MULTIPLIER_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
   #MACROS
-  add log -r sim:/testbench_miera_top/*
+  add log -r sim:/peripheral_dsa_testbench/*
 
-  force -freeze sim:/testbench_miera_pkg/ECDSA_MULTIPLIER_TEST true 0
-  force -freeze sim:/testbench_miera_pkg/ECDSA_MULTIPLIER_CASE_1 true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_MULTIPLIER_TEST true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_MULTIPLIER_CASE_1 true 0
 
   onbreak {resume}
   run -all
@@ -142,17 +142,17 @@ alias run_ecdsa_multiplier_test {
 alias run_ecdsa_point_adder_test {
   echo "TEST: ECDSA_POINT_ADDER_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_top.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
 
-  vsim -g /testbench_miera_top/C_ECDSA_POINT_ADDER_TEST=true -t ps +notimingchecks -L unisim work.testbench_miera_top
+  vsim -g /peripheral_dsa_testbench/C_ECDSA_POINT_ADDER_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
   #MACROS
-  add log -r sim:/testbench_miera_top/*
+  add log -r sim:/peripheral_dsa_testbench/*
 
-  force -freeze sim:/testbench_miera_pkg/ECDSA_POINT_ADDER_TEST true 0
-  force -freeze sim:/testbench_miera_pkg/ECDSA_POINT_ADDER_CASE_1 true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_POINT_ADDER_TEST true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_POINT_ADDER_CASE_1 true 0
 
   onbreak {resume}
   run -all
@@ -167,17 +167,17 @@ alias run_ecdsa_point_adder_test {
 alias run_ecdsa_point_doubler_test {
   echo "TEST: ECDSA_POINT_DOUBLER_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_top.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
 
-  vsim -g /testbench_miera_top/C_ECDSA_POINT_DOUBLER_TEST=true -t ps +notimingchecks -L unisim work.testbench_miera_top
+  vsim -g /peripheral_dsa_testbench/C_ECDSA_POINT_DOUBLER_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
   #MACROS
-  add log -r sim:/testbench_miera_top/*
+  add log -r sim:/peripheral_dsa_testbench/*
 
-  force -freeze sim:/testbench_miera_pkg/ECDSA_POINT_DOUBLER_TEST true 0
-  force -freeze sim:/testbench_miera_pkg/ECDSA_POINT_DOUBLER_CASE_1 true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_POINT_DOUBLER_TEST true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_POINT_DOUBLER_CASE_1 true 0
 
   onbreak {resume}
   run -all
@@ -192,17 +192,17 @@ alias run_ecdsa_point_doubler_test {
 alias run_ecdsa_point_generator_test {
   echo "TEST: ECDSA_POINT_GENERATOR_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_top.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
 
-  vsim -g /testbench_miera_top/C_ECDSA_POINT_GENERATOR_TEST=true -t ps +notimingchecks -L unisim work.testbench_miera_top
+  vsim -g /peripheral_dsa_testbench/C_ECDSA_POINT_GENERATOR_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
   #MACROS
-  add log -r sim:/testbench_miera_top/*
+  add log -r sim:/peripheral_dsa_testbench/*
 
-  force -freeze sim:/testbench_miera_pkg/ECDSA_POINT_GENERATOR_TEST true 0
-  force -freeze sim:/testbench_miera_pkg/ECDSA_POINT_GENERATOR_CASE_1 true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_POINT_GENERATOR_TEST true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_POINT_GENERATOR_CASE_1 true 0
 
   onbreak {resume}
   run -all
@@ -217,17 +217,17 @@ alias run_ecdsa_point_generator_test {
 alias run_ecdsa_sign_test {
   echo "TEST: ECDSA_SIGN_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_top.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
 
-  vsim -g /testbench_miera_top/C_ECDSA_SIGN_TEST=true -t ps +notimingchecks -L unisim work.testbench_miera_top
+  vsim -g /peripheral_dsa_testbench/C_ECDSA_SIGN_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
   #MACROS
-  add log -r sim:/testbench_miera_top/*
+  add log -r sim:/peripheral_dsa_testbench/*
 
-  force -freeze sim:/testbench_miera_pkg/ECDSA_SIGN_TEST true 0
-  force -freeze sim:/testbench_miera_pkg/ECDSA_SIGN_CASE_1 true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_SIGN_TEST true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_SIGN_CASE_1 true 0
 
   onbreak {resume}
   run -all
@@ -242,17 +242,17 @@ alias run_ecdsa_sign_test {
 alias run_ecdsa_verify_test {
   echo "TEST: ECDSA_VERIFY_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_top.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
 
-  vsim -g /testbench_miera_top/C_ECDSA_VERIFY_TEST=true -t ps +notimingchecks -L unisim work.testbench_miera_top
+  vsim -g /peripheral_dsa_testbench/C_ECDSA_VERIFY_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
   #MACROS
-  add log -r sim:/testbench_miera_top/*
+  add log -r sim:/peripheral_dsa_testbench/*
 
-  force -freeze sim:/testbench_miera_pkg/ECDSA_VERIFY_TEST true 0
-  force -freeze sim:/testbench_miera_pkg/ECDSA_VERIFY_CASE_1 true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_VERIFY_TEST true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_VERIFY_CASE_1 true 0
 
   onbreak {resume}
   run -all
@@ -267,17 +267,17 @@ alias run_ecdsa_verify_test {
 alias run_ecdsa_top_test {
   echo "TEST: ECDSA_TOP_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_top.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
 
-  vsim -g /testbench_miera_top/C_ECDSA_TOP_TEST=true -t ps +notimingchecks -L unisim work.testbench_miera_top
+  vsim -g /peripheral_dsa_testbench/C_ECDSA_TOP_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
   #MACROS
-  add log -r sim:/testbench_miera_top/*
+  add log -r sim:/peripheral_dsa_testbench/*
 
-  force -freeze sim:/testbench_miera_pkg/ECDSA_TOP_TEST true 0
-  force -freeze sim:/testbench_miera_pkg/ECDSA_TOP_CASE_2 true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_TOP_TEST true 0
+  force -freeze sim:/peripheral_dsa_pkg/ECDSA_TOP_CASE_2 true 0
 
   onbreak {resume}
   run -all
@@ -292,17 +292,17 @@ alias run_ecdsa_top_test {
 alias run_kcdsa_sign_test {
   echo "TEST: KCDSA_SIGN_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_top.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
 
-  vsim -g /testbench_miera_top/C_KCDSA_SIGN_TEST=true -t ps +notimingchecks -L unisim work.testbench_miera_top
+  vsim -g /peripheral_dsa_testbench/C_KCDSA_SIGN_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
   #MACROS
-  add log -r sim:/testbench_miera_top/*
+  add log -r sim:/peripheral_dsa_testbench/*
 
-  force -freeze sim:/testbench_miera_pkg/KCDSA_SIGN_TEST true 0
-  force -freeze sim:/testbench_miera_pkg/KCDSA_SIGN_CASE_1 true 0
+  force -freeze sim:/peripheral_dsa_pkg/KCDSA_SIGN_TEST true 0
+  force -freeze sim:/peripheral_dsa_pkg/KCDSA_SIGN_CASE_1 true 0
 
   onbreak {resume}
   run -all
@@ -317,17 +317,17 @@ alias run_kcdsa_sign_test {
 alias run_kcdsa_verify_test {
   echo "TEST: KCDSA_VERIFY_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_top.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
 
-  vsim -g /testbench_miera_top/C_KCDSA_VERIFY_TEST=true -t ps +notimingchecks -L unisim work.testbench_miera_top
+  vsim -g /peripheral_dsa_testbench/C_KCDSA_VERIFY_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
   #MACROS
-  add log -r sim:/testbench_miera_top/*
+  add log -r sim:/peripheral_dsa_testbench/*
 
-  force -freeze sim:/testbench_miera_pkg/KCDSA_VERIFY_TEST true 0
-  force -freeze sim:/testbench_miera_pkg/KCDSA_VERIFY_CASE_1 true 0
+  force -freeze sim:/peripheral_dsa_pkg/KCDSA_VERIFY_TEST true 0
+  force -freeze sim:/peripheral_dsa_pkg/KCDSA_VERIFY_CASE_1 true 0
 
   onbreak {resume}
   run -all
@@ -342,17 +342,17 @@ alias run_kcdsa_verify_test {
 alias run_kcdsa_top_test {
   echo "TEST: KCDSA_TOP_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/testbench_miera_top.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
 
-  vsim -g /testbench_miera_top/C_KCDSA_TOP_TEST=true -t ps +notimingchecks -L unisim work.testbench_miera_top
+  vsim -g /peripheral_dsa_testbench/C_KCDSA_TOP_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
   #MACROS
-  add log -r sim:/testbench_miera_top/*
+  add log -r sim:/peripheral_dsa_testbench/*
 
-  force -freeze sim:/testbench_miera_pkg/KCDSA_TOP_TEST true 0
-  force -freeze sim:/testbench_miera_pkg/KCDSA_TOP_CASE_2 true 0
+  force -freeze sim:/peripheral_dsa_pkg/KCDSA_TOP_TEST true 0
+  force -freeze sim:/peripheral_dsa_pkg/KCDSA_TOP_CASE_2 true 0
 
   onbreak {resume}
   run -all

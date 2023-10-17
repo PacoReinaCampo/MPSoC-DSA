@@ -47,9 +47,9 @@ use std.textio.all;
 --library modelsim_lib;
 --use modelsim_lib.util.all;
 
-use work.testbench_miera_pkg.all;
+use work.peripheral_dsa_pkg.all;
 
-entity testbench_miera_stimulus is
+entity peripheral_dsa_stimulus is
   generic (
     --ECDSA-SIZE
     BLOCK_SIZE    : integer := 4;
@@ -340,7 +340,7 @@ entity testbench_miera_stimulus is
     );
 end entity;
 
-architecture testbench_miera_stimulus_architecture of testbench_miera_stimulus is
+architecture peripheral_dsa_stimulus_architecture of peripheral_dsa_stimulus is
 
   -- Block Counter
   signal i : integer := 1;
@@ -1106,4 +1106,4 @@ begin
 
   end process main_test;
 
-end architecture testbench_miera_stimulus_architecture;
+end architecture peripheral_dsa_stimulus_architecture;

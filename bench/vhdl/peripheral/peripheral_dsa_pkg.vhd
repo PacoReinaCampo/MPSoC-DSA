@@ -51,7 +51,7 @@ use std.textio.all;
 --library modelsim_lib;
 --use modelsim_lib.util.all;
 
-package testbench_miera_pkg is
+package peripheral_dsa_pkg is
 
   -------------------------------------------------------------------------------
   -- TEST VECTORS
@@ -328,8 +328,8 @@ package testbench_miera_pkg is
   signal MONITOR_CASE    : string(25 downto 1) := "                         ";
   signal MONITOR_SUBCASE : string(25 downto 1) := "                         ";
 
-end testbench_miera_pkg;
+end peripheral_dsa_pkg;
 
-package body testbench_miera_pkg is
+package body peripheral_dsa_pkg is
 
-end testbench_miera_pkg;
+end peripheral_dsa_pkg;
