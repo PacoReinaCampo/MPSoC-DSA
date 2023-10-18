@@ -9,7 +9,7 @@
 --                  |_|                                                       --
 --                                                                            --
 --                                                                            --
---              MII/MIERA TFM                                                 --
+--              MPSoC-DSA                                                     --
 --              ECDSA/KCDSA                                                   --
 --                                                                            --
 --------------------------------------------------------------------------------
@@ -156,8 +156,8 @@ begin
     ECDSA_SHA256_DATA_IN_ENABLE <= '0';
 
     -- DATA
-    ECDSA_SHA256_DATA_BLOCK_SIZE <= DATA_BLOCK_SIZE_256_1;
-    ECDSA_SHA256_DATA_IN         <= DATA_INPUT_256_1;
+    ECDSA_SHA256_DATA_BLOCK_SIZE <= DATA_BLOCK_SIZE_256_2;
+    ECDSA_SHA256_DATA_IN         <= DATA_INPUT_256_2;
 
     wait for 1 ms;
 

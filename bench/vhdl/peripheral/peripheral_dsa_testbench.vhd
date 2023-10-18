@@ -9,7 +9,7 @@
 --                  |_|                                                       --
 --                                                                            --
 --                                                                            --
---              MII/MIERA TFM                                                 --
+--              MPSoC-DSA                                                     --
 --              ECDSA/KCDSA                                                   --
 --                                                                            --
 --------------------------------------------------------------------------------
@@ -1339,8 +1339,8 @@ begin
     begin
       if rising_edge(clk) then
         if (ready_sha256_int = '1') then
-          assert data_out_sha256_int = DATA_OUTPUT_256_1
-            report "SCALAR SHA256: CALCULATED = " & to_string(data_out_sha256_int) & "; CORRECT = " & to_string(DATA_OUTPUT_256_1)
+          assert data_out_sha256_int = DATA_OUTPUT_256_2
+            report "SCALAR SHA256: CALCULATED = " & to_string(data_out_sha256_int) & "; CORRECT = " & to_string(DATA_OUTPUT_256_2)
             severity error;
         end if;
       end if;
@@ -1380,8 +1380,8 @@ begin
     begin
       if rising_edge(clk) then
         if (ready_sha512_int = '1') then
-          assert data_out_sha512_int = DATA_OUTPUT_512_1
-            report "SCALAR SHA512: CALCULATED = " & to_string(data_out_sha512_int) & "; CORRECT = " & to_string(DATA_OUTPUT_512_1)
+          assert data_out_sha512_int = DATA_OUTPUT_512_2
+            report "SCALAR SHA512: CALCULATED = " & to_string(data_out_sha512_int) & "; CORRECT = " & to_string(DATA_OUTPUT_512_2)
             severity error;
         end if;
       end if;
@@ -1834,13 +1834,13 @@ begin
     kcdsa_sign_assertion : process (clk, rst)
     begin
       if rising_edge(clk) then
-        if (ready_sign_int = '1') then
-          assert signature_r_sign_int = SIGN_SIGNATURE_R_KCDSA
-            report "SCALAR SIGN: CALCULATED = " & to_string(signature_r_sign_int) & "; CORRECT = " & to_string(SIGN_SIGNATURE_R_KCDSA)
+        if (ready_kcdsa_sign_int = '1') then
+          assert signature_r_kcdsa_sign_int = SIGN_SIGNATURE_R_KCDSA
+            report "SCALAR SIGN: CALCULATED = " & to_string(signature_r_kcdsa_sign_int) & "; CORRECT = " & to_string(SIGN_SIGNATURE_R_KCDSA)
             severity error;
 
-          assert signature_s_sign_int = SIGN_SIGNATURE_S_KCDSA
-            report "SCALAR SIGN: CALCULATED = " & to_string(signature_s_sign_int) & "; CORRECT = " & to_string(SIGN_SIGNATURE_S_KCDSA)
+          assert signature_s_kcdsa_sign_int = SIGN_SIGNATURE_S_KCDSA
+            report "SCALAR SIGN: CALCULATED = " & to_string(signature_s_kcdsa_sign_int) & "; CORRECT = " & to_string(SIGN_SIGNATURE_S_KCDSA)
             severity error;
         end if;
       end if;
@@ -1887,13 +1887,13 @@ begin
     kcdsa_verify_assertion : process (clk, rst)
     begin
       if rising_edge(clk) then
-        if (ready_verify_int = '1') then
-          assert signature_r_verify_int = VERIFY_SIGNATURE_R_KCDSA
-            report "SCALAR VERIFY: CALCULATED = " & to_string(signature_r_verify_int) & "; CORRECT = " & to_string(VERIFY_SIGNATURE_R_KCDSA)
+        if (ready_kcdsa_verify_int = '1') then
+          assert signature_r_kcdsa_verify_int = VERIFY_SIGNATURE_R_KCDSA
+            report "SCALAR VERIFY: CALCULATED = " & to_string(signature_r_kcdsa_verify_int) & "; CORRECT = " & to_string(VERIFY_SIGNATURE_R_KCDSA)
             severity error;
 
-          assert signature_s_verify_int = VERIFY_SIGNATURE_S_KCDSA
-            report "SCALAR VERIFY: CALCULATED = " & to_string(signature_s_verify_int) & "; CORRECT = " & to_string(VERIFY_SIGNATURE_S_KCDSA)
+          assert signature_s_kcdsa_verify_int = VERIFY_SIGNATURE_S_KCDSA
+            report "SCALAR VERIFY: CALCULATED = " & to_string(signature_s_kcdsa_verify_int) & "; CORRECT = " & to_string(VERIFY_SIGNATURE_S_KCDSA)
             severity error;
         end if;
       end if;
@@ -1947,13 +1947,13 @@ begin
     kcdsa_top_assertion : process (clk, rst)
     begin
       if rising_edge(clk) then
-        if (ready_top_int = '1') then
-          assert signature_r_top_int = TOP_SIGNATURE_R_KCDSA
-            report "SCALAR TOP: CALCULATED = " & to_string(signature_r_top_int) & "; CORRECT = " & to_string(TOP_SIGNATURE_R_KCDSA)
+        if (ready_kcdsa_top_int = '1') then
+          assert signature_r_kcdsa_top_int = TOP_SIGNATURE_R_KCDSA
+            report "SCALAR TOP: CALCULATED = " & to_string(signature_r_kcdsa_top_int) & "; CORRECT = " & to_string(TOP_SIGNATURE_R_KCDSA)
             severity error;
 
-          assert signature_s_top_int = TOP_SIGNATURE_S_KCDSA
-            report "SCALAR TOP: CALCULATED = " & to_string(signature_s_top_int) & "; CORRECT = " & to_string(TOP_SIGNATURE_S_KCDSA)
+          assert signature_s_kcdsa_top_int = TOP_SIGNATURE_S_KCDSA
+            report "SCALAR TOP: CALCULATED = " & to_string(signature_s_kcdsa_top_int) & "; CORRECT = " & to_string(TOP_SIGNATURE_S_KCDSA)
             severity error;
         end if;
       end if;
