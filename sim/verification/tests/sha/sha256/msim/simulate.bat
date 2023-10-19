@@ -47,5 +47,5 @@ call ../../../../../../settings64_msim.bat
 
 vlib work
 vcom -2008 -f system.f
-vsim -c -do run.do work.ecdsa_sha256_testbench
+vsim -c -do run.do work.peripheral_dsa_sha256_testbench
 pause

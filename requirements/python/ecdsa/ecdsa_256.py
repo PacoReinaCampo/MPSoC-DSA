@@ -25,7 +25,7 @@ curve = EllipticCurve(
 
 # Modular arithmetic ##########################################################
 
-def ecdsa_inverter(k, p):
+def peripheral_dsa_inverter(k, p):
   """Returns the inverse of k modulo p.
   This function returns the only integer x such that (x * k) % p == 1.
   k must be non-zero and p must be a prime.
@@ -35,7 +35,7 @@ def ecdsa_inverter(k, p):
 
   if k < 0:
     # k ** -1 = p - (-k) ** -1  (mod p)
-    return p - ecdsa_inverter(-k, p)
+    return p - peripheral_dsa_inverter(-k, p)
 
   # Extended Euclidean algorithm.
   s, old_s = 0, 1
@@ -85,7 +85,7 @@ def ecdsa_negative_point(point):
   return result
 
 
-def ecdsa_point_adder(point1, point2):
+def peripheral_dsa_point_adder(point1, point2):
   """Returns the result of point1 + point2 according to the group law."""
   assert ecdsa_curve_point(point1)
   assert ecdsa_curve_point(point2)
@@ -106,10 +106,10 @@ def ecdsa_point_adder(point1, point2):
 
   if x1 == x2:
     # This is the case point1 == point2.
-    m = (3 * x1 * x1 + curve.a) * ecdsa_inverter(2 * y1, curve.p)
+    m = (3 * x1 * x1 + curve.a) * peripheral_dsa_inverter(2 * y1, curve.p)
   else:
     # This is the case point1 != point2.
-    m = (y1 - y2) * ecdsa_inverter(x1 - x2, curve.p)
+    m = (y1 - y2) * peripheral_dsa_inverter(x1 - x2, curve.p)
 
   x3 = m * m - x1 - x2
   y3 = y1 + m * (x3 - x1)
@@ -120,8 +120,8 @@ def ecdsa_point_adder(point1, point2):
   return result
 
 
-def ecdsa_point_generator(k, point):
-  """Returns k * point computed using the double and ecdsa_point_adder algorithm."""
+def peripheral_dsa_point_generator(k, point):
+  """Returns k * point computed using the double and peripheral_dsa_point_adder algorithm."""
   assert ecdsa_curve_point(point)
 
   if k % curve.n == 0 or point is None:
@@ -129,7 +129,7 @@ def ecdsa_point_generator(k, point):
 
   if k < 0:
     # k * point = -k * (-point)
-    return ecdsa_point_generator(-k, ecdsa_negative_point(point))
+    return peripheral_dsa_point_generator(-k, ecdsa_negative_point(point))
 
   result = None
   addend = point
@@ -137,10 +137,10 @@ def ecdsa_point_generator(k, point):
   while k:
     if k & 1:
       # Add.
-      result = ecdsa_point_adder(result, addend)
+      result = peripheral_dsa_point_adder(result, addend)
 
     # Double.
-    addend = ecdsa_point_adder(addend, addend)
+    addend = peripheral_dsa_point_adder(addend, addend)
 
     k >>= 1
 
@@ -154,12 +154,12 @@ def ecdsa_point_generator(k, point):
 def ecdsa_keypair():
   """Generates a random private-public key pair."""
   private_key = random.randrange(1, curve.n)
-  public_key = ecdsa_point_generator(private_key, curve.g)
+  public_key = peripheral_dsa_point_generator(private_key, curve.g)
 
   return private_key, public_key
 
 
-def ecdsa_sha256(message):
+def peripheral_dsa_sha256(message):
   """Returns the hash of the message."""
   message_hash = hashlib.sha256(message).digest()
   e = int.from_bytes(message_hash, 'big')
@@ -167,32 +167,32 @@ def ecdsa_sha256(message):
   return e
 
 
-def ecdsa_sign(private_key, message):
-  z = ecdsa_sha256(message)
+def peripheral_dsa_peripheral_dsa_ecdsa_sign(private_key, message):
+  z = peripheral_dsa_sha256(message)
 
   r = 0
   s = 0
 
   while not r or not s:
     k = random.randrange(1, curve.n)
-    x, y = ecdsa_point_generator(k, curve.g)
+    x, y = peripheral_dsa_point_generator(k, curve.g)
 
     r = x % curve.n
-    s = ((z + r * private_key) * ecdsa_inverter(k, curve.n)) % curve.n
+    s = ((z + r * private_key) * peripheral_dsa_inverter(k, curve.n)) % curve.n
 
   return (r, s)
 
 
-def ecdsa_verify(public_key, message, signature):
-  z = ecdsa_sha256(message)
+def peripheral_dsa_peripheral_dsa_ecdsa_verify(public_key, message, signature):
+  z = peripheral_dsa_sha256(message)
 
   r, s = signature
 
-  w = ecdsa_inverter(s, curve.n)
+  w = peripheral_dsa_inverter(s, curve.n)
   u1 = (z * w) % curve.n
   u2 = (r * w) % curve.n
 
-  x, y = ecdsa_point_adder(ecdsa_point_generator(u1, curve.g), ecdsa_point_generator(u2, public_key))
+  x, y = peripheral_dsa_point_adder(peripheral_dsa_point_generator(u1, curve.g), peripheral_dsa_point_generator(u2, public_key))
 
   if (r % curve.n) == (x % curve.n):
     return 'signature matches'
@@ -208,17 +208,17 @@ print("Private key:", hex(private))
 print("Public key: (0x{:x}, 0x{:x})".format(*public))
 
 msg = b'abc'
-signature = ecdsa_sign(private, msg)
+signature = peripheral_dsa_peripheral_dsa_ecdsa_sign(private, msg)
 
 print()
 print('Message:', msg)
 print('Signature: (0x{:x}, 0x{:x})'.format(*signature))
-print('Verification:', ecdsa_verify(public, msg, signature))
+print('Verification:', peripheral_dsa_peripheral_dsa_ecdsa_verify(public, msg, signature))
 
 msg = b'cba'
 print()
 print('Message:', msg)
-print('Verification:', ecdsa_verify(public, msg, signature))
+print('Verification:', peripheral_dsa_peripheral_dsa_ecdsa_verify(public, msg, signature))
 
 private, public = ecdsa_keypair()
 
@@ -226,4 +226,4 @@ msg = b'abc'
 print()
 print('Message:', msg)
 print("Public key: (0x{:x}, 0x{:x})".format(*public))
-print('Verification:', ecdsa_verify(public, msg, signature))
+print('Verification:', peripheral_dsa_peripheral_dsa_ecdsa_verify(public, msg, signature))

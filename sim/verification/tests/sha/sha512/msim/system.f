@@ -42,23 +42,23 @@
 ##                                                                               ##
 ###################################################################################
 
-../../../../../../rtl/vhdl/pkg/ecdsa_pkg.vhd
-../../../../../../rtl/vhdl/pkg/ecdsa_sha512_pkg.vhd
-../../../../../../rtl/vhdl/core/sha/ecdsa_sha512.vhd
-../../../../../../rtl/vhdl/core/modular/ecdsa_mod.vhd
-../../../../../../rtl/vhdl/core/modular/ecdsa_adder.vhd
-../../../../../../rtl/vhdl/core/modular/ecdsa_inverter.vhd
-../../../../../../rtl/vhdl/core/modular/ecdsa_multiplier.vhd
-../../../../../../rtl/vhdl/core/generation/ecdsa_point_adder.vhd
-../../../../../../rtl/vhdl/core/generation/ecdsa_point_doubler.vhd
-../../../../../../rtl/vhdl/core/generation/ecdsa_point_generator.vhd
-../../../../../../rtl/vhdl/core/ecdsa/ecdsa_sign.vhd
-../../../../../../rtl/vhdl/core/ecdsa/ecdsa_verify.vhd
-../../../../../../rtl/vhdl/core/ecdsa/ecdsa_top.vhd
-../../../../../../rtl/vhdl/core/kcdsa/kcdsa_sign.vhd
-../../../../../../rtl/vhdl/core/kcdsa/kcdsa_verify.vhd
-../../../../../../rtl/vhdl/core/kcdsa/kcdsa_top.vhd
+../../../../../../rtl/vhdl/pkg/peripheral_dsa_pkg.vhd
+../../../../../../rtl/vhdl/pkg/peripheral_dsa_sha512_pkg.vhd
+../../../../../../rtl/vhdl/core/sha/peripheral_dsa_sha512.vhd
+../../../../../../rtl/vhdl/core/modular/peripheral_dsa_mod.vhd
+../../../../../../rtl/vhdl/core/modular/peripheral_dsa_adder.vhd
+../../../../../../rtl/vhdl/core/modular/peripheral_dsa_inverter.vhd
+../../../../../../rtl/vhdl/core/modular/peripheral_dsa_multiplier.vhd
+../../../../../../rtl/vhdl/core/generation/peripheral_dsa_point_adder.vhd
+../../../../../../rtl/vhdl/core/generation/peripheral_dsa_point_doubler.vhd
+../../../../../../rtl/vhdl/core/generation/peripheral_dsa_point_generator.vhd
+../../../../../../rtl/vhdl/core/ecdsa/peripheral_dsa_ecdsa_sign.vhd
+../../../../../../rtl/vhdl/core/ecdsa/peripheral_dsa_ecdsa_verify.vhd
+../../../../../../rtl/vhdl/core/ecdsa/peripheral_dsa_ecdsa_top.vhd
+../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_sign.vhd
+../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_verify.vhd
+../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_top.vhd
 
-../../../../../../bench/vhdl/core/sha/ecdsa_sha512/ecdsa_sha512_pkg.vhd
-../../../../../../bench/vhdl/core/sha/ecdsa_sha512/ecdsa_sha512_stimulus.vhd
-../../../../../../bench/vhdl/core/sha/ecdsa_sha512/ecdsa_sha512_testbench.vhd
+../../../../../../bench/vhdl/core/sha/peripheral_dsa_sha512/peripheral_dsa_sha512_pkg.vhd
+../../../../../../bench/vhdl/core/sha/peripheral_dsa_sha512/peripheral_dsa_sha512_stimulus.vhd
+../../../../../../bench/vhdl/core/sha/peripheral_dsa_sha512/peripheral_dsa_sha512_testbench.vhd

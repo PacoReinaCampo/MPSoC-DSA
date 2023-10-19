@@ -48,11 +48,11 @@ build:
 	xvhdl -prj system.prj
 
 simulate:
-	xelab ecdsa_verify_testbench
-	xsim -R ecdsa_verify_testbench
+	xelab peripheral_dsa_ecdsa_verify_testbench
+	xsim -R peripheral_dsa_ecdsa_verify_testbench
 
 test:
-	gtkwave ecdsa_verify_testbench.vcd
+	gtkwave peripheral_dsa_ecdsa_verify_testbench.vcd
 
 clean:
 	rm -rf *.dir *.jou *.log *.pb *.vcd .Xil

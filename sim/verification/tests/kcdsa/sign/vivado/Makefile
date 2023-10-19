@@ -48,11 +48,11 @@ build:
 	xvhdl -prj system.prj
 
 simulate:
-	xelab kcdsa_sign_testbench
-	xsim -R kcdsa_sign_testbench
+	xelab peripheral_dsa_kcdsa_sign_testbench
+	xsim -R peripheral_dsa_kcdsa_sign_testbench
 
 test:
-	gtkwave kcdsa_sign_testbench.vcd
+	gtkwave peripheral_dsa_kcdsa_sign_testbench.vcd
 
 clean:
 	rm -rf *.dir *.jou *.log *.pb *.vcd .Xil

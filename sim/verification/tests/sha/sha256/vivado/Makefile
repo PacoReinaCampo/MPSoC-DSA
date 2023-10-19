@@ -48,11 +48,11 @@ build:
 	xvhdl -prj system.prj
 
 simulate:
-	xelab ecdsa_sha256_testbench
-	xsim -R ecdsa_sha256_testbench
+	xelab peripheral_dsa_sha256_testbench
+	xsim -R peripheral_dsa_sha256_testbench
 
 test:
-	gtkwave ecdsa_sha256_testbench.vcd
+	gtkwave peripheral_dsa_sha256_testbench.vcd
 
 clean:
 	rm -rf *.dir *.jou *.log *.pb *.vcd .Xil

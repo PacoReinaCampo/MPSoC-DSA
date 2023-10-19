@@ -49,10 +49,10 @@ build:
 	vcom -2008 -f system.f
 
 simulate:
-	vsim -c -do run.do work.ecdsa_sha512_testbench
+	vsim -c -do run.do work.peripheral_dsa_sha512_testbench
 
 test:
-	gtkwave ecdsa_sha512_testbench.vcd
+	gtkwave peripheral_dsa_sha512_testbench.vcd
 
 clean:
 	rm -rf work transcript

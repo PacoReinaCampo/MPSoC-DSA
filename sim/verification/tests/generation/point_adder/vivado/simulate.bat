@@ -46,6 +46,6 @@
 call ../../../../../../settings64_vivado.bat
 
 xvhdl -prj system.prj
-xelab ecdsa_point_adder_testbench
-xsim -R ecdsa_point_adder_testbench
+xelab peripheral_dsa_point_adder_testbench
+xsim -R peripheral_dsa_point_adder_testbench
 pause

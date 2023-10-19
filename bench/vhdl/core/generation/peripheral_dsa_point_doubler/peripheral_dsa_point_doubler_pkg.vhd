@@ -1,0 +1,174 @@
+--------------------------------------------------------------------------------
+--                                            __ _      _     _               --
+--                                           / _(_)    | |   | |              --
+--                __ _ _   _  ___  ___ _ __ | |_ _  ___| | __| |              --
+--               / _` | | | |/ _ \/ _ \ '_ \|  _| |/ _ \ |/ _` |              --
+--              | (_| | |_| |  __/  __/ | | | | | |  __/ | (_| |              --
+--               \__, |\__,_|\___|\___|_| |_|_| |_|\___|_|\__,_|              --
+--                  | |                                                       --
+--                  |_|                                                       --
+--                                                                            --
+--                                                                            --
+--              MPSoC-DSA                                                     --
+--              ECDSA/KCDSA                                                   --
+--                                                                            --
+--------------------------------------------------------------------------------
+
+-- Copyright (c) 2022-2023 by the author(s)
+--
+-- Permission is hereby granted, free of charge, to any person obtaining a copy
+-- of this software and associated documentation files (the "Software"), to deal
+-- in the Software without restriction, including without limitation the rights
+-- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+-- copies of the Software, and to permit persons to whom the Software is
+-- furnished to do so, subject to the following conditions:
+--
+-- The above copyright notice and this permission notice shall be included in
+-- all copies or substantial portions of the Software.
+--
+-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+-- THE SOFTWARE.
+--
+--------------------------------------------------------------------------------
+-- Author(s):
+--   Paco Reina Campo <pacoreinacampo@queenfield.tech>
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.math_real.all;
+
+use std.textio.all;
+
+--library unisim;
+--use unisim.vcomponents.all;
+
+--library modelsim_lib;
+--use modelsim_lib.util.all;
+
+package peripheral_dsa_point_doubler_pkg is
+
+  ------------------------------------------------------------------------------
+  -- TYPES
+  ------------------------------------------------------------------------------
+
+  type std_logic_matrix_2x4 is array (1 to 2) of std_logic_vector(3 downto 0);
+  type std_logic_matrix_4x4 is array (1 to 4) of std_logic_vector(3 downto 0);
+
+  type std_logic_matrix_2x128 is array (1 to 2) of std_logic_vector(127 downto 0);
+  type std_logic_matrix_4x128 is array (1 to 4) of std_logic_vector(127 downto 0);
+  type std_logic_matrix_6x128 is array (1 to 6) of std_logic_vector(127 downto 0);
+
+  type std_logic_matrix_2x512 is array (1 to 2) of std_logic_vector(0 to 511);
+  type std_logic_matrix_2x1024 is array (1 to 2) of std_logic_vector(0 to 1023);
+
+  -------------------------------------------------------------------------------
+  -- CONSTANTS
+  -------------------------------------------------------------------------------
+
+  constant PERIOD : time := 10 ns;
+
+  -- GLOBAL
+  constant DATA_SIZE : integer := 512;
+
+  constant BLOCK_SIZE : integer := 4;
+
+  -- SECP 256
+  constant SECP256_P : std_logic_vector(255 downto 0) := X"FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFC2F";
+  constant SECP256_A : std_logic_vector(255 downto 0) := X"0000000000000000000000000000000000000000000000000000000000000000";
+  constant SECP256_B : std_logic_vector(255 downto 0) := X"0000000000000000000000000000000000000000000000000000000000000007";
+  constant SECP256_X : std_logic_vector(255 downto 0) := X"79BE667EF9DCBBAC55A06295CE870B07029BFCDB2DCE28D959F2815B16F81798";
+  constant SECP256_Y : std_logic_vector(255 downto 0) := X"483ADA7726A3C4655DA4FBFC0E1108A8FD17B448A68554199C47D08FFB10D4B8";
+  constant SECP256_N : std_logic_vector(255 downto 0) := X"FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141";
+
+  -- BLACKPOOL 512
+  constant BLACKPOOL512_P : std_logic_vector(511 downto 0) := X"AADD9DB8DBE9C48B3FD4E6AE33C9FC07CB308DB3B3C9D20ED6639CCA703308717D4D9B009BC66842AECDA12AE6A380E62881FF2F2D82C68528AA6056583A48F3";
+  constant BLACKPOOL512_A : std_logic_vector(511 downto 0) := X"7830A3318B603B89E2327145AC234CC594CBDD8D3DF91610A83441CAEA9863BC2DED5D5AA8253AA10A2EF1C98B9AC8B57F1117A72BF2C7B9E7C1AC4D77FC94CA";
+  constant BLACKPOOL512_B : std_logic_vector(511 downto 0) := X"3DF91610A83441CAEA9863BC2DED5D5AA8253AA10A2EF1C98B9AC8B57F1117A72BF2C7B9E7C1AC4D77FC94CADC083E67984050B75EBAE5DD2809BD638016F723";
+  constant BLACKPOOL512_X : std_logic_vector(511 downto 0) := X"81AEE4BDD82ED9645A21322E9C4C6A9385ED9F70B5D916C1B43B62EEF4D0098EFF3B1F78E2D0D48D50D1687B93B97D5F7C6D5047406A5E688B352209BCB9F822";
+  constant BLACKPOOL512_Y : std_logic_vector(511 downto 0) := X"7DDE385D566332ECC0EABFA9CF7822FDF209F70024A57B1AA000C55B881F8111B2DCDE494A5F485E5BCA4BD88A2763AED1CA2B2FA8F0540678CD1E0F3AD80892";
+  constant BLACKPOOL512_N : std_logic_vector(511 downto 0) := X"AADD9DB8DBE9C48B3FD4E6AE33C9FC07CB308DB3B3C9D20ED6639CCA70330870553E5C414CA92619418661197FAC10471DB1D381085DDADDB58796829CA90069";
+
+  -- ECDSA-SHA256 --
+  constant WORD_SIZE_256 : integer := 32;
+
+  -- Test Case 1
+  constant DATA_BLOCK_SIZE_256_1 : std_logic_vector(BLOCK_SIZE-1 downto 0) := X"1";
+
+  constant DATA_INPUT_256_1 : std_logic_vector(0 to 16*WORD_SIZE_256-1) := X"61626380000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000018";
+
+  constant DATA_OUTPUT_256_1 : std_logic_vector(255 downto 0) := X"BA7816BF8F01CFEA414140DE5DAE2223B00361A396177A9CB410FF61F20015AD";
+
+  -- Test Case 2
+  constant DATA_BLOCK_SIZE_256_2 : std_logic_vector(BLOCK_SIZE-1 downto 0) := X"2";
+
+  constant DATA_INPUT_256_0_2 : std_logic_vector(0 to 16*WORD_SIZE_256-1) := X"6162636462636465636465666465666765666768666768696768696A68696A6B696A6B6C6A6B6C6D6B6C6D6E6C6D6E6F6D6E6F706E6F70718000000000000000";
+  constant DATA_INPUT_256_1_2 : std_logic_vector(0 to 16*WORD_SIZE_256-1) := X"000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001C0";
+
+  constant DATA_INPUT_256_2 : std_logic_matrix_2x512 := (DATA_INPUT_256_0_2, DATA_INPUT_256_1_2);
+
+  constant DATA_OUTPUT_256_2 : std_logic_vector(255 downto 0) := X"248D6A61D20638B8E5C026930C3E6039A33CE45964FF2167F6ECEDD419DB06C1";
+
+  -- ECDSA-SHA512 --
+  constant WORD_SIZE_512 : integer := 64;
+
+  -- Test Case 1
+  constant DATA_BLOCK_SIZE_512_1 : std_logic_vector(BLOCK_SIZE-1 downto 0) := X"1";
+
+  constant DATA_INPUT_512_1 : std_logic_vector(0 to 16*WORD_SIZE_512-1) := X"6162638000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000018";
+
+  constant DATA_OUTPUT_512_1 : std_logic_vector(511 downto 0) := X"DDAF35A193617ABACC417349AE20413112E6FA4E89A97EA20A9EEEE64B55D39A2192992A274FC1A836BA3C23A3FEEBBD454D4423643CE80E2A9AC94FA54CA49F";
+
+  -- Test Case 2
+  constant DATA_BLOCK_SIZE_512_2 : std_logic_vector(BLOCK_SIZE-1 downto 0) := X"2";
+
+  constant DATA_INPUT_512_0_2 : std_logic_vector(0 to 16*WORD_SIZE_512-1) := X"61626364656667686263646566676869636465666768696A6465666768696A6B65666768696A6B6C666768696A6B6C6D6768696A6B6C6D6E68696A6B6C6D6E6F696A6B6C6D6E6F706A6B6C6D6E6F70716B6C6D6E6F7071726C6D6E6F707172736D6E6F70717273746E6F70717273747580000000000000000000000000000000";
+  constant DATA_INPUT_512_1_2 : std_logic_vector(0 to 16*WORD_SIZE_512-1) := X"0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000380";
+
+  constant DATA_INPUT_512_2 : std_logic_matrix_2x1024 := (DATA_INPUT_512_0_2, DATA_INPUT_512_1_2);
+
+  constant DATA_OUTPUT_512_2 : std_logic_vector(511 downto 0) := X"8E959B75DAE313DA8CF4F72814FC143F8F7779C6EB9F7FA17299AEADB6889018501D289E4900F7E4331B99DEC4B5433AC7D329EEB6DD26545E96E55B874BE909";
+
+  -- ECDSA-ADDER --
+
+  -- Test Case 1
+  constant ADDER_DATA_A_IN : std_logic_vector(DATA_SIZE-1 downto 0) := X"968585ca02542195330b93c76fe058be5b4e33b8a72c740f355b21244eb85c1555066ce4b725eba96aa5b9cbf53956a379e408bc93213b8df35dbbb042e80fb7";
+  constant ADDER_DATA_B_IN : std_logic_vector(DATA_SIZE-1 downto 0) := X"237c710f6e0bcb17f32fa5b611b9f0a5acff27966ebc07ab77a4bbd790cd51682e059f9cf821eb2516bdece645d667461961737f2869ea6b975d05adb8ee9009";
+
+  -- Adder (operation = '0')
+  constant ADDER_DATA_OUT : std_logic_vector(DATA_SIZE-1 downto 0) := X"0F24592094762821E66652CF4DD04D5C3D1CCD9B621EA9ABD69C40316F52A50C05BE718113816E8BD2960587546C3D036AC37D0C8E085F7462106107A39C56CD";
+
+  -- Subtractor (operation = '1')
+--constant ADDER_DATA_OUT : std_logic_vector(DATA_SIZE-1 downto 0) := X"730914BA9448567D3FDBEE115E266818AE4F0C2238706C63BDB6654CBDEB0AAD2700CD47BF04008453E7CCE5AF62EF5D6082953D6AB751225C00B60289F97FAE";
+
+  -- ECDSA-INVERTER --
+
+  -- Test Case 1
+  constant INVERTER_DATA_IN  : std_logic_vector(DATA_SIZE-1 downto 0) := X"968585ca02542195330b93c76fe058be5b4e33b8a72c740f355b21244eb85c1555066ce4b725eba96aa5b9cbf53956a379e408bc93213b8df35dbbb042e80fb7";
+  constant INVERTER_DATA_OUT : std_logic_vector(DATA_SIZE-1 downto 0) := X"9b05074d6441d4e9c266978780402d12eb0b518fde9531e0f2226c5756b01a2e231f65f9c7b8b20e7ce7bdf9cd5abca2f0d51b728947830c992f76a3dbbfd2d7";
+
+  -- ECDSA-MULTIPLIER --
+
+  -- Test Case 1
+  constant MULTIPLIER_DATA_A_IN : std_logic_vector(DATA_SIZE-1 downto 0) := X"968585ca02542195330b93c76fe058be5b4e33b8a72c740f355b21244eb85c1555066ce4b725eba96aa5b9cbf53956a379e408bc93213b8df35dbbb042e80fb7";
+  constant MULTIPLIER_DATA_B_IN : std_logic_vector(DATA_SIZE-1 downto 0) := X"237c710f6e0bcb17f32fa5b611b9f0a5acff27966ebc07ab77a4bbd790cd51682e059f9cf821eb2516bdece645d667461961737f2869ea6b975d05adb8ee9009";
+  constant MULTIPLIER_DATA_OUT  : std_logic_vector(DATA_SIZE-1 downto 0) := X"14b54ce2adde1e952a1dfff78fa0b248349dc215839cfa964995f6930053770dd184ba24a26015124760cc678d3a7d9536f711017182f0a8813f263c8d2b45f0";
+
+  -- ECDSA-POINT_DOUBLER --
+
+  -- Test Case 1
+  constant POINT_DOUBLER_IN_PX  : std_logic_vector(DATA_SIZE-1 downto 0) := X"968585ca02542195330b93c76fe058be5b4e33b8a72c740f355b21244eb85c1555066ce4b725eba96aa5b9cbf53956a379e408bc93213b8df35dbbb042e80fb7";
+  constant POINT_DOUBLER_IN_PY  : std_logic_vector(DATA_SIZE-1 downto 0) := X"237c710f6e0bcb17f32fa5b611b9f0a5acff27966ebc07ab77a4bbd790cd51682e059f9cf821eb2516bdece645d667461961737f2869ea6b975d05adb8ee9009";
+  constant POINT_DOUBLER_OUT_RX : std_logic_vector(DATA_SIZE-1 downto 0) := X"0fb1a6e0f495befca9977b4e751d044554880d1ea752efcfac20ff6a0132dc13d3eab56654537f7444d4fedd1bb8fa51b9eb9362c8accc255a7cd26be6d96138";
+  constant POINT_DOUBLER_OUT_RY : std_logic_vector(DATA_SIZE-1 downto 0) := X"aad5ce0e13356da98b0e9507b92e3a8fb497e73a39f7424d859d90b589457ca85e359ad163e403cf02355fa0d035d232334c9863e9ddddae9243e4d46f3cfcb9";
+
+end peripheral_dsa_point_doubler_pkg;
+
+package body peripheral_dsa_point_doubler_pkg is
+
+end peripheral_dsa_point_doubler_pkg;

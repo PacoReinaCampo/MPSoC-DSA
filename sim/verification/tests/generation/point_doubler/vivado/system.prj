@@ -42,23 +42,23 @@
 //                                                                               //
 ///////////////////////////////////////////////////////////////////////////////////
 
-vhdl2008 work ../../../../../../rtl/vhdl/pkg/ecdsa_pkg.vhd
-vhdl2008 work ../../../../../../rtl/vhdl/pkg/ecdsa_sha512_pkg.vhd
-vhdl2008 work ../../../../../../rtl/vhdl/core/sha/ecdsa_sha512.vhd
-vhdl2008 work ../../../../../../rtl/vhdl/core/modular/ecdsa_mod.vhd
-vhdl2008 work ../../../../../../rtl/vhdl/core/modular/ecdsa_adder.vhd
-vhdl2008 work ../../../../../../rtl/vhdl/core/modular/ecdsa_inverter.vhd
-vhdl2008 work ../../../../../../rtl/vhdl/core/modular/ecdsa_multiplier.vhd
-vhdl2008 work ../../../../../../rtl/vhdl/core/generation/ecdsa_point_adder.vhd
-vhdl2008 work ../../../../../../rtl/vhdl/core/generation/ecdsa_point_doubler.vhd
-vhdl2008 work ../../../../../../rtl/vhdl/core/generation/ecdsa_point_generator.vhd
-vhdl2008 work ../../../../../../rtl/vhdl/core/ecdsa/ecdsa_sign.vhd
-vhdl2008 work ../../../../../../rtl/vhdl/core/ecdsa/ecdsa_verify.vhd
-vhdl2008 work ../../../../../../rtl/vhdl/core/ecdsa/ecdsa_top.vhd
-vhdl2008 work ../../../../../../rtl/vhdl/core/kcdsa/kcdsa_sign.vhd
-vhdl2008 work ../../../../../../rtl/vhdl/core/kcdsa/kcdsa_verify.vhd
-vhdl2008 work ../../../../../../rtl/vhdl/core/kcdsa/kcdsa_top.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/pkg/peripheral_dsa_pkg.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/pkg/peripheral_dsa_sha512_pkg.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/core/sha/peripheral_dsa_sha512.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/core/modular/peripheral_dsa_mod.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/core/modular/peripheral_dsa_adder.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/core/modular/peripheral_dsa_inverter.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/core/modular/peripheral_dsa_multiplier.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/core/generation/peripheral_dsa_point_adder.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/core/generation/peripheral_dsa_point_doubler.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/core/generation/peripheral_dsa_point_generator.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/core/ecdsa/peripheral_dsa_ecdsa_sign.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/core/ecdsa/peripheral_dsa_ecdsa_verify.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/core/ecdsa/peripheral_dsa_ecdsa_top.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_sign.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_verify.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_top.vhd
 
-vhdl2008 work ../../../../../../bench/vhdl/core/generation/ecdsa_point_doubler/ecdsa_point_doubler_pkg.vhd
-vhdl2008 work ../../../../../../bench/vhdl/core/generation/ecdsa_point_doubler/ecdsa_point_doubler_stimulus.vhd
-vhdl2008 work ../../../../../../bench/vhdl/core/generation/ecdsa_point_doubler/ecdsa_point_doubler_testbench.vhd
+vhdl2008 work ../../../../../../bench/vhdl/core/generation/peripheral_dsa_point_doubler/peripheral_dsa_point_doubler_pkg.vhd
+vhdl2008 work ../../../../../../bench/vhdl/core/generation/peripheral_dsa_point_doubler/peripheral_dsa_point_doubler_stimulus.vhd
+vhdl2008 work ../../../../../../bench/vhdl/core/generation/peripheral_dsa_point_doubler/peripheral_dsa_point_doubler_testbench.vhd

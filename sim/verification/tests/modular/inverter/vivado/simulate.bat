@@ -46,6 +46,6 @@
 call ../../../../../../settings64_vivado.bat
 
 xvhdl -prj system.prj
-xelab ecdsa_inverter_testbench
-xsim -R ecdsa_inverter_testbench
+xelab peripheral_dsa_inverter_testbench
+xsim -R peripheral_dsa_inverter_testbench
 pause

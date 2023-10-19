@@ -49,10 +49,10 @@ build:
 	vcom -2008 -f system.f
 
 simulate:
-	vsim -c -do run.do work.kcdsa_top_testbench
+	vsim -c -do run.do work.peripheral_dsa_kcdsa_top_testbench
 
 test:
-	gtkwave kcdsa_top_testbench.vcd
+	gtkwave peripheral_dsa_kcdsa_top_testbench.vcd
 
 clean:
 	rm -rf work transcript

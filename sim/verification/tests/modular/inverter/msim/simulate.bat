@@ -47,5 +47,5 @@ call ../../../../../../settings64_msim.bat
 
 vlib work
 vcom -2008 -f system.f
-vsim -c -do run.do work.ecdsa_inverter_testbench
+vsim -c -do run.do work.peripheral_dsa_inverter_testbench
 pause

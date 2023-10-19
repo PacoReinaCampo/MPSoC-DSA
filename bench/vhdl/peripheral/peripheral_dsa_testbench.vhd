@@ -44,25 +44,25 @@ use ieee.numeric_std.all;
 
 use std.textio.all;
 
-use work.peripheral_dsa_pkg.all;
+use work.peripheral_dsa_package.all;
 
 entity peripheral_dsa_testbench is
   generic (
     --ECDSA-FUNCTIONALITY
-    C_ECDSA_SHA256_TEST          : boolean := false;
-    C_ECDSA_SHA512_TEST          : boolean := false;
-    C_ECDSA_ADDER_TEST           : boolean := false;
-    C_ECDSA_INVERTER_TEST        : boolean := false;
-    C_ECDSA_MULTIPLIER_TEST      : boolean := false;
-    C_ECDSA_POINT_ADDER_TEST     : boolean := false;
-    C_ECDSA_POINT_DOUBLER_TEST   : boolean := false;
-    C_ECDSA_POINT_GENERATOR_TEST : boolean := false;
-    C_ECDSA_SIGN_TEST            : boolean := false;
-    C_ECDSA_VERIFY_TEST          : boolean := false;
-    C_ECDSA_TOP_TEST             : boolean := false;
-    C_KCDSA_SIGN_TEST            : boolean := false;
-    C_KCDSA_VERIFY_TEST          : boolean := false;
-    C_KCDSA_TOP_TEST             : boolean := false;
+    DSA_SHA256_TEST          : boolean := false;
+    DSA_SHA512_TEST          : boolean := false;
+    DSA_ADDER_TEST           : boolean := false;
+    DSA_INVERTER_TEST        : boolean := false;
+    DSA_MULTIPLIER_TEST      : boolean := false;
+    DSA_POINT_ADDER_TEST     : boolean := false;
+    DSA_POINT_DOUBLER_TEST   : boolean := false;
+    DSA_POINT_GENERATOR_TEST : boolean := false;
+    DSA_ECDSA_SIGN_TEST            : boolean := false;
+    DSA_ECDSA_VERIFY_TEST          : boolean := false;
+    DSA_ECDSA_TOP_TEST             : boolean := false;
+    DSA_KCDSA_SIGN_TEST            : boolean := false;
+    DSA_KCDSA_VERIFY_TEST          : boolean := false;
+    DSA_KCDSA_TOP_TEST             : boolean := false;
 
     --ECDSA-SIZE
     DATA_SIZE     : integer := 512;
@@ -86,282 +86,282 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
       RST : out std_logic;
 
       -------------------------------------------------------
-      -- ECDSA-SHA256
+      -- DSA-SHA256
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_SHA256_START : out std_logic;
-      ECDSA_SHA256_READY : in  std_logic;
+      DSA_SHA256_START : out std_logic;
+      DSA_SHA256_READY : in  std_logic;
 
-      ECDSA_SHA256_DATA_IN_ENABLE  : out std_logic;
-      ECDSA_SHA256_DATA_OUT_ENABLE : in  std_logic;
+      DSA_SHA256_DATA_IN_ENABLE  : out std_logic;
+      DSA_SHA256_DATA_OUT_ENABLE : in  std_logic;
 
       -- DATA
-      ECDSA_SHA256_DATA_BLOCK_SIZE : out std_logic_vector(BLOCK_SIZE-1 downto 0);
+      DSA_SHA256_DATA_BLOCK_SIZE : out std_logic_vector(BLOCK_SIZE-1 downto 0);
 
-      ECDSA_SHA256_DATA_IN  : out std_logic_vector(0 to 16*WORD_SIZE_256-1);
-      ECDSA_SHA256_DATA_OUT : in  std_logic_vector(WORD_SIZE_256*8-1 downto 0);
+      DSA_SHA256_DATA_IN  : out std_logic_vector(0 to 16*WORD_SIZE_256-1);
+      DSA_SHA256_DATA_OUT : in  std_logic_vector(WORD_SIZE_256*8-1 downto 0);
 
       -------------------------------------------------------
-      -- ECDSA-SHA512
+      -- DSA-SHA512
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_SHA512_START : out std_logic;
-      ECDSA_SHA512_READY : in  std_logic;
+      DSA_SHA512_START : out std_logic;
+      DSA_SHA512_READY : in  std_logic;
 
-      ECDSA_SHA512_DATA_IN_ENABLE  : out std_logic;
-      ECDSA_SHA512_DATA_OUT_ENABLE : in  std_logic;
+      DSA_SHA512_DATA_IN_ENABLE  : out std_logic;
+      DSA_SHA512_DATA_OUT_ENABLE : in  std_logic;
 
       -- DATA
-      ECDSA_SHA512_DATA_BLOCK_SIZE : out std_logic_vector(BLOCK_SIZE-1 downto 0);
+      DSA_SHA512_DATA_BLOCK_SIZE : out std_logic_vector(BLOCK_SIZE-1 downto 0);
 
-      ECDSA_SHA512_DATA_IN  : out std_logic_vector(0 to 16*WORD_SIZE_512-1);
-      ECDSA_SHA512_DATA_OUT : in  std_logic_vector(WORD_SIZE_512*8-1 downto 0);
+      DSA_SHA512_DATA_IN  : out std_logic_vector(0 to 16*WORD_SIZE_512-1);
+      DSA_SHA512_DATA_OUT : in  std_logic_vector(WORD_SIZE_512*8-1 downto 0);
 
       -------------------------------------------------------
-      -- ECDSA-ADDER
+      -- DSA-ADDER
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_ADDER_START : out std_logic;
-      ECDSA_ADDER_READY : in  std_logic;
+      DSA_ADDER_START : out std_logic;
+      DSA_ADDER_READY : in  std_logic;
 
-      ECDSA_ADDER_OPERATION : out std_logic;
+      DSA_ADDER_OPERATION : out std_logic;
 
       -- DATA
-      ECDSA_ADDER_DATA_A_IN : out std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_ADDER_DATA_B_IN : out std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_ADDER_DATA_OUT  : in  std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_ADDER_DATA_A_IN : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_ADDER_DATA_B_IN : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_ADDER_DATA_OUT  : in  std_logic_vector(DATA_SIZE-1 downto 0);
 
       -------------------------------------------------------
-      -- ECDSA-INVERTER
+      -- DSA-INVERTER
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_INVERTER_START : out std_logic;
-      ECDSA_INVERTER_READY : in  std_logic;
+      DSA_INVERTER_START : out std_logic;
+      DSA_INVERTER_READY : in  std_logic;
 
       -- DATA
-      ECDSA_INVERTER_DATA_IN  : out std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_INVERTER_DATA_OUT : in  std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_INVERTER_DATA_IN  : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_INVERTER_DATA_OUT : in  std_logic_vector(DATA_SIZE-1 downto 0);
 
       -------------------------------------------------------
-      -- ECDSA-MULTIPLIER
+      -- DSA-MULTIPLIER
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_MULTIPLIER_START : out std_logic;
-      ECDSA_MULTIPLIER_READY : in  std_logic;
+      DSA_MULTIPLIER_START : out std_logic;
+      DSA_MULTIPLIER_READY : in  std_logic;
 
       -- DATA
-      ECDSA_MULTIPLIER_DATA_A_IN : out std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_MULTIPLIER_DATA_B_IN : out std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_MULTIPLIER_DATA_OUT  : in  std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_MULTIPLIER_DATA_A_IN : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_MULTIPLIER_DATA_B_IN : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_MULTIPLIER_DATA_OUT  : in  std_logic_vector(DATA_SIZE-1 downto 0);
 
       -------------------------------------------------------
-      -- ECDSA-POINT_ADDER
+      -- DSA-POINT_ADDER
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_POINT_ADDER_START : out std_logic;
-      ECDSA_POINT_ADDER_READY : in  std_logic;
+      DSA_POINT_ADDER_START : out std_logic;
+      DSA_POINT_ADDER_READY : in  std_logic;
 
       -- DATA
-      ECDSA_POINT_IN_PX_ADDER  : out std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_POINT_IN_PY_ADDER  : out std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_POINT_IN_QX_ADDER  : out std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_POINT_IN_QY_ADDER  : out std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_POINT_OUT_RX_ADDER : in  std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_POINT_OUT_RY_ADDER : in  std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_POINT_IN_PX_ADDER  : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_POINT_IN_PY_ADDER  : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_POINT_IN_QX_ADDER  : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_POINT_IN_QY_ADDER  : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_POINT_OUT_RX_ADDER : in  std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_POINT_OUT_RY_ADDER : in  std_logic_vector(DATA_SIZE-1 downto 0);
 
       -------------------------------------------------------
-      -- ECDSA-POINT_DOUBLER
+      -- DSA-POINT_DOUBLER
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_POINT_DOUBLER_START : out std_logic;
-      ECDSA_POINT_DOUBLER_READY : in  std_logic;
+      DSA_POINT_DOUBLER_START : out std_logic;
+      DSA_POINT_DOUBLER_READY : in  std_logic;
 
       -- DATA
-      ECDSA_POINT_IN_PX_DOUBLER  : out std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_POINT_IN_PY_DOUBLER  : out std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_POINT_OUT_RX_DOUBLER : in  std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_POINT_OUT_RY_DOUBLER : in  std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_POINT_IN_PX_DOUBLER  : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_POINT_IN_PY_DOUBLER  : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_POINT_OUT_RX_DOUBLER : in  std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_POINT_OUT_RY_DOUBLER : in  std_logic_vector(DATA_SIZE-1 downto 0);
 
       -------------------------------------------------------
-      -- ECDSA-POINT_GENERATOR
+      -- DSA-POINT_GENERATOR
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_POINT_GENERATOR_START : out std_logic;
-      ECDSA_POINT_GENERATOR_READY : in  std_logic;
+      DSA_POINT_GENERATOR_START : out std_logic;
+      DSA_POINT_GENERATOR_READY : in  std_logic;
 
       -- DATA
-      ECDSA_PRIVATE_KEY_GENERATOR : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_PRIVATE_KEY_GENERATOR : out std_logic_vector(DATA_SIZE-1 downto 0);
 
-      ECDSA_POINT_IN_X_GENERATOR  : out std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_POINT_IN_Y_GENERATOR  : out std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_POINT_OUT_X_GENERATOR : in  std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_POINT_OUT_Y_GENERATOR : in  std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_POINT_IN_X_GENERATOR  : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_POINT_IN_Y_GENERATOR  : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_POINT_OUT_X_GENERATOR : in  std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_POINT_OUT_Y_GENERATOR : in  std_logic_vector(DATA_SIZE-1 downto 0);
 
       -------------------------------------------------------
-      -- ECDSA-SIGN
+      -- DSA-ECDSA-SIGN
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_SIGN_START : out std_logic;
-      ECDSA_SIGN_READY : in  std_logic;
+      DSA_ECDSA_SIGN_START : out std_logic;
+      DSA_ECDSA_SIGN_READY : in  std_logic;
 
-      ECDSA_SIGN_DATA_IN_ENABLE  : out std_logic;
-      ECDSA_SIGN_DATA_OUT_ENABLE : in  std_logic;
+      DSA_ECDSA_SIGN_DATA_IN_ENABLE  : out std_logic;
+      DSA_ECDSA_SIGN_DATA_OUT_ENABLE : in  std_logic;
 
       -- DATA
-      ECDSA_SIGN_PRIVATE_KEY   : out std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_SIGN_GENERATED_KEY : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_ECDSA_SIGN_PRIVATE_KEY   : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_ECDSA_SIGN_GENERATED_KEY : out std_logic_vector(DATA_SIZE-1 downto 0);
 
-      ECDSA_SIGN_DATA_BLOCK_SIZE : out std_logic_vector(BLOCK_SIZE-1 downto 0);
+      DSA_ECDSA_SIGN_DATA_BLOCK_SIZE : out std_logic_vector(BLOCK_SIZE-1 downto 0);
 
-      ECDSA_SIGN_MESSAGE : out std_logic_vector(0 to 16*WORD_SIZE_512-1);
+      DSA_ECDSA_SIGN_MESSAGE : out std_logic_vector(0 to 16*WORD_SIZE_512-1);
 
-      ECDSA_SIGN_SIGNATURE_R : in std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_SIGN_SIGNATURE_S : in std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_ECDSA_SIGN_SIGNATURE_R : in std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_ECDSA_SIGN_SIGNATURE_S : in std_logic_vector(DATA_SIZE-1 downto 0);
 
       -------------------------------------------------------
-      -- ECDSA-VERIFY
+      -- DSA-ECDSA-VERIFY
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_VERIFY_START : out std_logic;
-      ECDSA_VERIFY_READY : in  std_logic;
+      DSA_ECDSA_VERIFY_START : out std_logic;
+      DSA_ECDSA_VERIFY_READY : in  std_logic;
 
-      ECDSA_VERIFY_DATA_IN_ENABLE  : out std_logic;
-      ECDSA_VERIFY_DATA_OUT_ENABLE : in  std_logic;
+      DSA_ECDSA_VERIFY_DATA_IN_ENABLE  : out std_logic;
+      DSA_ECDSA_VERIFY_DATA_OUT_ENABLE : in  std_logic;
 
-      ECDSA_VERIFY_FAIL : in std_logic;
+      DSA_ECDSA_VERIFY_FAIL : in std_logic;
 
       -- DATA
-      ECDSA_VERIFY_PUBLIC_KEY_X : out std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_VERIFY_PUBLIC_KEY_Y : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_ECDSA_VERIFY_PUBLIC_KEY_X : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_ECDSA_VERIFY_PUBLIC_KEY_Y : out std_logic_vector(DATA_SIZE-1 downto 0);
 
-      ECDSA_VERIFY_DATA_BLOCK_SIZE : out std_logic_vector(BLOCK_SIZE-1 downto 0);
+      DSA_ECDSA_VERIFY_DATA_BLOCK_SIZE : out std_logic_vector(BLOCK_SIZE-1 downto 0);
 
-      ECDSA_VERIFY_MESSAGE : out std_logic_vector(0 to 16*WORD_SIZE_512-1);
+      DSA_ECDSA_VERIFY_MESSAGE : out std_logic_vector(0 to 16*WORD_SIZE_512-1);
 
-      ECDSA_VERIFY_SIGNATURE_R : out std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_VERIFY_SIGNATURE_S : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_ECDSA_VERIFY_SIGNATURE_R : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_ECDSA_VERIFY_SIGNATURE_S : out std_logic_vector(DATA_SIZE-1 downto 0);
 
       -------------------------------------------------------
-      -- ECDSA-TOP
+      -- DSA-ECDSA-TOP
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_TOP_START : out std_logic;
-      ECDSA_TOP_READY : in  std_logic;
+      DSA_ECDSA_TOP_START : out std_logic;
+      DSA_ECDSA_TOP_READY : in  std_logic;
 
-      ECDSA_TOP_DATA_IN_ENABLE  : out std_logic;
-      ECDSA_TOP_DATA_OUT_ENABLE : in  std_logic;
+      DSA_ECDSA_TOP_DATA_IN_ENABLE  : out std_logic;
+      DSA_ECDSA_TOP_DATA_OUT_ENABLE : in  std_logic;
 
-      ECDSA_TOP_MODE : out std_logic;
-      ECDSA_TOP_FAIL : in  std_logic;
+      DSA_ECDSA_TOP_MODE : out std_logic;
+      DSA_ECDSA_TOP_FAIL : in  std_logic;
 
       -- DATA
-      ECDSA_TOP_PRIVATE_KEY   : out std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_TOP_GENERATED_KEY : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_ECDSA_TOP_PRIVATE_KEY   : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_ECDSA_TOP_GENERATED_KEY : out std_logic_vector(DATA_SIZE-1 downto 0);
 
-      ECDSA_TOP_PUBLIC_KEY_X_CHECK : out std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_TOP_PUBLIC_KEY_Y_CHECK : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_ECDSA_TOP_PUBLIC_KEY_X_CHECK : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_ECDSA_TOP_PUBLIC_KEY_Y_CHECK : out std_logic_vector(DATA_SIZE-1 downto 0);
 
-      ECDSA_TOP_DATA_BLOCK_SIZE : out std_logic_vector(BLOCK_SIZE-1 downto 0);
+      DSA_ECDSA_TOP_DATA_BLOCK_SIZE : out std_logic_vector(BLOCK_SIZE-1 downto 0);
 
-      ECDSA_TOP_MESSAGE : out std_logic_vector(0 to 16*WORD_SIZE_512-1);
+      DSA_ECDSA_TOP_MESSAGE : out std_logic_vector(0 to 16*WORD_SIZE_512-1);
 
-      ECDSA_TOP_SIGNATURE_R_CHECK : out std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_TOP_SIGNATURE_S_CHECK : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_ECDSA_TOP_SIGNATURE_R_CHECK : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_ECDSA_TOP_SIGNATURE_S_CHECK : out std_logic_vector(DATA_SIZE-1 downto 0);
 
-      ECDSA_TOP_SIGNATURE_R : in std_logic_vector(DATA_SIZE-1 downto 0);
-      ECDSA_TOP_SIGNATURE_S : in std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_ECDSA_TOP_SIGNATURE_R : in std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_ECDSA_TOP_SIGNATURE_S : in std_logic_vector(DATA_SIZE-1 downto 0);
 
       -------------------------------------------------------
-      -- KCDSA-SIGN
+      -- DSA-KCDSA-SIGN
       -------------------------------------------------------
 
       -- CONTROL
-      KCDSA_SIGN_START : out std_logic;
-      KCDSA_SIGN_READY : in  std_logic;
+      DSA_KCDSA_SIGN_START : out std_logic;
+      DSA_KCDSA_SIGN_READY : in  std_logic;
 
-      KCDSA_SIGN_DATA_IN_ENABLE  : out std_logic;
-      KCDSA_SIGN_DATA_OUT_ENABLE : in  std_logic;
+      DSA_KCDSA_SIGN_DATA_IN_ENABLE  : out std_logic;
+      DSA_KCDSA_SIGN_DATA_OUT_ENABLE : in  std_logic;
 
       -- DATA
-      KCDSA_SIGN_PRIVATE_KEY   : out std_logic_vector(DATA_SIZE-1 downto 0);
-      KCDSA_SIGN_GENERATED_KEY : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_KCDSA_SIGN_PRIVATE_KEY   : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_KCDSA_SIGN_GENERATED_KEY : out std_logic_vector(DATA_SIZE-1 downto 0);
 
-      KCDSA_SIGN_DATA_BLOCK_SIZE : out std_logic_vector(BLOCK_SIZE-1 downto 0);
+      DSA_KCDSA_SIGN_DATA_BLOCK_SIZE : out std_logic_vector(BLOCK_SIZE-1 downto 0);
 
-      KCDSA_SIGN_MESSAGE : out std_logic_vector(0 to 16*WORD_SIZE_512-1);
+      DSA_KCDSA_SIGN_MESSAGE : out std_logic_vector(0 to 16*WORD_SIZE_512-1);
 
-      KCDSA_SIGN_SIGNATURE_R : in std_logic_vector(DATA_SIZE-1 downto 0);
-      KCDSA_SIGN_SIGNATURE_S : in std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_KCDSA_SIGN_SIGNATURE_R : in std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_KCDSA_SIGN_SIGNATURE_S : in std_logic_vector(DATA_SIZE-1 downto 0);
 
       -------------------------------------------------------
-      -- KCDSA-VERIFY
+      -- DSA-KCDSA-VERIFY
       -------------------------------------------------------
 
       -- CONTROL
-      KCDSA_VERIFY_START : out std_logic;
-      KCDSA_VERIFY_READY : in  std_logic;
+      DSA_KCDSA_VERIFY_START : out std_logic;
+      DSA_KCDSA_VERIFY_READY : in  std_logic;
 
-      KCDSA_VERIFY_DATA_IN_ENABLE  : out std_logic;
-      KCDSA_VERIFY_DATA_OUT_ENABLE : in  std_logic;
+      DSA_KCDSA_VERIFY_DATA_IN_ENABLE  : out std_logic;
+      DSA_KCDSA_VERIFY_DATA_OUT_ENABLE : in  std_logic;
 
-      KCDSA_VERIFY_FAIL : in std_logic;
+      DSA_KCDSA_VERIFY_FAIL : in std_logic;
 
       -- DATA
-      KCDSA_VERIFY_PUBLIC_KEY_X : out std_logic_vector(DATA_SIZE-1 downto 0);
-      KCDSA_VERIFY_PUBLIC_KEY_Y : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_KCDSA_VERIFY_PUBLIC_KEY_X : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_KCDSA_VERIFY_PUBLIC_KEY_Y : out std_logic_vector(DATA_SIZE-1 downto 0);
 
-      KCDSA_VERIFY_DATA_BLOCK_SIZE : out std_logic_vector(BLOCK_SIZE-1 downto 0);
+      DSA_KCDSA_VERIFY_DATA_BLOCK_SIZE : out std_logic_vector(BLOCK_SIZE-1 downto 0);
 
-      KCDSA_VERIFY_MESSAGE : out std_logic_vector(0 to 16*WORD_SIZE_512-1);
+      DSA_KCDSA_VERIFY_MESSAGE : out std_logic_vector(0 to 16*WORD_SIZE_512-1);
 
-      KCDSA_VERIFY_SIGNATURE_R : out std_logic_vector(DATA_SIZE-1 downto 0);
-      KCDSA_VERIFY_SIGNATURE_S : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_KCDSA_VERIFY_SIGNATURE_R : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_KCDSA_VERIFY_SIGNATURE_S : out std_logic_vector(DATA_SIZE-1 downto 0);
 
       -------------------------------------------------------
-      -- KCDSA-TOP
+      -- DSA-KCDSA-TOP
       -------------------------------------------------------
 
       -- CONTROL
-      KCDSA_TOP_START : out std_logic;
-      KCDSA_TOP_READY : in  std_logic;
+      DSA_KCDSA_TOP_START : out std_logic;
+      DSA_KCDSA_TOP_READY : in  std_logic;
 
-      KCDSA_TOP_DATA_IN_ENABLE  : out std_logic;
-      KCDSA_TOP_DATA_OUT_ENABLE : in  std_logic;
+      DSA_KCDSA_TOP_DATA_IN_ENABLE  : out std_logic;
+      DSA_KCDSA_TOP_DATA_OUT_ENABLE : in  std_logic;
 
-      KCDSA_TOP_MODE : out std_logic;
-      KCDSA_TOP_FAIL : in  std_logic;
+      DSA_KCDSA_TOP_MODE : out std_logic;
+      DSA_KCDSA_TOP_FAIL : in  std_logic;
 
       -- DATA
-      KCDSA_TOP_PRIVATE_KEY   : out std_logic_vector(DATA_SIZE-1 downto 0);
-      KCDSA_TOP_GENERATED_KEY : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_KCDSA_TOP_PRIVATE_KEY   : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_KCDSA_TOP_GENERATED_KEY : out std_logic_vector(DATA_SIZE-1 downto 0);
 
-      KCDSA_TOP_PUBLIC_KEY_X_CHECK : out std_logic_vector(DATA_SIZE-1 downto 0);
-      KCDSA_TOP_PUBLIC_KEY_Y_CHECK : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_KCDSA_TOP_PUBLIC_KEY_X_CHECK : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_KCDSA_TOP_PUBLIC_KEY_Y_CHECK : out std_logic_vector(DATA_SIZE-1 downto 0);
 
-      KCDSA_TOP_DATA_BLOCK_SIZE : out std_logic_vector(BLOCK_SIZE-1 downto 0);
+      DSA_KCDSA_TOP_DATA_BLOCK_SIZE : out std_logic_vector(BLOCK_SIZE-1 downto 0);
 
-      KCDSA_TOP_MESSAGE : out std_logic_vector(0 to 16*WORD_SIZE_512-1);
+      DSA_KCDSA_TOP_MESSAGE : out std_logic_vector(0 to 16*WORD_SIZE_512-1);
 
-      KCDSA_TOP_SIGNATURE_R_CHECK : out std_logic_vector(DATA_SIZE-1 downto 0);
-      KCDSA_TOP_SIGNATURE_S_CHECK : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_KCDSA_TOP_SIGNATURE_R_CHECK : out std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_KCDSA_TOP_SIGNATURE_S_CHECK : out std_logic_vector(DATA_SIZE-1 downto 0);
 
-      KCDSA_TOP_SIGNATURE_R : in std_logic_vector(DATA_SIZE-1 downto 0);
-      KCDSA_TOP_SIGNATURE_S : in std_logic_vector(DATA_SIZE-1 downto 0)
+      DSA_KCDSA_TOP_SIGNATURE_R : in std_logic_vector(DATA_SIZE-1 downto 0);
+      DSA_KCDSA_TOP_SIGNATURE_S : in std_logic_vector(DATA_SIZE-1 downto 0)
       );
   end component peripheral_dsa_stimulus;
 
-  component ecdsa_sha256 is
+  component peripheral_dsa_sha256 is
     generic (
       BLOCK_SIZE : integer := 4;
       WORD_SIZE  : integer := 32
@@ -386,7 +386,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
       );
   end component;
 
-  component ecdsa_sha512 is
+  component peripheral_dsa_sha512 is
     generic (
       BLOCK_SIZE : integer := 4;
       WORD_SIZE  : integer := 64
@@ -411,7 +411,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
       );
   end component;
 
-  component ecdsa_adder is
+  component peripheral_dsa_adder is
     generic (
       DATA_SIZE : integer := 256
       );
@@ -434,7 +434,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
       );
   end component;
 
-  component ecdsa_inverter is
+  component peripheral_dsa_inverter is
     generic (
       DATA_SIZE : integer := 256
       );
@@ -454,7 +454,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
       );
   end component;
 
-  component ecdsa_multiplier is
+  component peripheral_dsa_multiplier is
     generic (
       DATA_SIZE : integer := 256
       );
@@ -475,7 +475,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
       );
   end component;
 
-  component ecdsa_point_adder is
+  component peripheral_dsa_point_adder is
     generic (
       DATA_SIZE : integer := 256
       );
@@ -498,7 +498,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
       );
   end component;
 
-  component ecdsa_point_doubler is
+  component peripheral_dsa_point_doubler is
     generic (
       DATA_SIZE : integer := 256
       );
@@ -519,7 +519,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
       );
   end component;
 
-  component ecdsa_point_generator is
+  component peripheral_dsa_point_generator is
     generic (
       DATA_SIZE : integer := 256
       );
@@ -542,7 +542,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
       );
   end component;
 
-  component ecdsa_sign is
+  component peripheral_dsa_ecdsa_sign is
     generic (
       DATA_SIZE  : integer := 512;
       BLOCK_SIZE : integer := 4;
@@ -575,7 +575,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
       );
   end component;
 
-  component ecdsa_verify is
+  component peripheral_dsa_ecdsa_verify is
     generic (
       DATA_SIZE  : integer := 512;
       BLOCK_SIZE : integer := 4;
@@ -608,7 +608,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
       );
   end component;
 
-  component ecdsa_top is
+  component peripheral_dsa_ecdsa_top is
     generic (
       DATA_SIZE  : integer := 512;
       BLOCK_SIZE : integer := 4;
@@ -648,7 +648,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
       );
   end component;
 
-  component kcdsa_sign is
+  component peripheral_dsa_kcdsa_sign is
     generic (
       DATA_SIZE  : integer := 512;
       BLOCK_SIZE : integer := 4;
@@ -681,7 +681,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
       );
   end component;
 
-  component kcdsa_verify is
+  component peripheral_dsa_kcdsa_verify is
     generic (
       DATA_SIZE  : integer := 512;
       BLOCK_SIZE : integer := 4;
@@ -714,7 +714,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
       );
   end component;
 
-  component kcdsa_top is
+  component peripheral_dsa_kcdsa_top is
     generic (
       DATA_SIZE  : integer := 512;
       BLOCK_SIZE : integer := 4;
@@ -760,7 +760,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
   signal rst : std_logic;
 
   -------------------------------------------------------
-  -- ECDSA-SHA256
+  -- DSA-SHA256
   -------------------------------------------------------
 
   signal start_sha256_int : std_logic;
@@ -775,7 +775,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
   signal data_out_sha256_int : std_logic_vector(WORD_SIZE_256*8-1 downto 0);
 
   -------------------------------------------------------
-  -- ECDSA-SHA512
+  -- DSA-SHA512
   -------------------------------------------------------
 
   signal start_sha512_int : std_logic;
@@ -790,7 +790,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
   signal data_out_sha512_int : std_logic_vector(WORD_SIZE_512*8-1 downto 0);
 
   -------------------------------------------------------
-  -- ECDSA-ADDER
+  -- DSA-ADDER
   -------------------------------------------------------
 
   signal start_adder_int : std_logic;
@@ -803,7 +803,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
   signal data_out_adder_int  : std_logic_vector(DATA_SIZE-1 downto 0);
 
   -------------------------------------------------------
-  -- ECDSA-INVERTER
+  -- DSA-INVERTER
   -------------------------------------------------------
 
   signal start_inverter_int : std_logic;
@@ -813,7 +813,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
   signal data_out_inverter_int : std_logic_vector(DATA_SIZE-1 downto 0);
 
   -------------------------------------------------------
-  -- ECDSA-MULTIPLIER
+  -- DSA-MULTIPLIER
   -------------------------------------------------------
 
   signal start_multiplier_int : std_logic;
@@ -824,7 +824,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
   signal data_out_multiplier_int  : std_logic_vector(DATA_SIZE-1 downto 0);
 
   -------------------------------------------------------
-  -- ECDSA-POINT_ADDER
+  -- DSA-POINT_ADDER
   -------------------------------------------------------
 
   signal start_point_adder_int : std_logic;
@@ -838,7 +838,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
   signal point_out_ry_adder_int : std_logic_vector(DATA_SIZE-1 downto 0);
 
   -------------------------------------------------------
-  -- ECDSA-POINT_DOUBLER
+  -- DSA-POINT_DOUBLER
   -------------------------------------------------------
 
   signal start_point_doubler_int : std_logic;
@@ -850,7 +850,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
   signal point_out_ry_doubler_int : std_logic_vector(DATA_SIZE-1 downto 0);
 
   -------------------------------------------------------
-  -- ECDSA-POINT_GENERATOR
+  -- DSA-POINT_GENERATOR
   -------------------------------------------------------
 
   signal start_point_generator_int : std_logic;
@@ -864,7 +864,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
   signal point_out_y_generator_int : std_logic_vector(DATA_SIZE-1 downto 0);
 
   -------------------------------------------------------
-  -- ECDSA-SIGN
+  -- DSA-ECDSA-SIGN
   -------------------------------------------------------
 
   signal start_sign_int : std_logic;
@@ -886,7 +886,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
   signal signature_s_sign_int : std_logic_vector(DATA_SIZE-1 downto 0);
 
   -------------------------------------------------------
-  -- ECDSA-VERIFY
+  -- DSA-ECDSA-VERIFY
   -------------------------------------------------------
 
   signal start_verify_int : std_logic;
@@ -908,7 +908,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
   signal signature_s_verify_int : std_logic_vector(DATA_SIZE-1 downto 0);
 
   -------------------------------------------------------
-  -- ECDSA-TOP
+  -- DSA-ECDSA-TOP
   -------------------------------------------------------
 
   signal start_top_int : std_logic;
@@ -937,77 +937,77 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
   signal signature_s_top_int : std_logic_vector(DATA_SIZE-1 downto 0);
 
   -------------------------------------------------------
-  -- KCDSA-SIGN
+  -- DSA-KCDSA-SIGN
   -------------------------------------------------------
 
-  signal start_kcdsa_sign_int : std_logic;
-  signal ready_kcdsa_sign_int : std_logic;
+  signal start_peripheral_dsa_kcdsa_sign_int : std_logic;
+  signal ready_peripheral_dsa_kcdsa_sign_int : std_logic;
 
-  signal fail_kcdsa_sign_int : std_logic;
+  signal fail_peripheral_dsa_kcdsa_sign_int : std_logic;
 
-  signal data_in_enable_kcdsa_sign_int  : std_logic;
-  signal data_out_enable_kcdsa_sign_int : std_logic;
+  signal data_in_enable_peripheral_dsa_kcdsa_sign_int  : std_logic;
+  signal data_out_enable_peripheral_dsa_kcdsa_sign_int : std_logic;
 
-  signal private_key_kcdsa_sign_int   : std_logic_vector(DATA_SIZE-1 downto 0);
-  signal generated_key_kcdsa_sign_int : std_logic_vector(DATA_SIZE-1 downto 0);
+  signal private_key_peripheral_dsa_kcdsa_sign_int   : std_logic_vector(DATA_SIZE-1 downto 0);
+  signal generated_key_peripheral_dsa_kcdsa_sign_int : std_logic_vector(DATA_SIZE-1 downto 0);
 
-  signal data_block_size_kcdsa_sign_int : std_logic_vector(BLOCK_SIZE-1 downto 0);
+  signal data_block_size_peripheral_dsa_kcdsa_sign_int : std_logic_vector(BLOCK_SIZE-1 downto 0);
 
-  signal message_kcdsa_sign_int : std_logic_vector(0 to 16*WORD_SIZE_512-1);
+  signal message_peripheral_dsa_kcdsa_sign_int : std_logic_vector(0 to 16*WORD_SIZE_512-1);
 
-  signal signature_r_kcdsa_sign_int : std_logic_vector(DATA_SIZE-1 downto 0);
-  signal signature_s_kcdsa_sign_int : std_logic_vector(DATA_SIZE-1 downto 0);
-
-  -------------------------------------------------------
-  -- KCDSA-VERIFY
-  -------------------------------------------------------
-
-  signal start_kcdsa_verify_int : std_logic;
-  signal ready_kcdsa_verify_int : std_logic;
-
-  signal data_in_enable_kcdsa_verify_int  : std_logic;
-  signal data_out_enable_kcdsa_verify_int : std_logic;
-
-  signal fail_kcdsa_verify_int : std_logic;
-
-  signal public_key_x_kcdsa_verify_int : std_logic_vector(DATA_SIZE-1 downto 0);
-  signal public_key_y_kcdsa_verify_int : std_logic_vector(DATA_SIZE-1 downto 0);
-
-  signal data_block_size_kcdsa_verify_int : std_logic_vector(BLOCK_SIZE-1 downto 0);
-
-  signal message_kcdsa_verify_int : std_logic_vector(0 to 16*WORD_SIZE_512-1);
-
-  signal signature_r_kcdsa_verify_int : std_logic_vector(DATA_SIZE-1 downto 0);
-  signal signature_s_kcdsa_verify_int : std_logic_vector(DATA_SIZE-1 downto 0);
+  signal signature_r_peripheral_dsa_kcdsa_sign_int : std_logic_vector(DATA_SIZE-1 downto 0);
+  signal signature_s_peripheral_dsa_kcdsa_sign_int : std_logic_vector(DATA_SIZE-1 downto 0);
 
   -------------------------------------------------------
-  -- KCDSA-TOP
+  -- DSA-KCDSA-VERIFY
   -------------------------------------------------------
 
-  signal start_kcdsa_top_int : std_logic;
-  signal ready_kcdsa_top_int : std_logic;
+  signal start_peripheral_dsa_kcdsa_verify_int : std_logic;
+  signal ready_peripheral_dsa_kcdsa_verify_int : std_logic;
 
-  signal data_in_enable_kcdsa_top_int  : std_logic;
-  signal data_out_enable_kcdsa_top_int : std_logic;
+  signal data_in_enable_peripheral_dsa_kcdsa_verify_int  : std_logic;
+  signal data_out_enable_peripheral_dsa_kcdsa_verify_int : std_logic;
 
-  signal mode_kcdsa_top_int : std_logic;
-  signal fail_kcdsa_top_int : std_logic;
+  signal fail_peripheral_dsa_kcdsa_verify_int : std_logic;
 
-  signal private_key_kcdsa_top_int   : std_logic_vector(DATA_SIZE-1 downto 0);
-  signal generated_key_kcdsa_top_int : std_logic_vector(DATA_SIZE-1 downto 0);
+  signal public_key_x_peripheral_dsa_kcdsa_verify_int : std_logic_vector(DATA_SIZE-1 downto 0);
+  signal public_key_y_peripheral_dsa_kcdsa_verify_int : std_logic_vector(DATA_SIZE-1 downto 0);
 
-  signal public_key_x_check_kcdsa_top_int : std_logic_vector(DATA_SIZE-1 downto 0);
-  signal public_key_y_check_kcdsa_top_int : std_logic_vector(DATA_SIZE-1 downto 0);
+  signal data_block_size_peripheral_dsa_kcdsa_verify_int : std_logic_vector(BLOCK_SIZE-1 downto 0);
 
-  signal data_block_size_kcdsa_top_int : std_logic_vector(BLOCK_SIZE-1 downto 0);
+  signal message_peripheral_dsa_kcdsa_verify_int : std_logic_vector(0 to 16*WORD_SIZE_512-1);
 
-  signal message_kcdsa_top_int : std_logic_vector(0 to 16*WORD_SIZE_512-1);
+  signal signature_r_peripheral_dsa_kcdsa_verify_int : std_logic_vector(DATA_SIZE-1 downto 0);
+  signal signature_s_peripheral_dsa_kcdsa_verify_int : std_logic_vector(DATA_SIZE-1 downto 0);
 
-  signal signature_r_check_kcdsa_top_int : std_logic_vector(DATA_SIZE-1 downto 0);
-  signal signature_s_check_kcdsa_top_int : std_logic_vector(DATA_SIZE-1 downto 0);
+  -------------------------------------------------------
+  -- DSA-KCDSA-TOP
+  -------------------------------------------------------
 
-  signal signature_r_kcdsa_top_int : std_logic_vector(DATA_SIZE-1 downto 0);
-  signal signature_s_kcdsa_top_int : std_logic_vector(DATA_SIZE-1 downto 0);
+  signal start_peripheral_dsa_kcdsa_top_int : std_logic;
+  signal ready_peripheral_dsa_kcdsa_top_int : std_logic;
+
+  signal data_in_enable_peripheral_dsa_kcdsa_top_int  : std_logic;
+  signal data_out_enable_peripheral_dsa_kcdsa_top_int : std_logic;
+
+  signal mode_peripheral_dsa_kcdsa_top_int : std_logic;
+  signal fail_peripheral_dsa_kcdsa_top_int : std_logic;
+
+  signal private_key_peripheral_dsa_kcdsa_top_int   : std_logic_vector(DATA_SIZE-1 downto 0);
+  signal generated_key_peripheral_dsa_kcdsa_top_int : std_logic_vector(DATA_SIZE-1 downto 0);
+
+  signal public_key_x_check_peripheral_dsa_kcdsa_top_int : std_logic_vector(DATA_SIZE-1 downto 0);
+  signal public_key_y_check_peripheral_dsa_kcdsa_top_int : std_logic_vector(DATA_SIZE-1 downto 0);
+
+  signal data_block_size_peripheral_dsa_kcdsa_top_int : std_logic_vector(BLOCK_SIZE-1 downto 0);
+
+  signal message_peripheral_dsa_kcdsa_top_int : std_logic_vector(0 to 16*WORD_SIZE_512-1);
+
+  signal signature_r_check_peripheral_dsa_kcdsa_top_int : std_logic_vector(DATA_SIZE-1 downto 0);
+  signal signature_s_check_peripheral_dsa_kcdsa_top_int : std_logic_vector(DATA_SIZE-1 downto 0);
+
+  signal signature_r_peripheral_dsa_kcdsa_top_int : std_logic_vector(DATA_SIZE-1 downto 0);
+  signal signature_s_peripheral_dsa_kcdsa_top_int : std_logic_vector(DATA_SIZE-1 downto 0);
 
 begin
 
@@ -1032,286 +1032,286 @@ begin
       RST => rst,
 
       -------------------------------------------------------
-      -- ECDSA-SHA256
+      -- DSA-SHA256
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_SHA256_START => start_sha256_int,
-      ECDSA_SHA256_READY => ready_sha256_int,
+      DSA_SHA256_START => start_sha256_int,
+      DSA_SHA256_READY => ready_sha256_int,
 
-      ECDSA_SHA256_DATA_IN_ENABLE  => data_in_enable_sha256_int,
-      ECDSA_SHA256_DATA_OUT_ENABLE => data_out_enable_sha256_int,
+      DSA_SHA256_DATA_IN_ENABLE  => data_in_enable_sha256_int,
+      DSA_SHA256_DATA_OUT_ENABLE => data_out_enable_sha256_int,
 
       -- DATA
-      ECDSA_SHA256_DATA_BLOCK_SIZE => data_block_size_sha256_int,
+      DSA_SHA256_DATA_BLOCK_SIZE => data_block_size_sha256_int,
 
-      ECDSA_SHA256_DATA_IN  => data_in_sha256_int,
-      ECDSA_SHA256_DATA_OUT => data_out_sha256_int,
+      DSA_SHA256_DATA_IN  => data_in_sha256_int,
+      DSA_SHA256_DATA_OUT => data_out_sha256_int,
 
       -------------------------------------------------------
-      -- ECDSA-SHA512
+      -- DSA-SHA512
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_SHA512_START => start_sha512_int,
-      ECDSA_SHA512_READY => ready_sha512_int,
+      DSA_SHA512_START => start_sha512_int,
+      DSA_SHA512_READY => ready_sha512_int,
 
-      ECDSA_SHA512_DATA_IN_ENABLE  => data_in_enable_sha512_int,
-      ECDSA_SHA512_DATA_OUT_ENABLE => data_out_enable_sha512_int,
+      DSA_SHA512_DATA_IN_ENABLE  => data_in_enable_sha512_int,
+      DSA_SHA512_DATA_OUT_ENABLE => data_out_enable_sha512_int,
 
       -- DATA
-      ECDSA_SHA512_DATA_BLOCK_SIZE => data_block_size_sha512_int,
+      DSA_SHA512_DATA_BLOCK_SIZE => data_block_size_sha512_int,
 
-      ECDSA_SHA512_DATA_IN  => data_in_sha512_int,
-      ECDSA_SHA512_DATA_OUT => data_out_sha512_int,
+      DSA_SHA512_DATA_IN  => data_in_sha512_int,
+      DSA_SHA512_DATA_OUT => data_out_sha512_int,
 
       -------------------------------------------------------
-      -- ECDSA-ADDER
+      -- DSA-ADDER
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_ADDER_START => start_adder_int,
-      ECDSA_ADDER_READY => ready_adder_int,
+      DSA_ADDER_START => start_adder_int,
+      DSA_ADDER_READY => ready_adder_int,
 
-      ECDSA_ADDER_OPERATION => operation_adder_int,
+      DSA_ADDER_OPERATION => operation_adder_int,
 
       -- DATA
-      ECDSA_ADDER_DATA_A_IN => data_a_in_adder_int,
-      ECDSA_ADDER_DATA_B_IN => data_b_in_adder_int,
-      ECDSA_ADDER_DATA_OUT  => data_out_adder_int,
+      DSA_ADDER_DATA_A_IN => data_a_in_adder_int,
+      DSA_ADDER_DATA_B_IN => data_b_in_adder_int,
+      DSA_ADDER_DATA_OUT  => data_out_adder_int,
 
       -------------------------------------------------------
-      -- ECDSA-INVERTER
+      -- DSA-INVERTER
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_INVERTER_START => start_inverter_int,
-      ECDSA_INVERTER_READY => ready_inverter_int,
+      DSA_INVERTER_START => start_inverter_int,
+      DSA_INVERTER_READY => ready_inverter_int,
 
       -- DATA
-      ECDSA_INVERTER_DATA_IN  => data_in_inverter_int,
-      ECDSA_INVERTER_DATA_OUT => data_out_inverter_int,
+      DSA_INVERTER_DATA_IN  => data_in_inverter_int,
+      DSA_INVERTER_DATA_OUT => data_out_inverter_int,
 
       -------------------------------------------------------
-      -- ECDSA-MULTIPLIER
+      -- DSA-MULTIPLIER
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_MULTIPLIER_START => start_multiplier_int,
-      ECDSA_MULTIPLIER_READY => ready_multiplier_int,
+      DSA_MULTIPLIER_START => start_multiplier_int,
+      DSA_MULTIPLIER_READY => ready_multiplier_int,
 
       -- DATA
-      ECDSA_MULTIPLIER_DATA_A_IN => data_a_in_multiplier_int,
-      ECDSA_MULTIPLIER_DATA_B_IN => data_b_in_multiplier_int,
-      ECDSA_MULTIPLIER_DATA_OUT  => data_out_multiplier_int,
+      DSA_MULTIPLIER_DATA_A_IN => data_a_in_multiplier_int,
+      DSA_MULTIPLIER_DATA_B_IN => data_b_in_multiplier_int,
+      DSA_MULTIPLIER_DATA_OUT  => data_out_multiplier_int,
 
       -------------------------------------------------------
-      -- ECDSA-POINT_ADDER
+      -- DSA-POINT_ADDER
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_POINT_ADDER_START => start_point_adder_int,
-      ECDSA_POINT_ADDER_READY => ready_point_adder_int,
+      DSA_POINT_ADDER_START => start_point_adder_int,
+      DSA_POINT_ADDER_READY => ready_point_adder_int,
 
       -- DATA
-      ECDSA_POINT_IN_PX_ADDER  => point_in_px_adder_int,
-      ECDSA_POINT_IN_PY_ADDER  => point_in_py_adder_int,
-      ECDSA_POINT_IN_QX_ADDER  => point_in_qx_adder_int,
-      ECDSA_POINT_IN_QY_ADDER  => point_in_qy_adder_int,
-      ECDSA_POINT_OUT_RX_ADDER => point_out_rx_adder_int,
-      ECDSA_POINT_OUT_RY_ADDER => point_out_ry_adder_int,
+      DSA_POINT_IN_PX_ADDER  => point_in_px_adder_int,
+      DSA_POINT_IN_PY_ADDER  => point_in_py_adder_int,
+      DSA_POINT_IN_QX_ADDER  => point_in_qx_adder_int,
+      DSA_POINT_IN_QY_ADDER  => point_in_qy_adder_int,
+      DSA_POINT_OUT_RX_ADDER => point_out_rx_adder_int,
+      DSA_POINT_OUT_RY_ADDER => point_out_ry_adder_int,
 
       -------------------------------------------------------
-      -- ECDSA-POINT_DOUBLER
+      -- DSA-POINT_DOUBLER
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_POINT_DOUBLER_START => start_point_doubler_int,
-      ECDSA_POINT_DOUBLER_READY => ready_point_doubler_int,
+      DSA_POINT_DOUBLER_START => start_point_doubler_int,
+      DSA_POINT_DOUBLER_READY => ready_point_doubler_int,
 
       -- DATA
-      ECDSA_POINT_IN_PX_DOUBLER  => point_in_px_doubler_int,
-      ECDSA_POINT_IN_PY_DOUBLER  => point_in_py_doubler_int,
-      ECDSA_POINT_OUT_RX_DOUBLER => point_out_rx_doubler_int,
-      ECDSA_POINT_OUT_RY_DOUBLER => point_out_ry_doubler_int,
+      DSA_POINT_IN_PX_DOUBLER  => point_in_px_doubler_int,
+      DSA_POINT_IN_PY_DOUBLER  => point_in_py_doubler_int,
+      DSA_POINT_OUT_RX_DOUBLER => point_out_rx_doubler_int,
+      DSA_POINT_OUT_RY_DOUBLER => point_out_ry_doubler_int,
 
       -------------------------------------------------------
-      -- ECDSA-POINT_GENERATOR
+      -- DSA-POINT_GENERATOR
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_POINT_GENERATOR_START => start_point_generator_int,
-      ECDSA_POINT_GENERATOR_READY => ready_point_generator_int,
+      DSA_POINT_GENERATOR_START => start_point_generator_int,
+      DSA_POINT_GENERATOR_READY => ready_point_generator_int,
 
       -- DATA
-      ECDSA_PRIVATE_KEY_GENERATOR => private_key_generator_int,
+      DSA_PRIVATE_KEY_GENERATOR => private_key_generator_int,
 
-      ECDSA_POINT_IN_X_GENERATOR  => point_in_x_generator_int,
-      ECDSA_POINT_IN_Y_GENERATOR  => point_in_y_generator_int,
-      ECDSA_POINT_OUT_X_GENERATOR => point_out_x_generator_int,
-      ECDSA_POINT_OUT_Y_GENERATOR => point_out_y_generator_int,
+      DSA_POINT_IN_X_GENERATOR  => point_in_x_generator_int,
+      DSA_POINT_IN_Y_GENERATOR  => point_in_y_generator_int,
+      DSA_POINT_OUT_X_GENERATOR => point_out_x_generator_int,
+      DSA_POINT_OUT_Y_GENERATOR => point_out_y_generator_int,
 
       -------------------------------------------------------
-      -- ECDSA-SIGN
+      -- DSA-ECDSA-SIGN
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_SIGN_START => start_sign_int,
-      ECDSA_SIGN_READY => ready_sign_int,
+      DSA_ECDSA_SIGN_START => start_sign_int,
+      DSA_ECDSA_SIGN_READY => ready_sign_int,
 
-      ECDSA_SIGN_DATA_IN_ENABLE  => data_in_enable_sign_int,
-      ECDSA_SIGN_DATA_OUT_ENABLE => data_out_enable_sign_int,
+      DSA_ECDSA_SIGN_DATA_IN_ENABLE  => data_in_enable_sign_int,
+      DSA_ECDSA_SIGN_DATA_OUT_ENABLE => data_out_enable_sign_int,
 
       -- DATA
-      ECDSA_SIGN_PRIVATE_KEY   => private_key_sign_int,
-      ECDSA_SIGN_GENERATED_KEY => generated_key_sign_int,
+      DSA_ECDSA_SIGN_PRIVATE_KEY   => private_key_sign_int,
+      DSA_ECDSA_SIGN_GENERATED_KEY => generated_key_sign_int,
 
-      ECDSA_SIGN_DATA_BLOCK_SIZE => data_block_size_sign_int,
+      DSA_ECDSA_SIGN_DATA_BLOCK_SIZE => data_block_size_sign_int,
 
-      ECDSA_SIGN_MESSAGE => message_sign_int,
+      DSA_ECDSA_SIGN_MESSAGE => message_sign_int,
 
-      ECDSA_SIGN_SIGNATURE_R => signature_r_sign_int,
-      ECDSA_SIGN_SIGNATURE_S => signature_s_sign_int,
+      DSA_ECDSA_SIGN_SIGNATURE_R => signature_r_sign_int,
+      DSA_ECDSA_SIGN_SIGNATURE_S => signature_s_sign_int,
 
       -------------------------------------------------------
-      -- ECDSA-VERIFY
+      -- DSA-ECDSA-VERIFY
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_VERIFY_START => start_verify_int,
-      ECDSA_VERIFY_READY => ready_verify_int,
+      DSA_ECDSA_VERIFY_START => start_verify_int,
+      DSA_ECDSA_VERIFY_READY => ready_verify_int,
 
-      ECDSA_VERIFY_DATA_IN_ENABLE  => data_in_enable_verify_int,
-      ECDSA_VERIFY_DATA_OUT_ENABLE => data_out_enable_verify_int,
+      DSA_ECDSA_VERIFY_DATA_IN_ENABLE  => data_in_enable_verify_int,
+      DSA_ECDSA_VERIFY_DATA_OUT_ENABLE => data_out_enable_verify_int,
 
-      ECDSA_VERIFY_FAIL => fail_verify_int,
+      DSA_ECDSA_VERIFY_FAIL => fail_verify_int,
 
       -- DATA
-      ECDSA_VERIFY_PUBLIC_KEY_X => public_key_x_verify_int,
-      ECDSA_VERIFY_PUBLIC_KEY_Y => public_key_y_verify_int,
+      DSA_ECDSA_VERIFY_PUBLIC_KEY_X => public_key_x_verify_int,
+      DSA_ECDSA_VERIFY_PUBLIC_KEY_Y => public_key_y_verify_int,
 
-      ECDSA_VERIFY_DATA_BLOCK_SIZE => data_block_size_verify_int,
+      DSA_ECDSA_VERIFY_DATA_BLOCK_SIZE => data_block_size_verify_int,
 
-      ECDSA_VERIFY_MESSAGE => message_verify_int,
+      DSA_ECDSA_VERIFY_MESSAGE => message_verify_int,
 
-      ECDSA_VERIFY_SIGNATURE_R => signature_r_verify_int,
-      ECDSA_VERIFY_SIGNATURE_S => signature_s_verify_int,
+      DSA_ECDSA_VERIFY_SIGNATURE_R => signature_r_verify_int,
+      DSA_ECDSA_VERIFY_SIGNATURE_S => signature_s_verify_int,
 
       -------------------------------------------------------
-      -- ECDSA-TOP
+      -- DSA-ECDSA-TOP
       -------------------------------------------------------
 
       -- CONTROL
-      ECDSA_TOP_START => start_top_int,
-      ECDSA_TOP_READY => ready_top_int,
+      DSA_ECDSA_TOP_START => start_top_int,
+      DSA_ECDSA_TOP_READY => ready_top_int,
 
-      ECDSA_TOP_DATA_IN_ENABLE  => data_in_enable_top_int,
-      ECDSA_TOP_DATA_OUT_ENABLE => data_out_enable_top_int,
+      DSA_ECDSA_TOP_DATA_IN_ENABLE  => data_in_enable_top_int,
+      DSA_ECDSA_TOP_DATA_OUT_ENABLE => data_out_enable_top_int,
 
-      ECDSA_TOP_MODE => mode_top_int,
-      ECDSA_TOP_FAIL => fail_top_int,
+      DSA_ECDSA_TOP_MODE => mode_top_int,
+      DSA_ECDSA_TOP_FAIL => fail_top_int,
 
       -- DATA
-      ECDSA_TOP_PRIVATE_KEY   => private_key_top_int,
-      ECDSA_TOP_GENERATED_KEY => generated_key_top_int,
+      DSA_ECDSA_TOP_PRIVATE_KEY   => private_key_top_int,
+      DSA_ECDSA_TOP_GENERATED_KEY => generated_key_top_int,
 
-      ECDSA_TOP_PUBLIC_KEY_X_CHECK => public_key_x_check_top_int,
-      ECDSA_TOP_PUBLIC_KEY_Y_CHECK => public_key_y_check_top_int,
+      DSA_ECDSA_TOP_PUBLIC_KEY_X_CHECK => public_key_x_check_top_int,
+      DSA_ECDSA_TOP_PUBLIC_KEY_Y_CHECK => public_key_y_check_top_int,
 
-      ECDSA_TOP_DATA_BLOCK_SIZE => data_block_size_top_int,
+      DSA_ECDSA_TOP_DATA_BLOCK_SIZE => data_block_size_top_int,
 
-      ECDSA_TOP_MESSAGE => message_top_int,
+      DSA_ECDSA_TOP_MESSAGE => message_top_int,
 
-      ECDSA_TOP_SIGNATURE_R_CHECK => signature_r_check_top_int,
-      ECDSA_TOP_SIGNATURE_S_CHECK => signature_s_check_top_int,
+      DSA_ECDSA_TOP_SIGNATURE_R_CHECK => signature_r_check_top_int,
+      DSA_ECDSA_TOP_SIGNATURE_S_CHECK => signature_s_check_top_int,
 
-      ECDSA_TOP_SIGNATURE_R => signature_r_top_int,
-      ECDSA_TOP_SIGNATURE_S => signature_s_top_int,
+      DSA_ECDSA_TOP_SIGNATURE_R => signature_r_top_int,
+      DSA_ECDSA_TOP_SIGNATURE_S => signature_s_top_int,
 
       -------------------------------------------------------
-      -- KCDSA-SIGN
+      -- DSA-KCDSA-SIGN
       -------------------------------------------------------
 
       -- CONTROL
-      KCDSA_SIGN_START => start_kcdsa_sign_int,
-      KCDSA_SIGN_READY => ready_kcdsa_sign_int,
+      DSA_KCDSA_SIGN_START => start_peripheral_dsa_kcdsa_sign_int,
+      DSA_KCDSA_SIGN_READY => ready_peripheral_dsa_kcdsa_sign_int,
 
-      KCDSA_SIGN_DATA_IN_ENABLE  => data_in_enable_kcdsa_sign_int,
-      KCDSA_SIGN_DATA_OUT_ENABLE => data_out_enable_kcdsa_sign_int,
+      DSA_KCDSA_SIGN_DATA_IN_ENABLE  => data_in_enable_peripheral_dsa_kcdsa_sign_int,
+      DSA_KCDSA_SIGN_DATA_OUT_ENABLE => data_out_enable_peripheral_dsa_kcdsa_sign_int,
 
       -- DATA
-      KCDSA_SIGN_PRIVATE_KEY   => private_key_kcdsa_sign_int,
-      KCDSA_SIGN_GENERATED_KEY => generated_key_kcdsa_sign_int,
+      DSA_KCDSA_SIGN_PRIVATE_KEY   => private_key_peripheral_dsa_kcdsa_sign_int,
+      DSA_KCDSA_SIGN_GENERATED_KEY => generated_key_peripheral_dsa_kcdsa_sign_int,
 
-      KCDSA_SIGN_DATA_BLOCK_SIZE => data_block_size_kcdsa_sign_int,
+      DSA_KCDSA_SIGN_DATA_BLOCK_SIZE => data_block_size_peripheral_dsa_kcdsa_sign_int,
 
-      KCDSA_SIGN_MESSAGE => message_kcdsa_sign_int,
+      DSA_KCDSA_SIGN_MESSAGE => message_peripheral_dsa_kcdsa_sign_int,
 
-      KCDSA_SIGN_SIGNATURE_R => signature_r_kcdsa_sign_int,
-      KCDSA_SIGN_SIGNATURE_S => signature_s_kcdsa_sign_int,
+      DSA_KCDSA_SIGN_SIGNATURE_R => signature_r_peripheral_dsa_kcdsa_sign_int,
+      DSA_KCDSA_SIGN_SIGNATURE_S => signature_s_peripheral_dsa_kcdsa_sign_int,
 
       -------------------------------------------------------
-      -- KCDSA-VERIFY
+      -- DSA-KCDSA-VERIFY
       -------------------------------------------------------
 
       -- CONTROL
-      KCDSA_VERIFY_START => start_kcdsa_verify_int,
-      KCDSA_VERIFY_READY => ready_kcdsa_verify_int,
+      DSA_KCDSA_VERIFY_START => start_peripheral_dsa_kcdsa_verify_int,
+      DSA_KCDSA_VERIFY_READY => ready_peripheral_dsa_kcdsa_verify_int,
 
-      KCDSA_VERIFY_DATA_IN_ENABLE  => data_in_enable_kcdsa_verify_int,
-      KCDSA_VERIFY_DATA_OUT_ENABLE => data_out_enable_kcdsa_verify_int,
+      DSA_KCDSA_VERIFY_DATA_IN_ENABLE  => data_in_enable_peripheral_dsa_kcdsa_verify_int,
+      DSA_KCDSA_VERIFY_DATA_OUT_ENABLE => data_out_enable_peripheral_dsa_kcdsa_verify_int,
 
-      KCDSA_VERIFY_FAIL => fail_kcdsa_verify_int,
+      DSA_KCDSA_VERIFY_FAIL => fail_peripheral_dsa_kcdsa_verify_int,
 
       -- DATA
-      KCDSA_VERIFY_PUBLIC_KEY_X => public_key_x_kcdsa_verify_int,
-      KCDSA_VERIFY_PUBLIC_KEY_Y => public_key_y_kcdsa_verify_int,
+      DSA_KCDSA_VERIFY_PUBLIC_KEY_X => public_key_x_peripheral_dsa_kcdsa_verify_int,
+      DSA_KCDSA_VERIFY_PUBLIC_KEY_Y => public_key_y_peripheral_dsa_kcdsa_verify_int,
 
-      KCDSA_VERIFY_DATA_BLOCK_SIZE => data_block_size_kcdsa_verify_int,
+      DSA_KCDSA_VERIFY_DATA_BLOCK_SIZE => data_block_size_peripheral_dsa_kcdsa_verify_int,
 
-      KCDSA_VERIFY_MESSAGE => message_kcdsa_verify_int,
+      DSA_KCDSA_VERIFY_MESSAGE => message_peripheral_dsa_kcdsa_verify_int,
 
-      KCDSA_VERIFY_SIGNATURE_R => signature_r_kcdsa_verify_int,
-      KCDSA_VERIFY_SIGNATURE_S => signature_s_kcdsa_verify_int,
+      DSA_KCDSA_VERIFY_SIGNATURE_R => signature_r_peripheral_dsa_kcdsa_verify_int,
+      DSA_KCDSA_VERIFY_SIGNATURE_S => signature_s_peripheral_dsa_kcdsa_verify_int,
 
       -------------------------------------------------------
-      -- KCDSA-TOP
+      -- DSA-KCDSA-TOP
       -------------------------------------------------------
 
       -- CONTROL
-      KCDSA_TOP_START => start_kcdsa_top_int,
-      KCDSA_TOP_READY => ready_kcdsa_top_int,
+      DSA_KCDSA_TOP_START => start_peripheral_dsa_kcdsa_top_int,
+      DSA_KCDSA_TOP_READY => ready_peripheral_dsa_kcdsa_top_int,
 
-      KCDSA_TOP_DATA_IN_ENABLE  => data_in_enable_kcdsa_top_int,
-      KCDSA_TOP_DATA_OUT_ENABLE => data_out_enable_kcdsa_top_int,
+      DSA_KCDSA_TOP_DATA_IN_ENABLE  => data_in_enable_peripheral_dsa_kcdsa_top_int,
+      DSA_KCDSA_TOP_DATA_OUT_ENABLE => data_out_enable_peripheral_dsa_kcdsa_top_int,
 
-      KCDSA_TOP_MODE => mode_kcdsa_top_int,
-      KCDSA_TOP_FAIL => fail_kcdsa_top_int,
+      DSA_KCDSA_TOP_MODE => mode_peripheral_dsa_kcdsa_top_int,
+      DSA_KCDSA_TOP_FAIL => fail_peripheral_dsa_kcdsa_top_int,
 
       -- DATA
-      KCDSA_TOP_PRIVATE_KEY   => private_key_kcdsa_top_int,
-      KCDSA_TOP_GENERATED_KEY => generated_key_kcdsa_top_int,
+      DSA_KCDSA_TOP_PRIVATE_KEY   => private_key_peripheral_dsa_kcdsa_top_int,
+      DSA_KCDSA_TOP_GENERATED_KEY => generated_key_peripheral_dsa_kcdsa_top_int,
 
-      KCDSA_TOP_PUBLIC_KEY_X_CHECK => public_key_x_check_kcdsa_top_int,
-      KCDSA_TOP_PUBLIC_KEY_Y_CHECK => public_key_y_check_kcdsa_top_int,
+      DSA_KCDSA_TOP_PUBLIC_KEY_X_CHECK => public_key_x_check_peripheral_dsa_kcdsa_top_int,
+      DSA_KCDSA_TOP_PUBLIC_KEY_Y_CHECK => public_key_y_check_peripheral_dsa_kcdsa_top_int,
 
-      KCDSA_TOP_DATA_BLOCK_SIZE => data_block_size_kcdsa_top_int,
+      DSA_KCDSA_TOP_DATA_BLOCK_SIZE => data_block_size_peripheral_dsa_kcdsa_top_int,
 
-      KCDSA_TOP_MESSAGE => message_kcdsa_top_int,
+      DSA_KCDSA_TOP_MESSAGE => message_peripheral_dsa_kcdsa_top_int,
 
-      KCDSA_TOP_SIGNATURE_R_CHECK => signature_r_check_kcdsa_top_int,
-      KCDSA_TOP_SIGNATURE_S_CHECK => signature_s_check_kcdsa_top_int,
+      DSA_KCDSA_TOP_SIGNATURE_R_CHECK => signature_r_check_peripheral_dsa_kcdsa_top_int,
+      DSA_KCDSA_TOP_SIGNATURE_S_CHECK => signature_s_check_peripheral_dsa_kcdsa_top_int,
 
-      KCDSA_TOP_SIGNATURE_R => signature_r_kcdsa_top_int,
-      KCDSA_TOP_SIGNATURE_S => signature_s_kcdsa_top_int
+      DSA_KCDSA_TOP_SIGNATURE_R => signature_r_peripheral_dsa_kcdsa_top_int,
+      DSA_KCDSA_TOP_SIGNATURE_S => signature_s_peripheral_dsa_kcdsa_top_int
       );
 
   -- ***************************************************************************
-  -- ***************************** ecdsa_sha256 ********************************
+  -- ************************** peripheral_dsa_sha256 **************************
   -- ***************************************************************************
 
-  ecdsa_sha256_if : if (C_ECDSA_SHA256_TEST) generate
-    ecdsa_sha256_dut : ecdsa_sha256
+  peripheral_dsa_sha256_if : if (DSA_SHA256_TEST) generate
+    peripheral_dsa_sha256_dut : peripheral_dsa_sha256
       generic map (
         BLOCK_SIZE => BLOCK_SIZE,
         WORD_SIZE  => WORD_SIZE_256
@@ -1335,7 +1335,7 @@ begin
         DATA_OUT => data_out_sha256_int
         );
 
-    ecdsa_sha256_assertion : process (clk, rst)
+    peripheral_dsa_sha256_assertion : process (clk, rst)
     begin
       if rising_edge(clk) then
         if (ready_sha256_int = '1') then
@@ -1344,15 +1344,15 @@ begin
             severity error;
         end if;
       end if;
-    end process ecdsa_sha256_assertion;
-  end generate ecdsa_sha256_if;
+    end process peripheral_dsa_sha256_assertion;
+  end generate peripheral_dsa_sha256_if;
 
   -- ***************************************************************************
-  -- ***************************** ecdsa_sha512 ********************************
+  -- ************************** peripheral_dsa_sha512 **************************
   -- ***************************************************************************
 
-  ecdsa_sha512_if : if (C_ECDSA_SHA512_TEST) generate
-    ecdsa_sha512_dut : ecdsa_sha512
+  peripheral_dsa_sha512_if : if (DSA_SHA512_TEST) generate
+    peripheral_dsa_sha512_dut : peripheral_dsa_sha512
       generic map (
         BLOCK_SIZE => BLOCK_SIZE,
         WORD_SIZE  => WORD_SIZE_512
@@ -1376,7 +1376,7 @@ begin
         DATA_OUT => data_out_sha512_int
         );
 
-    ecdsa_sha512_assertion : process (clk, rst)
+    peripheral_dsa_sha512_assertion : process (clk, rst)
     begin
       if rising_edge(clk) then
         if (ready_sha512_int = '1') then
@@ -1385,15 +1385,15 @@ begin
             severity error;
         end if;
       end if;
-    end process ecdsa_sha512_assertion;
-  end generate ecdsa_sha512_if;
+    end process peripheral_dsa_sha512_assertion;
+  end generate peripheral_dsa_sha512_if;
 
   -- ***************************************************************************
-  -- ****************************** ecdsa_adder ********************************
+  -- *************************** peripheral_dsa_adder **************************
   -- ***************************************************************************
 
-  ecdsa_adder_if : if (C_ECDSA_ADDER_TEST) generate
-    ecdsa_adder_dut : ecdsa_adder
+  peripheral_dsa_adder_if : if (DSA_ADDER_TEST) generate
+    peripheral_dsa_adder_dut : peripheral_dsa_adder
       generic map (
         DATA_SIZE => DATA_SIZE
         )
@@ -1415,7 +1415,7 @@ begin
         DATA_OUT  => data_out_adder_int
         );
 
-    ecdsa_adder_assertion : process (clk, rst)
+    peripheral_dsa_adder_assertion : process (clk, rst)
     begin
       if rising_edge(clk) then
         if (ready_adder_int = '1') then
@@ -1424,15 +1424,15 @@ begin
             severity error;
         end if;
       end if;
-    end process ecdsa_adder_assertion;
-  end generate ecdsa_adder_if;
+    end process peripheral_dsa_adder_assertion;
+  end generate peripheral_dsa_adder_if;
 
   -- ***************************************************************************
-  -- ****************************** ecdsa_inverter *****************************
+  -- ************************* peripheral_dsa_inverter *************************
   -- ***************************************************************************
 
-  ecdsa_inverter_if : if (C_ECDSA_INVERTER_TEST) generate
-    ecdsa_inverter_dut : ecdsa_inverter
+  peripheral_dsa_inverter_if : if (DSA_INVERTER_TEST) generate
+    peripheral_dsa_inverter_dut : peripheral_dsa_inverter
       generic map (
         DATA_SIZE => DATA_SIZE
         )
@@ -1451,7 +1451,7 @@ begin
         DATA_OUT => data_out_inverter_int
         );
 
-    ecdsa_inverter_assertion : process (clk, rst)
+    peripheral_dsa_inverter_assertion : process (clk, rst)
     begin
       if rising_edge(clk) then
         if (ready_inverter_int = '1') then
@@ -1460,15 +1460,15 @@ begin
             severity error;
         end if;
       end if;
-    end process ecdsa_inverter_assertion;
-  end generate ecdsa_inverter_if;
+    end process peripheral_dsa_inverter_assertion;
+  end generate peripheral_dsa_inverter_if;
 
   -- ***************************************************************************
-  -- ***************************** ecdsa_multiplier ****************************
+  -- ************************ peripheral_dsa_multiplier ************************
   -- ***************************************************************************
 
-  ecdsa_multiplier_if : if (C_ECDSA_MULTIPLIER_TEST) generate
-    ecdsa_multiplier_dut : ecdsa_multiplier
+  peripheral_dsa_multiplier_if : if (DSA_MULTIPLIER_TEST) generate
+    peripheral_dsa_multiplier_dut : peripheral_dsa_multiplier
       generic map (
         DATA_SIZE => DATA_SIZE
         )
@@ -1488,7 +1488,7 @@ begin
         DATA_OUT  => data_out_multiplier_int
         );
 
-    ecdsa_multiplier_assertion : process (clk, rst)
+    peripheral_dsa_multiplier_assertion : process (clk, rst)
     begin
       if rising_edge(clk) then
         if (ready_multiplier_int = '1') then
@@ -1497,15 +1497,15 @@ begin
             severity error;
         end if;
       end if;
-    end process ecdsa_multiplier_assertion;
-  end generate ecdsa_multiplier_if;
+    end process peripheral_dsa_multiplier_assertion;
+  end generate peripheral_dsa_multiplier_if;
 
   -- ***************************************************************************
-  -- **************************** ecdsa_point_adder ****************************
+  -- ************************ peripheral_dsa_point_adder ***********************
   -- ***************************************************************************
 
-  ecdsa_point_adder_if : if (C_ECDSA_POINT_ADDER_TEST) generate
-    ecdsa_point_adder_dut : ecdsa_point_adder
+  peripheral_dsa_point_adder_if : if (DSA_POINT_ADDER_TEST) generate
+    peripheral_dsa_point_adder_dut : peripheral_dsa_point_adder
       generic map (
         DATA_SIZE => DATA_SIZE
         )
@@ -1527,7 +1527,7 @@ begin
         POINT_OUT_RY => point_out_ry_adder_int
         );
 
-    ecdsa_point_adder_assertion : process (clk, rst)
+    peripheral_dsa_point_adder_assertion : process (clk, rst)
     begin
       if rising_edge(clk) then
         if (ready_point_adder_int = '1') then
@@ -1540,15 +1540,15 @@ begin
             severity error;
         end if;
       end if;
-    end process ecdsa_point_adder_assertion;
-  end generate ecdsa_point_adder_if;
+    end process peripheral_dsa_point_adder_assertion;
+  end generate peripheral_dsa_point_adder_if;
 
   -- ***************************************************************************
-  -- *************************** ecdsa_point_doubler ***************************
+  -- *********************** peripheral_dsa_point_doubler **********************
   -- ***************************************************************************
 
-  ecdsa_point_doubler_if : if (C_ECDSA_POINT_DOUBLER_TEST) generate
-    ecdsa_point_doubler_dut : ecdsa_point_doubler
+  peripheral_dsa_point_doubler_if : if (DSA_POINT_DOUBLER_TEST) generate
+    peripheral_dsa_point_doubler_dut : peripheral_dsa_point_doubler
       generic map (
         DATA_SIZE => DATA_SIZE
         )
@@ -1568,7 +1568,7 @@ begin
         POINT_OUT_RY => point_out_ry_doubler_int
         );
 
-    ecdsa_point_doubler_assertion : process (clk, rst)
+    peripheral_dsa_point_doubler_assertion : process (clk, rst)
     begin
       if rising_edge(clk) then
         if (ready_point_doubler_int = '1') then
@@ -1581,15 +1581,15 @@ begin
             severity error;
         end if;
       end if;
-    end process ecdsa_point_doubler_assertion;
-  end generate ecdsa_point_doubler_if;
+    end process peripheral_dsa_point_doubler_assertion;
+  end generate peripheral_dsa_point_doubler_if;
 
   -- ***************************************************************************
-  -- ************************** ecdsa_point_generator **************************
+  -- ********************** peripheral_dsa_point_generator *********************
   -- ***************************************************************************
 
-  ecdsa_point_generator_if : if (C_ECDSA_POINT_GENERATOR_TEST) generate
-    ecdsa_point_generator_dut : ecdsa_point_generator
+  peripheral_dsa_point_generator_if : if (DSA_POINT_GENERATOR_TEST) generate
+    peripheral_dsa_point_generator_dut : peripheral_dsa_point_generator
       generic map (
         DATA_SIZE => DATA_SIZE
         )
@@ -1612,7 +1612,7 @@ begin
         POINT_OUT_Y => point_out_y_generator_int
         );
 
-    ecdsa_point_generator_assertion : process (clk, rst)
+    peripheral_dsa_point_generator_assertion : process (clk, rst)
     begin
       if rising_edge(clk) then
         if (ready_point_generator_int = '1') then
@@ -1625,15 +1625,15 @@ begin
             severity error;
         end if;
       end if;
-    end process ecdsa_point_generator_assertion;
-  end generate ecdsa_point_generator_if;
+    end process peripheral_dsa_point_generator_assertion;
+  end generate peripheral_dsa_point_generator_if;
 
   -- ***************************************************************************
-  -- ******************************** ecdsa_sign *******************************
+  -- ************************ peripheral_dsa_ecdsa_sign ************************
   -- ***************************************************************************
 
-  ecdsa_sign_if : if (C_ECDSA_SIGN_TEST) generate
-    ecdsa_sign_dut : ecdsa_sign
+  peripheral_dsa_ecdsa_sign_if : if (DSA_ECDSA_SIGN_TEST) generate
+    peripheral_dsa_ecdsa_sign_dut : peripheral_dsa_ecdsa_sign
       generic map (
         DATA_SIZE  => DATA_SIZE,
         BLOCK_SIZE => BLOCK_SIZE,
@@ -1665,7 +1665,7 @@ begin
         SIGNATURE_S => signature_s_sign_int
         );
 
-    ecdsa_sign_assertion : process (clk, rst)
+    peripheral_dsa_ecdsa_sign_assertion : process (clk, rst)
     begin
       if rising_edge(clk) then
         if (ready_sign_int = '1') then
@@ -1678,15 +1678,15 @@ begin
             severity error;
         end if;
       end if;
-    end process ecdsa_sign_assertion;
-  end generate ecdsa_sign_if;
+    end process peripheral_dsa_ecdsa_sign_assertion;
+  end generate peripheral_dsa_ecdsa_sign_if;
 
   -- ***************************************************************************
-  -- ******************************* ecdsa_verify ******************************
+  -- *********************** peripheral_dsa_ecdsa_verify ***********************
   -- ***************************************************************************
 
-  ecdsa_verify_if : if (C_ECDSA_VERIFY_TEST) generate
-    ecdsa_verify_dut : ecdsa_verify
+  peripheral_dsa_ecdsa_verify_if : if (DSA_ECDSA_VERIFY_TEST) generate
+    peripheral_dsa_ecdsa_verify_dut : peripheral_dsa_ecdsa_verify
       generic map (
         DATA_SIZE  => DATA_SIZE,
         BLOCK_SIZE => BLOCK_SIZE,
@@ -1718,7 +1718,7 @@ begin
         SIGNATURE_S => signature_s_verify_int
         );
 
-    ecdsa_verify_assertion : process (clk, rst)
+    peripheral_dsa_ecdsa_verify_assertion : process (clk, rst)
     begin
       if rising_edge(clk) then
         if (ready_verify_int = '1') then
@@ -1731,15 +1731,15 @@ begin
             severity error;
         end if;
       end if;
-    end process ecdsa_verify_assertion;
-  end generate ecdsa_verify_if;
+    end process peripheral_dsa_ecdsa_verify_assertion;
+  end generate peripheral_dsa_ecdsa_verify_if;
 
   -- ***************************************************************************
-  -- ********************************* ecdsa_top *******************************
+  -- ************************* peripheral_dsa_ecdsa_top ************************
   -- ***************************************************************************
 
-  ecdsa_top_if : if (C_ECDSA_TOP_TEST) generate
-    ecdsa_top_dut : ecdsa_top
+  peripheral_dsa_ecdsa_top_if : if (DSA_ECDSA_TOP_TEST) generate
+    peripheral_dsa_ecdsa_top_dut : peripheral_dsa_ecdsa_top
       generic map (
         DATA_SIZE  => DATA_SIZE,
         BLOCK_SIZE => BLOCK_SIZE,
@@ -1778,7 +1778,7 @@ begin
         SIGNATURE_S => signature_s_top_int
         );
 
-    ecdsa_top_assertion : process (clk, rst)
+    peripheral_dsa_ecdsa_top_assertion : process (clk, rst)
     begin
       if rising_edge(clk) then
         if (ready_top_int = '1') then
@@ -1791,15 +1791,15 @@ begin
             severity error;
         end if;
       end if;
-    end process ecdsa_top_assertion;
-  end generate ecdsa_top_if;
+    end process peripheral_dsa_ecdsa_top_assertion;
+  end generate peripheral_dsa_ecdsa_top_if;
 
   -- ***************************************************************************
-  -- ******************************** kcdsa_sign *******************************
+  -- ************************ peripheral_dsa_kcdsa_sign ************************
   -- ***************************************************************************
 
-  kcdsa_sign_if : if (C_KCDSA_SIGN_TEST) generate
-    kcdsa_sign_dut : kcdsa_sign
+  peripheral_dsa_kcdsa_sign_if : if (DSA_KCDSA_SIGN_TEST) generate
+    peripheral_dsa_kcdsa_sign_dut : peripheral_dsa_kcdsa_sign
       generic map (
         DATA_SIZE  => DATA_SIZE,
         BLOCK_SIZE => BLOCK_SIZE,
@@ -1811,48 +1811,48 @@ begin
         RST => rst,
 
         -- CONTROL
-        START => start_kcdsa_sign_int,
-        READY => ready_kcdsa_sign_int,
+        START => start_peripheral_dsa_kcdsa_sign_int,
+        READY => ready_peripheral_dsa_kcdsa_sign_int,
 
-        FAIL => fail_kcdsa_sign_int,
+        FAIL => fail_peripheral_dsa_kcdsa_sign_int,
 
-        DATA_IN_ENABLE  => data_in_enable_kcdsa_sign_int,
-        DATA_OUT_ENABLE => data_out_enable_kcdsa_sign_int,
+        DATA_IN_ENABLE  => data_in_enable_peripheral_dsa_kcdsa_sign_int,
+        DATA_OUT_ENABLE => data_out_enable_peripheral_dsa_kcdsa_sign_int,
 
         -- DATA
-        PRIVATE_KEY   => private_key_kcdsa_sign_int,
-        GENERATED_KEY => generated_key_kcdsa_sign_int,
+        PRIVATE_KEY   => private_key_peripheral_dsa_kcdsa_sign_int,
+        GENERATED_KEY => generated_key_peripheral_dsa_kcdsa_sign_int,
 
-        DATA_BLOCK_SIZE => data_block_size_kcdsa_sign_int,
+        DATA_BLOCK_SIZE => data_block_size_peripheral_dsa_kcdsa_sign_int,
 
-        MESSAGE => message_kcdsa_sign_int,
+        MESSAGE => message_peripheral_dsa_kcdsa_sign_int,
 
-        SIGNATURE_R => signature_r_kcdsa_sign_int,
-        SIGNATURE_S => signature_s_kcdsa_sign_int
+        SIGNATURE_R => signature_r_peripheral_dsa_kcdsa_sign_int,
+        SIGNATURE_S => signature_s_peripheral_dsa_kcdsa_sign_int
         );
 
-    kcdsa_sign_assertion : process (clk, rst)
+    peripheral_dsa_kcdsa_sign_assertion : process (clk, rst)
     begin
       if rising_edge(clk) then
-        if (ready_kcdsa_sign_int = '1') then
-          assert signature_r_kcdsa_sign_int = SIGN_SIGNATURE_R_KCDSA
-            report "SCALAR SIGN: CALCULATED = " & to_string(signature_r_kcdsa_sign_int) & "; CORRECT = " & to_string(SIGN_SIGNATURE_R_KCDSA)
+        if (ready_peripheral_dsa_kcdsa_sign_int = '1') then
+          assert signature_r_peripheral_dsa_kcdsa_sign_int = SIGN_SIGNATURE_R_KCDSA
+            report "SCALAR SIGN: CALCULATED = " & to_string(signature_r_peripheral_dsa_kcdsa_sign_int) & "; CORRECT = " & to_string(SIGN_SIGNATURE_R_KCDSA)
             severity error;
 
-          assert signature_s_kcdsa_sign_int = SIGN_SIGNATURE_S_KCDSA
-            report "SCALAR SIGN: CALCULATED = " & to_string(signature_s_kcdsa_sign_int) & "; CORRECT = " & to_string(SIGN_SIGNATURE_S_KCDSA)
+          assert signature_s_peripheral_dsa_kcdsa_sign_int = SIGN_SIGNATURE_S_KCDSA
+            report "SCALAR SIGN: CALCULATED = " & to_string(signature_s_peripheral_dsa_kcdsa_sign_int) & "; CORRECT = " & to_string(SIGN_SIGNATURE_S_KCDSA)
             severity error;
         end if;
       end if;
-    end process kcdsa_sign_assertion;
-  end generate kcdsa_sign_if;
+    end process peripheral_dsa_kcdsa_sign_assertion;
+  end generate peripheral_dsa_kcdsa_sign_if;
 
   -- ***************************************************************************
-  -- ******************************* kcdsa_verify ******************************
+  -- *********************** peripheral_dsa_kcdsa_verify ***********************
   -- ***************************************************************************
 
-  kcdsa_verify_if : if (C_KCDSA_VERIFY_TEST) generate
-    kcdsa_verify_dut : kcdsa_verify
+  peripheral_dsa_kcdsa_verify_if : if (DSA_KCDSA_VERIFY_TEST) generate
+    peripheral_dsa_kcdsa_verify_dut : peripheral_dsa_kcdsa_verify
       generic map (
         DATA_SIZE  => DATA_SIZE,
         BLOCK_SIZE => BLOCK_SIZE,
@@ -1864,48 +1864,48 @@ begin
         RST => rst,
 
         -- CONTROL
-        START => start_kcdsa_verify_int,
-        READY => ready_kcdsa_verify_int,
+        START => start_peripheral_dsa_kcdsa_verify_int,
+        READY => ready_peripheral_dsa_kcdsa_verify_int,
 
-        DATA_IN_ENABLE  => data_in_enable_kcdsa_verify_int,
-        DATA_OUT_ENABLE => data_out_enable_kcdsa_verify_int,
+        DATA_IN_ENABLE  => data_in_enable_peripheral_dsa_kcdsa_verify_int,
+        DATA_OUT_ENABLE => data_out_enable_peripheral_dsa_kcdsa_verify_int,
 
-        FAIL => fail_kcdsa_verify_int,
+        FAIL => fail_peripheral_dsa_kcdsa_verify_int,
 
         -- DATA
-        PUBLIC_KEY_X => public_key_x_kcdsa_verify_int,
-        PUBLIC_KEY_Y => public_key_y_kcdsa_verify_int,
+        PUBLIC_KEY_X => public_key_x_peripheral_dsa_kcdsa_verify_int,
+        PUBLIC_KEY_Y => public_key_y_peripheral_dsa_kcdsa_verify_int,
 
-        DATA_BLOCK_SIZE => data_block_size_kcdsa_verify_int,
+        DATA_BLOCK_SIZE => data_block_size_peripheral_dsa_kcdsa_verify_int,
 
-        MESSAGE => message_kcdsa_verify_int,
+        MESSAGE => message_peripheral_dsa_kcdsa_verify_int,
 
-        SIGNATURE_R => signature_r_kcdsa_verify_int,
-        SIGNATURE_S => signature_s_kcdsa_verify_int
+        SIGNATURE_R => signature_r_peripheral_dsa_kcdsa_verify_int,
+        SIGNATURE_S => signature_s_peripheral_dsa_kcdsa_verify_int
         );
 
-    kcdsa_verify_assertion : process (clk, rst)
+    peripheral_dsa_kcdsa_verify_assertion : process (clk, rst)
     begin
       if rising_edge(clk) then
-        if (ready_kcdsa_verify_int = '1') then
-          assert signature_r_kcdsa_verify_int = VERIFY_SIGNATURE_R_KCDSA
-            report "SCALAR VERIFY: CALCULATED = " & to_string(signature_r_kcdsa_verify_int) & "; CORRECT = " & to_string(VERIFY_SIGNATURE_R_KCDSA)
+        if (ready_peripheral_dsa_kcdsa_verify_int = '1') then
+          assert signature_r_peripheral_dsa_kcdsa_verify_int = VERIFY_SIGNATURE_R_KCDSA
+            report "SCALAR VERIFY: CALCULATED = " & to_string(signature_r_peripheral_dsa_kcdsa_verify_int) & "; CORRECT = " & to_string(VERIFY_SIGNATURE_R_KCDSA)
             severity error;
 
-          assert signature_s_kcdsa_verify_int = VERIFY_SIGNATURE_S_KCDSA
-            report "SCALAR VERIFY: CALCULATED = " & to_string(signature_s_kcdsa_verify_int) & "; CORRECT = " & to_string(VERIFY_SIGNATURE_S_KCDSA)
+          assert signature_s_peripheral_dsa_kcdsa_verify_int = VERIFY_SIGNATURE_S_KCDSA
+            report "SCALAR VERIFY: CALCULATED = " & to_string(signature_s_peripheral_dsa_kcdsa_verify_int) & "; CORRECT = " & to_string(VERIFY_SIGNATURE_S_KCDSA)
             severity error;
         end if;
       end if;
-    end process kcdsa_verify_assertion;
-  end generate kcdsa_verify_if;
+    end process peripheral_dsa_kcdsa_verify_assertion;
+  end generate peripheral_dsa_kcdsa_verify_if;
 
   -- ***************************************************************************
-  -- ********************************* kcdsa_top *******************************
+  -- ************************* peripheral_dsa_kcdsa_top ************************
   -- ***************************************************************************
 
-  kcdsa_top_if : if (C_KCDSA_TOP_TEST) generate
-    kcdsa_top_dut : kcdsa_top
+  peripheral_dsa_kcdsa_top_if : if (DSA_KCDSA_TOP_TEST) generate
+    peripheral_dsa_kcdsa_top_dut : peripheral_dsa_kcdsa_top
       generic map (
         DATA_SIZE  => DATA_SIZE,
         BLOCK_SIZE => BLOCK_SIZE,
@@ -1917,46 +1917,46 @@ begin
         RST => rst,
 
         -- CONTROL
-        START => start_kcdsa_top_int,
-        READY => ready_kcdsa_top_int,
+        START => start_peripheral_dsa_kcdsa_top_int,
+        READY => ready_peripheral_dsa_kcdsa_top_int,
 
-        DATA_IN_ENABLE  => data_in_enable_kcdsa_top_int,
-        DATA_OUT_ENABLE => data_out_enable_kcdsa_top_int,
+        DATA_IN_ENABLE  => data_in_enable_peripheral_dsa_kcdsa_top_int,
+        DATA_OUT_ENABLE => data_out_enable_peripheral_dsa_kcdsa_top_int,
 
-        MODE => mode_kcdsa_top_int,
-        FAIL => fail_kcdsa_top_int,
+        MODE => mode_peripheral_dsa_kcdsa_top_int,
+        FAIL => fail_peripheral_dsa_kcdsa_top_int,
 
         -- DATA
-        PRIVATE_KEY   => private_key_kcdsa_top_int,
-        GENERATED_KEY => generated_key_kcdsa_top_int,
+        PRIVATE_KEY   => private_key_peripheral_dsa_kcdsa_top_int,
+        GENERATED_KEY => generated_key_peripheral_dsa_kcdsa_top_int,
 
-        PUBLIC_KEY_X_CHECK => public_key_x_check_kcdsa_top_int,
-        PUBLIC_KEY_Y_CHECK => public_key_y_check_kcdsa_top_int,
+        PUBLIC_KEY_X_CHECK => public_key_x_check_peripheral_dsa_kcdsa_top_int,
+        PUBLIC_KEY_Y_CHECK => public_key_y_check_peripheral_dsa_kcdsa_top_int,
 
-        DATA_BLOCK_SIZE => data_block_size_kcdsa_top_int,
+        DATA_BLOCK_SIZE => data_block_size_peripheral_dsa_kcdsa_top_int,
 
-        MESSAGE => message_kcdsa_top_int,
+        MESSAGE => message_peripheral_dsa_kcdsa_top_int,
 
-        SIGNATURE_R_CHECK => signature_r_check_kcdsa_top_int,
-        SIGNATURE_S_CHECK => signature_s_check_kcdsa_top_int,
+        SIGNATURE_R_CHECK => signature_r_check_peripheral_dsa_kcdsa_top_int,
+        SIGNATURE_S_CHECK => signature_s_check_peripheral_dsa_kcdsa_top_int,
 
-        SIGNATURE_R => signature_r_kcdsa_top_int,
-        SIGNATURE_S => signature_s_kcdsa_top_int
+        SIGNATURE_R => signature_r_peripheral_dsa_kcdsa_top_int,
+        SIGNATURE_S => signature_s_peripheral_dsa_kcdsa_top_int
         );
 
-    kcdsa_top_assertion : process (clk, rst)
+    peripheral_dsa_kcdsa_top_assertion : process (clk, rst)
     begin
       if rising_edge(clk) then
-        if (ready_kcdsa_top_int = '1') then
-          assert signature_r_kcdsa_top_int = TOP_SIGNATURE_R_KCDSA
-            report "SCALAR TOP: CALCULATED = " & to_string(signature_r_kcdsa_top_int) & "; CORRECT = " & to_string(TOP_SIGNATURE_R_KCDSA)
+        if (ready_peripheral_dsa_kcdsa_top_int = '1') then
+          assert signature_r_peripheral_dsa_kcdsa_top_int = TOP_SIGNATURE_R_KCDSA
+            report "SCALAR TOP: CALCULATED = " & to_string(signature_r_peripheral_dsa_kcdsa_top_int) & "; CORRECT = " & to_string(TOP_SIGNATURE_R_KCDSA)
             severity error;
 
-          assert signature_s_kcdsa_top_int = TOP_SIGNATURE_S_KCDSA
-            report "SCALAR TOP: CALCULATED = " & to_string(signature_s_kcdsa_top_int) & "; CORRECT = " & to_string(TOP_SIGNATURE_S_KCDSA)
+          assert signature_s_peripheral_dsa_kcdsa_top_int = TOP_SIGNATURE_S_KCDSA
+            report "SCALAR TOP: CALCULATED = " & to_string(signature_s_peripheral_dsa_kcdsa_top_int) & "; CORRECT = " & to_string(TOP_SIGNATURE_S_KCDSA)
             severity error;
         end if;
       end if;
-    end process kcdsa_top_assertion;
-  end generate kcdsa_top_if;
+    end process peripheral_dsa_kcdsa_top_assertion;
+  end generate peripheral_dsa_kcdsa_top_if;
 end architecture peripheral_dsa_testbench_architecture;

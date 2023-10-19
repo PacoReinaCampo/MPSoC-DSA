@@ -46,6 +46,6 @@
 call ../../../../../../settings64_vivado.bat
 
 xvhdl -prj system.prj
-xelab ecdsa_sha256_testbench
-xsim -R ecdsa_sha256_testbench
+xelab peripheral_dsa_sha256_testbench
+xsim -R peripheral_dsa_sha256_testbench
 pause

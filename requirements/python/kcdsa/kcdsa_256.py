@@ -168,7 +168,7 @@ def kcdsa_sha256(message):
   return e
 
 
-def kcdsa_sign(private_key, message):
+def peripheral_dsa_peripheral_dsa_kcdsa_sign(private_key, message):
 
   r = 0
   s = 0
@@ -190,7 +190,7 @@ def kcdsa_sign(private_key, message):
   return (r, s)
 
 
-def kcdsa_verify(public_key, message, signature):
+def peripheral_dsa_peripheral_dsa_kcdsa_verify(public_key, message, signature):
   r, s = signature
 
   z = kcdsa_sha256(message)
@@ -217,17 +217,17 @@ print("Private key:", hex(private))
 print("Public key: (0x{:x}, 0x{:x})".format(*public))
 
 msg = b'abc'
-signature = kcdsa_sign(private, msg)
+signature = peripheral_dsa_peripheral_dsa_kcdsa_sign(private, msg)
 
 print()
 print('Message:', msg)
 print('Signature: (0x{:x}, 0x{:x})'.format(*signature))
-print('Verification:', kcdsa_verify(public, msg, signature))
+print('Verification:', peripheral_dsa_peripheral_dsa_kcdsa_verify(public, msg, signature))
 
 msg = b'cba'
 print()
 print('Message:', msg)
-print('Verification:', kcdsa_verify(public, msg, signature))
+print('Verification:', peripheral_dsa_peripheral_dsa_kcdsa_verify(public, msg, signature))
 
 private, public = kcdsa_keypair()
 
@@ -235,4 +235,4 @@ msg = b'abc'
 print()
 print('Message:', msg)
 print("Public key: (0x{:x}, 0x{:x})".format(*public))
-print('Verification:', kcdsa_verify(public, msg, signature))
+print('Verification:', peripheral_dsa_peripheral_dsa_kcdsa_verify(public, msg, signature))

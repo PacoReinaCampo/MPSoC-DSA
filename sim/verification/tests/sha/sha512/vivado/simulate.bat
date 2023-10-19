@@ -46,6 +46,6 @@
 call ../../../../../../settings64_vivado.bat
 
 xvhdl -prj system.prj
-xelab ecdsa_sha512_testbench
-xsim -R ecdsa_sha512_testbench
+xelab peripheral_dsa_sha512_testbench
+xsim -R peripheral_dsa_sha512_testbench
 pause

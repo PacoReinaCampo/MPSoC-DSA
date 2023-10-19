@@ -7,267 +7,267 @@ do variables.do
 vlib work
 
 ###################################################################################################
-# ecdsa_sha256_compilation_exec ###################################################################
+# peripheral_dsa_sha256_compilation_exec
 ###################################################################################################
 
-alias ecdsa_sha256_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_sha256_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/ecdsa_sha256.vhd
+alias peripheral_dsa_sha256_compilation_exec {
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_sha256_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/peripheral_dsa_sha256.vhd
 }
 
 ###################################################################################################
-# ecdsa_sha512_compilation_exec ###################################################################
+# peripheral_dsa_sha512_compilation_exec
 ###################################################################################################
 
-alias ecdsa_sha512_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_sha512_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/ecdsa_sha512.vhd
+alias peripheral_dsa_sha512_compilation_exec {
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_sha512_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/peripheral_dsa_sha512.vhd
 }
 
 ###################################################################################################
-# ecdsa_adder_compilation_exec ####################################################################
+# peripheral_dsa_adder_compilation_exec
 ###################################################################################################
 
-alias ecdsa_adder_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_adder.vhd
+alias peripheral_dsa_adder_compilation_exec {
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_adder.vhd
 }
 
 ###################################################################################################
-# ecdsa_inverter_compilation_exec #################################################################
+# peripheral_dsa_inverter_compilation_exec
 ###################################################################################################
 
-alias ecdsa_inverter_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_inverter.vhd
+alias peripheral_dsa_inverter_compilation_exec {
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_inverter.vhd
 }
 
 ###################################################################################################
-# ecdsa_multiplier_compilation_exec ###############################################################
+# peripheral_dsa_multiplier_compilation_exec
 ###################################################################################################
 
-alias ecdsa_multiplier_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_multiplier.vhd
+alias peripheral_dsa_multiplier_compilation_exec {
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_multiplier.vhd
 }
 
 ###################################################################################################
-# ecdsa_point_adder_compilation_exec ##############################################################
+# peripheral_dsa_point_adder_compilation_exec
 ###################################################################################################
 
-alias ecdsa_point_adder_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_multiplier.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_adder.vhd
+alias peripheral_dsa_point_adder_compilation_exec {
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_adder.vhd
 }
 
 ###################################################################################################
-# ecdsa_point_doubler_compilation_exec ############################################################
+# peripheral_dsa_point_doubler_compilation_exec
 ###################################################################################################
 
-alias ecdsa_point_doubler_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_multiplier.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_doubler.vhd
+alias peripheral_dsa_point_doubler_compilation_exec {
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_doubler.vhd
 }
 
 ###################################################################################################
-# ecdsa_point_generator_compilation_exec ##########################################################
+# peripheral_dsa_point_generator_compilation_exec
 ###################################################################################################
 
-alias ecdsa_point_generator_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_multiplier.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_doubler.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_generator.vhd
+alias peripheral_dsa_point_generator_compilation_exec {
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_doubler.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_generator.vhd
 }
 
 ###################################################################################################
-# ecdsa_sign_compilation_exec #####################################################################
+# peripheral_dsa_ecdsa_sign_compilation_exec
 ###################################################################################################
 
-alias ecdsa_sign_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_sha512_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/ecdsa_sha512.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_mod.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_multiplier.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_doubler.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_generator.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/ecdsa/ecdsa_sign.vhd
+alias peripheral_dsa_ecdsa_sign_compilation_exec {
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_sha512_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/peripheral_dsa_sha512.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_mod.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_doubler.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_generator.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/ecdsa/peripheral_dsa_ecdsa_sign.vhd
 }
 
 ###################################################################################################
-# ecdsa_verify_compilation_exec ###################################################################
+# peripheral_dsa_ecdsa_verify_compilation_exec
 ###################################################################################################
 
-alias ecdsa_verify_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_sha512_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/ecdsa_sha512.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_mod.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_multiplier.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_doubler.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_generator.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/ecdsa/ecdsa_verify.vhd
+alias peripheral_dsa_ecdsa_verify_compilation_exec {
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_sha512_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/peripheral_dsa_sha512.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_mod.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_doubler.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_generator.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/ecdsa/peripheral_dsa_ecdsa_verify.vhd
 }
 
 ###################################################################################################
-# ecdsa_top_compilation_exec ######################################################################
+# peripheral_dsa_ecdsa_top_compilation_exec
 ###################################################################################################
 
-alias ecdsa_top_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_sha512_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/ecdsa_sha512.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_mod.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_multiplier.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_doubler.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_generator.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/ecdsa/ecdsa_top.vhd
+alias peripheral_dsa_ecdsa_top_compilation_exec {
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_sha512_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/peripheral_dsa_sha512.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_mod.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_doubler.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_generator.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/ecdsa/peripheral_dsa_ecdsa_top.vhd
 }
 
 ###################################################################################################
-# kcdsa_sign_compilation_exec #####################################################################
+# peripheral_dsa_kcdsa_sign_compilation_exec
 ###################################################################################################
 
-alias kcdsa_sign_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_sha512_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/ecdsa_sha512.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_mod.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_multiplier.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_doubler.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_generator.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/kcdsa/kcdsa_sign.vhd
+alias peripheral_dsa_kcdsa_sign_compilation_exec {
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_sha512_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/peripheral_dsa_sha512.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_mod.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_doubler.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_generator.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/kcdsa/peripheral_dsa_kcdsa_sign.vhd
 }
 
 ###################################################################################################
-# kcdsa_verify_compilation_exec ###################################################################
+# peripheral_dsa_kcdsa_verify_compilation_exec
 ###################################################################################################
 
-alias kcdsa_verify_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_sha512_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/ecdsa_sha512.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_mod.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_multiplier.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_doubler.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_generator.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/kcdsa/kcdsa_verify.vhd
+alias peripheral_dsa_kcdsa_verify_compilation_exec {
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_sha512_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/peripheral_dsa_sha512.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_mod.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_doubler.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_generator.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/kcdsa/peripheral_dsa_kcdsa_verify.vhd
 }
 
 ###################################################################################################
-# kcdsa_top_compilation_exec ######################################################################
+# peripheral_dsa_kcdsa_top_compilation_exec
 ###################################################################################################
 
-alias kcdsa_top_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/ecdsa_sha512_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/ecdsa_sha512.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_mod.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/ecdsa_multiplier.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_doubler.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/ecdsa_point_generator.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/kcdsa/kcdsa_top.vhd
+alias peripheral_dsa_kcdsa_top_compilation_exec {
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_sha512_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/peripheral_dsa_sha512.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_mod.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_doubler.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_generator.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/kcdsa/peripheral_dsa_kcdsa_top.vhd
 }
 
 ###################################################################################################
 
 alias d01 {
-  ecdsa_sha256_compilation_exec
+  peripheral_dsa_sha256_compilation_exec
 }
 
 alias d02 {
-  ecdsa_sha512_compilation_exec
+  peripheral_dsa_sha512_compilation_exec
 }
 
 alias d03 {
-  ecdsa_adder_compilation_exec
+  peripheral_dsa_adder_compilation_exec
 }
 
 alias d04 {
-  ecdsa_inverter_compilation_exec
+  peripheral_dsa_inverter_compilation_exec
 }
 
 alias d05 {
-  ecdsa_multiplier_compilation_exec
+  peripheral_dsa_multiplier_compilation_exec
 }
 
 alias d06 {
-  ecdsa_point_adder_compilation_exec
+  peripheral_dsa_point_adder_compilation_exec
 }
 
 alias d07 {
-  ecdsa_point_doubler_compilation_exec
+  peripheral_dsa_point_doubler_compilation_exec
 }
 
 alias d08 {
-  ecdsa_point_generator_compilation_exec
+  peripheral_dsa_point_generator_compilation_exec
 }
 
 alias d09 {
-  ecdsa_sign_compilation_exec
+  peripheral_dsa_ecdsa_sign_compilation_exec
 }
 
 alias d10 {
-  ecdsa_verify_compilation_exec
+  peripheral_dsa_ecdsa_verify_compilation_exec
 }
 
 alias d11 {
-  ecdsa_top_compilation_exec
+  peripheral_dsa_ecdsa_top_compilation_exec
 }
 
 alias d12 {
-  kcdsa_sign_compilation_exec
+  peripheral_dsa_kcdsa_sign_compilation_exec
 }
 
 alias d13 {
-  kcdsa_verify_compilation_exec
+  peripheral_dsa_kcdsa_verify_compilation_exec
 }
 
 alias d14 {
-  kcdsa_top_compilation_exec
+  peripheral_dsa_kcdsa_top_compilation_exec
 }
 
 echo "****************************************"
-echo "d01 . ECDSA-SHA256"
-echo "d02 . ECDSA-SHA512"
-echo "d03 . ECDSA-ADDER"
-echo "d04 . ECDSA-INVERTER"
-echo "d05 . ECDSA-MULTIPLIER"
-echo "d06 . ECDSA-POINT_ADDER"
-echo "d07 . ECDSA-POINT_DOUBLER"
-echo "d08 . ECDSA-POINT_GENERATOR"
-echo "d09 . ECDSA-SIGN"
-echo "d10 . ECDSA-VERIFY"
-echo "d11 . ECDSA-TOP"
-echo "d12 . KCDSA-SIGN"
-echo "d13 . KCDSA-VERIFY"
-echo "d14 . KCDSA-TOP"
+echo "d01 . DSA-SHA256"
+echo "d02 . DSA-SHA512"
+echo "d03 . DSA-ADDER"
+echo "d04 . DSA-INVERTER"
+echo "d05 . DSA-MULTIPLIER"
+echo "d06 . DSA-POINT_ADDER"
+echo "d07 . DSA-POINT_DOUBLER"
+echo "d08 . DSA-POINT_GENERATOR"
+echo "d09 . DSA-ECDSA-SIGN"
+echo "d10 . DSA-ECDSA-VERIFY"
+echo "d11 . DSA-ECDSA-TOP"
+echo "d12 . DSA-KCDSA-SIGN"
+echo "d13 . DSA-KCDSA-VERIFY"
+echo "d14 . DSA-KCDSA-TOP"
 echo "****************************************"
