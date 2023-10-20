@@ -154,7 +154,7 @@ architecture peripheral_dsa_kcdsa_sign_testbench_architecture of peripheral_dsa_
 begin
 
   -- ***************************************************************************
-  -- *************************** peripheral_dsa_kcdsa_sign_stimulus ***************************
+  -- ******************** peripheral_dsa_kcdsa_sign_stimulus *******************
   -- ***************************************************************************
 
   peripheral_dsa_kcdsa_sign_stimulus_i : peripheral_dsa_kcdsa_sign_stimulus
@@ -197,7 +197,7 @@ begin
       );
 
   -- ***************************************************************************
-  -- ******************************** peripheral_dsa_kcdsa_sign *******************************
+  -- ************************ peripheral_dsa_kcdsa_sign ************************
   -- ***************************************************************************
 
   peripheral_dsa_kcdsa_sign_dut : peripheral_dsa_kcdsa_sign
@@ -236,12 +236,12 @@ begin
   begin
     if rising_edge(clk) then
       if (ready_sign_int = '1') then
-        assert signature_r_sign_int = SIGN_SIGNATURE_R_KCDSA
-          report "SCALAR SIGN: CALCULATED = " & to_string(signature_r_sign_int) & "; CORRECT = " & to_string(SIGN_SIGNATURE_R_KCDSA)
+        assert signature_r_sign_int = KCDSA_SIGN_SIGNATURE_R
+          report "SCALAR SIGN: CALCULATED = " & to_string(signature_r_sign_int) & "; CORRECT = " & to_string(KCDSA_SIGN_SIGNATURE_R)
           severity error;
 
-        assert signature_s_sign_int = SIGN_SIGNATURE_S_KCDSA
-          report "SCALAR SIGN: CALCULATED = " & to_string(signature_s_sign_int) & "; CORRECT = " & to_string(SIGN_SIGNATURE_S_KCDSA)
+        assert signature_s_sign_int = KCDSA_SIGN_SIGNATURE_S
+          report "SCALAR SIGN: CALCULATED = " & to_string(signature_s_sign_int) & "; CORRECT = " & to_string(KCDSA_SIGN_SIGNATURE_S)
           severity error;
       end if;
     end if;

@@ -156,7 +156,7 @@ architecture peripheral_dsa_ecdsa_verify_testbench_architecture of peripheral_ds
 begin
 
   -- ***************************************************************************
-  -- ************************** peripheral_dsa_ecdsa_verify_stimulus **************************
+  -- ******************* peripheral_dsa_ecdsa_verify_stimulus ******************
   -- ***************************************************************************
 
   peripheral_dsa_ecdsa_verify_stimulus_i : peripheral_dsa_ecdsa_verify_stimulus
@@ -201,7 +201,7 @@ begin
       );
 
   -- ***************************************************************************
-  -- ******************************* peripheral_dsa_ecdsa_verify ******************************
+  -- *********************** peripheral_dsa_ecdsa_verify ***********************
   -- ***************************************************************************
 
   peripheral_dsa_ecdsa_verify_dut : peripheral_dsa_ecdsa_verify
@@ -240,12 +240,12 @@ begin
   begin
     if rising_edge(clk) then
       if (ready_verify_int = '1') then
-        assert signature_r_verify_int = VERIFY_SIGNATURE_R
-          report "SCALAR VERIFY: CALCULATED = " & to_string(signature_r_verify_int) & "; CORRECT = " & to_string(VERIFY_SIGNATURE_R)
+        assert signature_r_verify_int = ECDSA_VERIFY_SIGNATURE_R
+          report "SCALAR VERIFY: CALCULATED = " & to_string(signature_r_verify_int) & "; CORRECT = " & to_string(ECDSA_VERIFY_SIGNATURE_R)
           severity error;
 
-        assert signature_s_verify_int = VERIFY_SIGNATURE_S
-          report "SCALAR VERIFY: CALCULATED = " & to_string(signature_s_verify_int) & "; CORRECT = " & to_string(VERIFY_SIGNATURE_S)
+        assert signature_s_verify_int = ECDSA_VERIFY_SIGNATURE_S
+          report "SCALAR VERIFY: CALCULATED = " & to_string(signature_s_verify_int) & "; CORRECT = " & to_string(ECDSA_VERIFY_SIGNATURE_S)
           severity error;
       end if;
     end if;

@@ -182,7 +182,7 @@ architecture peripheral_dsa_kcdsa_top_testbench_architecture of peripheral_dsa_k
 begin
 
   -- ***************************************************************************
-  -- **************************** peripheral_dsa_kcdsa_top_stimulus ***************************
+  -- ******************** peripheral_dsa_kcdsa_top_stimulus ********************
   -- ***************************************************************************
 
   peripheral_dsa_kcdsa_top_stimulus_i : peripheral_dsa_kcdsa_top_stimulus
@@ -234,7 +234,7 @@ begin
       );
 
   -- ***************************************************************************
-  -- ********************************* peripheral_dsa_kcdsa_top *******************************
+  -- ************************* peripheral_dsa_kcdsa_top ************************
   -- ***************************************************************************
 
   peripheral_dsa_kcdsa_top_dut : peripheral_dsa_kcdsa_top
@@ -280,12 +280,12 @@ begin
   begin
     if rising_edge(clk) then
       if (ready_top_int = '1') then
-        assert signature_r_top_int = TOP_SIGNATURE_R_KCDSA
-          report "SCALAR TOP: CALCULATED = " & to_string(signature_r_top_int) & "; CORRECT = " & to_string(TOP_SIGNATURE_R_KCDSA)
+        assert signature_r_top_int = KCDSA_TOP_SIGNATURE_R
+          report "SCALAR TOP: CALCULATED = " & to_string(signature_r_top_int) & "; CORRECT = " & to_string(KCDSA_TOP_SIGNATURE_R)
           severity error;
 
-        assert signature_s_top_int = TOP_SIGNATURE_S_KCDSA
-          report "SCALAR TOP: CALCULATED = " & to_string(signature_s_top_int) & "; CORRECT = " & to_string(TOP_SIGNATURE_S_KCDSA)
+        assert signature_s_top_int = KCDSA_TOP_SIGNATURE_S
+          report "SCALAR TOP: CALCULATED = " & to_string(signature_s_top_int) & "; CORRECT = " & to_string(KCDSA_TOP_SIGNATURE_S)
           severity error;
       end if;
     end if;
