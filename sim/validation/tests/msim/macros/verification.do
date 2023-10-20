@@ -277,7 +277,7 @@ alias run_peripheral_dsa_ecdsa_top_test {
   add log -r sim:/peripheral_dsa_testbench/*
 
   force -freeze sim:/peripheral_dsa_package/DSA_ECDSA_TOP_TEST true 0
-  force -freeze sim:/peripheral_dsa_package/DSA_ECDSA_TOP_CASE_2 true 0
+  force -freeze sim:/peripheral_dsa_package/DSA_ECDSA_TOP_CASE_1 true 0
 
   onbreak {resume}
   run -all
@@ -352,7 +352,7 @@ alias run_peripheral_dsa_kcdsa_top_test {
   add log -r sim:/peripheral_dsa_testbench/*
 
   force -freeze sim:/peripheral_dsa_package/DSA_KCDSA_TOP_TEST true 0
-  force -freeze sim:/peripheral_dsa_package/DSA_KCDSA_TOP_CASE_2 true 0
+  force -freeze sim:/peripheral_dsa_package/DSA_KCDSA_TOP_CASE_1 true 0
 
   onbreak {resume}
   run -all

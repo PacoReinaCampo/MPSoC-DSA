@@ -1669,12 +1669,12 @@ begin
     begin
       if rising_edge(clk) then
         if (ready_sign_int = '1') then
-          assert signature_r_sign_int = SIGN_SIGNATURE_R
-            report "SCALAR SIGN: CALCULATED = " & to_string(signature_r_sign_int) & "; CORRECT = " & to_string(SIGN_SIGNATURE_R)
+          assert signature_r_sign_int = ECDSA_SIGN_SIGNATURE_R
+            report "SCALAR SIGN: CALCULATED = " & to_string(signature_r_sign_int) & "; CORRECT = " & to_string(ECDSA_SIGN_SIGNATURE_R)
             severity error;
 
-          assert signature_s_sign_int = SIGN_SIGNATURE_S
-            report "SCALAR SIGN: CALCULATED = " & to_string(signature_s_sign_int) & "; CORRECT = " & to_string(SIGN_SIGNATURE_S)
+          assert signature_s_sign_int = ECDSA_SIGN_SIGNATURE_S
+            report "SCALAR SIGN: CALCULATED = " & to_string(signature_s_sign_int) & "; CORRECT = " & to_string(ECDSA_SIGN_SIGNATURE_S)
             severity error;
         end if;
       end if;
@@ -1722,12 +1722,12 @@ begin
     begin
       if rising_edge(clk) then
         if (ready_verify_int = '1') then
-          assert signature_r_verify_int = VERIFY_SIGNATURE_R
-            report "SCALAR VERIFY: CALCULATED = " & to_string(signature_r_verify_int) & "; CORRECT = " & to_string(VERIFY_SIGNATURE_R)
+          assert signature_r_verify_int = ECDSA_VERIFY_SIGNATURE_R
+            report "SCALAR VERIFY: CALCULATED = " & to_string(signature_r_verify_int) & "; CORRECT = " & to_string(ECDSA_VERIFY_SIGNATURE_R)
             severity error;
 
-          assert signature_s_verify_int = VERIFY_SIGNATURE_S
-            report "SCALAR VERIFY: CALCULATED = " & to_string(signature_s_verify_int) & "; CORRECT = " & to_string(VERIFY_SIGNATURE_S)
+          assert signature_s_verify_int = ECDSA_VERIFY_SIGNATURE_S
+            report "SCALAR VERIFY: CALCULATED = " & to_string(signature_s_verify_int) & "; CORRECT = " & to_string(ECDSA_VERIFY_SIGNATURE_S)
             severity error;
         end if;
       end if;
@@ -1782,12 +1782,12 @@ begin
     begin
       if rising_edge(clk) then
         if (ready_top_int = '1') then
-          assert signature_r_top_int = TOP_SIGNATURE_R
-            report "SCALAR TOP: CALCULATED = " & to_string(signature_r_top_int) & "; CORRECT = " & to_string(TOP_SIGNATURE_R)
+          assert signature_r_top_int = ECDSA_TOP_SIGNATURE_R
+            report "SCALAR TOP: CALCULATED = " & to_string(signature_r_top_int) & "; CORRECT = " & to_string(ECDSA_TOP_SIGNATURE_R)
             severity error;
 
-          assert signature_s_top_int = TOP_SIGNATURE_S
-            report "SCALAR TOP: CALCULATED = " & to_string(signature_s_top_int) & "; CORRECT = " & to_string(TOP_SIGNATURE_S)
+          assert signature_s_top_int = ECDSA_TOP_SIGNATURE_S
+            report "SCALAR TOP: CALCULATED = " & to_string(signature_s_top_int) & "; CORRECT = " & to_string(ECDSA_TOP_SIGNATURE_S)
             severity error;
         end if;
       end if;
@@ -1835,12 +1835,12 @@ begin
     begin
       if rising_edge(clk) then
         if (ready_peripheral_dsa_kcdsa_sign_int = '1') then
-          assert signature_r_peripheral_dsa_kcdsa_sign_int = SIGN_SIGNATURE_R_KCDSA
-            report "SCALAR SIGN: CALCULATED = " & to_string(signature_r_peripheral_dsa_kcdsa_sign_int) & "; CORRECT = " & to_string(SIGN_SIGNATURE_R_KCDSA)
+          assert signature_r_peripheral_dsa_kcdsa_sign_int = KCDSA_SIGN_SIGNATURE_R
+            report "SCALAR SIGN: CALCULATED = " & to_string(signature_r_peripheral_dsa_kcdsa_sign_int) & "; CORRECT = " & to_string(KCDSA_SIGN_SIGNATURE_R)
             severity error;
 
-          assert signature_s_peripheral_dsa_kcdsa_sign_int = SIGN_SIGNATURE_S_KCDSA
-            report "SCALAR SIGN: CALCULATED = " & to_string(signature_s_peripheral_dsa_kcdsa_sign_int) & "; CORRECT = " & to_string(SIGN_SIGNATURE_S_KCDSA)
+          assert signature_s_peripheral_dsa_kcdsa_sign_int = KCDSA_SIGN_SIGNATURE_S
+            report "SCALAR SIGN: CALCULATED = " & to_string(signature_s_peripheral_dsa_kcdsa_sign_int) & "; CORRECT = " & to_string(KCDSA_SIGN_SIGNATURE_S)
             severity error;
         end if;
       end if;
@@ -1888,12 +1888,12 @@ begin
     begin
       if rising_edge(clk) then
         if (ready_peripheral_dsa_kcdsa_verify_int = '1') then
-          assert signature_r_peripheral_dsa_kcdsa_verify_int = VERIFY_SIGNATURE_R_KCDSA
-            report "SCALAR VERIFY: CALCULATED = " & to_string(signature_r_peripheral_dsa_kcdsa_verify_int) & "; CORRECT = " & to_string(VERIFY_SIGNATURE_R_KCDSA)
+          assert signature_r_peripheral_dsa_kcdsa_verify_int = KCDSA_VERIFY_SIGNATURE_R
+            report "SCALAR VERIFY: CALCULATED = " & to_string(signature_r_peripheral_dsa_kcdsa_verify_int) & "; CORRECT = " & to_string(KCDSA_VERIFY_SIGNATURE_R)
             severity error;
 
-          assert signature_s_peripheral_dsa_kcdsa_verify_int = VERIFY_SIGNATURE_S_KCDSA
-            report "SCALAR VERIFY: CALCULATED = " & to_string(signature_s_peripheral_dsa_kcdsa_verify_int) & "; CORRECT = " & to_string(VERIFY_SIGNATURE_S_KCDSA)
+          assert signature_s_peripheral_dsa_kcdsa_verify_int = KCDSA_VERIFY_SIGNATURE_S
+            report "SCALAR VERIFY: CALCULATED = " & to_string(signature_s_peripheral_dsa_kcdsa_verify_int) & "; CORRECT = " & to_string(KCDSA_VERIFY_SIGNATURE_S)
             severity error;
         end if;
       end if;
@@ -1948,12 +1948,12 @@ begin
     begin
       if rising_edge(clk) then
         if (ready_peripheral_dsa_kcdsa_top_int = '1') then
-          assert signature_r_peripheral_dsa_kcdsa_top_int = TOP_SIGNATURE_R_KCDSA
-            report "SCALAR TOP: CALCULATED = " & to_string(signature_r_peripheral_dsa_kcdsa_top_int) & "; CORRECT = " & to_string(TOP_SIGNATURE_R_KCDSA)
+          assert signature_r_peripheral_dsa_kcdsa_top_int = KCDSA_TOP_SIGNATURE_R
+            report "SCALAR TOP: CALCULATED = " & to_string(signature_r_peripheral_dsa_kcdsa_top_int) & "; CORRECT = " & to_string(KCDSA_TOP_SIGNATURE_R)
             severity error;
 
-          assert signature_s_peripheral_dsa_kcdsa_top_int = TOP_SIGNATURE_S_KCDSA
-            report "SCALAR TOP: CALCULATED = " & to_string(signature_s_peripheral_dsa_kcdsa_top_int) & "; CORRECT = " & to_string(TOP_SIGNATURE_S_KCDSA)
+          assert signature_s_peripheral_dsa_kcdsa_top_int = KCDSA_TOP_SIGNATURE_S
+            report "SCALAR TOP: CALCULATED = " & to_string(signature_s_peripheral_dsa_kcdsa_top_int) & "; CORRECT = " & to_string(KCDSA_TOP_SIGNATURE_S)
             severity error;
         end if;
       end if;
