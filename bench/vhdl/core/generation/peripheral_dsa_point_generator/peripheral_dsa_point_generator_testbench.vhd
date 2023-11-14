@@ -48,7 +48,7 @@ use work.peripheral_dsa_point_generator_pkg.all;
 
 entity peripheral_dsa_point_generator_testbench is
   generic (
-    --ECDSA-SIZE
+    -- ECDSA-SIZE
     DATA_SIZE     : integer := 512;
     BLOCK_SIZE    : integer := 4;
     WORD_SIZE_256 : integer := 32;
@@ -60,7 +60,7 @@ architecture peripheral_dsa_point_generator_testbench_architecture of peripheral
 
   component peripheral_dsa_point_generator_stimulus is
     generic (
-      --ECDSA-SIZE
+      -- ECDSA-SIZE
       BLOCK_SIZE    : integer := 4;
       WORD_SIZE_256 : integer := 32;
       WORD_SIZE_512 : integer := 64
@@ -135,7 +135,7 @@ begin
 
   peripheral_dsa_point_generator_stimulus_i : peripheral_dsa_point_generator_stimulus
     generic map (
-      --ECDSA-SIZE
+      -- ECDSA-SIZE
       BLOCK_SIZE    => BLOCK_SIZE,
       WORD_SIZE_256 => WORD_SIZE_256,
       WORD_SIZE_512 => WORD_SIZE_512

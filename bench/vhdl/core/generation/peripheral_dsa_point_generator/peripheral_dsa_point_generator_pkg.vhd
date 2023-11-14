@@ -45,11 +45,11 @@ use ieee.math_real.all;
 
 use std.textio.all;
 
---library unisim;
---use unisim.vcomponents.all;
+-- library unisim;
+-- use unisim.vcomponents.all;
 
---library modelsim_lib;
---use modelsim_lib.util.all;
+-- library modelsim_lib;
+-- use modelsim_lib.util.all;
 
 package peripheral_dsa_point_generator_pkg is
 
@@ -144,7 +144,7 @@ package peripheral_dsa_point_generator_pkg is
   constant ADDER_DATA_OUT : std_logic_vector(DATA_SIZE-1 downto 0) := X"0F24592094762821E66652CF4DD04D5C3D1CCD9B621EA9ABD69C40316F52A50C05BE718113816E8BD2960587546C3D036AC37D0C8E085F7462106107A39C56CD";
 
   -- Subtractor (operation = '1')
---constant ADDER_DATA_OUT : std_logic_vector(DATA_SIZE-1 downto 0) := X"730914BA9448567D3FDBEE115E266818AE4F0C2238706C63BDB6654CBDEB0AAD2700CD47BF04008453E7CCE5AF62EF5D6082953D6AB751225C00B60289F97FAE";
+-- constant ADDER_DATA_OUT : std_logic_vector(DATA_SIZE-1 downto 0) := X"730914BA9448567D3FDBEE115E266818AE4F0C2238706C63BDB6654CBDEB0AAD2700CD47BF04008453E7CCE5AF62EF5D6082953D6AB751225C00B60289F97FAE";
 
   -- ECDSA-INVERTER --
 

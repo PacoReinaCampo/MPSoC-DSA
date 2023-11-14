@@ -48,7 +48,7 @@ use work.peripheral_dsa_kcdsa_sign_pkg.all;
 
 entity peripheral_dsa_kcdsa_sign_testbench is
   generic (
-    --KCDSA-SIZE
+    -- KCDSA-SIZE
     DATA_SIZE     : integer := 512;
     BLOCK_SIZE    : integer := 4;
     WORD_SIZE_256 : integer := 32;
@@ -60,7 +60,7 @@ architecture peripheral_dsa_kcdsa_sign_testbench_architecture of peripheral_dsa_
 
   component peripheral_dsa_kcdsa_sign_stimulus is
     generic (
-      --KCDSA-SIZE
+      -- KCDSA-SIZE
       BLOCK_SIZE    : integer := 4;
       WORD_SIZE_256 : integer := 32;
       WORD_SIZE_512 : integer := 64
@@ -159,7 +159,7 @@ begin
 
   peripheral_dsa_kcdsa_sign_stimulus_i : peripheral_dsa_kcdsa_sign_stimulus
     generic map (
-      --KCDSA-SIZE
+      -- KCDSA-SIZE
       BLOCK_SIZE    => BLOCK_SIZE,
       WORD_SIZE_256 => WORD_SIZE_256,
       WORD_SIZE_512 => WORD_SIZE_512

@@ -48,14 +48,14 @@ package peripheral_dsa_sha256_pkg is
   -- Constants
   ------------------------------------------------------------------------------
 
-  --SHA-256 uses 32-bit words
+  -- SHA-256 uses 32-bit words
   constant WORD_SIZE : integer := 32;
 
   ------------------------------------------------------------------------------
   -- Types
   ------------------------------------------------------------------------------
 
-  --array types for SHA-256
+  -- array types for SHA-256
   type K_DATA is array (0 to 63) of std_logic_vector(WORD_SIZE-1 downto 0);
   type M_DATA is array (0 to 15) of std_logic_vector(WORD_SIZE-1 downto 0);
   type H_DATA is array (0 to 7) of std_logic_vector(WORD_SIZE-1 downto 0);
@@ -64,7 +64,7 @@ package peripheral_dsa_sha256_pkg is
   -- Functions
   ------------------------------------------------------------------------------
 
-  --function definitions
+  -- function definitions
   function ROTR (a : std_logic_vector(WORD_SIZE-1 downto 0); n : integer)
     return std_logic_vector;
   function ROTL (a : std_logic_vector(WORD_SIZE-1 downto 0); n : integer)
@@ -99,17 +99,17 @@ package body peripheral_dsa_sha256_pkg is
 
   function ROTR (a : std_logic_vector(WORD_SIZE-1 downto 0); n : integer)
     return std_logic_vector is
-  --result : std_logic_vector(WORD_SIZE-1 downto 0);
+  -- result : std_logic_vector(WORD_SIZE-1 downto 0);
   begin
-    --signal result : std_logic_vector(WORD_SIZE-1 downto 0);
+    -- signal result : std_logic_vector(WORD_SIZE-1 downto 0);
     return (std_logic_vector(shift_right(unsigned(a), n))) or std_logic_vector((shift_left(unsigned(a), (WORD_SIZE-n))));
   end function;
 
   function ROTL (a : std_logic_vector(WORD_SIZE-1 downto 0); n : integer)
     return std_logic_vector is
-  --result : std_logic_vector(WORD_SIZE-1 downto 0);
+  -- result : std_logic_vector(WORD_SIZE-1 downto 0);
   begin
-    --signal result : std_logic_vector(WORD_SIZE-1 downto 0);
+    -- signal result : std_logic_vector(WORD_SIZE-1 downto 0);
     return (std_logic_vector(shift_left(unsigned(a), n))) or std_logic_vector((shift_right(unsigned(a), (WORD_SIZE-n))));
   end function;
 

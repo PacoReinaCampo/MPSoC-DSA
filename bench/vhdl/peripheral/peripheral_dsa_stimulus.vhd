@@ -44,14 +44,14 @@ use ieee.numeric_std.all;
 
 use std.textio.all;
 
---library modelsim_lib;
---use modelsim_lib.util.all;
+-- library modelsim_lib;
+-- use modelsim_lib.util.all;
 
 use work.peripheral_dsa_package.all;
 
 entity peripheral_dsa_stimulus is
   generic (
-    --ECDSA-SIZE
+    -- ECDSA-SIZE
     BLOCK_SIZE    : integer := 4;
     WORD_SIZE_256 : integer := 32;
     WORD_SIZE_512 : integer := 64

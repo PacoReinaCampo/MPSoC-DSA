@@ -48,7 +48,7 @@ use work.peripheral_dsa_package.all;
 
 entity peripheral_dsa_testbench is
   generic (
-    --ECDSA-FUNCTIONALITY
+    -- ECDSA-FUNCTIONALITY
     DSA_SHA256_TEST          : boolean := false;
     DSA_SHA512_TEST          : boolean := false;
     DSA_ADDER_TEST           : boolean := false;
@@ -64,7 +64,7 @@ entity peripheral_dsa_testbench is
     DSA_KCDSA_VERIFY_TEST          : boolean := false;
     DSA_KCDSA_TOP_TEST             : boolean := false;
 
-    --ECDSA-SIZE
+    -- ECDSA-SIZE
     DATA_SIZE     : integer := 512;
     BLOCK_SIZE    : integer := 4;
     WORD_SIZE_256 : integer := 32;
@@ -76,7 +76,7 @@ architecture peripheral_dsa_testbench_architecture of peripheral_dsa_testbench i
 
   component peripheral_dsa_stimulus is
     generic (
-      --ECDSA-SIZE
+      -- ECDSA-SIZE
       BLOCK_SIZE    : integer := 4;
       WORD_SIZE_256 : integer := 32;
       WORD_SIZE_512 : integer := 64
@@ -1017,7 +1017,7 @@ begin
 
   peripheral_dsa_stimulus_i : peripheral_dsa_stimulus
     generic map (
-      --ECDSA-SIZE
+      -- ECDSA-SIZE
       BLOCK_SIZE    => BLOCK_SIZE,
       WORD_SIZE_256 => WORD_SIZE_256,
       WORD_SIZE_512 => WORD_SIZE_512

@@ -45,11 +45,11 @@ use ieee.math_real.all;
 
 use std.textio.all;
 
---library unisim;
---use unisim.vcomponents.all;
+-- library unisim;
+-- use unisim.vcomponents.all;
 
---library modelsim_lib;
---use modelsim_lib.util.all;
+-- library modelsim_lib;
+-- use modelsim_lib.util.all;
 
 package peripheral_dsa_sha256_pkg is
 
