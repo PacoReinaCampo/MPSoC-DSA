@@ -54,7 +54,7 @@ class peripheral_scoreboard;
         $display("Matched: ip1 = %0d, ip2 = %0d, out = %0d", transaction.ip1, transaction.ip2, transaction.out);
       end
       else begin
-        $display("NOT matched: ip1 = %0d, ip2 = %0d, out = %0d", transaction.ip1, transaction.ip2, transaction.out);
+        $display("Dis-Matched: ip1 = %0d, ip2 = %0d, out = %0d", transaction.ip1, transaction.ip2, transaction.out);
       end
       compare_cnt++;
     end
