@@ -52,5 +52,8 @@ simulate:
 	xelab peripheral_testbench
 	xsim -R peripheral_testbench
 
+test:
+	gtkwave dump.vcd
+
 clean:
 	rm -rf *.dir *.jou *.log *.pb *.vcd *.wdb .Xil

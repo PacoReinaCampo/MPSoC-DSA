@@ -72,12 +72,12 @@ class peripheral_uvm_scoreboard extends uvm_scoreboard;
       if (item_q.size > 0) begin
         scoreboard_item = item_q.pop_front();
         $display("----------------------------------------------------------------------------------------------------------");
-        if (!scoreboard_item.MODULO && ((scoreboard_item.DATA_A_IN + scoreboard_item.DATA_B_IN) % scoreboard_item.MODULO == scoreboard_item.DATA_OUT)) begin
-          `uvm_info(get_type_name, $sformatf("Matched: MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d", scoreboard_item.MODULO, scoreboard_item.DATA_A_IN, scoreboard_item.DATA_B_IN, scoreboard_item.DATA_OUT), UVM_LOW);
-        end else if (scoreboard_item.MODULO && ((scoreboard_item.DATA_A_IN - scoreboard_item.DATA_B_IN) % scoreboard_item.MODULO == scoreboard_item.DATA_OUT)) begin
-          `uvm_info(get_type_name, $sformatf("Matched: MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d", scoreboard_item.MODULO, scoreboard_item.DATA_A_IN, scoreboard_item.DATA_B_IN, scoreboard_item.DATA_OUT), UVM_LOW);
+        if (!scoreboard_item.OPERATION && ((scoreboard_item.DATA_A_IN + scoreboard_item.DATA_B_IN) % scoreboard_item.MODULO == scoreboard_item.DATA_OUT)) begin
+          `uvm_info(get_type_name, $sformatf("Matched: OPERATION = %0d, MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d", scoreboard_item.OPERATION, scoreboard_item.MODULO, scoreboard_item.DATA_A_IN, scoreboard_item.DATA_B_IN, scoreboard_item.DATA_OUT), UVM_LOW);
+        end else if (scoreboard_item.OPERATION && ((scoreboard_item.DATA_A_IN - scoreboard_item.DATA_B_IN) % scoreboard_item.MODULO == scoreboard_item.DATA_OUT)) begin
+          `uvm_info(get_type_name, $sformatf("Matched: OPERATION = %0d, MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d", scoreboard_item.OPERATION, scoreboard_item.MODULO, scoreboard_item.DATA_A_IN, scoreboard_item.DATA_B_IN, scoreboard_item.DATA_OUT), UVM_LOW);
         end else begin
-          `uvm_error(get_name, $sformatf("Dis-Matched: MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d", scoreboard_item.MODULO, scoreboard_item.DATA_A_IN, scoreboard_item.DATA_B_IN, scoreboard_item.DATA_OUT));
+          `uvm_error(get_name, $sformatf("Dis-Matched: OPERATION = %0d, MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d", scoreboard_item.OPERATION, scoreboard_item.MODULO, scoreboard_item.DATA_A_IN, scoreboard_item.DATA_B_IN, scoreboard_item.DATA_OUT));
         end
         $display("----------------------------------------------------------------------------------------------------------");
       end

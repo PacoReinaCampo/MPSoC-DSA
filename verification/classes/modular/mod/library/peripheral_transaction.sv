@@ -37,12 +37,18 @@
 // Author(s):
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
+import peripheral_dsa_pkg::*;
+
 class peripheral_transaction;
-  rand bit [7:0] ip1;
-  rand bit [7:0] ip2;
+  rand bit [DATA_SIZE-1:0] MODULO;
+  rand bit [DATA_SIZE-1:0] DATA_IN;
 
-  bit [8:0] out;
+  bit                      READY;
+  bit      [DATA_SIZE-1:0] DATA_OUT;
 
-  constraint ip_c {ip1 < 100; ip2 < 100;}
+  constraint ip_c {
+    MODULO < 100;
+    DATA_IN < 100;
+  }
 
 endclass
