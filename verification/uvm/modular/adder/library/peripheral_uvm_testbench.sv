@@ -84,7 +84,7 @@ module peripheral_uvm_testbench;
     .RST(vif.RST),
 
     .START(vif.START),
-    .OPERATION(vif.OPERATION),
+    .OPERATION(0),
     .MODULO(vif.MODULO),
     .DATA_A_IN(vif.DATA_A_IN),
     .DATA_B_IN(vif.DATA_B_IN),

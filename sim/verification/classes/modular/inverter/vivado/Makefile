@@ -45,11 +45,12 @@
 all: build simulate
 
 build:
-	xvlog -prj system.prj
+	xvhdl -prj system-vhdl.prj
+	xvlog -prj system-verilog.prj
 
 simulate:
 	xelab peripheral_testbench
 	xsim -R peripheral_testbench
 
 clean:
-	rm -rf *.dir *.jou *.log *.pb *.vcd .Xil
+	rm -rf *.dir *.jou *.log *.pb *.vcd *.wdb .Xil

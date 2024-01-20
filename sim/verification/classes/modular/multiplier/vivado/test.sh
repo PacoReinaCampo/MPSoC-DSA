@@ -42,15 +42,4 @@
 ##                                                                               ##
 ###################################################################################
 
-all: build simulate
-
-build:
-	xvhdl -prj system-vhdl.prj
-	xvlog -prj system-verilog.prj
-
-simulate:
-	xelab peripheral_testbench
-	xsim -R peripheral_testbench
-
-clean:
-	rm -rf *.dir *.jou *.log *.pb *.vcd *.wdb .Xil
+make test

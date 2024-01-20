@@ -37,18 +37,23 @@
 // Author(s):
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
+import peripheral_dsa_pkg::*;
+
 interface add_if (
-  input logic clk,
-  input logic rst
+  input logic CLK,
+  input logic RST,
+  input logic START
 );
 
-  logic [7:0] ip1;
-  logic [7:0] ip2;
+  logic [DATA_SIZE-1:0] MODULO;
+  logic [DATA_SIZE-1:0] DATA_A_IN;
+  logic [DATA_SIZE-1:0] DATA_B_IN;
 
-  logic [8:0] out;
-  
-  // clocking driver_cb @(posedge clk);
-  // default input #1 output #1;
+  logic                 READY;
+  logic [DATA_SIZE-1:0] DATA_OUT;
+
+  // clocking driver_cb @(posedge CLK);
+  //   default input #1 output #1;
   // endclocking
 
 endinterface

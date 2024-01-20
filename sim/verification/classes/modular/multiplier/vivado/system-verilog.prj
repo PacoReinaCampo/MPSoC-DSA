@@ -42,6 +42,6 @@
 //                                                                               //
 ///////////////////////////////////////////////////////////////////////////////////
 
-sv work ../../../../../../verification/classes/arithmetic/adder/application/adder.sv
+sv work ../../../../../../rtl/verilog/pkg/peripheral_dsa_pkg.sv
 
-sv work ../../../../../../verification/classes/arithmetic/adder/library/peripheral_testbench.sv
+sv work ../../../../../../verification/classes/modular/multiplier/library/peripheral_testbench.sv
