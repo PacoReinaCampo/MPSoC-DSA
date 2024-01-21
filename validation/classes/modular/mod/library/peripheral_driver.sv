@@ -38,25 +38,43 @@
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
 class peripheral_driver;
+  // Interface instantiation
   virtual add_if vif;
+
   mailbox generator_to_driver;
+
+  // Transaction method instantiation
   peripheral_transaction transaction;
 
+  // Constructor
   function new(mailbox generator_to_driver, virtual add_if vif);
     this.generator_to_driver = generator_to_driver;
+
     this.vif = vif;
   endfunction
 
   task run;
     forever begin
-      // Driver to the DUT
-      @(posedge vif.clk);
+      // Driver to the DUT      
       generator_to_driver.get(transaction);
-      //$display("ip1 = %0d, ip2 = %0d", transaction.ip1, transaction.ip2);
-      vif.ip1 <= transaction.ip1;
-      vif.ip2 <= transaction.ip2;
-      @(posedge vif.clk);
-      transaction.out <= vif.out;
+
+      vif.START <= 0;
+      vif.MODULO <= 0;
+      vif.DATA_IN <= 0;
+
+      repeat (1000) @(posedge vif.CLK);
+
+      vif.START <= 1;
+      vif.MODULO <= transaction.MODULO;
+      vif.DATA_IN <= transaction.DATA_IN;
+
+      @(posedge vif.CLK);
+
+      vif.START <= 0;
+
+      repeat (999) @(posedge vif.CLK);
+
+      transaction.DATA_OUT <= vif.DATA_OUT;
     end
   endtask
 endclass

@@ -39,24 +39,90 @@
 
 class peripheral_scoreboard;
   int compare_cnt;
+
   mailbox monitor_to_scoreboard;
 
+  // Constructor
   function new(mailbox monitor_to_scoreboard);
     this.monitor_to_scoreboard = monitor_to_scoreboard;
   endfunction
 
   task run;
     forever begin
+      // Transaction method instantiation
       peripheral_transaction transaction;
+
+      // Create transaction method
       transaction = new();
-      monitor_to_scoreboard.get(transaction);     
-      if(transaction.ip1 + transaction.ip2 == transaction.out) begin
-        $display("Matched: ip1 = %0d, ip2 = %0d, out = %0d", transaction.ip1, transaction.ip2, transaction.out);
-      end
-      else begin
-        $display("Dis-Matched: ip1 = %0d, ip2 = %0d, out = %0d", transaction.ip1, transaction.ip2, transaction.out);
+
+      monitor_to_scoreboard.get(transaction);
+
+      if (dsa_inverter(transaction.MODULO, transaction.DATA_IN) == transaction.DATA_OUT) begin
+        $display("Matched: MODULO = %0d, DATA_IN = %0d, DATA_OUT = %0d", transaction.MODULO, transaction.DATA_IN, transaction.DATA_OUT);
+      end else begin
+        $display("Dis-Matched: MODULO = %0d, DATA_IN = %0d, DATA_OUT = %0d", transaction.MODULO, transaction.DATA_IN, transaction.DATA_OUT);
       end
       compare_cnt++;
     end
   endtask
+
+
+  function [511:0] dsa_inverter;
+    input [511:0] MODULO;
+    input [511:0] DATA_IN;
+
+    logic [511:0] s;
+    logic [511:0] t;
+    logic [511:0] r;
+
+    logic [511:0] old_s;
+    logic [511:0] old_t;
+    logic [511:0] old_r;
+
+    logic [511:0] gcd;
+    logic [511:0] x;
+    logic [511:0] y;
+
+    logic [511:0] quotient;
+
+    begin
+      if (DATA_IN == 0) begin
+        return 0;
+      end
+
+      if (DATA_IN < 0) begin
+        return MODULO - dsa_inverter(-DATA_IN, MODULO);
+      end
+
+      s = 0;
+      t = 1;
+      r = MODULO;
+
+      old_s = 1;
+      old_t = 0;
+      old_r = DATA_IN;
+
+      while (r != 0) begin
+        quotient = old_r / r;
+
+        old_r = r;
+        old_s = s;
+        old_t = t;
+
+        r = old_r - quotient * r;
+        s = old_s - quotient * s;
+        t = old_t - quotient * t;
+      end
+
+      gcd = old_r;
+      x   =  old_s;
+      y   = old_t;
+
+      if ((gcd == 1)  &&  ((DATA_IN * x) % MODULO == 1)) begin
+        return x % MODULO;
+      end else begin
+        return 0;
+      end
+    end
+  endfunction
 endclass

@@ -39,14 +39,20 @@
 
 class peripheral_uvm_scoreboard extends uvm_scoreboard;
   uvm_analysis_imp #(peripheral_uvm_sequence_item, peripheral_uvm_scoreboard) item_collect_export;
-  peripheral_uvm_sequence_item                                                item_q              [$];
+
+  // Sequence Item method instantiation
+  peripheral_uvm_sequence_item item_q [$];
+
+  // Utility declaration
   `uvm_component_utils(peripheral_uvm_scoreboard)
 
+  // Constructor
   function new(string name = "scoreboard", uvm_component parent = null);
     super.new(name, parent);
     item_collect_export = new("item_collect_export", this);
   endfunction
 
+  // Build phase
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
   endfunction
@@ -55,18 +61,23 @@ class peripheral_uvm_scoreboard extends uvm_scoreboard;
     item_q.push_back(req);
   endfunction
 
+  // Run phase
   task run_phase(uvm_phase phase);
+    // Sequence Item method instantiation
     peripheral_uvm_sequence_item scoreboard_item;
+
     forever begin
       wait (item_q.size > 0);
 
       if (item_q.size > 0) begin
         scoreboard_item = item_q.pop_front();
         $display("----------------------------------------------------------------------------------------------------------");
-        if (scoreboard_item.ip1 + scoreboard_item.ip2 == scoreboard_item.out) begin
-          `uvm_info(get_type_name, $sformatf("Matched: ip1 = %0d, ip2 = %0d, out = %0d", scoreboard_item.ip1, scoreboard_item.ip2, scoreboard_item.out), UVM_LOW);
+        if (!scoreboard_item.OPERATION && ((scoreboard_item.DATA_A_IN + scoreboard_item.DATA_B_IN) % scoreboard_item.MODULO == scoreboard_item.DATA_OUT)) begin
+          `uvm_info(get_type_name, $sformatf("Matched: OPERATION = %0d, MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d", scoreboard_item.OPERATION, scoreboard_item.MODULO, scoreboard_item.DATA_A_IN, scoreboard_item.DATA_B_IN, scoreboard_item.DATA_OUT), UVM_LOW);
+        end else if (scoreboard_item.OPERATION && ((scoreboard_item.DATA_A_IN - scoreboard_item.DATA_B_IN) % scoreboard_item.MODULO == scoreboard_item.DATA_OUT)) begin
+          `uvm_info(get_type_name, $sformatf("Matched: OPERATION = %0d, MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d", scoreboard_item.OPERATION, scoreboard_item.MODULO, scoreboard_item.DATA_A_IN, scoreboard_item.DATA_B_IN, scoreboard_item.DATA_OUT), UVM_LOW);
         end else begin
-          `uvm_error(get_name, $sformatf("Dis-Matched: ip1 = %0d, ip2 = %0d, out = %0d", scoreboard_item.ip1, scoreboard_item.ip2, scoreboard_item.out));
+          `uvm_error(get_name, $sformatf("Dis-Matched: OPERATION = %0d, MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d", scoreboard_item.OPERATION, scoreboard_item.MODULO, scoreboard_item.DATA_A_IN, scoreboard_item.DATA_B_IN, scoreboard_item.DATA_OUT));
         end
         $display("----------------------------------------------------------------------------------------------------------");
       end

@@ -38,31 +38,46 @@
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
 class peripheral_uvm_monitor extends uvm_monitor;
-  virtual peripheral_adder_if                       vif;
+  // Virtual Interface
+  virtual peripheral_design_if vif;
+
+  // UVM analysis port
   uvm_analysis_port #(peripheral_uvm_sequence_item) item_collect_port;
-  peripheral_uvm_sequence_item                      monitor_item;
+
+  // Sequence Item method instantiation
+  peripheral_uvm_sequence_item monitor_item;
+
+  // Utility declaration
   `uvm_component_utils(peripheral_uvm_monitor)
 
+  // Constructor
   function new(string name = "monitor", uvm_component parent = null);
     super.new(name, parent);
     item_collect_port = new("item_collect_port", this);
     monitor_item      = new();
   endfunction
 
+  // Build phase
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
-    if (!uvm_config_db#(virtual peripheral_adder_if)::get(this, "", "vif", vif)) `uvm_fatal(get_type_name(), "Not set at top level");
+    if (!uvm_config_db#(virtual peripheral_design_if)::get(this, "", "vif", vif)) begin
+      `uvm_fatal(get_type_name(), "Not set at top level");
+    end
   endfunction
 
+  // Run phase
   task run_phase(uvm_phase phase);
     forever begin
-      wait (!vif.rst);
-      @(posedge vif.clk);
-      monitor_item.ip1 = vif.ip1;
-      monitor_item.ip2 = vif.ip2;
-      `uvm_info(get_type_name, $sformatf("ip1 = %0d, ip2 = %0d", monitor_item.ip1, monitor_item.ip2), UVM_HIGH);
-      @(posedge vif.clk);
-      monitor_item.out = vif.out;
+      wait (vif.RST);
+      wait (vif.START);
+      monitor_item.OPERATION = vif.OPERATION;
+      monitor_item.MODULO = vif.MODULO;
+      monitor_item.DATA_A_IN = vif.DATA_A_IN;
+      monitor_item.DATA_B_IN = vif.DATA_B_IN;
+      `uvm_info(get_type_name, $sformatf("OPERATION = %0d, MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d", monitor_item.OPERATION, monitor_item.MODULO, monitor_item.DATA_A_IN, monitor_item.DATA_B_IN), UVM_HIGH);
+      wait (vif.RST);
+      wait (vif.READY);
+      monitor_item.DATA_OUT = vif.DATA_OUT;
       item_collect_port.write(monitor_item);
     end
   endtask

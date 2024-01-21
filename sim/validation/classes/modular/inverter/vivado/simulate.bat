@@ -45,7 +45,8 @@
 @echo off
 call ../../../../../../settings64_vivado.bat
 
-xvlog -prj system.prj
+xvhdl -prj system-vhdl.prj
+xvlog -prj system-verilog.prj
 xelab peripheral_testbench
 xsim -R peripheral_testbench
 pause

@@ -37,13 +37,18 @@
 // Author(s):
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
-interface peripheral_adder_if (
-  input logic clk,
-  input logic rst
+import peripheral_dsa_pkg::*;
+
+interface peripheral_design_if (
+  input logic CLK
 );
 
-  logic [7:0] ip1;
-  logic [7:0] ip2;
+  // Declaration of signals
+  logic                 RST;
+  logic                 START;
+  logic [DATA_SIZE-1:0] MODULO;
+  logic [DATA_SIZE-1:0] DATA_IN;
 
-  logic [8:0] out;
+  logic                 READY;
+  logic [DATA_SIZE-1:0] DATA_OUT;
 endinterface

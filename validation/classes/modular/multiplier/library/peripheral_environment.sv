@@ -38,14 +38,23 @@
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
 class peripheral_environment;
-  peripheral_agent agent;
+  // Agent method instantiation
+  peripheral_agent      agent;
+
+  // ScoreBoard method instantiation
   peripheral_scoreboard scoreboard;
 
   mailbox monitor_to_scoreboard;
+
+  // Constructor
   function new(virtual add_if vif);
     monitor_to_scoreboard = new();
-    agent = new(vif, monitor_to_scoreboard);
-    scoreboard = new(monitor_to_scoreboard);
+
+    // Create agent method
+    agent                 = new(vif, monitor_to_scoreboard);
+
+    // Create scoreboard method
+    scoreboard            = new(monitor_to_scoreboard);
   endfunction
 
   task run();
@@ -53,7 +62,8 @@ class peripheral_environment;
       agent.run();
       scoreboard.run();
     join_any
-    wait(agent.generator.count == scoreboard.compare_cnt);
+
+    wait (agent.generator.count == scoreboard.compare_cnt);
     $finish;
   endtask
 endclass

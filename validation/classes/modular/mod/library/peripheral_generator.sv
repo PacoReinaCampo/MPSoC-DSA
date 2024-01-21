@@ -39,16 +39,22 @@
 
 class peripheral_generator;
   int count;
+
   mailbox generator_to_driver;
+
+  // Transaction method instantiation
   peripheral_transaction transaction;
 
+  // Constructor
   function new(mailbox generator_to_driver);
     this.generator_to_driver = generator_to_driver;
   endfunction
 
   task run;
-    repeat(count) begin
+    repeat (count) begin
+      // Create transaction method
       transaction = new();
+
       void'(transaction.randomize());
       generator_to_driver.put(transaction);
     end

@@ -39,14 +39,20 @@
 
 class peripheral_uvm_scoreboard extends uvm_scoreboard;
   uvm_analysis_imp #(peripheral_uvm_sequence_item, peripheral_uvm_scoreboard) item_collect_export;
-  peripheral_uvm_sequence_item                                                item_q              [$];
+
+  // Sequence Item method instantiation
+  peripheral_uvm_sequence_item item_q [$];
+
+  // Utility declaration
   `uvm_component_utils(peripheral_uvm_scoreboard)
 
+  // Constructor
   function new(string name = "scoreboard", uvm_component parent = null);
     super.new(name, parent);
     item_collect_export = new("item_collect_export", this);
   endfunction
 
+  // Build phase
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
   endfunction
@@ -55,22 +61,85 @@ class peripheral_uvm_scoreboard extends uvm_scoreboard;
     item_q.push_back(req);
   endfunction
 
+  // Run phase
   task run_phase(uvm_phase phase);
+    // Sequence Item method instantiation
     peripheral_uvm_sequence_item scoreboard_item;
+
     forever begin
       wait (item_q.size > 0);
 
       if (item_q.size > 0) begin
         scoreboard_item = item_q.pop_front();
         $display("----------------------------------------------------------------------------------------------------------");
-        if (scoreboard_item.ip1 + scoreboard_item.ip2 == scoreboard_item.out) begin
-          `uvm_info(get_type_name, $sformatf("Matched: ip1 = %0d, ip2 = %0d, out = %0d", scoreboard_item.ip1, scoreboard_item.ip2, scoreboard_item.out), UVM_LOW);
+        if (dsa_inverter(scoreboard_item.MODULO, scoreboard_item.DATA_IN) == scoreboard_item.DATA_OUT) begin
+          `uvm_info(get_type_name, $sformatf("Matched: MODULO = %0d, DATA_IN = %0d, DATA_OUT = %0d", scoreboard_item.MODULO, scoreboard_item.DATA_IN, scoreboard_item.DATA_OUT), UVM_LOW);
         end else begin
-          `uvm_error(get_name, $sformatf("Dis-Matched: ip1 = %0d, ip2 = %0d, out = %0d", scoreboard_item.ip1, scoreboard_item.ip2, scoreboard_item.out));
+          `uvm_error(get_name, $sformatf("Dis-Matched: MODULO = %0d, DATA_IN = %0d, DATA_OUT = %0d", scoreboard_item.MODULO, scoreboard_item.DATA_IN, scoreboard_item.DATA_OUT));
         end
         $display("----------------------------------------------------------------------------------------------------------");
       end
     end
   endtask
+
+
+  function [511:0] dsa_inverter;
+    input [511:0] MODULO;
+    input [511:0] DATA_IN;
+
+    logic [511:0] s;
+    logic [511:0] t;
+    logic [511:0] r;
+
+    logic [511:0] old_s;
+    logic [511:0] old_t;
+    logic [511:0] old_r;
+
+    logic [511:0] gcd;
+    logic [511:0] x;
+    logic [511:0] y;
+
+    logic [511:0] quotient;
+
+    begin
+      if (DATA_IN == 0) begin
+        return 0;
+      end
+
+      if (DATA_IN < 0) begin
+        return MODULO - dsa_inverter(-DATA_IN, MODULO);
+      end
+
+      s = 0;
+      t = 1;
+      r = MODULO;
+
+      old_s = 1;
+      old_t = 0;
+      old_r = DATA_IN;
+
+      while (r != 0) begin
+        quotient = old_r / r;
+
+        old_r = r;
+        old_s = s;
+        old_t = t;
+
+        r = old_r - quotient * r;
+        s = old_s - quotient * s;
+        t = old_t - quotient * t;
+      end
+
+      gcd = old_r;
+      x   =  old_s;
+      y   = old_t;
+
+      if ((gcd == 1)  &&  ((DATA_IN * x) % MODULO == 1)) begin
+        return x % MODULO;
+      end else begin
+        return 0;
+      end
+    end
+  endfunction
 
 endclass

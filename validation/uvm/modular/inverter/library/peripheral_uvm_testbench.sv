@@ -43,42 +43,45 @@ import uvm_pkg::*;
 `include "peripheral_uvm_interface.sv"
 `include "peripheral_uvm_test.sv"
 
-module peripheral_uvm_testbench;
-  bit clk;
-  bit rst;
+import peripheral_dsa_pkg::*;
 
-  always #2 clk = ~clk;
+module peripheral_uvm_testbench;
+  // Clock and Reset declaration
+  bit CLK;
+
+  // Clock Generation
+  always #1 CLK = ~CLK;
 
   initial begin
-    //clk = 0;
-    rst = 1;
-    #5;
-    rst = 0;
+    CLK = 0;
   end
 
-  peripheral_adder_if vif (
-    clk,
-    rst
-  );
+  // Virtual interface
+  peripheral_design_if vif (CLK);
 
-  peripheral_adder dut (
-    .clk(vif.clk),
-    .rst(vif.rst),
+  // DUT instantiation
+  peripheral_dsa_inverter dut (
+    .CLK(vif.CLK),
+    .RST(vif.RST),
 
-    .in1(vif.ip1),
-    .in2(vif.ip2),
+    .START(vif.START),
+    .MODULO(vif.MODULO),
+    .DATA_IN(vif.DATA_IN),
 
-    .out(vif.out)
+    .READY(vif.READY),
+    .DATA_OUT(vif.DATA_OUT)
   );
 
   initial begin
-    // set interface in config_db
-    uvm_config_db#(virtual peripheral_adder_if)::set(uvm_root::get(), "*", "vif", vif);
-    // Dump waves
+    // Passing the interface handle to lower heirarchy using set method
+    uvm_config_db#(virtual peripheral_design_if)::set(uvm_root::get(), "*", "vif", vif);
+
+    // Enable wave dump
     $dumpfile("dump.vcd");
     $dumpvars(0);
   end
 
+  // Calling TestCase
   initial begin
     run_test("base_test");
   end

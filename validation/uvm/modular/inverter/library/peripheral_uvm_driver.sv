@@ -38,28 +38,48 @@
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
 class peripheral_uvm_driver extends uvm_driver #(peripheral_uvm_sequence_item);
-  virtual peripheral_adder_if vif;
+  // Virtual Interface
+  virtual peripheral_design_if vif;
+
+  // Utility declaration
   `uvm_component_utils(peripheral_uvm_driver)
 
+  // Constructor
   function new(string name = "peripheral_uvm_driver", uvm_component parent = null);
     super.new(name, parent);
   endfunction
 
+  // Build phase
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
-    if (!uvm_config_db#(virtual peripheral_adder_if)::get(this, "", "vif", vif)) `uvm_fatal(get_type_name(), "Not set at top level");
+    if (!uvm_config_db#(virtual peripheral_design_if)::get(this, "", "vif", vif)) begin
+      `uvm_fatal(get_type_name(), "Not set at top level");
+    end
   endfunction
 
+  // Run phase
   task run_phase(uvm_phase phase);
     forever begin
       // Driver to the DUT
-      //@(posedge vif.clk);
       seq_item_port.get_next_item(req);
-      `uvm_info(get_type_name, $sformatf("ip1 = %0d, ip2 = %0d", req.ip1, req.ip2), UVM_LOW);
-      vif.ip1 <= req.ip1;
-      vif.ip2 <= req.ip2;
-      //@(posedge vif.clk);
-      //req.out <= vif.out;
+      `uvm_info(get_type_name, $sformatf("MODULO = %0d, DATA_IN = %0d", req.MODULO, req.DATA_IN), UVM_LOW);
+
+      vif.START <= 0;
+      vif.MODULO <= 0;
+      vif.DATA_IN <= 0;
+
+      repeat (1000) @(posedge vif.CLK);
+
+      vif.START <= 1;
+      vif.MODULO <= req.MODULO;
+      vif.DATA_IN <= req.DATA_IN;
+
+      @(posedge vif.CLK);
+
+      vif.START <= 0;
+
+      repeat (999) @(posedge vif.CLK);
+
       seq_item_port.item_done();
     end
   endtask

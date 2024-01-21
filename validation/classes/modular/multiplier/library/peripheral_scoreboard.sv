@@ -39,22 +39,28 @@
 
 class peripheral_scoreboard;
   int compare_cnt;
+
   mailbox monitor_to_scoreboard;
 
+  // Constructor
   function new(mailbox monitor_to_scoreboard);
     this.monitor_to_scoreboard = monitor_to_scoreboard;
   endfunction
 
   task run;
     forever begin
+      // Transaction method instantiation
       peripheral_transaction transaction;
+
+      // Create transaction method
       transaction = new();
-      monitor_to_scoreboard.get(transaction);     
-      if(transaction.ip1 + transaction.ip2 == transaction.out) begin
-        $display("Matched: ip1 = %0d, ip2 = %0d, out = %0d", transaction.ip1, transaction.ip2, transaction.out);
-      end
-      else begin
-        $display("Dis-Matched: ip1 = %0d, ip2 = %0d, out = %0d", transaction.ip1, transaction.ip2, transaction.out);
+
+      monitor_to_scoreboard.get(transaction);
+
+      if ((transaction.DATA_A_IN * transaction.DATA_B_IN) % transaction.MODULO == transaction.DATA_OUT) begin
+        $display("Matched: MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d", transaction.MODULO, transaction.DATA_A_IN, transaction.DATA_B_IN, transaction.DATA_OUT);
+      end else begin
+        $display("Dis-Matched: MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d", transaction.MODULO, transaction.DATA_A_IN, transaction.DATA_B_IN, transaction.DATA_OUT);
       end
       compare_cnt++;
     end
