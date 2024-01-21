@@ -58,8 +58,6 @@ class peripheral_monitor;
       wait (vif.RST);
       wait (vif.START);
 
-      @(posedge vif.CLK);
-
       // Create transaction method
       monitor_transaction = new();
 
@@ -69,7 +67,6 @@ class peripheral_monitor;
       wait (vif.RST);
       wait (vif.READY);
 
-      @(posedge vif.CLK);
       monitor_transaction.DATA_OUT = vif.DATA_OUT;
       monitor_to_scoreboard.put(monitor_transaction);
     end

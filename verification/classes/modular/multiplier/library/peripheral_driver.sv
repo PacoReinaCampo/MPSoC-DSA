@@ -55,14 +55,14 @@ class peripheral_driver;
 
   task run;
     forever begin
-      // Driver to the DUT
-      repeat (500) @(posedge vif.CLK);
-      
+      // Driver to the DUT      
       generator_to_driver.get(transaction);
 
       vif.MODULO <= transaction.MODULO;
       vif.DATA_A_IN <= transaction.DATA_A_IN;
       vif.DATA_B_IN <= transaction.DATA_B_IN;
+
+      repeat (2000) @(posedge vif.CLK);
 
       transaction.DATA_OUT <= vif.DATA_OUT;
     end

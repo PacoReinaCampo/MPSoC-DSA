@@ -64,14 +64,14 @@ module peripheral_testbench;
   // Start Generation
   initial begin
     START = 0;
-    #999;
+    #4000;
 
-    repeat (10) begin
+    repeat (5) begin
       START = 1;
       #2;
 
       START = 0;
-      #998;
+      #3998;
     end
   end
 
