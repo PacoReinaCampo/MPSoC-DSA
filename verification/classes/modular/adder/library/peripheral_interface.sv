@@ -40,10 +40,10 @@
 import peripheral_dsa_pkg::*;
 
 interface add_if (
-  input logic CLK,
-  input logic RST
+  input logic CLK
 );
 
+  logic                 RST;
   logic                 START;
   logic                 OPERATION;
   logic [DATA_SIZE-1:0] MODULO;

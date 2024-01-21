@@ -52,6 +52,10 @@ module peripheral_uvm_testbench;
   // Clock Generation
   always #1 CLK = ~CLK;
 
+  initial begin
+    CLK = 0;
+  end
+
   // Virtual interface
   peripheral_design_if vif (CLK);
 

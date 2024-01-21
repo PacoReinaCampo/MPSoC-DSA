@@ -57,8 +57,21 @@ program peripheral_test (
     // Create environment method
     environment = new(vif);
 
+    apply_reset();
+
     environment.agent.generator.count = 5;
 
     environment.run();
   end
+
+  task apply_reset();
+    vif.RST <= 0;
+    vif.START  <= 0;
+    vif.MODULO  <= 0;
+    vif.DATA_IN  <= 0;
+
+    repeat (5) @(posedge vif.CLK);
+
+    vif.RST <= 1;
+  endtask
 endprogram
