@@ -40,12 +40,12 @@
 import peripheral_dsa_pkg::*;
 
 interface peripheral_design_if (
-  input logic CLK,
-  input logic RST,
-  input logic START
+  input logic CLK
 );
 
   // Declaration of signals
+  logic                 RST;
+  logic                 START;
   logic                 OPERATION;
   logic [DATA_SIZE-1:0] MODULO;
   logic [DATA_SIZE-1:0] DATA_A_IN;

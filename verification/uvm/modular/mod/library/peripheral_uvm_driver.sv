@@ -63,8 +63,23 @@ class peripheral_uvm_driver extends uvm_driver #(peripheral_uvm_sequence_item);
       // Driver to the DUT
       seq_item_port.get_next_item(req);
       `uvm_info(get_type_name, $sformatf("MODULO = %0d, DATA_IN = %0d", req.MODULO, req.DATA_IN), UVM_LOW);
+
+      vif.START <= 0;
+      vif.MODULO <= 0;
+      vif.DATA_IN <= 0;
+
+      repeat (1000) @(posedge vif.CLK);
+
+      vif.START <= 1;
       vif.MODULO <= req.MODULO;
       vif.DATA_IN <= req.DATA_IN;
+
+      @(posedge vif.CLK);
+
+      vif.START <= 0;
+
+      repeat (999) @(posedge vif.CLK);
+
       seq_item_port.item_done();
     end
   endtask

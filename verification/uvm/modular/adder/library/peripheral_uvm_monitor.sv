@@ -70,14 +70,13 @@ class peripheral_uvm_monitor extends uvm_monitor;
     forever begin
       wait (vif.RST);
       wait (vif.START);
-      @(posedge vif.CLK);
       monitor_item.OPERATION = vif.OPERATION;
       monitor_item.MODULO = vif.MODULO;
       monitor_item.DATA_A_IN = vif.DATA_A_IN;
       monitor_item.DATA_B_IN = vif.DATA_B_IN;
       `uvm_info(get_type_name, $sformatf("OPERATION = %0d, MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d", monitor_item.OPERATION, monitor_item.MODULO, monitor_item.DATA_A_IN, monitor_item.DATA_B_IN), UVM_HIGH);
+      wait (vif.RST);
       wait (vif.READY);
-      @(posedge vif.CLK);
       monitor_item.DATA_OUT = vif.DATA_OUT;
       item_collect_port.write(monitor_item);
     end

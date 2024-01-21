@@ -47,6 +47,9 @@
 `include "peripheral_uvm_environment.sv"
 
 class peripheral_uvm_test extends uvm_test;
+  // Virtual Interface
+  virtual peripheral_design_if vif;
+
   // Environment method instantiation
   peripheral_uvm_environment environment;
 
@@ -64,6 +67,9 @@ class peripheral_uvm_test extends uvm_test;
   // Build phase
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
+    if (!uvm_config_db#(virtual peripheral_design_if)::get(this, "", "vif", vif)) begin
+      `uvm_fatal(get_type_name(), "Not set at top level");
+    end
 
     // Create environment method
     environment = peripheral_uvm_environment::type_id::create("environment", this);
@@ -76,6 +82,8 @@ class peripheral_uvm_test extends uvm_test;
     // Create sequence method
     base_sequence = peripheral_uvm_sequence::type_id::create("base_sequence");
 
+    apply_reset();
+
     repeat (10) begin
       #1000;
       base_sequence.start(environment.agent.sequencer);
@@ -83,5 +91,18 @@ class peripheral_uvm_test extends uvm_test;
 
     phase.drop_objection(this);
     `uvm_info(get_type_name, "End of TestCase", UVM_LOW);
+  endtask
+
+  task apply_reset();
+    vif.RST <= 0;
+    vif.START  <= 0;
+    vif.OPERATION  <= 0;
+    vif.MODULO  <= 0;
+    vif.DATA_A_IN  <= 0;
+    vif.DATA_B_IN  <= 0;
+
+    repeat (5) @(posedge vif.CLK);
+
+    vif.RST <= 1;
   endtask
 endclass

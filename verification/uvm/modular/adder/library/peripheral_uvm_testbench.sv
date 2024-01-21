@@ -48,35 +48,12 @@ import peripheral_dsa_pkg::*;
 module peripheral_uvm_testbench;
   // Clock and Reset declaration
   bit CLK;
-  bit RST;
-  bit START;
 
   // Clock Generation
   always #1 CLK = ~CLK;
 
-  // Reset Generation
-  initial begin
-    RST = 0;
-    #6;
-    RST = 1;
-  end
-
-  // Start Generation
-  initial begin
-    START = 0;
-    #1000;
-
-    repeat (10) begin
-      START = 1;
-      #2;
-
-      START = 0;
-      #998;
-    end
-  end
-
   // Virtual interface
-  peripheral_design_if vif (CLK, RST, START);
+  peripheral_design_if vif (CLK);
 
   // DUT instantiation
   peripheral_dsa_adder dut (

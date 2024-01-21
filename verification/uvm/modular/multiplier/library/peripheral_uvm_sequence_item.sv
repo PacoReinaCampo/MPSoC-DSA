@@ -41,6 +41,8 @@ import peripheral_dsa_pkg::*;
 
 class peripheral_uvm_sequence_item extends uvm_sequence_item;
   // Data Signals
+  bit                      RST;
+  bit                      START;
   rand bit [DATA_SIZE-1:0] MODULO;
   rand bit [DATA_SIZE-1:0] DATA_A_IN;
   rand bit [DATA_SIZE-1:0] DATA_B_IN;
@@ -55,6 +57,8 @@ class peripheral_uvm_sequence_item extends uvm_sequence_item;
 
   // Utility and Field declarations
   `uvm_object_utils_begin(peripheral_uvm_sequence_item)
+  `uvm_field_int(RST, UVM_ALL_ON)
+  `uvm_field_int(START, UVM_ALL_ON)
   `uvm_field_int(MODULO, UVM_ALL_ON)
   `uvm_field_int(DATA_A_IN, UVM_ALL_ON)
   `uvm_field_int(DATA_B_IN, UVM_ALL_ON)
