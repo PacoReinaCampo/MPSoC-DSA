@@ -45,7 +45,6 @@ import peripheral_dsa_pkg::*;
 module peripheral_testbench;
   bit CLK;
   bit RST;
-  bit START;
 
   // Clock declaration
   always #1 CLK = ~CLK;
@@ -61,25 +60,10 @@ module peripheral_testbench;
     RST = 1;
   end
 
-  // Start Generation
-  initial begin
-    START = 0;
-    #4000;
-
-    repeat (5) begin
-      START = 1;
-      #2;
-
-      START = 0;
-      #3998;
-    end
-  end
-
   // Interface instantiation
   add_if vif (
     CLK,
-    RST,
-    START
+    RST
   );
 
   // DUT instantiation

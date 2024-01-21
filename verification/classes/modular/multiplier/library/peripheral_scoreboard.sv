@@ -58,9 +58,9 @@ class peripheral_scoreboard;
       monitor_to_scoreboard.get(transaction);
 
       if ((transaction.DATA_A_IN * transaction.DATA_B_IN) % transaction.MODULO == transaction.DATA_OUT) begin
-        $display("Matched: MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d, out = %0d", transaction.MODULO, transaction.DATA_A_IN, transaction.DATA_B_IN, transaction.DATA_OUT);
+        $display("Matched: MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d", transaction.MODULO, transaction.DATA_A_IN, transaction.DATA_B_IN, transaction.DATA_OUT);
       end else begin
-        $display("Dis-Matched: MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d, out = %0d", transaction.MODULO, transaction.DATA_A_IN, transaction.DATA_B_IN, transaction.DATA_OUT);
+        $display("Dis-Matched: MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d", transaction.MODULO, transaction.DATA_A_IN, transaction.DATA_B_IN, transaction.DATA_OUT);
       end
       compare_cnt++;
     end

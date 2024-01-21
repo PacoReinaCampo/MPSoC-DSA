@@ -58,10 +58,21 @@ class peripheral_driver;
       // Driver to the DUT      
       generator_to_driver.get(transaction);
 
+      vif.START <= 0;
+      vif.MODULO <= 0;
+      vif.DATA_IN <= 0;
+
+      repeat (1000) @(posedge vif.CLK);
+
+      vif.START <= 1;
       vif.MODULO <= transaction.MODULO;
       vif.DATA_IN <= transaction.DATA_IN;
 
-      repeat (2000) @(posedge vif.CLK);
+      @(posedge vif.CLK);
+
+      vif.START <= 0;
+
+      repeat (999) @(posedge vif.CLK);
 
       transaction.DATA_OUT <= vif.DATA_OUT;
     end
