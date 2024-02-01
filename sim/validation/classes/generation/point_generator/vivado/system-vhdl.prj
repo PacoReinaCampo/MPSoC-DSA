@@ -42,6 +42,13 @@
 //                                                                               //
 ///////////////////////////////////////////////////////////////////////////////////
 
-sv work ../../../../../../validation/classes/arithmetic/adder/application/adder.sv
+vhdl2008 work ../../../../../../rtl/vhdl/pkg/peripheral_dsa_pkg.vhd
 
-sv work ../../../../../../validation/classes/arithmetic/adder/library/peripheral_testbench.sv
+vhdl2008 work ../../../../../../rtl/vhdl/core/modular/peripheral_dsa_adder.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/core/modular/peripheral_dsa_inverter.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/core/modular/peripheral_dsa_mod.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/core/modular/peripheral_dsa_multiplier.vhd
+
+vhdl2008 work ../../../../../../rtl/vhdl/core/generation/peripheral_dsa_point_adder.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/core/generation/peripheral_dsa_point_doubler.vhd
+vhdl2008 work ../../../../../../rtl/vhdl/core/generation/peripheral_dsa_point_generator.vhd

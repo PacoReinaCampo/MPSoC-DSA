@@ -45,13 +45,12 @@ interface add_if (
 
   logic                 RST;
   logic                 START;
-  logic                 OPERATION;
-  logic [DATA_SIZE-1:0] MODULO;
-  logic [DATA_SIZE-1:0] DATA_A_IN;
-  logic [DATA_SIZE-1:0] DATA_B_IN;
+  logic [DATA_SIZE-1:0] POINT_IN_X;
+  logic [DATA_SIZE-1:0] POINT_IN_Y;
 
   logic                 READY;
-  logic [DATA_SIZE-1:0] DATA_OUT;
+  logic [DATA_SIZE-1:0] POINT_OUT_X;
+  logic [DATA_SIZE-1:0] POINT_OUT_Y;
 
   // clocking driver_cb @(posedge CLK);
   //   default input #1 output #1;

@@ -56,18 +56,19 @@ module peripheral_testbench;
   add_if vif (CLK);
 
   // DUT instantiation
-  peripheral_dsa_adder dut (
+  peripheral_dsa_point_adder #(
+    .DATA_SIZE(DATA_SIZE)
+  ) dut (
     .CLK(vif.CLK),
     .RST(vif.RST),
 
     .START(vif.START),
-    .OPERATION(vif.OPERATION),
-    .MODULO(vif.MODULO),
-    .DATA_A_IN(vif.DATA_A_IN),
-    .DATA_B_IN(vif.DATA_B_IN),
+    .POINT_IN_X(vif.POINT_IN_X),
+    .POINT_IN_Y(vif.POINT_IN_Y),
 
     .READY(vif.READY),
-    .DATA_OUT(vif.DATA_OUT)
+    .POINT_OUT_X(vif.POINT_OUT_X),
+    .POINT_OUT_Y(vif.POINT_OUT_Y)
   );
 
   // Calling TestCase

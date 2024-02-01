@@ -59,18 +59,14 @@ class peripheral_driver;
       generator_to_driver.get(transaction);
 
       vif.START <= 0;
-      vif.OPERATION <= 0;
-      vif.MODULO <= 0;
-      vif.DATA_A_IN <= 0;
-      vif.DATA_B_IN <= 0;
+      vif.POINT_IN_X <= 0;
+      vif.POINT_IN_Y <= 0;
 
       repeat (1000) @(posedge vif.CLK);
 
       vif.START <= 1;
-      vif.OPERATION <= transaction.OPERATION;
-      vif.MODULO <= transaction.MODULO;
-      vif.DATA_A_IN <= transaction.DATA_A_IN;
-      vif.DATA_B_IN <= transaction.DATA_B_IN;
+      vif.POINT_IN_X <= transaction.POINT_IN_X;
+      vif.POINT_IN_Y <= transaction.POINT_IN_Y;
 
       @(posedge vif.CLK);
 
@@ -78,7 +74,8 @@ class peripheral_driver;
 
       repeat (999) @(posedge vif.CLK);
 
-      transaction.DATA_OUT <= vif.DATA_OUT;
+      transaction.POINT_OUT_X <= vif.POINT_OUT_X;
+      transaction.POINT_OUT_Y <= vif.POINT_OUT_Y;
     end
   endtask
 endclass

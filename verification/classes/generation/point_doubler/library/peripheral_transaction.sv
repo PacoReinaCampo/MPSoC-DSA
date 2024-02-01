@@ -42,18 +42,16 @@ import peripheral_dsa_pkg::*;
 class peripheral_transaction;
   bit                      RST;
   bit                      START;
-  rand bit [DATA_SIZE-1:0] OPERATION;
-  rand bit [DATA_SIZE-1:0] MODULO;
-  rand bit [DATA_SIZE-1:0] DATA_A_IN;
-  rand bit [DATA_SIZE-1:0] DATA_B_IN;
+  rand bit [DATA_SIZE-1:0] POINT_IN_PX;
+  rand bit [DATA_SIZE-1:0] POINT_IN_PY;
 
   bit                      READY;
-  bit      [DATA_SIZE-1:0] DATA_OUT;
+  bit      [DATA_SIZE-1:0] POINT_OUT_RX;
+  bit      [DATA_SIZE-1:0] POINT_OUT_RY;
 
   constraint ip_c {
-    MODULO < 100;
-    DATA_B_IN < 100;
-    DATA_A_IN < 100;
+    POINT_IN_PX < 100;
+    POINT_IN_PY < 100;
   }
 
 endclass

@@ -61,16 +61,17 @@ class peripheral_monitor;
       // Create transaction method
       monitor_transaction = new();
 
-      monitor_transaction.OPERATION = vif.OPERATION;
-      monitor_transaction.MODULO = vif.MODULO;
-      monitor_transaction.DATA_B_IN = vif.DATA_B_IN;
-      monitor_transaction.DATA_A_IN = vif.DATA_A_IN;
+      monitor_transaction.POINT_IN_X = vif.POINT_IN_X;
+      monitor_transaction.POINT_IN_Y = vif.POINT_IN_Y;
+      monitor_transaction.POINT_IN_QX = vif.POINT_IN_QX;
+      monitor_transaction.POINT_IN_QY = vif.POINT_IN_QY;
 
       wait (vif.RST);
       wait (vif.READY);
 
       @(posedge vif.CLK);
-      monitor_transaction.DATA_OUT = vif.DATA_OUT;
+      monitor_transaction.POINT_OUT_X = vif.POINT_OUT_X;
+      monitor_transaction.POINT_OUT_Y = vif.POINT_OUT_Y;
       monitor_to_scoreboard.put(monitor_transaction);
     end
   endtask

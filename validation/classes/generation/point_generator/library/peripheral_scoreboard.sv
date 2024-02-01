@@ -57,12 +57,12 @@ class peripheral_scoreboard;
 
       monitor_to_scoreboard.get(transaction);
 
-      if (!transaction.OPERATION && ((transaction.DATA_A_IN + transaction.DATA_B_IN) % transaction.MODULO == transaction.DATA_OUT)) begin
-        $display("Matched: OPERATION = %0d, MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d", transaction.OPERATION, transaction.MODULO, transaction.DATA_A_IN, transaction.DATA_B_IN, transaction.DATA_OUT);
-      end else if (transaction.OPERATION && ((transaction.DATA_A_IN - transaction.DATA_B_IN) % transaction.MODULO == transaction.DATA_OUT)) begin
-        $display("Matched: OPERATION = %0d, MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d", transaction.OPERATION, transaction.MODULO, transaction.DATA_A_IN, transaction.DATA_B_IN, transaction.DATA_OUT);
+      if (transaction.POINT_OUT_X == transaction.POINT_OUT_X) begin
+        $display("Matched: POINT_OUT_X = %0d", transaction.POINT_OUT_X);
+      end else if (transaction.POINT_OUT_Y == transaction.POINT_OUT_Y) begin
+        $display("Matched: POINT_OUT_Y = %0d", transaction.POINT_OUT_Y);
       end else begin
-        $display("Dis-Matched: OPERATION = %0d, MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d", transaction.OPERATION, transaction.MODULO, transaction.DATA_A_IN, transaction.DATA_B_IN, transaction.DATA_OUT);
+        $display("Dis-Matched: POINT_OUT_X = %0d, POINT_OUT_Y = %0d", transaction.POINT_OUT_X, transaction.POINT_OUT_Y);
       end
       compare_cnt++;
     end

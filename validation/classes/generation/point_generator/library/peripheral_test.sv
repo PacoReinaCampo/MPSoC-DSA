@@ -66,10 +66,9 @@ program peripheral_test (
 
   task apply_reset();
     vif.RST <= 0;
-    vif.START  <= 0;
-    vif.MODULO  <= 0;
-    vif.DATA_A_IN  <= 0;
-    vif.DATA_B_IN  <= 0;
+    vif.START <= 0;
+    vif.POINT_IN_X <= 0;
+    vif.POINT_IN_Y <= 0;
 
     repeat (5) @(posedge vif.CLK);
 
