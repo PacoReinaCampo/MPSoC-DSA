@@ -40,35 +40,41 @@
 `include "peripheral_interface.sv"
 `include "peripheral_test.sv"
 
+import peripheral_dsa_pkg::*;
+
 module peripheral_testbench;
-  bit clk;
-  bit rst;
+  bit CLK;
 
-  always #2 clk = ~clk;
-
-  add_if vif(clk, rst);
-
-  adder DUT (
-    .clk (vif.clk),
-    .rst (vif.rst),
-
-    .in1 (vif.ip1),
-    .in2 (vif.ip2),
-
-    .out (vif.out)
-  );
-
-  peripheral_test t1(vif);
+  // Clock declaration
+  always #1 CLK = ~CLK;
 
   initial begin
-    clk = 0;
-    rst = 1;
-    #5; 
-    rst = 0;
+    CLK = 0;
   end
 
+  // Interface instantiation
+  add_if vif (CLK);
+
+  // DUT instantiation
+  peripheral_dsa_adder dut (
+    .CLK(vif.CLK),
+    .RST(vif.RST),
+
+    .START(vif.START),
+    .OPERATION(vif.OPERATION),
+    .MODULO(vif.MODULO),
+    .DATA_A_IN(vif.DATA_A_IN),
+    .DATA_B_IN(vif.DATA_B_IN),
+
+    .READY(vif.READY),
+    .DATA_OUT(vif.DATA_OUT)
+  );
+
+  // Calling TestCase
+  peripheral_test t1 (vif);
+
   initial begin
-    // Dump waves
+    // Enable wave dump
     $dumpfile("dump.vcd");
     $dumpvars(0);
   end

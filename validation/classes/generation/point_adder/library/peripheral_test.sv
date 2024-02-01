@@ -37,14 +37,42 @@
 // Author(s):
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
-`include "peripheral_package.sv"
+`include "peripheral_transaction.sv"
+`include "peripheral_generator.sv"
+`include "peripheral_driver.sv"
+`include "peripheral_monitor.sv"
+`include "peripheral_scoreboard.sv"
+`include "peripheral_agent.sv"
+`include "peripheral_environment.sv"
 
-program peripheral_test(add_if vif);
+program peripheral_test (
+  // Interface instantiation
+  add_if vif
+);
+
+  // Environment method instantiation
   peripheral_environment environment;
-  
+
   initial begin
+    // Create environment method
     environment = new(vif);
+
+    apply_reset();
+
     environment.agent.generator.count = 5;
+
     environment.run();
   end
+
+  task apply_reset();
+    vif.RST <= 0;
+    vif.START  <= 0;
+    vif.MODULO  <= 0;
+    vif.DATA_A_IN  <= 0;
+    vif.DATA_B_IN  <= 0;
+
+    repeat (5) @(posedge vif.CLK);
+
+    vif.RST <= 1;
+  endtask
 endprogram

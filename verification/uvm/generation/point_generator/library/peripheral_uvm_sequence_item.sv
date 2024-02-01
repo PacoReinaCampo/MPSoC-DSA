@@ -37,23 +37,35 @@
 // Author(s):
 //   Paco Reina Campo <pacoreinacampo@queenfield.tech>
 
+import peripheral_dsa_pkg::*;
+
 class peripheral_uvm_sequence_item extends uvm_sequence_item;
-  rand bit [7:0] ip1;
-  rand bit [7:0] ip2;
+  // Data Signals
+  bit                      RST;
+  bit                      START;
+  rand bit [DATA_SIZE-1:0] POINT_IN_X;
+  rand bit [DATA_SIZE-1:0] POINT_IN_Y;
 
-  bit      [8:0] out;
+  bit                      READY;
+  bit      [DATA_SIZE-1:0] POINT_OUT_X;
+  bit      [DATA_SIZE-1:0] POINT_OUT_Y;
 
+  // Constructor
   function new(string name = "peripheral_uvm_sequence_item");
     super.new(name);
   endfunction
 
+  // Utility and Field declarations
   `uvm_object_utils_begin(peripheral_uvm_sequence_item)
-    `uvm_field_int(ip1, UVM_ALL_ON)
-    `uvm_field_int(ip2, UVM_ALL_ON)
+  `uvm_field_int(RST, UVM_ALL_ON)
+  `uvm_field_int(START, UVM_ALL_ON)
+  `uvm_field_int(POINT_IN_X, UVM_ALL_ON)
+  `uvm_field_int(POINT_IN_Y, UVM_ALL_ON)
   `uvm_object_utils_end
 
+  // Constraints
   constraint ip_c {
-    ip1 < 100;
-    ip2 < 100;
+    POINT_IN_X < 100;
+    POINT_IN_Y < 100;
   }
 endclass
