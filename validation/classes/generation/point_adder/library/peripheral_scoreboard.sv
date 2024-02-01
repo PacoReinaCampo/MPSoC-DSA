@@ -68,33 +68,34 @@ class peripheral_scoreboard;
     end
   endtask
 
-  function [511:0] adder_rx;
+  function point_adder;
     input [511:0] px;
     input [511:0] py;
     input [511:0] qx;
     input [511:0] qy;
 
+    input [511:0] x;
+    input [511:0] y;
+
     logic [511:0] s;
 
+    logic [511:0] rx;
+    logic [511:0] ry;
+
     // s = (Py - Qy) / (Px - Qx)
-    s = ((py - qy) / (px - qx)) % BLACKPOOL512_P;
+    s = (py - qy) / (px - qx);
 
     // Rx = s*s - Px - Qx
-    adder_rx = (s*s - px - qx) % BLACKPOOL512_P;
-  endfunction
-
-  function [511:0] adder_ry;
-    input [511:0] px;
-    input [511:0] py;
-    input [511:0] qx;
-    input [511:0] qy;
-
-    logic [511:0] s;
-
-    // s = (Py - Qy) / (Px - Qx)
-    s = ((py - qy) / (px - qx)) % BLACKPOOL512_P;
+    rx = (s*s - px - qx) % BLACKPOOL512_P;
 
     // Ry = s*(Px - Rx) - Py
-    adder_ry = (s*s - px - qx) % BLACKPOOL512_P;
+    ry = (s*s - px - qx) % BLACKPOOL512_P;
+    
+    if ((rx == x) && (ry == y)) begin
+      return 1;
+    end else begin
+      return 0;
+    end
   endfunction
+
 endclass

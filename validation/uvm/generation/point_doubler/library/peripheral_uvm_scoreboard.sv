@@ -84,35 +84,32 @@ class peripheral_uvm_scoreboard extends uvm_scoreboard;
     end
   endtask
 
-  function [511:0] doubler_rx;
+  function point_doubler;
     input [511:0] px;
     input [511:0] py;
 
-    logic [511:0] s;
-
-    // s = (3*Px*Px) + A / (2*Py)
-    s = ((3*px*px) + BLACKPOOL512_A / (2*py)) % BLACKPOOL512_P;
-
-    // Rx = s*s - 2*Px
-    doubler_rx = (s*s - 2*px) % BLACKPOOL512_P;
-  endfunction
-
-  function [511:0] doubler_ry;
-    input [511:0] px;
-    input [511:0] py;
+    input [511:0] x;
+    input [511:0] y;
 
     logic [511:0] s;
 
     logic [511:0] rx;
+    logic [511:0] ry;
 
     // s = (3*Px*Px) + A / (2*Py)
-    s = ((3*px*px) + BLACKPOOL512_A / (2*py)) % BLACKPOOL512_P;
+    s = (3*px*px) + BLACKPOOL512_A / (2*py);
 
     // Rx = s*s - 2*Px
     rx = (s*s - 2*px) % BLACKPOOL512_P;
 
     // Ry = s*(Px - Rx) - Py
-    doubler_ry = (s*(px - rx) - py) % BLACKPOOL512_P;
+    ry = (s*(px - rx) - py) % BLACKPOOL512_P;
+    
+    if ((rx == x) && (ry == y)) begin
+      return 1;
+    end else begin
+      return 0;
+    end
   endfunction
 
 endclass
