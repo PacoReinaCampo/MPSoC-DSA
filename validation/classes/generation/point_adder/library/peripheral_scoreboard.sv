@@ -67,4 +67,34 @@ class peripheral_scoreboard;
       compare_cnt++;
     end
   endtask
+
+  function [511:0] adder_rx;
+    input [511:0] px;
+    input [511:0] py;
+    input [511:0] qx;
+    input [511:0] qy;
+
+    logic [511:0] s;
+
+    // s = (Py - Qy) / (Px - Qx)
+    s = ((py - qy) / (px - qx)) % BLACKPOOL512_P;
+
+    // Rx = s*s - Px - Qx
+    adder_rx = (s*s - px - qx) % BLACKPOOL512_P;
+  endfunction
+
+  function [511:0] adder_ry;
+    input [511:0] px;
+    input [511:0] py;
+    input [511:0] qx;
+    input [511:0] qy;
+
+    logic [511:0] s;
+
+    // s = (Py - Qy) / (Px - Qx)
+    s = ((py - qy) / (px - qx)) % BLACKPOOL512_P;
+
+    // Ry = s*(Px - Rx) - Py
+    adder_ry = (s*s - px - qx) % BLACKPOOL512_P;
+  endfunction
 endclass
