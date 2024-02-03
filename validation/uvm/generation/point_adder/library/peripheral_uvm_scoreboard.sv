@@ -72,10 +72,8 @@ class peripheral_uvm_scoreboard extends uvm_scoreboard;
       if (item_q.size > 0) begin
         scoreboard_item = item_q.pop_front();
         $display("----------------------------------------------------------------------------------------------------------");
-        if (scoreboard_item.POINT_OUT_RX == scoreboard_item.POINT_OUT_RX) begin
-          `uvm_info(get_type_name, $sformatf("Matched: POINT_OUT_RX = %0d", scoreboard_item.POINT_OUT_RX), UVM_LOW);
-        end else if (scoreboard_item.POINT_OUT_RY == scoreboard_item.POINT_OUT_RY) begin
-          `uvm_info(get_type_name, $sformatf("Matched: POINT_OUT_RY = %0d", scoreboard_item.POINT_OUT_RY), UVM_LOW);
+        if (point_adder(scoreboard_item.POINT_IN_PX, scoreboard_item.POINT_IN_PY, scoreboard_item.POINT_IN_QX, scoreboard_item.POINT_IN_QY, scoreboard_item.POINT_OUT_RX, scoreboard_item.POINT_OUT_RY)) begin
+          `uvm_info(get_type_name, $sformatf("Matched: POINT_OUT_RX = %0d, POINT_OUT_RY = %0d", scoreboard_item.POINT_OUT_RX, scoreboard_item.POINT_OUT_RY), UVM_LOW);
         end else begin
           `uvm_error(get_name, $sformatf("Dis-Matched: POINT_OUT_RX = %0d, POINT_OUT_RY = %0d", scoreboard_item.POINT_OUT_RX, scoreboard_item.POINT_OUT_RY));
         end

@@ -57,10 +57,8 @@ class peripheral_scoreboard;
 
       monitor_to_scoreboard.get(transaction);
 
-      if (transaction.POINT_OUT_RX == transaction.POINT_OUT_RX) begin
-        $display("Matched: POINT_OUT_RX = %0d", transaction.POINT_OUT_RX);
-      end else if (transaction.POINT_OUT_RY == transaction.POINT_OUT_RY) begin
-        $display("Matched: POINT_OUT_RY = %0d", transaction.POINT_OUT_RY);
+      if (point_doubler(transaction.POINT_IN_PX, transaction.POINT_IN_PY, transaction.POINT_IN_QX, transaction.POINT_IN_QY, transaction.POINT_OUT_RX, transaction.POINT_OUT_RY)) begin
+        $display("Matched: POINT_OUT_RX = %0d, POINT_OUT_RY = %0d", transaction.POINT_OUT_RX, transaction.POINT_OUT_RY);
       end else begin
         $display("Dis-Matched: POINT_OUT_RX = %0d, POINT_OUT_RY = %0d", transaction.POINT_OUT_RX, transaction.POINT_OUT_RY);
       end

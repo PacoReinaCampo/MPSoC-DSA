@@ -57,7 +57,7 @@ class peripheral_scoreboard;
 
       monitor_to_scoreboard.get(transaction);
 
-      if (transaction.DATA_IN % transaction.MODULO == transaction.DATA_OUT) begin
+      if (modular_mod(transaction.MODULO, transaction.DATA_IN, transaction.DATA_OUT)) begin
         $display("Matched: MODULO = %0d, DATA_IN = %0d, DATA_OUT = %0d", transaction.MODULO, transaction.DATA_IN, transaction.DATA_OUT);
       end else begin
         $display("Dis-Matched: MODULO = %0d, DATA_IN = %0d, DATA_OUT = %0d", transaction.MODULO, transaction.DATA_IN, transaction.DATA_OUT);
@@ -65,4 +65,21 @@ class peripheral_scoreboard;
       compare_cnt++;
     end
   endtask
+
+  function modular_mod;
+    input [511:0] modulo;
+    input [511:0] data_in;
+
+    input [511:0] data_out;
+
+    logic [511:0] out;
+
+    out = data_in % modulo;
+    
+    if (out == data_out) begin
+      return 1;
+    end else begin
+      return 0;
+    end
+  endfunction
 endclass

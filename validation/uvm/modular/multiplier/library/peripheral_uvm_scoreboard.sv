@@ -72,7 +72,7 @@ class peripheral_uvm_scoreboard extends uvm_scoreboard;
       if (item_q.size > 0) begin
         scoreboard_item = item_q.pop_front();
         $display("----------------------------------------------------------------------------------------------------------");
-        if ((scoreboard_item.DATA_A_IN * scoreboard_item.DATA_B_IN) % scoreboard_item.MODULO == scoreboard_item.DATA_OUT) begin
+        if (modular_multiplier(scoreboard_item.MODULO, scoreboard_item.DATA_A_IN, scoreboard_item.DATA_B_IN, scoreboard_item.DATA_OUT)) begin
           `uvm_info(get_type_name, $sformatf("Matched: MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d", scoreboard_item.MODULO, scoreboard_item.DATA_A_IN, scoreboard_item.DATA_B_IN, scoreboard_item.DATA_OUT), UVM_LOW);
         end else begin
           `uvm_error(get_name, $sformatf("Dis-Matched: MODULO = %0d, DATA_A_IN = %0d, DATA_B_IN = %0d, DATA_OUT = %0d", scoreboard_item.MODULO, scoreboard_item.DATA_A_IN, scoreboard_item.DATA_B_IN, scoreboard_item.DATA_OUT));
@@ -81,5 +81,23 @@ class peripheral_uvm_scoreboard extends uvm_scoreboard;
       end
     end
   endtask
+
+  function modular_multiplier;
+    input [511:0] modulo;
+    input [511:0] data_a_in;
+    input [511:0] data_b_in;
+
+    input [511:0] data_out;
+
+    logic [511:0] out;
+
+    out = (data_a_in * data_b_in) % modulo;
+    
+    if (out == data_out) begin
+      return 1;
+    end else begin
+      return 0;
+    end
+  endfunction
 
 endclass
