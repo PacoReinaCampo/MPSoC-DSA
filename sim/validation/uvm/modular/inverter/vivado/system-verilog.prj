@@ -44,4 +44,4 @@
 
 sv work ../../../../../../rtl/verilog/pkg/peripheral_dsa_pkg.sv
 
-sv work ../../../../../../validation/uvm/modular/inverter/library/peripheral_uvm_testbench.sv
+sv work ../../../../../../validation/uvm/library/core/modular/inverter/library/peripheral_uvm_testbench.sv

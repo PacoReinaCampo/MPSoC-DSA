@@ -44,4 +44,4 @@
 
 sv work ../../../../../../rtl/verilog/pkg/peripheral_dsa_pkg.sv
 
-sv work ../../../../../../verification/uvm/generation/point_doubler/library/peripheral_uvm_testbench.sv
+sv work ../../../../../../verification/uvm/library/core/generation/point_doubler/library/peripheral_uvm_testbench.sv

@@ -44,4 +44,4 @@
 
 sv work ../../../../../../rtl/verilog/pkg/peripheral_dsa_pkg.sv
 
-sv work ../../../../../../validation/classes/modular/mod/library/peripheral_testbench.sv
+sv work ../../../../../../validation/classes/library/core/modular/mod/library/peripheral_testbench.sv
