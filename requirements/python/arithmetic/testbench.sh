@@ -1,5 +1,0 @@
-python3 peripheral_dsa_adder.py
-python3 peripheral_dsa_inverter.py
-python3 peripheral_dsa_mod.py
-python3 peripheral_dsa_multiplier.py
-python3 peripheral_dsa_subtractor.py
