@@ -59,6 +59,6 @@ vhdl2008 work ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_sign.vh
 vhdl2008 work ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_verify.vhd
 vhdl2008 work ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_top.vhd
 
-vhdl2008 work ../../../../../../bench/vhdl/core/kcdsa/peripheral_dsa_kcdsa_verify/peripheral_dsa_kcdsa_verify_pkg.vhd
-vhdl2008 work ../../../../../../bench/vhdl/core/kcdsa/peripheral_dsa_kcdsa_verify/peripheral_dsa_kcdsa_verify_stimulus.vhd
-vhdl2008 work ../../../../../../bench/vhdl/core/kcdsa/peripheral_dsa_kcdsa_verify/peripheral_dsa_kcdsa_verify_testbench.vhd
+vhdl2008 work ../../../../../../verification/procedures/library/core/kcdsa/peripheral_dsa_kcdsa_verify/peripheral_dsa_kcdsa_verify_pkg.vhd
+vhdl2008 work ../../../../../../verification/procedures/library/core/kcdsa/peripheral_dsa_kcdsa_verify/peripheral_dsa_kcdsa_verify_stimulus.vhd
+vhdl2008 work ../../../../../../verification/procedures/library/core/kcdsa/peripheral_dsa_kcdsa_verify/peripheral_dsa_kcdsa_verify_testbench.vhd

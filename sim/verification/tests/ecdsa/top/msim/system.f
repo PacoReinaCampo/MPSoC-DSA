@@ -59,6 +59,6 @@
 ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_verify.vhd
 ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_top.vhd
 
-../../../../../../bench/vhdl/core/ecdsa/peripheral_dsa_ecdsa_top/peripheral_dsa_ecdsa_top_pkg.vhd
-../../../../../../bench/vhdl/core/ecdsa/peripheral_dsa_ecdsa_top/peripheral_dsa_ecdsa_top_stimulus.vhd
-../../../../../../bench/vhdl/core/ecdsa/peripheral_dsa_ecdsa_top/peripheral_dsa_ecdsa_top_testbench.vhd
+../../../../../../verification/procedures/library/core/ecdsa/peripheral_dsa_ecdsa_top/peripheral_dsa_ecdsa_top_pkg.vhd
+../../../../../../verification/procedures/library/core/ecdsa/peripheral_dsa_ecdsa_top/peripheral_dsa_ecdsa_top_stimulus.vhd
+../../../../../../verification/procedures/library/core/ecdsa/peripheral_dsa_ecdsa_top/peripheral_dsa_ecdsa_top_testbench.vhd

@@ -59,6 +59,6 @@ vhdl2008 work ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_sign.vh
 vhdl2008 work ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_verify.vhd
 vhdl2008 work ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_top.vhd
 
-vhdl2008 work ../../../../../../bench/vhdl/core/modular/peripheral_dsa_inverter/peripheral_dsa_inverter_pkg.vhd
-vhdl2008 work ../../../../../../bench/vhdl/core/modular/peripheral_dsa_inverter/peripheral_dsa_inverter_stimulus.vhd
-vhdl2008 work ../../../../../../bench/vhdl/core/modular/peripheral_dsa_inverter/peripheral_dsa_inverter_testbench.vhd
+vhdl2008 work ../../../../../../verification/procedures/library/core/modular/peripheral_dsa_inverter/peripheral_dsa_inverter_pkg.vhd
+vhdl2008 work ../../../../../../verification/procedures/library/core/modular/peripheral_dsa_inverter/peripheral_dsa_inverter_stimulus.vhd
+vhdl2008 work ../../../../../../verification/procedures/library/core/modular/peripheral_dsa_inverter/peripheral_dsa_inverter_testbench.vhd

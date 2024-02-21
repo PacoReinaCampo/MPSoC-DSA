@@ -15,6 +15,6 @@ ghdl -a --std=08 ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_sign
 ghdl -a --std=08 ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_verify.vhd
 ghdl -a --std=08 ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_top.vhd
 
-ghdl -a --std=08 ../../../../../../bench/vhdl/core/sha/peripheral_dsa_sha256/peripheral_dsa_sha256_pkg.vhd
-ghdl -a --std=08 ../../../../../../bench/vhdl/core/sha/peripheral_dsa_sha256/peripheral_dsa_sha256_stimulus.vhd
-ghdl -a --std=08 ../../../../../../bench/vhdl/core/sha/peripheral_dsa_sha256/peripheral_dsa_sha256_testbench.vhd
+ghdl -a --std=08 ../../../../../../verification/procedures/library/core/sha/peripheral_dsa_sha256/peripheral_dsa_sha256_pkg.vhd
+ghdl -a --std=08 ../../../../../../verification/procedures/library/core/sha/peripheral_dsa_sha256/peripheral_dsa_sha256_stimulus.vhd
+ghdl -a --std=08 ../../../../../../verification/procedures/library/core/sha/peripheral_dsa_sha256/peripheral_dsa_sha256_testbench.vhd

@@ -15,6 +15,6 @@ ghdl -a --std=08 ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_sign
 ghdl -a --std=08 ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_verify.vhd
 ghdl -a --std=08 ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_top.vhd
 
-ghdl -a --std=08 ../../../../../../bench/vhdl/core/modular/peripheral_dsa_mod/peripheral_dsa_mod_pkg.vhd
-ghdl -a --std=08 ../../../../../../bench/vhdl/core/modular/peripheral_dsa_mod/peripheral_dsa_mod_stimulus.vhd
-ghdl -a --std=08 ../../../../../../bench/vhdl/core/modular/peripheral_dsa_mod/peripheral_dsa_mod_testbench.vhd
+ghdl -a --std=08 ../../../../../../verification/procedures/library/core/modular/peripheral_dsa_mod/peripheral_dsa_mod_pkg.vhd
+ghdl -a --std=08 ../../../../../../verification/procedures/library/core/modular/peripheral_dsa_mod/peripheral_dsa_mod_stimulus.vhd
+ghdl -a --std=08 ../../../../../../verification/procedures/library/core/modular/peripheral_dsa_mod/peripheral_dsa_mod_testbench.vhd

@@ -59,6 +59,6 @@
 ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_verify.vhd
 ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_top.vhd
 
-../../../../../../bench/vhdl/core/modular/peripheral_dsa_adder/peripheral_dsa_adder_pkg.vhd
-../../../../../../bench/vhdl/core/modular/peripheral_dsa_adder/peripheral_dsa_adder_stimulus.vhd
-../../../../../../bench/vhdl/core/modular/peripheral_dsa_adder/peripheral_dsa_adder_testbench.vhd
+../../../../../../verification/procedures/library/core/modular/peripheral_dsa_adder/peripheral_dsa_adder_pkg.vhd
+../../../../../../verification/procedures/library/core/modular/peripheral_dsa_adder/peripheral_dsa_adder_stimulus.vhd
+../../../../../../verification/procedures/library/core/modular/peripheral_dsa_adder/peripheral_dsa_adder_testbench.vhd

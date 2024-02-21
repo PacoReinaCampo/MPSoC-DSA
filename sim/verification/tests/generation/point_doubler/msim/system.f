@@ -59,6 +59,6 @@
 ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_verify.vhd
 ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_top.vhd
 
-../../../../../../bench/vhdl/core/generation/peripheral_dsa_point_doubler/peripheral_dsa_point_doubler_pkg.vhd
-../../../../../../bench/vhdl/core/generation/peripheral_dsa_point_doubler/peripheral_dsa_point_doubler_stimulus.vhd
-../../../../../../bench/vhdl/core/generation/peripheral_dsa_point_doubler/peripheral_dsa_point_doubler_testbench.vhd
+../../../../../../verification/procedures/library/core/generation/peripheral_dsa_point_doubler/peripheral_dsa_point_doubler_pkg.vhd
+../../../../../../verification/procedures/library/core/generation/peripheral_dsa_point_doubler/peripheral_dsa_point_doubler_stimulus.vhd
+../../../../../../verification/procedures/library/core/generation/peripheral_dsa_point_doubler/peripheral_dsa_point_doubler_testbench.vhd

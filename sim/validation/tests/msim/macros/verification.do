@@ -17,9 +17,9 @@ mkdir wlf
 alias run_peripheral_dsa_sha256_test {
   echo "TEST: DSA_SHA256_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_package.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_package.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_testbench.vhd
 
   vsim -g /peripheral_dsa_testbench/DSA_SHA256_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
@@ -42,9 +42,9 @@ alias run_peripheral_dsa_sha256_test {
 alias run_peripheral_dsa_sha512_test {
   echo "TEST: DSA_SHA512_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_package.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_package.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_testbench.vhd
 
   vsim -g /peripheral_dsa_testbench/DSA_SHA512_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
@@ -67,9 +67,9 @@ alias run_peripheral_dsa_sha512_test {
 alias run_peripheral_dsa_adder_test {
   echo "TEST: DSA_ADDER_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_package.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_package.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_testbench.vhd
 
   vsim -g /peripheral_dsa_testbench/DSA_ADDER_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
@@ -92,9 +92,9 @@ alias run_peripheral_dsa_adder_test {
 alias run_peripheral_dsa_inverter_test {
   echo "TEST: DSA_INVERTER_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_package.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_package.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_testbench.vhd
 
   vsim -g /peripheral_dsa_testbench/DSA_INVERTER_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
@@ -117,9 +117,9 @@ alias run_peripheral_dsa_inverter_test {
 alias run_peripheral_dsa_multiplier_test {
   echo "TEST: DSA_MULTIPLIER_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_package.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_package.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_testbench.vhd
 
   vsim -g /peripheral_dsa_testbench/DSA_MULTIPLIER_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
@@ -142,9 +142,9 @@ alias run_peripheral_dsa_multiplier_test {
 alias run_peripheral_dsa_point_adder_test {
   echo "TEST: DSA_POINT_ADDER_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_package.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_package.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_testbench.vhd
 
   vsim -g /peripheral_dsa_testbench/DSA_POINT_ADDER_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
@@ -167,9 +167,9 @@ alias run_peripheral_dsa_point_adder_test {
 alias run_peripheral_dsa_point_doubler_test {
   echo "TEST: DSA_POINT_DOUBLER_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_package.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_package.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_testbench.vhd
 
   vsim -g /peripheral_dsa_testbench/DSA_POINT_DOUBLER_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
@@ -192,9 +192,9 @@ alias run_peripheral_dsa_point_doubler_test {
 alias run_peripheral_dsa_point_generator_test {
   echo "TEST: DSA_POINT_GENERATOR_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_package.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_package.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_testbench.vhd
 
   vsim -g /peripheral_dsa_testbench/DSA_POINT_GENERATOR_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
@@ -217,9 +217,9 @@ alias run_peripheral_dsa_point_generator_test {
 alias run_peripheral_dsa_ecdsa_sign_test {
   echo "TEST: DSA_ECDSA_SIGN_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_package.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_package.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_testbench.vhd
 
   vsim -g /peripheral_dsa_testbench/DSA_ECDSA_SIGN_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
@@ -242,9 +242,9 @@ alias run_peripheral_dsa_ecdsa_sign_test {
 alias run_peripheral_dsa_ecdsa_verify_test {
   echo "TEST: DSA_ECDSA_VERIFY_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_package.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_package.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_testbench.vhd
 
   vsim -g /peripheral_dsa_testbench/DSA_ECDSA_VERIFY_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
@@ -267,9 +267,9 @@ alias run_peripheral_dsa_ecdsa_verify_test {
 alias run_peripheral_dsa_ecdsa_top_test {
   echo "TEST: DSA_ECDSA_TOP_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_package.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_package.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_testbench.vhd
 
   vsim -g /peripheral_dsa_testbench/DSA_ECDSA_TOP_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
@@ -292,9 +292,9 @@ alias run_peripheral_dsa_ecdsa_top_test {
 alias run_peripheral_dsa_kcdsa_sign_test {
   echo "TEST: DSA_KCDSA_SIGN_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_package.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_package.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_testbench.vhd
 
   vsim -g /peripheral_dsa_testbench/DSA_KCDSA_SIGN_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
@@ -317,9 +317,9 @@ alias run_peripheral_dsa_kcdsa_sign_test {
 alias run_peripheral_dsa_kcdsa_verify_test {
   echo "TEST: DSA_KCDSA_VERIFY_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_package.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_package.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_testbench.vhd
 
   vsim -g /peripheral_dsa_testbench/DSA_KCDSA_VERIFY_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 
@@ -342,9 +342,9 @@ alias run_peripheral_dsa_kcdsa_verify_test {
 alias run_peripheral_dsa_kcdsa_top_test {
   echo "TEST: DSA_KCDSA_TOP_TEST"
 
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_package.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_stimulus.vhd
-  vcom -2008 -reportprogress 300 -work work $test_path/vhdl/peripheral/peripheral_dsa_testbench.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_package.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_stimulus.vhd
+  vcom -2008 -reportprogress 300 -work work $test_path/procedures/library/peripheral/peripheral_dsa_testbench.vhd
 
   vsim -g /peripheral_dsa_testbench/DSA_KCDSA_TOP_TEST=true -t ps +notimingchecks -L unisim work.peripheral_dsa_testbench
 

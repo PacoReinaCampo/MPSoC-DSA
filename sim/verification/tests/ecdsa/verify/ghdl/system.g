@@ -15,6 +15,6 @@ ghdl -a --std=08 ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_sign
 ghdl -a --std=08 ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_verify.vhd
 ghdl -a --std=08 ../../../../../../rtl/vhdl/core/kcdsa/peripheral_dsa_kcdsa_top.vhd
 
-ghdl -a --std=08 ../../../../../../bench/vhdl/core/ecdsa/peripheral_dsa_ecdsa_verify/peripheral_dsa_ecdsa_verify_pkg.vhd
-ghdl -a --std=08 ../../../../../../bench/vhdl/core/ecdsa/peripheral_dsa_ecdsa_verify/peripheral_dsa_ecdsa_verify_stimulus.vhd
-ghdl -a --std=08 ../../../../../../bench/vhdl/core/ecdsa/peripheral_dsa_ecdsa_verify/peripheral_dsa_ecdsa_verify_testbench.vhd
+ghdl -a --std=08 ../../../../../../verification/procedures/library/core/ecdsa/peripheral_dsa_ecdsa_verify/peripheral_dsa_ecdsa_verify_pkg.vhd
+ghdl -a --std=08 ../../../../../../verification/procedures/library/core/ecdsa/peripheral_dsa_ecdsa_verify/peripheral_dsa_ecdsa_verify_stimulus.vhd
+ghdl -a --std=08 ../../../../../../verification/procedures/library/core/ecdsa/peripheral_dsa_ecdsa_verify/peripheral_dsa_ecdsa_verify_testbench.vhd

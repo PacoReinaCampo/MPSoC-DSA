@@ -11,8 +11,8 @@ vlib work
 ###################################################################################################
 
 alias peripheral_dsa_sha256_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_sha256_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/peripheral_dsa_sha256.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/pkg/peripheral_dsa_sha256_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/sha/peripheral_dsa_sha256.vhd
 }
 
 ###################################################################################################
@@ -20,8 +20,8 @@ alias peripheral_dsa_sha256_compilation_exec {
 ###################################################################################################
 
 alias peripheral_dsa_sha512_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_sha512_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/peripheral_dsa_sha512.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/pkg/peripheral_dsa_sha512_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/sha/peripheral_dsa_sha512.vhd
 }
 
 ###################################################################################################
@@ -29,8 +29,8 @@ alias peripheral_dsa_sha512_compilation_exec {
 ###################################################################################################
 
 alias peripheral_dsa_adder_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_adder.vhd
 }
 
 ###################################################################################################
@@ -38,8 +38,8 @@ alias peripheral_dsa_adder_compilation_exec {
 ###################################################################################################
 
 alias peripheral_dsa_inverter_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_inverter.vhd
 }
 
 ###################################################################################################
@@ -47,8 +47,8 @@ alias peripheral_dsa_inverter_compilation_exec {
 ###################################################################################################
 
 alias peripheral_dsa_multiplier_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_multiplier.vhd
 }
 
 ###################################################################################################
@@ -56,11 +56,11 @@ alias peripheral_dsa_multiplier_compilation_exec {
 ###################################################################################################
 
 alias peripheral_dsa_point_adder_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_multiplier.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_adder.vhd
 }
 
 ###################################################################################################
@@ -68,11 +68,11 @@ alias peripheral_dsa_point_adder_compilation_exec {
 ###################################################################################################
 
 alias peripheral_dsa_point_doubler_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_multiplier.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_doubler.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_doubler.vhd
 }
 
 ###################################################################################################
@@ -80,13 +80,13 @@ alias peripheral_dsa_point_doubler_compilation_exec {
 ###################################################################################################
 
 alias peripheral_dsa_point_generator_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_multiplier.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_doubler.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_generator.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_doubler.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_generator.vhd
 }
 
 ###################################################################################################
@@ -94,17 +94,17 @@ alias peripheral_dsa_point_generator_compilation_exec {
 ###################################################################################################
 
 alias peripheral_dsa_ecdsa_sign_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_sha512_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/peripheral_dsa_sha512.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_mod.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_multiplier.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_doubler.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_generator.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/ecdsa/peripheral_dsa_ecdsa_sign.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/pkg/peripheral_dsa_sha512_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/sha/peripheral_dsa_sha512.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_mod.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_doubler.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_generator.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/ecdsa/peripheral_dsa_ecdsa_sign.vhd
 }
 
 ###################################################################################################
@@ -112,17 +112,17 @@ alias peripheral_dsa_ecdsa_sign_compilation_exec {
 ###################################################################################################
 
 alias peripheral_dsa_ecdsa_verify_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_sha512_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/peripheral_dsa_sha512.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_mod.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_multiplier.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_doubler.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_generator.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/ecdsa/peripheral_dsa_ecdsa_verify.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/pkg/peripheral_dsa_sha512_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/sha/peripheral_dsa_sha512.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_mod.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_doubler.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_generator.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/ecdsa/peripheral_dsa_ecdsa_verify.vhd
 }
 
 ###################################################################################################
@@ -130,17 +130,17 @@ alias peripheral_dsa_ecdsa_verify_compilation_exec {
 ###################################################################################################
 
 alias peripheral_dsa_ecdsa_top_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_sha512_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/peripheral_dsa_sha512.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_mod.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_multiplier.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_doubler.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_generator.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/ecdsa/peripheral_dsa_ecdsa_top.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/pkg/peripheral_dsa_sha512_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/sha/peripheral_dsa_sha512.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_mod.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_doubler.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_generator.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/ecdsa/peripheral_dsa_ecdsa_top.vhd
 }
 
 ###################################################################################################
@@ -148,17 +148,17 @@ alias peripheral_dsa_ecdsa_top_compilation_exec {
 ###################################################################################################
 
 alias peripheral_dsa_kcdsa_sign_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_sha512_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/peripheral_dsa_sha512.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_mod.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_multiplier.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_doubler.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_generator.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/kcdsa/peripheral_dsa_kcdsa_sign.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/pkg/peripheral_dsa_sha512_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/sha/peripheral_dsa_sha512.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_mod.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_doubler.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_generator.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/kcdsa/peripheral_dsa_kcdsa_sign.vhd
 }
 
 ###################################################################################################
@@ -166,17 +166,17 @@ alias peripheral_dsa_kcdsa_sign_compilation_exec {
 ###################################################################################################
 
 alias peripheral_dsa_kcdsa_verify_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_sha512_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/peripheral_dsa_sha512.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_mod.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_multiplier.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_doubler.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_generator.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/kcdsa/peripheral_dsa_kcdsa_verify.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/pkg/peripheral_dsa_sha512_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/sha/peripheral_dsa_sha512.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_mod.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_doubler.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_generator.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/kcdsa/peripheral_dsa_kcdsa_verify.vhd
 }
 
 ###################################################################################################
@@ -184,17 +184,17 @@ alias peripheral_dsa_kcdsa_verify_compilation_exec {
 ###################################################################################################
 
 alias peripheral_dsa_kcdsa_top_compilation_exec {
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/pkg/peripheral_dsa_sha512_pkg.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/sha/peripheral_dsa_sha512.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_mod.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_inverter.vhd
-  vcom -2008 -reportprogress 300 -work work $model_path/vhdl/core/modular/peripheral_dsa_multiplier.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_adder.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_doubler.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/generation/peripheral_dsa_point_generator.vhd
-  vcom -2008 -reportprogress 300 -work work $design_path/vhdl/core/kcdsa/peripheral_dsa_kcdsa_top.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/pkg/peripheral_dsa_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/pkg/peripheral_dsa_sha512_pkg.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/sha/peripheral_dsa_sha512.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_mod.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_inverter.vhd
+  vcom -2008 -reportprogress 300 -work work $model_path/procedures/library/core/modular/peripheral_dsa_multiplier.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_adder.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_doubler.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/generation/peripheral_dsa_point_generator.vhd
+  vcom -2008 -reportprogress 300 -work work $design_path/procedures/library/core/kcdsa/peripheral_dsa_kcdsa_top.vhd
 }
 
 ###################################################################################################
