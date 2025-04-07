@@ -53,7 +53,7 @@ module peripheral_testbench;
   end
 
   // Interface instantiation
-  add_if vif (CLK);
+  peripheral_design_if vif (CLK);
 
   // DUT instantiation
   peripheral_dsa_multiplier dut (

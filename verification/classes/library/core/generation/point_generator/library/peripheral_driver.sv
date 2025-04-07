@@ -39,7 +39,7 @@
 
 class peripheral_driver;
   // Interface instantiation
-  virtual add_if vif;
+  virtual peripheral_design_if vif;
 
   mailbox generator_to_driver;
 
@@ -47,7 +47,7 @@ class peripheral_driver;
   peripheral_transaction transaction;
 
   // Constructor
-  function new(mailbox generator_to_driver, virtual add_if vif);
+  function new(mailbox generator_to_driver, virtual peripheral_design_if vif);
     this.generator_to_driver = generator_to_driver;
 
     this.vif = vif;

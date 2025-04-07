@@ -39,7 +39,7 @@
 
 import peripheral_dsa_pkg::*;
 
-interface add_if (
+interface peripheral_design_if (
   input logic CLK
 );
 
