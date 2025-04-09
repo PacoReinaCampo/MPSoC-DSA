@@ -43,7 +43,7 @@
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 @echo off
-call ../../../../../../../settings64_vivado.bat
+call ../../../../../../settings64_vivado.bat
 
 xvhdl -prj system-vhdl.prj
 xvlog -prj system-verilog.prj -L uvm
