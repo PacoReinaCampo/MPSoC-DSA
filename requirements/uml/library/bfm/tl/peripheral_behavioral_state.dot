@@ -1,4 +1,4 @@
-digraph behavioral_state_biu {
+digraph behavioral_state_tl {
   node [shape = circle, style=filled, fillcolor=lightblue];
   
   // Estados

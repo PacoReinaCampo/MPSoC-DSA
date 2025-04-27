@@ -42,38 +42,23 @@
 //                                                                               //
 ///////////////////////////////////////////////////////////////////////////////////
 
-package biu;
+import java.util.Random;
 
-public class peripheral_design {
-  public static double ntm_scalar_adder(double data_a_in, double data_b_in) {
-    double data_out;
- 
-    data_out = data_a_in + data_b_in;
- 
-    return data_out;
-  }
+import tl.peripheral_design;
 
-  public static double ntm_scalar_subtractor(double data_a_in, double data_b_in) {
-    double data_out;
- 
-    data_out = data_a_in - data_b_in;
- 
-    return data_out;
-  }
+class peripheral_tl_test {
+  public static void main(String[] args) {
+    Random random = new Random();
 
-  public static double ntm_scalar_multiplier(double data_a_in, double data_b_in) {
-    double data_out;
- 
-    data_out = data_a_in * data_b_in;
- 
-    return data_out;
-  }
+    double data_a_in = random.nextDouble();
+    double data_b_in = random.nextDouble();
 
-  public static double ntm_scalar_divider(double data_a_in, double data_b_in) {
-    double data_out;
- 
-    data_out = data_a_in / data_b_in;
- 
-    return data_out;
+    assert peripheral_design.ntm_scalar_adder(data_a_in, data_b_in) == data_a_in + data_b_in;
+
+    assert peripheral_design.ntm_scalar_subtractor(data_a_in, data_b_in) == data_a_in - data_b_in;
+
+    assert peripheral_design.ntm_scalar_multiplier(data_a_in, data_b_in) == data_a_in * data_b_in;
+
+    assert peripheral_design.ntm_scalar_divider(data_a_in, data_b_in) == data_a_in / data_b_in;
   }
 }

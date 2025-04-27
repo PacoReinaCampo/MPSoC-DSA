@@ -42,23 +42,54 @@
 //                                                                               //
 ///////////////////////////////////////////////////////////////////////////////////
 
-import java.util.Random;
+extern crate bfm_library_tl;
+extern crate rand;
 
-import biu.peripheral_design;
+use bfm_library_tl::code::peripheral_design::*;
+use rand::random;
 
-class peripheral_biu_test {
-  public static void main(String[] args) {
-    Random random = new Random();
+fn main() {
+    let data_a_input: f64 = random();
+    let data_b_input: f64 = random();
 
-    double data_a_in = random.nextDouble();
-    double data_b_in = random.nextDouble();
+    let data_addition_output: f64 = data_a_input + data_b_input;
+    let data_subtraction_output: f64 = data_a_input - data_b_input;
+    let data_multiplication_output: f64 = data_a_input * data_b_input;
+    let data_division_output: f64 = data_a_input / data_b_input;
 
-    assert peripheral_design.ntm_scalar_adder(data_a_in, data_b_in) == data_a_in + data_b_in;
+    let addition = ScalarArithmetic {
+        data_a_in: data_a_input,
+        data_b_in: data_b_input,
 
-    assert peripheral_design.ntm_scalar_subtractor(data_a_in, data_b_in) == data_a_in - data_b_in;
+        data_out: data_addition_output
+    };
 
-    assert peripheral_design.ntm_scalar_multiplier(data_a_in, data_b_in) == data_a_in * data_b_in;
+    assert_eq!(addition.ntm_scalar_adder(), addition.data_out);
 
-    assert peripheral_design.ntm_scalar_divider(data_a_in, data_b_in) == data_a_in / data_b_in;
-  }
+    let subtraction = ScalarArithmetic {
+        data_a_in: data_a_input,
+        data_b_in: data_b_input,
+
+        data_out: data_subtraction_output
+    };
+
+    assert_eq!(subtraction.ntm_scalar_subtractor(), subtraction.data_out);
+
+    let multiplication = ScalarArithmetic {
+        data_a_in: data_a_input,
+        data_b_in: data_b_input,
+
+        data_out: data_multiplication_output
+    };
+
+    assert_eq!(multiplication.ntm_scalar_multiplier(), multiplication.data_out);
+
+    let division = ScalarArithmetic {
+        data_a_in: data_a_input,
+        data_b_in: data_b_input,
+
+        data_out: data_division_output
+    };
+
+    assert_eq!(division.ntm_scalar_divider(), division.data_out);
 }
