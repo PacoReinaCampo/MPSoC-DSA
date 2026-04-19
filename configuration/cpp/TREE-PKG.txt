@@ -1,0 +1,36 @@
+library
+├── algebra
+│   ├── accelerator_algebra.hpp
+│   ├── matrix
+│   ├── scalar
+│   ├── tensor
+│   └── vector
+├── arithmetic
+│   ├── accelerator_arithmetic.hpp
+│   ├── matrix
+│   │   ├── adder
+│   │   ├── divider
+│   │   ├── multiplier
+│   │   └── subtractor
+│   ├── scalar
+│   │   ├── adder
+│   │   ├── divider
+│   │   ├── multiplier
+│   │   └── subtractor
+│   ├── tensor
+│   │   ├── adder
+│   │   ├── divider
+│   │   ├── multiplier
+│   │   └── subtractor
+│   └── vector
+│       ├── adder
+│       ├── divider
+│       ├── multiplier
+│       └── subtractor
+└── math
+    ├── accelerator_math.hpp
+    ├── matrix
+    ├── scalar
+    └── vector
+
+30 directories, 3 files

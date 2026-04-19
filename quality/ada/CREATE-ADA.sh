@@ -1,0 +1,11 @@
+touch library/algebra/matrix/accelerator_matrix_algebra.adb
+touch library/algebra/scalar/accelerator_scalar_algebra.adb
+touch library/algebra/tensor/accelerator_tensor_algebra.adb
+touch library/algebra/vector/accelerator_vector_algebra.adb
+touch library/arithmetic/matrix/accelerator_matrix_arithmetic.adb
+touch library/arithmetic/scalar/accelerator_scalar_arithmetic.adb
+touch library/arithmetic/tensor/accelerator_tensor_arithmetic.adb
+touch library/arithmetic/vector/accelerator_vector_arithmetic.adb
+touch library/math/matrix/accelerator_matrix_math.adb
+touch library/math/scalar/accelerator_scalar_math.adb
+touch library/math/vector/accelerator_vector_math.adb

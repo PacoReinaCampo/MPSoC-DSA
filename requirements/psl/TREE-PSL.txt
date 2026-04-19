@@ -1,29 +1,79 @@
 library
-├── bfm
-│   ├── ahb4
-│   │   └── peripheral_design.psl
-│   ├── apb4
-│   │   └── peripheral_design.psl
-│   ├── axi4
-│   │   └── peripheral_design.psl
-│   ├── bb
-│   │   └── peripheral_design.psl
-│   ├── tl
-│   │   └── peripheral_design.psl
-│   └── wb
-│       └── peripheral_design.psl
-└── core
-    ├── ahb4
-    │   └── peripheral_design.psl
-    ├── apb4
-    │   └── peripheral_design.psl
-    ├── axi4
-    │   └── peripheral_design.psl
-    ├── bb
-    │   └── peripheral_design.psl
-    ├── tl
-    │   └── peripheral_design.psl
-    └── wb
-        └── peripheral_design.psl
+├── algebra
+│   ├── matrix
+│   │   ├── accelerator_matrix_convolution.psl
+│   │   ├── accelerator_matrix_differentiation.psl
+│   │   ├── accelerator_matrix_integration.psl
+│   │   ├── accelerator_matrix_inverse.psl
+│   │   ├── accelerator_matrix_multiplication.psl
+│   │   ├── accelerator_matrix_product.psl
+│   │   ├── accelerator_matrix_softmax.psl
+│   │   ├── accelerator_matrix_summation.psl
+│   │   ├── accelerator_matrix_transpose.psl
+│   │   ├── accelerator_matrix_vector_convolution.psl
+│   │   ├── accelerator_matrix_vector_product.psl
+│   │   └── accelerator_transpose_vector_product.psl
+│   ├── scalar
+│   │   ├── accelerator_scalar_multiplication.psl
+│   │   └── accelerator_scalar_summation.psl
+│   ├── tensor
+│   │   ├── accelerator_tensor_convolution.psl
+│   │   ├── accelerator_tensor_differentiation.psl
+│   │   ├── accelerator_tensor_integration.psl
+│   │   ├── accelerator_tensor_inverse.psl
+│   │   ├── accelerator_tensor_matrix_convolution.psl
+│   │   ├── accelerator_tensor_matrix_product.psl
+│   │   ├── accelerator_tensor_multiplication.psl
+│   │   ├── accelerator_tensor_product.psl
+│   │   ├── accelerator_tensor_softmax.psl
+│   │   ├── accelerator_tensor_summation.psl
+│   │   └── accelerator_tensor_transpose.psl
+│   └── vector
+│       ├── accelerator_dot_product.psl
+│       ├── accelerator_vector_convolution.psl
+│       ├── accelerator_vector_cosine_similarity.psl
+│       ├── accelerator_vector_differentiation.psl
+│       ├── accelerator_vector_integration.psl
+│       ├── accelerator_vector_module.psl
+│       ├── accelerator_vector_multiplication.psl
+│       ├── accelerator_vector_softmax.psl
+│       └── accelerator_vector_summation.psl
+├── arithmetic
+│   ├── matrix
+│   │   ├── accelerator_matrix_adder.psl
+│   │   ├── accelerator_matrix_divider.psl
+│   │   ├── accelerator_matrix_multiplier.psl
+│   │   └── accelerator_matrix_subtract.psl
+│   ├── scalar
+│   │   ├── accelerator_scalar_adder.psl
+│   │   ├── accelerator_scalar_divider.psl
+│   │   ├── accelerator_scalar_multiplier.psl
+│   │   └── accelerator_scalar_subtract.psl
+│   ├── tensor
+│   │   ├── accelerator_tensor_adder.psl
+│   │   ├── accelerator_tensor_divider.psl
+│   │   ├── accelerator_tensor_multiplier.psl
+│   │   └── accelerator_tensor_subtract.psl
+│   └── vector
+│       ├── accelerator_vector_adder.psl
+│       ├── accelerator_vector_divider.psl
+│       ├── accelerator_vector_multiplier.psl
+│       └── accelerator_vector_subtract.psl
+└── math
+    ├── matrix
+    │   ├── accelerator_matrix_deviation_function.psl
+    │   ├── accelerator_matrix_logistic_function.psl
+    │   ├── accelerator_matrix_mean_function.psl
+    │   └── accelerator_matrix_oneplus_function.psl
+    ├── scalar
+    │   ├── accelerator_scalar_deviation_function.psl
+    │   ├── accelerator_scalar_logistic_function.psl
+    │   ├── accelerator_scalar_mean_function.psl
+    │   └── accelerator_scalar_oneplus_function.psl
+    └── vector
+        ├── accelerator_vector_deviation_function.psl
+        ├── accelerator_vector_logistic_function.psl
+        ├── accelerator_vector_mean_function.psl
+        └── accelerator_vector_oneplus_function.psl
 
-14 directories, 12 files
+14 directories, 62 files

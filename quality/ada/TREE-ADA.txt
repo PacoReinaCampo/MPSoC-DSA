@@ -1,0 +1,28 @@
+library
+├── algebra
+│   ├── matrix
+│   │   └── accelerator_matrix_algebra.adb
+│   ├── scalar
+│   │   └── accelerator_scalar_algebra.adb
+│   ├── tensor
+│   │   └── accelerator_tensor_algebra.adb
+│   └── vector
+│       └── accelerator_vector_algebra.adb
+├── arithmetic
+│   ├── matrix
+│   │   └── accelerator_matrix_arithmetic.adb
+│   ├── scalar
+│   │   └── accelerator_scalar_arithmetic.adb
+│   ├── tensor
+│   │   └── accelerator_tensor_arithmetic.adb
+│   └── vector
+│       └── accelerator_vector_arithmetic.adb
+└── math
+    ├── matrix
+    │   └── accelerator_matrix_math.adb
+    ├── scalar
+    │   └── accelerator_scalar_math.adb
+    └── vector
+        └── accelerator_vector_math.adb
+
+14 directories, 11 files

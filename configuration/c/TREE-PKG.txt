@@ -1,0 +1,20 @@
+library
+├── algebra
+│   ├── accelerator_algebra.h
+│   ├── matrix
+│   ├── scalar
+│   ├── tensor
+│   └── vector
+├── arithmetic
+│   ├── accelerator_arithmetic.h
+│   ├── matrix
+│   ├── scalar
+│   ├── tensor
+│   └── vector
+└── math
+    ├── accelerator_math.h
+    ├── matrix
+    ├── scalar
+    └── vector
+
+14 directories, 3 files

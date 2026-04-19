@@ -1,0 +1,95 @@
+library
+├── algebra
+│   ├── matrix
+│   │   ├── accelerator_matrix_convolution.py
+│   │   ├── accelerator_matrix_differentiation.py
+│   │   ├── accelerator_matrix_integration.py
+│   │   ├── accelerator_matrix_inverse.py
+│   │   ├── accelerator_matrix_multiplication.py
+│   │   ├── accelerator_matrix_product.py
+│   │   ├── accelerator_matrix_softmax.py
+│   │   ├── accelerator_matrix_summation.py
+│   │   ├── accelerator_matrix_transpose.py
+│   │   ├── accelerator_matrix_vector_convolution.py
+│   │   ├── accelerator_matrix_vector_product.py
+│   │   └── accelerator_transpose_vector_product.py
+│   ├── scalar
+│   │   ├── accelerator_scalar_multiplication.py
+│   │   └── accelerator_scalar_summation.py
+│   ├── tensor
+│   │   ├── accelerator_tensor_convolution.py
+│   │   ├── accelerator_tensor_differentiation.py
+│   │   ├── accelerator_tensor_integration.py
+│   │   ├── accelerator_tensor_inverse.py
+│   │   ├── accelerator_tensor_matrix_convolution.py
+│   │   ├── accelerator_tensor_matrix_product.py
+│   │   ├── accelerator_tensor_multiplication.py
+│   │   ├── accelerator_tensor_product.py
+│   │   ├── accelerator_tensor_softmax.py
+│   │   ├── accelerator_tensor_summation.py
+│   │   └── accelerator_tensor_transpose.py
+│   └── vector
+│       ├── accelerator_dot_product.py
+│       ├── accelerator_vector_convolution.py
+│       ├── accelerator_vector_cosine_similarity.py
+│       ├── accelerator_vector_differentiation.py
+│       ├── accelerator_vector_integration.py
+│       ├── accelerator_vector_module.py
+│       ├── accelerator_vector_multiplication.py
+│       ├── accelerator_vector_softmax.py
+│       └── accelerator_vector_summation.py
+├── arithmetic
+│   ├── matrix
+│   │   ├── adder
+│   │   │   └── accelerator_matrix_adder.py
+│   │   ├── divider
+│   │   │   └── accelerator_matrix_divider.py
+│   │   ├── multiplier
+│   │   │   └── accelerator_matrix_multiplier.py
+│   │   └── subtractor
+│   │       └── accelerator_matrix_subtractor.py
+│   ├── scalar
+│   │   ├── adder
+│   │   │   └── accelerator_scalar_adder.py
+│   │   ├── divider
+│   │   │   └── accelerator_scalar_divider.py
+│   │   ├── multiplier
+│   │   │   └── accelerator_scalar_multiplier.py
+│   │   └── subtractor
+│   │       └── accelerator_scalar_subtractor.py
+│   ├── tensor
+│   │   ├── adder
+│   │   │   └── accelerator_tensor_adder.py
+│   │   ├── divider
+│   │   │   └── accelerator_tensor_divider.py
+│   │   ├── multiplier
+│   │   │   └── accelerator_tensor_multiplier.py
+│   │   └── subtractor
+│   │       └── accelerator_tensor_subtractor.py
+│   └── vector
+│       ├── adder
+│       │   └── accelerator_vector_adder.py
+│       ├── divider
+│       │   └── accelerator_vector_divider.py
+│       ├── multiplier
+│       │   └── accelerator_vector_multiplier.py
+│       └── subtractor
+│           └── accelerator_vector_subtractor.py
+└── math
+    ├── matrix
+    │   ├── accelerator_matrix_deviation_function.py
+    │   ├── accelerator_matrix_logistic_function.py
+    │   ├── accelerator_matrix_mean_function.py
+    │   └── accelerator_matrix_oneplus_function.py
+    ├── scalar
+    │   ├── accelerator_scalar_deviation_function.py
+    │   ├── accelerator_scalar_logistic_function.py
+    │   ├── accelerator_scalar_mean_function.py
+    │   └── accelerator_scalar_oneplus_function.py
+    └── vector
+        ├── accelerator_vector_deviation_function.py
+        ├── accelerator_vector_logistic_function.py
+        ├── accelerator_vector_mean_function.py
+        └── accelerator_vector_oneplus_function.py
+
+30 directories, 62 files

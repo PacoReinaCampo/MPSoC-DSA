@@ -1,0 +1,83 @@
+library
+├── algebra
+│   ├── matrix
+│   │   ├── accelerator_matrix_convolution.m
+│   │   ├── accelerator_matrix_differentiation.m
+│   │   ├── accelerator_matrix_integration.m
+│   │   ├── accelerator_matrix_inverse.m
+│   │   ├── accelerator_matrix_multiplication.m
+│   │   ├── accelerator_matrix_product.m
+│   │   ├── accelerator_matrix_softmax.m
+│   │   ├── accelerator_matrix_summation.m
+│   │   ├── accelerator_matrix_transpose.m
+│   │   ├── accelerator_matrix_vector_convolution.m
+│   │   ├── accelerator_matrix_vector_product.m
+│   │   └── accelerator_transpose_vector_product.m
+│   ├── scalar
+│   │   ├── accelerator_scalar_multiplication.m
+│   │   └── accelerator_scalar_summation.m
+│   ├── tensor
+│   │   ├── accelerator_tensor_convolution.m
+│   │   ├── accelerator_tensor_differentiation.m
+│   │   ├── accelerator_tensor_integration.m
+│   │   ├── accelerator_tensor_inverse.m
+│   │   ├── accelerator_tensor_matrix_convolution.m
+│   │   ├── accelerator_tensor_matrix_product.m
+│   │   ├── accelerator_tensor_multiplication.m
+│   │   ├── accelerator_tensor_product.m
+│   │   ├── accelerator_tensor_softmax.m
+│   │   ├── accelerator_tensor_summation.m
+│   │   └── accelerator_tensor_transpose.m
+│   └── vector
+│       ├── accelerator_dot_product.m
+│       ├── accelerator_vector_convolution.m
+│       ├── accelerator_vector_cosine_similarity.m
+│       ├── accelerator_vector_differentiation.m
+│       ├── accelerator_vector_integration.m
+│       ├── accelerator_vector_module.m
+│       ├── accelerator_vector_multiplication.m
+│       ├── accelerator_vector_softmax.m
+│       └── accelerator_vector_summation.m
+├── arithmetic
+│   ├── matrix
+│   │   ├── accelerator_matrix_adder.m
+│   │   ├── accelerator_matrix_divider.m
+│   │   ├── accelerator_matrix_multiplier.m
+│   │   └── accelerator_matrix_subtractor.m
+│   ├── MatrixArithmetic.m
+│   ├── scalar
+│   │   ├── accelerator_scalar_adder.m
+│   │   ├── accelerator_scalar_divider.m
+│   │   ├── accelerator_scalar_multiplier.m
+│   │   └── accelerator_scalar_subtractor.m
+│   ├── ScalarArithmetic.m
+│   ├── tensor
+│   │   ├── accelerator_tensor_adder.m
+│   │   ├── accelerator_tensor_divider.m
+│   │   ├── accelerator_tensor_multiplier.m
+│   │   └── accelerator_tensor_subtractor.m
+│   ├── TensorArithmetic.m
+│   ├── vector
+│   │   ├── accelerator_vector_adder.m
+│   │   ├── accelerator_vector_divider.m
+│   │   ├── accelerator_vector_multiplier.m
+│   │   └── accelerator_vector_subtractor.m
+│   └── VectorArithmetic.m
+└── math
+    ├── matrix
+    │   ├── accelerator_matrix_deviation_function.m
+    │   ├── accelerator_matrix_logistic_function.m
+    │   ├── accelerator_matrix_mean_function.m
+    │   └── accelerator_matrix_oneplus_function.m
+    ├── scalar
+    │   ├── accelerator_scalar_deviation_function.m
+    │   ├── accelerator_scalar_logistic_function.m
+    │   ├── accelerator_scalar_mean_function.m
+    │   └── accelerator_scalar_oneplus_function.m
+    └── vector
+        ├── accelerator_vector_deviation_function.m
+        ├── accelerator_vector_logistic_function.m
+        ├── accelerator_vector_mean_function.m
+        └── accelerator_vector_oneplus_function.m
+
+14 directories, 66 files

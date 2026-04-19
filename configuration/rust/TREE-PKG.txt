@@ -1,0 +1,31 @@
+library
+├── algebra
+│   └── src
+│       ├── matrix
+│       │   └── mod.rs
+│       ├── scalar
+│       │   └── mod.rs
+│       ├── tensor
+│       │   └── mod.rs
+│       └── vector
+│           └── mod.rs
+├── arithmetic
+│   └── src
+│       ├── matrix
+│       │   └── mod.rs
+│       ├── scalar
+│       │   └── mod.rs
+│       ├── tensor
+│       │   └── mod.rs
+│       └── vector
+│           └── mod.rs
+└── math
+    └── src
+        ├── matrix
+        │   └── mod.rs
+        ├── scalar
+        │   └── mod.rs
+        └── vector
+            └── mod.rs
+
+17 directories, 11 files

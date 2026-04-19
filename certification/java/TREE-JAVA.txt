@@ -1,0 +1,39 @@
+library
+├── algebra
+│   ├── test_matrix_algebra.java
+│   ├── test_scalar_algebra.java
+│   ├── test_tensor_algebra.java
+│   ├── test_vector_algebra.java
+│   ├── matrix
+│   │   └── accelerator_matrix_algebra.java
+│   ├── scalar
+│   │   └── accelerator_scalar_algebra.java
+│   ├── tensor
+│   │   └── accelerator_tensor_algebra.java
+│   └── vector
+│       └── accelerator_vector_algebra.java
+├── arithmetic
+│   ├── test_matrix_arithmetic.java
+│   ├── test_scalar_arithmetic.java
+│   ├── test_tensor_arithmetic.java
+│   ├── test_vector_arithmetic.java
+│   ├── matrix
+│   │   └── accelerator_matrix_arithmetic.java
+│   ├── scalar
+│   │   └── accelerator_scalar_arithmetic.java
+│   ├── tensor
+│   │   └── accelerator_tensor_arithmetic.java
+│   └── vector
+│       └── accelerator_vector_arithmetic.java
+└── math
+    ├── test_matrix_math.java
+    ├── test_scalar_math.java
+    ├── test_vector_math.java
+    ├── matrix
+    │   └── accelerator_matrix_math.java
+    ├── scalar
+    │   └── accelerator_scalar_math.java
+    └── vector
+        └── accelerator_vector_math.java
+
+14 directories, 22 files

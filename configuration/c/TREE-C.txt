@@ -1,0 +1,79 @@
+library
+├── algebra
+│   ├── matrix
+│   │   ├── accelerator_matrix_convolution.c
+│   │   ├── accelerator_matrix_differentiation.c
+│   │   ├── accelerator_matrix_integration.c
+│   │   ├── accelerator_matrix_inverse.c
+│   │   ├── accelerator_matrix_multiplication.c
+│   │   ├── accelerator_matrix_product.c
+│   │   ├── accelerator_matrix_softmax.c
+│   │   ├── accelerator_matrix_summation.c
+│   │   ├── accelerator_matrix_transpose.c
+│   │   ├── accelerator_matrix_vector_convolution.c
+│   │   ├── accelerator_matrix_vector_product.c
+│   │   └── accelerator_transpose_vector_product.c
+│   ├── scalar
+│   │   ├── accelerator_scalar_multiplication.c
+│   │   └── accelerator_scalar_summation.c
+│   ├── tensor
+│   │   ├── accelerator_tensor_convolution.c
+│   │   ├── accelerator_tensor_differentiation.c
+│   │   ├── accelerator_tensor_integration.c
+│   │   ├── accelerator_tensor_inverse.c
+│   │   ├── accelerator_tensor_matrix_convolution.c
+│   │   ├── accelerator_tensor_matrix_product.c
+│   │   ├── accelerator_tensor_multiplication.c
+│   │   ├── accelerator_tensor_product.c
+│   │   ├── accelerator_tensor_softmax.c
+│   │   ├── accelerator_tensor_summation.c
+│   │   └── accelerator_tensor_transpose.c
+│   └── vector
+│       ├── accelerator_dot_product.c
+│       ├── accelerator_vector_convolution.c
+│       ├── accelerator_vector_cosine_similarity.c
+│       ├── accelerator_vector_differentiation.c
+│       ├── accelerator_vector_integration.c
+│       ├── accelerator_vector_module.c
+│       ├── accelerator_vector_multiplication.c
+│       ├── accelerator_vector_softmax.c
+│       └── accelerator_vector_summation.c
+├── arithmetic
+│   ├── matrix
+│   │   ├── accelerator_matrix_adder.c
+│   │   ├── accelerator_matrix_divider.c
+│   │   ├── accelerator_matrix_multiplier.c
+│   │   └── accelerator_matrix_subtractor.c
+│   ├── scalar
+│   │   ├── accelerator_scalar_adder.c
+│   │   ├── accelerator_scalar_divider.c
+│   │   ├── accelerator_scalar_multiplier.c
+│   │   └── accelerator_scalar_subtractor.c
+│   ├── tensor
+│   │   ├── accelerator_tensor_adder.c
+│   │   ├── accelerator_tensor_divider.c
+│   │   ├── accelerator_tensor_multiplier.c
+│   │   └── accelerator_tensor_subtractor.c
+│   └── vector
+│       ├── accelerator_vector_adder.c
+│       ├── accelerator_vector_divider.c
+│       ├── accelerator_vector_multiplier.c
+│       └── accelerator_vector_subtractor.c
+└── math
+    ├── matrix
+    │   ├── accelerator_matrix_deviation_function.c
+    │   ├── accelerator_matrix_logistic_function.c
+    │   ├── accelerator_matrix_mean_function.c
+    │   └── accelerator_matrix_oneplus_function.c
+    ├── scalar
+    │   ├── accelerator_scalar_deviation_function.c
+    │   ├── accelerator_scalar_logistic_function.c
+    │   ├── accelerator_scalar_mean_function.c
+    │   └── accelerator_scalar_oneplus_function.c
+    └── vector
+        ├── accelerator_vector_deviation_function.c
+        ├── accelerator_vector_logistic_function.c
+        ├── accelerator_vector_mean_function.c
+        └── accelerator_vector_oneplus_function.c
+
+14 directories, 62 files

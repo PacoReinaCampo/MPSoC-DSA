@@ -1,0 +1,106 @@
+library
+├── algebra
+│   ├── accelerator_matrix_algebra.cpp
+│   ├── accelerator_scalar_algebra.cpp
+│   ├── accelerator_tensor_algebra.cpp
+│   ├── accelerator_vector_algebra.cpp
+│   ├── matrix
+│   │   ├── accelerator_matrix_convolution.cpp
+│   │   ├── accelerator_matrix_differentiation.cpp
+│   │   ├── accelerator_matrix_integration.cpp
+│   │   ├── accelerator_matrix_inverse.cpp
+│   │   ├── accelerator_matrix_multiplication.cpp
+│   │   ├── accelerator_matrix_product.cpp
+│   │   ├── accelerator_matrix_softmax.cpp
+│   │   ├── accelerator_matrix_summation.cpp
+│   │   ├── accelerator_matrix_transpose.cpp
+│   │   ├── accelerator_matrix_vector_convolution.cpp
+│   │   ├── accelerator_matrix_vector_product.cpp
+│   │   └── accelerator_transpose_vector_product.cpp
+│   ├── scalar
+│   │   ├── accelerator_scalar_multiplication.cpp
+│   │   └── accelerator_scalar_summation.cpp
+│   ├── tensor
+│   │   ├── accelerator_tensor_convolution.cpp
+│   │   ├── accelerator_tensor_differentiation.cpp
+│   │   ├── accelerator_tensor_integration.cpp
+│   │   ├── accelerator_tensor_inverse.cpp
+│   │   ├── accelerator_tensor_matrix_convolution.cpp
+│   │   ├── accelerator_tensor_matrix_product.cpp
+│   │   ├── accelerator_tensor_multiplication.cpp
+│   │   ├── accelerator_tensor_product.cpp
+│   │   ├── accelerator_tensor_softmax.cpp
+│   │   ├── accelerator_tensor_summation.cpp
+│   │   └── accelerator_tensor_transpose.cpp
+│   └── vector
+│       ├── accelerator_dot_product.cpp
+│       ├── accelerator_vector_convolution.cpp
+│       ├── accelerator_vector_cosine_similarity.cpp
+│       ├── accelerator_vector_differentiation.cpp
+│       ├── accelerator_vector_integration.cpp
+│       ├── accelerator_vector_module.cpp
+│       ├── accelerator_vector_multiplication.cpp
+│       ├── accelerator_vector_softmax.cpp
+│       └── accelerator_vector_summation.cpp
+├── arithmetic
+│   ├── accelerator_matrix_arithmetic.cpp
+│   ├── accelerator_scalar_arithmetic.cpp
+│   ├── accelerator_tensor_arithmetic.cpp
+│   ├── accelerator_vector_arithmetic.cpp
+│   ├── matrix
+│   │   ├── adder
+│   │   │   └── accelerator_matrix_adder.cpp
+│   │   ├── divider
+│   │   │   └── accelerator_matrix_divider.cpp
+│   │   ├── multiplier
+│   │   │   └── accelerator_matrix_multiplier.cpp
+│   │   └── subtractor
+│   │       └── accelerator_matrix_subtractor.cpp
+│   ├── scalar
+│   │   ├── adder
+│   │   │   └── accelerator_scalar_adder.cpp
+│   │   ├── divider
+│   │   │   └── accelerator_scalar_divider.cpp
+│   │   ├── multiplier
+│   │   │   └── accelerator_scalar_multiplier.cpp
+│   │   └── subtractor
+│   │       └── accelerator_scalar_subtractor.cpp
+│   ├── tensor
+│   │   ├── adder
+│   │   │   └── accelerator_tensor_adder.cpp
+│   │   ├── divider
+│   │   │   └── accelerator_tensor_divider.cpp
+│   │   ├── multiplier
+│   │   │   └── accelerator_tensor_multiplier.cpp
+│   │   └── subtractor
+│   │       └── accelerator_tensor_subtractor.cpp
+│   └── vector
+│       ├── adder
+│       │   └── accelerator_vector_adder.cpp
+│       ├── divider
+│       │   └── accelerator_vector_divider.cpp
+│       ├── multiplier
+│       │   └── accelerator_vector_multiplier.cpp
+│       └── subtractor
+│           └── accelerator_vector_subtractor.cpp
+└── math
+    ├── accelerator_matrix_math.cpp
+    ├── accelerator_scalar_math.cpp
+    ├── accelerator_vector_math.cpp
+    ├── matrix
+    │   ├── accelerator_matrix_deviation_function.cpp
+    │   ├── accelerator_matrix_logistic_function.cpp
+    │   ├── accelerator_matrix_mean_function.cpp
+    │   └── accelerator_matrix_oneplus_function.cpp
+    ├── scalar
+    │   ├── accelerator_scalar_deviation_function.cpp
+    │   ├── accelerator_scalar_logistic_function.cpp
+    │   ├── accelerator_scalar_mean_function.cpp
+    │   └── accelerator_scalar_oneplus_function.cpp
+    └── vector
+        ├── accelerator_vector_deviation_function.cpp
+        ├── accelerator_vector_logistic_function.cpp
+        ├── accelerator_vector_mean_function.cpp
+        └── accelerator_vector_oneplus_function.cpp
+
+30 directories, 73 files

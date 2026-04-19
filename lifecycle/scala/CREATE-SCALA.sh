@@ -1,0 +1,11 @@
+touch library/algebra/matrix/accelerator_matrix_algebra.scala
+touch library/algebra/scalar/accelerator_scalar_algebra.scala
+touch library/algebra/tensor/accelerator_tensor_algebra.scala
+touch library/algebra/vector/accelerator_vector_algebra.scala
+touch library/arithmetic/matrix/accelerator_matrix_arithmetic.scala
+touch library/arithmetic/scalar/accelerator_scalar_arithmetic.scala
+touch library/arithmetic/tensor/accelerator_tensor_arithmetic.scala
+touch library/arithmetic/vector/accelerator_vector_arithmetic.scala
+touch library/math/matrix/accelerator_matrix_math.scala
+touch library/math/scalar/accelerator_scalar_math.scala
+touch library/math/vector/accelerator_vector_math.scala

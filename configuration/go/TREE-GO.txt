@@ -1,0 +1,28 @@
+library
+├── algebra
+│   ├── MatrixMath
+│   │   └── MatrixMath.go
+│   ├── ScalarMath
+│   │   └── ScalarMath.go
+│   ├── TensorMath
+│   │   └── TensorMath.go
+│   └── VectorMath
+│       └── VectorMath.go
+├── arithmetic
+│   ├── MatrixArithmetic
+│   │   └── MatrixArithmetic.go
+│   ├── ScalarArithmetic
+│   │   └── ScalarArithmetic.go
+│   ├── TensorArithmetic
+│   │   └── TensorArithmetic.go
+│   └── VectorArithmetic
+│       └── VectorArithmetic.go
+└── math
+    ├── MatrixMath
+    │   └── MatrixMath.go
+    ├── ScalarMath
+    │   └── ScalarMath.go
+    └── VectorMath
+        └── VectorMath.go
+
+14 directories, 11 files
