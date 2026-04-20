@@ -1,0 +1,63 @@
+code
+├── classes
+│   ├── philosophers
+│   │   └── accelerator_philosophers.go
+│   ├── soldiers
+│   │   └── accelerator_soldiers.go
+│   └── workers
+│       └── accelerator_workers.go
+└── computing
+    ├── advanced_computer_architecture
+    │   ├── multi_processor_system_on_chip
+    │   │   └── multi_processor_system_on_chip.go
+    │   ├── processing_unit
+    │   │   ├── mimd.go
+    │   │   ├── misd.go
+    │   │   ├── simd.go
+    │   │   └── sisd.go
+    │   └── system_on_chip
+    │       ├── bus_on_chip.go
+    │       └── network_on_chip.go
+    ├── computer_architecture
+    │   ├── harvard_architecture
+    │   │   ├── pu_or1k.go
+    │   │   └── pu_riscv.go
+    │   └── von_neumann_architecture
+    │       ├── pu_msp430.go
+    │       └── pu_riscv.go
+    ├── information
+    │   ├── bit
+    │   │   └── bit.go
+    │   ├── combinational_logic
+    │   │   ├── arithmetic_circuits.go
+    │   │   └── logic_circuits.go
+    │   ├── finite_state_machine
+    │   │   └── finite_state_machine.go
+    │   ├── logic_gate
+    │   │   ├── and_gate.go
+    │   │   ├── nand_gate.go
+    │   │   ├── nor_gate.go
+    │   │   ├── not_gate.go
+    │   │   ├── or_gate.go
+    │   │   ├── xnor_gate.go
+    │   │   ├── xor_gate.go
+    │   │   └── yes_gate.go
+    │   ├── pushdown_automaton
+    │   │   └── pushdown_automaton.go
+    │   └── turing_machine
+    │       └── turing_machine.go
+    └── neural_network
+        ├── attention_neural_network
+        │   └── attention_neural_network.go
+        ├── differentiable_neural_computer_neural_network
+        │   └── differentiable_neural_computer_neural_network.go
+        ├── feedforward_neural_network
+        │   └── feedforward_neural_network.go
+        ├── long_short_term_memory_neural_network
+        │   └── long_short_term_memory_neural_network.go
+        ├── neural_turing_machine_neural_network
+        │   └── neural_turing_machine_neural_network.go
+        └── perceptron_neural_network
+            └── perceptron_neural_network.go
+
+26 directories, 34 files

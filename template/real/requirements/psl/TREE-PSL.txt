@@ -1,0 +1,63 @@
+code
+├── classes
+│   ├── philosophers
+│   │   └── accelerator_philosophers.psl
+│   ├── soldiers
+│   │   └── accelerator_soldiers.psl
+│   └── workers
+│       └── accelerator_workers.psl
+└── computing
+    ├── advanced_computer_architecture
+    │   ├── multi_processor_system_on_chip
+    │   │   └── multi_processor_system_on_chip.psl
+    │   ├── processing_unit
+    │   │   ├── mimd.psl
+    │   │   ├── misd.psl
+    │   │   ├── simd.psl
+    │   │   └── sisd.psl
+    │   └── system_on_chip
+    │       ├── bus_on_chip.psl
+    │       └── network_on_chip.psl
+    ├── computer_architecture
+    │   ├── harvard_architecture
+    │   │   ├── pu_or1k.psl
+    │   │   └── pu_riscv.psl
+    │   └── von_neumann_architecture
+    │       ├── pu_msp430.psl
+    │       └── pu_riscv.psl
+    ├── information
+    │   ├── bit
+    │   │   └── bit.psl
+    │   ├── combinational_logic
+    │   │   ├── arithmetic_circuits.psl
+    │   │   └── logic_circuits.psl
+    │   ├── finite_state_machine
+    │   │   └── finite_state_machine.psl
+    │   ├── logic_gate
+    │   │   ├── and_gate.psl
+    │   │   ├── nand_gate.psl
+    │   │   ├── nor_gate.psl
+    │   │   ├── not_gate.psl
+    │   │   ├── or_gate.psl
+    │   │   ├── xnor_gate.psl
+    │   │   ├── xor_gate.psl
+    │   │   └── yes_gate.psl
+    │   ├── pushdown_automaton
+    │   │   └── pushdown_automaton.psl
+    │   └── turing_machine
+    │       └── turing_machine.psl
+    └── neural_network
+        ├── attention_neural_network
+        │   └── attention_neural_network.psl
+        ├── differentiable_neural_computer_neural_network
+        │   └── differentiable_neural_computer_neural_network.psl
+        ├── feedforward_neural_network
+        │   └── feedforward_neural_network.psl
+        ├── long_short_term_memory_neural_network
+        │   └── long_short_term_memory_neural_network.psl
+        ├── neural_turing_machine_neural_network
+        │   └── neural_turing_machine_neural_network.psl
+        └── perceptron_neural_network
+            └── perceptron_neural_network.psl
+
+26 directories, 34 files

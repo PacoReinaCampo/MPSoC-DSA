@@ -1,0 +1,63 @@
+code
+├── classes
+│   ├── philosophers
+│   │   └── accelerator_philosophers.c
+│   ├── soldiers
+│   │   └── accelerator_soldiers.c
+│   └── workers
+│       └── accelerator_workers.c
+└── computing
+    ├── advanced_computer_architecture
+    │   ├── multi_processor_system_on_chip
+    │   │   └── multi_processor_system_on_chip.c
+    │   ├── processing_unit
+    │   │   ├── mimd.c
+    │   │   ├── misd.c
+    │   │   ├── simd.c
+    │   │   └── sisd.c
+    │   └── system_on_chip
+    │       ├── bus_on_chip.c
+    │       └── network_on_chip.c
+    ├── computer_architecture
+    │   ├── harvard_architecture
+    │   │   ├── pu_or1k.c
+    │   │   └── pu_riscv.c
+    │   └── von_neumann_architecture
+    │       ├── pu_msp430.c
+    │       └── pu_riscv.c
+    ├── information
+    │   ├── bit
+    │   │   └── bit.c
+    │   ├── combinational_logic
+    │   │   ├── arithmetic_circuits.c
+    │   │   └── logic_circuits.c
+    │   ├── finite_state_machine
+    │   │   └── finite_state_machine.c
+    │   ├── logic_gate
+    │   │   ├── and_gate.c
+    │   │   ├── nand_gate.c
+    │   │   ├── nor_gate.c
+    │   │   ├── not_gate.c
+    │   │   ├── or_gate.c
+    │   │   ├── xnor_gate.c
+    │   │   ├── xor_gate.c
+    │   │   └── yes_gate.c
+    │   ├── pushdown_automaton
+    │   │   └── pushdown_automaton.c
+    │   └── turing_machine
+    │       └── turing_machine.c
+    └── neural_network
+        ├── attention_neural_network
+        │   └── attention_neural_network.c
+        ├── differentiable_neural_computer_neural_network
+        │   └── differentiable_neural_computer_neural_network.c
+        ├── feedforward_neural_network
+        │   └── feedforward_neural_network.c
+        ├── long_short_term_memory_neural_network
+        │   └── long_short_term_memory_neural_network.c
+        ├── neural_turing_machine_neural_network
+        │   └── neural_turing_machine_neural_network.c
+        └── perceptron_neural_network
+            └── perceptron_neural_network.c
+
+26 directories, 34 files

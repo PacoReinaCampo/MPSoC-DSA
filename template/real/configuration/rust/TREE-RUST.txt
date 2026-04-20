@@ -1,0 +1,63 @@
+code
+├── classes
+│   ├── philosophers
+│   │   └── accelerator_philosophers.rs
+│   ├── soldiers
+│   │   └── accelerator_soldiers.rs
+│   └── workers
+│       └── accelerator_workers.rs
+└── computing
+    ├── advanced_computer_architecture
+    │   ├── multi_processor_system_on_chip
+    │   │   └── multi_processor_system_on_chip.rs
+    │   ├── processing_unit
+    │   │   ├── mimd.rs
+    │   │   ├── misd.rs
+    │   │   ├── simd.rs
+    │   │   └── sisd.rs
+    │   └── system_on_chip
+    │       ├── bus_on_chip.rs
+    │       └── network_on_chip.rs
+    ├── computer_architecture
+    │   ├── harvard_architecture
+    │   │   ├── pu_or1k.rs
+    │   │   └── pu_riscv.rs
+    │   └── von_neumann_architecture
+    │       ├── pu_msp430.rs
+    │       └── pu_riscv.rs
+    ├── information
+    │   ├── bit
+    │   │   └── bit.rs
+    │   ├── combinational_logic
+    │   │   ├── arithmetic_circuits.rs
+    │   │   └── logic_circuits.rs
+    │   ├── finite_state_machine
+    │   │   └── finite_state_machine.rs
+    │   ├── logic_gate
+    │   │   ├── and_gate.rs
+    │   │   ├── nand_gate.rs
+    │   │   ├── nor_gate.rs
+    │   │   ├── not_gate.rs
+    │   │   ├── or_gate.rs
+    │   │   ├── xnor_gate.rs
+    │   │   ├── xor_gate.rs
+    │   │   └── yes_gate.rs
+    │   ├── pushdown_automaton
+    │   │   └── pushdown_automaton.rs
+    │   └── turing_machine
+    │       └── turing_machine.rs
+    └── neural_network
+        ├── attention_neural_network
+        │   └── attention_neural_network.rs
+        ├── differentiable_neural_computer_neural_network
+        │   └── differentiable_neural_computer_neural_network.rs
+        ├── feedforward_neural_network
+        │   └── feedforward_neural_network.rs
+        ├── long_short_term_memory_neural_network
+        │   └── long_short_term_memory_neural_network.rs
+        ├── neural_turing_machine_neural_network
+        │   └── neural_turing_machine_neural_network.rs
+        └── perceptron_neural_network
+            └── perceptron_neural_network.rs
+
+26 directories, 34 files

@@ -1,0 +1,63 @@
+code
+├── classes
+│   ├── philosophers
+│   │   └── accelerator_philosophers.adb
+│   ├── soldiers
+│   │   └── accelerator_soldiers.adb
+│   └── workers
+│       └── accelerator_workers.adb
+└── computing
+    ├── advanced_computer_architecture
+    │   ├── multi_processor_system_on_chip
+    │   │   └── multi_processor_system_on_chip.adb
+    │   ├── processing_unit
+    │   │   ├── mimd.adb
+    │   │   ├── misd.adb
+    │   │   ├── simd.adb
+    │   │   └── sisd.adb
+    │   └── system_on_chip
+    │       ├── bus_on_chip.adb
+    │       └── network_on_chip.adb
+    ├── computer_architecture
+    │   ├── harvard_architecture
+    │   │   ├── pu_or1k.adb
+    │   │   └── pu_riscv.adb
+    │   └── von_neumann_architecture
+    │       ├── pu_msp430.adb
+    │       └── pu_riscv.adb
+    ├── information
+    │   ├── bit
+    │   │   └── bit.adb
+    │   ├── combinational_logic
+    │   │   ├── arithmetic_circuits.adb
+    │   │   └── logic_circuits.adb
+    │   ├── finite_state_machine
+    │   │   └── finite_state_machine.adb
+    │   ├── logic_gate
+    │   │   ├── and_gate.adb
+    │   │   ├── nand_gate.adb
+    │   │   ├── nor_gate.adb
+    │   │   ├── not_gate.adb
+    │   │   ├── or_gate.adb
+    │   │   ├── xnor_gate.adb
+    │   │   ├── xor_gate.adb
+    │   │   └── yes_gate.adb
+    │   ├── pushdown_automaton
+    │   │   └── pushdown_automaton.adb
+    │   └── turing_machine
+    │       └── turing_machine.adb
+    └── neural_network
+        ├── attention_neural_network
+        │   └── attention_neural_network.adb
+        ├── differentiable_neural_computer_neural_network
+        │   └── differentiable_neural_computer_neural_network.adb
+        ├── feedforward_neural_network
+        │   └── feedforward_neural_network.adb
+        ├── long_short_term_memory_neural_network
+        │   └── long_short_term_memory_neural_network.adb
+        ├── neural_turing_machine_neural_network
+        │   └── neural_turing_machine_neural_network.adb
+        └── perceptron_neural_network
+            └── perceptron_neural_network.adb
+
+26 directories, 34 files

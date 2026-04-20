@@ -1,0 +1,63 @@
+code
+├── classes
+│   ├── philosophers
+│   │   └── accelerator_philosophers.py
+│   ├── soldiers
+│   │   └── accelerator_soldiers.py
+│   └── workers
+│       └── accelerator_workers.py
+└── computing
+    ├── advanced_computer_architecture
+    │   ├── multi_processor_system_on_chip
+    │   │   └── multi_processor_system_on_chip.py
+    │   ├── processing_unit
+    │   │   ├── mimd.py
+    │   │   ├── misd.py
+    │   │   ├── simd.py
+    │   │   └── sisd.py
+    │   └── system_on_chip
+    │       ├── bus_on_chip.py
+    │       └── network_on_chip.py
+    ├── computer_architecture
+    │   ├── harvard_architecture
+    │   │   ├── pu_or1k.py
+    │   │   └── pu_riscv.py
+    │   └── von_neumann_architecture
+    │       ├── pu_msp430.py
+    │       └── pu_riscv.py
+    ├── information
+    │   ├── bit
+    │   │   └── bit.py
+    │   ├── combinational_logic
+    │   │   ├── arithmetic_circuits.py
+    │   │   └── logic_circuits.py
+    │   ├── finite_state_machine
+    │   │   └── finite_state_machine.py
+    │   ├── logic_gate
+    │   │   ├── and_gate.py
+    │   │   ├── nand_gate.py
+    │   │   ├── nor_gate.py
+    │   │   ├── not_gate.py
+    │   │   ├── or_gate.py
+    │   │   ├── xnor_gate.py
+    │   │   ├── xor_gate.py
+    │   │   └── yes_gate.py
+    │   ├── pushdown_automaton
+    │   │   └── pushdown_automaton.py
+    │   └── turing_machine
+    │       └── turing_machine.py
+    └── neural_network
+        ├── attention_neural_network
+        │   └── attention_neural_network.py
+        ├── differentiable_neural_computer_neural_network
+        │   └── differentiable_neural_computer_neural_network.py
+        ├── feedforward_neural_network
+        │   └── feedforward_neural_network.py
+        ├── long_short_term_memory_neural_network
+        │   └── long_short_term_memory_neural_network.py
+        ├── neural_turing_machine_neural_network
+        │   └── neural_turing_machine_neural_network.py
+        └── perceptron_neural_network
+            └── perceptron_neural_network.py
+
+26 directories, 34 files
