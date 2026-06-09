@@ -83,6 +83,165 @@ library
 │       │   └── accelerator_vector_multiplier.cpp
 │       └── subtractor
 │           └── accelerator_vector_subtractor.cpp
+├── intelligence
+│   ├── modeling
+│   │   ├── ann
+│   │   │   ├── ann_controller.cpp
+│   │   │   ├── components
+│   │   │   │   ├── accelerator_masked_multi_head_attention.cpp
+│   │   │   │   ├── accelerator_masked_scaled_dot_product_attention.cpp
+│   │   │   │   ├── accelerator_multi_head_attention.cpp
+│   │   │   │   └── accelerator_scaled_dot_product_attention.cpp
+│   │   │   ├── controller
+│   │   │   │   ├── fnn
+│   │   │   │   │   └── accelerator_fnn.cpp
+│   │   │   │   └── lstm
+│   │   │   │       └── accelerator_lstm.cpp
+│   │   │   ├── functions
+│   │   │   │   ├── accelerator_layer_norm.cpp
+│   │   │   │   └── accelerator_positional_encoding.cpp
+│   │   │   ├── inputs
+│   │   │   │   ├── accelerator_inputs_vector.cpp
+│   │   │   │   ├── accelerator_keys_vector.cpp
+│   │   │   │   ├── accelerator_queries_vector.cpp
+│   │   │   │   └── accelerator_values_vector.cpp
+│   │   │   └── top
+│   │   │       ├── accelerator_controller.cpp
+│   │   │       ├── accelerator_decoder.cpp
+│   │   │       └── accelerator_encoder.cpp
+│   │   ├── dnc
+│   │   │   ├── accelerator_controller.cpp
+│   │   │   ├── memory
+│   │   │   │   ├── accelerator_addressing.cpp
+│   │   │   │   ├── accelerator_allocation_weighting.cpp
+│   │   │   │   ├── accelerator_backward_weighting.cpp
+│   │   │   │   ├── accelerator_forward_weighting.cpp
+│   │   │   │   ├── accelerator_matrix_content_based_addressing.cpp
+│   │   │   │   ├── accelerator_memory_matrix.cpp
+│   │   │   │   ├── accelerator_memory_retention_vector.cpp
+│   │   │   │   ├── accelerator_precedence_weighting.cpp
+│   │   │   │   ├── accelerator_sort_vector.cpp
+│   │   │   │   ├── accelerator_temporal_link_matrix.cpp
+│   │   │   │   ├── accelerator_usage_vector.cpp
+│   │   │   │   └── accelerator_vector_content_based_addressing.cpp
+│   │   │   ├── read_heads
+│   │   │   │   ├── accelerator_read_content_weighting.cpp
+│   │   │   │   ├── accelerator_read_vectors.cpp
+│   │   │   │   └── accelerator_read_weighting.cpp
+│   │   │   ├── top
+│   │   │   │   ├── accelerator_interface_matrix.cpp
+│   │   │   │   ├── accelerator_interface_top.cpp
+│   │   │   │   ├── accelerator_interface_vector.cpp
+│   │   │   │   ├── accelerator_output_vector.cpp
+│   │   │   │   └── accelerator_top.cpp
+│   │   │   ├── trained
+│   │   │   │   └── accelerator_trained_top.cpp
+│   │   │   └── write_heads
+│   │   │       ├── accelerator_write_content_weighting.cpp
+│   │   │       └── accelerator_write_weighting.cpp
+│   │   ├── fnn
+│   │   │   ├── accelerator_fnn_controller.cpp
+│   │   │   ├── convolutional
+│   │   │   │   └── accelerator_controller.cpp
+│   │   │   └── standard
+│   │   │       └── accelerator_controller.cpp
+│   │   ├── lstm
+│   │   │   ├── accelerator_lstm_controller.cpp
+│   │   │   ├── convolutional
+│   │   │   │   ├── accelerator_activation_gate_vector.cpp
+│   │   │   │   ├── accelerator_controller.cpp
+│   │   │   │   ├── accelerator_forget_gate_vector.cpp
+│   │   │   │   ├── accelerator_hidden_gate_vector.cpp
+│   │   │   │   ├── accelerator_input_gate_vector.cpp
+│   │   │   │   ├── accelerator_output_gate_vector.cpp
+│   │   │   │   └── accelerator_state_gate_vector.cpp
+│   │   │   └── standard
+│   │   │       ├── accelerator_activation_gate_vector.cpp
+│   │   │       ├── accelerator_controller.cpp
+│   │   │       ├── accelerator_forget_gate_vector.cpp
+│   │   │       ├── accelerator_hidden_gate_vector.cpp
+│   │   │       ├── accelerator_input_gate_vector.cpp
+│   │   │       ├── accelerator_output_gate_vector.cpp
+│   │   │       └── accelerator_state_gate_vector.cpp
+│   │   └── ntm
+│   │       ├── accelerator_controller.cpp
+│   │       ├── memory
+│   │       │   ├── accelerator_addressing.cpp
+│   │       │   ├── accelerator_matrix_content_based_addressing.cpp
+│   │       │   └── accelerator_vector_content_based_addressing.cpp
+│   │       ├── read_heads
+│   │       │   └── accelerator_reading.cpp
+│   │       ├── top
+│   │       │   ├── accelerator_interface_matrix.cpp
+│   │       │   ├── accelerator_interface_top.cpp
+│   │       │   ├── accelerator_interface_vector.cpp
+│   │       │   ├── accelerator_output_vector.cpp
+│   │       │   └── accelerator_top.cpp
+│   │       ├── trained
+│   │       │   └── accelerator_trained_top.cpp
+│   │       └── write_heads
+│   │           ├── accelerator_erasing.cpp
+│   │           └── accelerator_writing.cpp
+│   └── training
+│       ├── accelerator_differentiation.cpp
+│       ├── accelerator_fnn.cpp
+│       ├── accelerator_lstm.cpp
+│       ├── differentiation
+│       │   ├── accelerator_matrix_controller_differentiation.cpp
+│       │   └── accelerator_vector_controller_differentiation.cpp
+│       ├── fnn
+│       │   ├── accelerator_fnn_b_trainer.cpp
+│       │   ├── accelerator_fnn_d_trainer.cpp
+│       │   ├── accelerator_fnn_k_trainer.cpp
+│       │   ├── accelerator_fnn_trainer.cpp
+│       │   ├── accelerator_fnn_u_trainer.cpp
+│       │   ├── accelerator_fnn_v_trainer.cpp
+│       │   └── accelerator_fnn_w_trainer.cpp
+│       ├── lstm
+│       │   ├── activation
+│       │   │   ├── accelerator_lstm_activation_b_trainer.cpp
+│       │   │   ├── accelerator_lstm_activation_d_trainer.cpp
+│       │   │   ├── accelerator_lstm_activation_k_trainer.cpp
+│       │   │   ├── accelerator_lstm_activation_trainer.cpp
+│       │   │   ├── accelerator_lstm_activation_u_trainer.cpp
+│       │   │   ├── accelerator_lstm_activation_v_trainer.cpp
+│       │   │   └── accelerator_lstm_activation_w_trainer.cpp
+│       │   ├── forget
+│       │   │   ├── accelerator_lstm_forget_b_trainer.cpp
+│       │   │   ├── accelerator_lstm_forget_d_trainer.cpp
+│       │   │   ├── accelerator_lstm_forget_k_trainer.cpp
+│       │   │   ├── accelerator_lstm_forget_trainer.cpp
+│       │   │   ├── accelerator_lstm_forget_u_trainer.cpp
+│       │   │   ├── accelerator_lstm_forget_v_trainer.cpp
+│       │   │   └── accelerator_lstm_forget_w_trainer.cpp
+│       │   ├── input
+│       │   │   ├── accelerator_lstm_input_b_trainer.cpp
+│       │   │   ├── accelerator_lstm_input_d_trainer.cpp
+│       │   │   ├── accelerator_lstm_input_k_trainer.cpp
+│       │   │   ├── accelerator_lstm_input_trainer.cpp
+│       │   │   ├── accelerator_lstm_input_u_trainer.cpp
+│       │   │   ├── accelerator_lstm_input_v_trainer.cpp
+│       │   │   └── accelerator_lstm_input_w_trainer.cpp
+│       │   └── output
+│       │       ├── accelerator_lstm_output_b_trainer.cpp
+│       │       ├── accelerator_lstm_output_d_trainer.cpp
+│       │       ├── accelerator_lstm_output_k_trainer.cpp
+│       │       ├── accelerator_lstm_output_trainer.cpp
+│       │       ├── accelerator_lstm_output_u_trainer.cpp
+│       │       ├── accelerator_lstm_output_v_trainer.cpp
+│       │       └── accelerator_lstm_output_w_trainer.cpp
+│       └── state
+│           ├── accelerator_state.cpp
+│           ├── feedback
+│           │   ├── accelerator_state_matrix_feedforward.cpp
+│           │   ├── accelerator_state_matrix_input.cpp
+│           │   ├── accelerator_state_matrix_output.cpp
+│           │   └── accelerator_state_matrix_state.cpp
+│           ├── outputs
+│           │   ├── accelerator_state_vector_output.cpp
+│           │   └── accelerator_state_vector_state.cpp
+│           └── top
+│               └── accelerator_state_top.cpp
 └── math
     ├── accelerator_matrix_math.cpp
     ├── accelerator_scalar_math.cpp
@@ -103,4 +262,4 @@ library
         ├── accelerator_vector_mean_function.cpp
         └── accelerator_vector_oneplus_function.cpp
 
-30 directories, 73 files
+70 directories, 192 files
