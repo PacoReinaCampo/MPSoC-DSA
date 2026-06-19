@@ -1,0 +1,745 @@
+library
+├── algebra
+│   ├── matrix
+│   │   ├── accelerator_matrix_convolution
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── accelerator_matrix_differentiation
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── accelerator_matrix_integration
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── accelerator_matrix_inverse
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── accelerator_matrix_multiplication
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── accelerator_matrix_product
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── accelerator_matrix_softmax
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── accelerator_matrix_summation
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── accelerator_matrix_transpose
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── accelerator_matrix_vector_convolution
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── accelerator_matrix_vector_product
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   └── accelerator_transpose_vector_product
+│   │       ├── accelerator_model_pkg.vhd
+│   │       ├── accelerator_model.vhd
+│   │       └── accelerator_testbench.vhd
+│   ├── scalar
+│   │   ├── accelerator_scalar_multiplication
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   └── accelerator_scalar_summation
+│   │       ├── accelerator_model_pkg.vhd
+│   │       ├── accelerator_model.vhd
+│   │       └── accelerator_testbench.vhd
+│   ├── tensor
+│   │   ├── accelerator_tensor_convolution
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── accelerator_tensor_differentiation
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── accelerator_tensor_integration
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── accelerator_tensor_inverse
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── accelerator_tensor_matrix_convolution
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── accelerator_tensor_matrix_product
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── accelerator_tensor_multiplication
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── accelerator_tensor_product
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── accelerator_tensor_softmax
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── accelerator_tensor_summation
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   └── accelerator_tensor_transpose
+│   │       ├── accelerator_model_pkg.vhd
+│   │       ├── accelerator_model.vhd
+│   │       └── accelerator_testbench.vhd
+│   └── vector
+│       ├── accelerator_dot_product
+│       │   ├── accelerator_model_pkg.vhd
+│       │   ├── accelerator_model.vhd
+│       │   └── accelerator_testbench.vhd
+│       ├── accelerator_vector_convolution
+│       │   ├── accelerator_model_pkg.vhd
+│       │   ├── accelerator_model.vhd
+│       │   └── accelerator_testbench.vhd
+│       ├── accelerator_vector_cosine_similarity
+│       │   ├── accelerator_model_pkg.vhd
+│       │   ├── accelerator_model.vhd
+│       │   └── accelerator_testbench.vhd
+│       ├── accelerator_vector_differentiation
+│       │   ├── accelerator_model_pkg.vhd
+│       │   ├── accelerator_model.vhd
+│       │   └── accelerator_testbench.vhd
+│       ├── accelerator_vector_integration
+│       │   ├── accelerator_model_pkg.vhd
+│       │   ├── accelerator_model.vhd
+│       │   └── accelerator_testbench.vhd
+│       ├── accelerator_vector_module
+│       │   ├── accelerator_model_pkg.vhd
+│       │   ├── accelerator_model.vhd
+│       │   └── accelerator_testbench.vhd
+│       ├── accelerator_vector_multiplication
+│       │   ├── accelerator_model_pkg.vhd
+│       │   ├── accelerator_model.vhd
+│       │   └── accelerator_testbench.vhd
+│       ├── accelerator_vector_softmax
+│       │   ├── accelerator_model_pkg.vhd
+│       │   ├── accelerator_model.vhd
+│       │   └── accelerator_testbench.vhd
+│       └── accelerator_vector_summation
+│           ├── accelerator_model_pkg.vhd
+│           ├── accelerator_model.vhd
+│           └── accelerator_testbench.vhd
+├── arithmetic
+│   ├── matrix
+│   │   ├── adder
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── divider
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── multiplier
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   └── subtractor
+│   │       ├── accelerator_model_pkg.vhd
+│   │       ├── accelerator_model.vhd
+│   │       └── accelerator_testbench.vhd
+│   ├── scalar
+│   │   ├── adder
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── divider
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── multiplier
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   └── subtractor
+│   │       ├── accelerator_model_pkg.vhd
+│   │       ├── accelerator_model.vhd
+│   │       └── accelerator_testbench.vhd
+│   ├── tensor
+│   │   ├── adder
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── divider
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   ├── multiplier
+│   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   ├── accelerator_model.vhd
+│   │   │   └── accelerator_testbench.vhd
+│   │   └── subtractor
+│   │       ├── accelerator_model_pkg.vhd
+│   │       ├── accelerator_model.vhd
+│   │       └── accelerator_testbench.vhd
+│   └── vector
+│       ├── adder
+│       │   ├── accelerator_model_pkg.vhd
+│       │   ├── accelerator_model.vhd
+│       │   └── accelerator_testbench.vhd
+│       ├── divider
+│       │   ├── accelerator_model_pkg.vhd
+│       │   ├── accelerator_model.vhd
+│       │   └── accelerator_testbench.vhd
+│       ├── multiplier
+│       │   ├── accelerator_model_pkg.vhd
+│       │   ├── accelerator_model.vhd
+│       │   └── accelerator_testbench.vhd
+│       └── subtractor
+│           ├── accelerator_model_pkg.vhd
+│           ├── accelerator_model.vhd
+│           └── accelerator_testbench.vhd
+├── intelligence
+│   ├── modeling
+│   │   ├── ann
+│   │   │   ├── components
+│   │   │   │   ├── accelerator_masked_multi_head_attention
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_masked_scaled_dot_product_attention
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_multi_head_attention
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   └── accelerator_scaled_dot_product_attention
+│   │   │   │       ├── accelerator_model_pkg.vhd
+│   │   │   │       ├── accelerator_model.vhd
+│   │   │   │       └── accelerator_testbench.vhd
+│   │   │   ├── controller
+│   │   │   │   ├── fnn
+│   │   │   │   │   └── accelerator_fnn
+│   │   │   │   │       ├── accelerator_model_pkg.vhd
+│   │   │   │   │       ├── accelerator_model.vhd
+│   │   │   │   │       └── accelerator_testbench.vhd
+│   │   │   │   └── lstm
+│   │   │   │       └── accelerator_lstm
+│   │   │   │           ├── accelerator_model_pkg.vhd
+│   │   │   │           ├── accelerator_model.vhd
+│   │   │   │           └── accelerator_testbench.vhd
+│   │   │   ├── functions
+│   │   │   │   ├── accelerator_layer_norm
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   └── accelerator_positional_encoding
+│   │   │   │       ├── accelerator_model_pkg.vhd
+│   │   │   │       ├── accelerator_model.vhd
+│   │   │   │       └── accelerator_testbench.vhd
+│   │   │   ├── inputs
+│   │   │   │   ├── accelerator_inputs_vector
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_keys_vector
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_queries_vector
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   └── accelerator_values_vector
+│   │   │   │       ├── accelerator_model_pkg.vhd
+│   │   │   │       ├── accelerator_model.vhd
+│   │   │   │       └── accelerator_testbench.vhd
+│   │   │   └── top
+│   │   │       ├── accelerator_controller
+│   │   │       │   ├── accelerator_model_pkg.vhd
+│   │   │       │   ├── accelerator_model.vhd
+│   │   │       │   └── accelerator_testbench.vhd
+│   │   │       ├── accelerator_decoder
+│   │   │       │   ├── accelerator_model_pkg.vhd
+│   │   │       │   ├── accelerator_model.vhd
+│   │   │       │   └── accelerator_testbench.vhd
+│   │   │       └── accelerator_encoder
+│   │   │           ├── accelerator_model_pkg.vhd
+│   │   │           ├── accelerator_model.vhd
+│   │   │           └── accelerator_testbench.vhd
+│   │   ├── dnc
+│   │   │   ├── memory
+│   │   │   │   ├── accelerator_addressing
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_allocation_weighting
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_backward_weighting
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_forward_weighting
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_matrix_content_based_addressing
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_memory_matrix
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_memory_retention_vector
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_precedence_weighting
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_sort_vector
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_temporal_link_matrix
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_usage_vector
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   └── accelerator_vector_content_based_addressing
+│   │   │   │       ├── accelerator_model_pkg.vhd
+│   │   │   │       ├── accelerator_model.vhd
+│   │   │   │       └── accelerator_testbench.vhd
+│   │   │   ├── read_heads
+│   │   │   │   ├── accelerator_read_content_weighting
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_read_vectors
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   └── accelerator_read_weighting
+│   │   │   │       ├── accelerator_model_pkg.vhd
+│   │   │   │       ├── accelerator_model.vhd
+│   │   │   │       └── accelerator_testbench.vhd
+│   │   │   ├── top
+│   │   │   │   ├── accelerator_interface_matrix
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_interface_top
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_interface_vector
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_output_vector
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   └── accelerator_top
+│   │   │   │       ├── accelerator_model_pkg.vhd
+│   │   │   │       ├── accelerator_model.vhd
+│   │   │   │       └── accelerator_testbench.vhd
+│   │   │   ├── trained
+│   │   │   │   └── accelerator_trained_top
+│   │   │   │       ├── accelerator_model_pkg.vhd
+│   │   │   │       ├── accelerator_model.vhd
+│   │   │   │       └── accelerator_testbench.vhd
+│   │   │   └── write_heads
+│   │   │       ├── accelerator_write_content_weighting
+│   │   │       │   ├── accelerator_model_pkg.vhd
+│   │   │       │   ├── accelerator_model.vhd
+│   │   │       │   └── accelerator_testbench.vhd
+│   │   │       └── accelerator_write_weighting
+│   │   │           ├── accelerator_model_pkg.vhd
+│   │   │           ├── accelerator_model.vhd
+│   │   │           └── accelerator_testbench.vhd
+│   │   ├── fnn
+│   │   │   ├── convolutional
+│   │   │   │   └── accelerator_controller
+│   │   │   │       ├── accelerator_model_pkg.vhd
+│   │   │   │       ├── accelerator_model.vhd
+│   │   │   │       └── accelerator_testbench.vhd
+│   │   │   └── standard
+│   │   │       └── accelerator_controller
+│   │   │           ├── accelerator_model_pkg.vhd
+│   │   │           ├── accelerator_model.vhd
+│   │   │           └── accelerator_testbench.vhd
+│   │   ├── lstm
+│   │   │   ├── convolutional
+│   │   │   │   ├── accelerator_activation_gate_vector
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_controller
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_forget_gate_vector
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_hidden_gate_vector
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_input_gate_vector
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   ├── accelerator_output_gate_vector
+│   │   │   │   │   ├── accelerator_model_pkg.vhd
+│   │   │   │   │   ├── accelerator_model.vhd
+│   │   │   │   │   └── accelerator_testbench.vhd
+│   │   │   │   └── accelerator_state_gate_vector
+│   │   │   │       ├── accelerator_model_pkg.vhd
+│   │   │   │       ├── accelerator_model.vhd
+│   │   │   │       └── accelerator_testbench.vhd
+│   │   │   └── standard
+│   │   │       ├── accelerator_activation_gate_vector
+│   │   │       │   ├── accelerator_model_pkg.vhd
+│   │   │       │   ├── accelerator_model.vhd
+│   │   │       │   └── accelerator_testbench.vhd
+│   │   │       ├── accelerator_controller
+│   │   │       │   ├── accelerator_model_pkg.vhd
+│   │   │       │   ├── accelerator_model.vhd
+│   │   │       │   └── accelerator_testbench.vhd
+│   │   │       ├── accelerator_forget_gate_vector
+│   │   │       │   ├── accelerator_model_pkg.vhd
+│   │   │       │   ├── accelerator_model.vhd
+│   │   │       │   └── accelerator_testbench.vhd
+│   │   │       ├── accelerator_hidden_gate_vector
+│   │   │       │   ├── accelerator_model_pkg.vhd
+│   │   │       │   ├── accelerator_model.vhd
+│   │   │       │   └── accelerator_testbench.vhd
+│   │   │       ├── accelerator_input_gate_vector
+│   │   │       │   ├── accelerator_model_pkg.vhd
+│   │   │       │   ├── accelerator_model.vhd
+│   │   │       │   └── accelerator_testbench.vhd
+│   │   │       ├── accelerator_output_gate_vector
+│   │   │       │   ├── accelerator_model_pkg.vhd
+│   │   │       │   ├── accelerator_model.vhd
+│   │   │       │   └── accelerator_testbench.vhd
+│   │   │       └── accelerator_state_gate_vector
+│   │   │           ├── accelerator_model_pkg.vhd
+│   │   │           ├── accelerator_model.vhd
+│   │   │           └── accelerator_testbench.vhd
+│   │   └── ntm
+│   │       ├── memory
+│   │       │   ├── accelerator_addressing
+│   │       │   │   ├── accelerator_model_pkg.vhd
+│   │       │   │   ├── accelerator_model.vhd
+│   │       │   │   └── accelerator_testbench.vhd
+│   │       │   ├── accelerator_matrix_content_based_addressing
+│   │       │   │   ├── accelerator_model_pkg.vhd
+│   │       │   │   ├── accelerator_model.vhd
+│   │       │   │   └── accelerator_testbench.vhd
+│   │       │   └── accelerator_vector_content_based_addressing
+│   │       │       ├── accelerator_model_pkg.vhd
+│   │       │       ├── accelerator_model.vhd
+│   │       │       └── accelerator_testbench.vhd
+│   │       ├── read_heads
+│   │       │   └── accelerator_reading
+│   │       │       ├── accelerator_model_pkg.vhd
+│   │       │       ├── accelerator_model.vhd
+│   │       │       └── accelerator_testbench.vhd
+│   │       ├── top
+│   │       │   ├── accelerator_interface_matrix
+│   │       │   │   ├── accelerator_model_pkg.vhd
+│   │       │   │   ├── accelerator_model.vhd
+│   │       │   │   └── accelerator_testbench.vhd
+│   │       │   ├── accelerator_interface_top
+│   │       │   │   ├── accelerator_model_pkg.vhd
+│   │       │   │   ├── accelerator_model.vhd
+│   │       │   │   └── accelerator_testbench.vhd
+│   │       │   ├── accelerator_interface_vector
+│   │       │   │   ├── accelerator_model_pkg.vhd
+│   │       │   │   ├── accelerator_model.vhd
+│   │       │   │   └── accelerator_testbench.vhd
+│   │       │   ├── accelerator_output_vector
+│   │       │   │   ├── accelerator_model_pkg.vhd
+│   │       │   │   ├── accelerator_model.vhd
+│   │       │   │   └── accelerator_testbench.vhd
+│   │       │   └── accelerator_top
+│   │       │       ├── accelerator_model_pkg.vhd
+│   │       │       ├── accelerator_model.vhd
+│   │       │       └── accelerator_testbench.vhd
+│   │       ├── trained
+│   │       │   └── accelerator_trained_top
+│   │       │       ├── accelerator_model_pkg.vhd
+│   │       │       ├── accelerator_model.vhd
+│   │       │       └── accelerator_testbench.vhd
+│   │       └── write_heads
+│   │           ├── accelerator_erasing
+│   │           │   ├── accelerator_model_pkg.vhd
+│   │           │   ├── accelerator_model.vhd
+│   │           │   └── accelerator_testbench.vhd
+│   │           └── accelerator_writing
+│   │               ├── accelerator_model_pkg.vhd
+│   │               ├── accelerator_model.vhd
+│   │               └── accelerator_testbench.vhd
+│   └── training
+│       ├── differentiation
+│       │   ├── accelerator_matrix_controller_differentiation
+│       │   │   ├── accelerator_model_pkg.vhd
+│       │   │   ├── accelerator_model.vhd
+│       │   │   └── accelerator_testbench.vhd
+│       │   └── accelerator_vector_controller_differentiation
+│       │       ├── accelerator_model_pkg.vhd
+│       │       ├── accelerator_model.vhd
+│       │       └── accelerator_testbench.vhd
+│       ├── fnn
+│       │   ├── accelerator_fnn_b_trainer
+│       │   │   ├── accelerator_model_pkg.vhd
+│       │   │   ├── accelerator_model.vhd
+│       │   │   └── accelerator_testbench.vhd
+│       │   ├── accelerator_fnn_d_trainer
+│       │   │   ├── accelerator_model_pkg.vhd
+│       │   │   ├── accelerator_model.vhd
+│       │   │   └── accelerator_testbench.vhd
+│       │   ├── accelerator_fnn_k_trainer
+│       │   │   ├── accelerator_model_pkg.vhd
+│       │   │   ├── accelerator_model.vhd
+│       │   │   └── accelerator_testbench.vhd
+│       │   ├── accelerator_fnn_trainer
+│       │   │   ├── accelerator_model_pkg.vhd
+│       │   │   ├── accelerator_model.vhd
+│       │   │   └── accelerator_testbench.vhd
+│       │   ├── accelerator_fnn_u_trainer
+│       │   │   ├── accelerator_model_pkg.vhd
+│       │   │   ├── accelerator_model.vhd
+│       │   │   └── accelerator_testbench.vhd
+│       │   ├── accelerator_fnn_v_trainer
+│       │   │   ├── accelerator_model_pkg.vhd
+│       │   │   ├── accelerator_model.vhd
+│       │   │   └── accelerator_testbench.vhd
+│       │   └── accelerator_fnn_w_trainer
+│       │       ├── accelerator_model_pkg.vhd
+│       │       ├── accelerator_model.vhd
+│       │       └── accelerator_testbench.vhd
+│       ├── lstm
+│       │   ├── activation
+│       │   │   ├── accelerator_lstm_activation_b_trainer
+│       │   │   │   ├── accelerator_model_pkg.vhd
+│       │   │   │   ├── accelerator_model.vhd
+│       │   │   │   └── accelerator_testbench.vhd
+│       │   │   ├── accelerator_lstm_activation_d_trainer
+│       │   │   │   ├── accelerator_model_pkg.vhd
+│       │   │   │   ├── accelerator_model.vhd
+│       │   │   │   └── accelerator_testbench.vhd
+│       │   │   ├── accelerator_lstm_activation_k_trainer
+│       │   │   │   ├── accelerator_model_pkg.vhd
+│       │   │   │   ├── accelerator_model.vhd
+│       │   │   │   └── accelerator_testbench.vhd
+│       │   │   ├── accelerator_lstm_activation_trainer
+│       │   │   │   ├── accelerator_model_pkg.vhd
+│       │   │   │   ├── accelerator_model.vhd
+│       │   │   │   └── accelerator_testbench.vhd
+│       │   │   ├── accelerator_lstm_activation_u_trainer
+│       │   │   │   ├── accelerator_model_pkg.vhd
+│       │   │   │   ├── accelerator_model.vhd
+│       │   │   │   └── accelerator_testbench.vhd
+│       │   │   ├── accelerator_lstm_activation_v_trainer
+│       │   │   │   ├── accelerator_model_pkg.vhd
+│       │   │   │   ├── accelerator_model.vhd
+│       │   │   │   └── accelerator_testbench.vhd
+│       │   │   └── accelerator_lstm_activation_w_trainer
+│       │   │       ├── accelerator_model_pkg.vhd
+│       │   │       ├── accelerator_model.vhd
+│       │   │       └── accelerator_testbench.vhd
+│       │   ├── forget
+│       │   │   ├── accelerator_lstm_forget_b_trainer
+│       │   │   │   ├── accelerator_model_pkg.vhd
+│       │   │   │   ├── accelerator_model.vhd
+│       │   │   │   └── accelerator_testbench.vhd
+│       │   │   ├── accelerator_lstm_forget_d_trainer
+│       │   │   │   ├── accelerator_model_pkg.vhd
+│       │   │   │   ├── accelerator_model.vhd
+│       │   │   │   └── accelerator_testbench.vhd
+│       │   │   ├── accelerator_lstm_forget_k_trainer
+│       │   │   │   ├── accelerator_model_pkg.vhd
+│       │   │   │   ├── accelerator_model.vhd
+│       │   │   │   └── accelerator_testbench.vhd
+│       │   │   ├── accelerator_lstm_forget_trainer
+│       │   │   │   ├── accelerator_model_pkg.vhd
+│       │   │   │   ├── accelerator_model.vhd
+│       │   │   │   └── accelerator_testbench.vhd
+│       │   │   ├── accelerator_lstm_forget_u_trainer
+│       │   │   │   ├── accelerator_model_pkg.vhd
+│       │   │   │   ├── accelerator_model.vhd
+│       │   │   │   └── accelerator_testbench.vhd
+│       │   │   ├── accelerator_lstm_forget_v_trainer
+│       │   │   │   ├── accelerator_model_pkg.vhd
+│       │   │   │   ├── accelerator_model.vhd
+│       │   │   │   └── accelerator_testbench.vhd
+│       │   │   └── accelerator_lstm_forget_w_trainer
+│       │   │       ├── accelerator_model_pkg.vhd
+│       │   │       ├── accelerator_model.vhd
+│       │   │       └── accelerator_testbench.vhd
+│       │   ├── input
+│       │   │   ├── accelerator_lstm_input_b_trainer
+│       │   │   │   ├── accelerator_model_pkg.vhd
+│       │   │   │   ├── accelerator_model.vhd
+│       │   │   │   └── accelerator_testbench.vhd
+│       │   │   ├── accelerator_lstm_input_d_trainer
+│       │   │   │   ├── accelerator_model_pkg.vhd
+│       │   │   │   ├── accelerator_model.vhd
+│       │   │   │   └── accelerator_testbench.vhd
+│       │   │   ├── accelerator_lstm_input_k_trainer
+│       │   │   │   ├── accelerator_model_pkg.vhd
+│       │   │   │   ├── accelerator_model.vhd
+│       │   │   │   └── accelerator_testbench.vhd
+│       │   │   ├── accelerator_lstm_input_trainer
+│       │   │   │   ├── accelerator_model_pkg.vhd
+│       │   │   │   ├── accelerator_model.vhd
+│       │   │   │   └── accelerator_testbench.vhd
+│       │   │   ├── accelerator_lstm_input_u_trainer
+│       │   │   │   ├── accelerator_model_pkg.vhd
+│       │   │   │   ├── accelerator_model.vhd
+│       │   │   │   └── accelerator_testbench.vhd
+│       │   │   ├── accelerator_lstm_input_v_trainer
+│       │   │   │   ├── accelerator_model_pkg.vhd
+│       │   │   │   ├── accelerator_model.vhd
+│       │   │   │   └── accelerator_testbench.vhd
+│       │   │   └── accelerator_lstm_input_w_trainer
+│       │   │       ├── accelerator_model_pkg.vhd
+│       │   │       ├── accelerator_model.vhd
+│       │   │       └── accelerator_testbench.vhd
+│       │   └── output
+│       │       ├── accelerator_lstm_output_b_trainer
+│       │       │   ├── accelerator_model_pkg.vhd
+│       │       │   ├── accelerator_model.vhd
+│       │       │   └── accelerator_testbench.vhd
+│       │       ├── accelerator_lstm_output_d_trainer
+│       │       │   ├── accelerator_model_pkg.vhd
+│       │       │   ├── accelerator_model.vhd
+│       │       │   └── accelerator_testbench.vhd
+│       │       ├── accelerator_lstm_output_k_trainer
+│       │       │   ├── accelerator_model_pkg.vhd
+│       │       │   ├── accelerator_model.vhd
+│       │       │   └── accelerator_testbench.vhd
+│       │       ├── accelerator_lstm_output_trainer
+│       │       │   ├── accelerator_model_pkg.vhd
+│       │       │   ├── accelerator_model.vhd
+│       │       │   └── accelerator_testbench.vhd
+│       │       ├── accelerator_lstm_output_u_trainer
+│       │       │   ├── accelerator_model_pkg.vhd
+│       │       │   ├── accelerator_model.vhd
+│       │       │   └── accelerator_testbench.vhd
+│       │       ├── accelerator_lstm_output_v_trainer
+│       │       │   ├── accelerator_model_pkg.vhd
+│       │       │   ├── accelerator_model.vhd
+│       │       │   └── accelerator_testbench.vhd
+│       │       └── accelerator_lstm_output_w_trainer
+│       │           ├── accelerator_model_pkg.vhd
+│       │           ├── accelerator_model.vhd
+│       │           └── accelerator_testbench.vhd
+│       └── state
+│           ├── feedback
+│           │   ├── accelerator_state_matrix_feedforward
+│           │   │   ├── accelerator_model_pkg.vhd
+│           │   │   ├── accelerator_model.vhd
+│           │   │   └── accelerator_testbench.vhd
+│           │   ├── accelerator_state_matrix_input
+│           │   │   ├── accelerator_model_pkg.vhd
+│           │   │   ├── accelerator_model.vhd
+│           │   │   └── accelerator_testbench.vhd
+│           │   ├── accelerator_state_matrix_output
+│           │   │   ├── accelerator_model_pkg.vhd
+│           │   │   ├── accelerator_model.vhd
+│           │   │   └── accelerator_testbench.vhd
+│           │   └── accelerator_state_matrix_state
+│           │       ├── accelerator_model_pkg.vhd
+│           │       ├── accelerator_model.vhd
+│           │       └── accelerator_testbench.vhd
+│           ├── outputs
+│           │   ├── accelerator_state_vector_output
+│           │   │   ├── accelerator_model_pkg.vhd
+│           │   │   ├── accelerator_model.vhd
+│           │   │   └── accelerator_testbench.vhd
+│           │   └── accelerator_state_vector_state
+│           │       ├── accelerator_model_pkg.vhd
+│           │       ├── accelerator_model.vhd
+│           │       └── accelerator_testbench.vhd
+│           └── top
+│               └── accelerator_state_top
+│                   ├── accelerator_model_pkg.vhd
+│                   ├── accelerator_model.vhd
+│                   └── accelerator_testbench.vhd
+└── math
+    ├── matrix
+    │   ├── accelerator_matrix_deviation_function
+    │   │   ├── accelerator_model_pkg.vhd
+    │   │   ├── accelerator_model.vhd
+    │   │   └── accelerator_testbench.vhd
+    │   ├── accelerator_matrix_logistic_function
+    │   │   ├── accelerator_model_pkg.vhd
+    │   │   ├── accelerator_model.vhd
+    │   │   └── accelerator_testbench.vhd
+    │   ├── accelerator_matrix_mean_function
+    │   │   ├── accelerator_model_pkg.vhd
+    │   │   ├── accelerator_model.vhd
+    │   │   └── accelerator_testbench.vhd
+    │   └── accelerator_matrix_oneplus_function
+    │       ├── accelerator_model_pkg.vhd
+    │       ├── accelerator_model.vhd
+    │       └── accelerator_testbench.vhd
+    ├── scalar
+    │   ├── accelerator_scalar_deviation_function
+    │   │   ├── accelerator_model_pkg.vhd
+    │   │   ├── accelerator_model.vhd
+    │   │   └── accelerator_testbench.vhd
+    │   ├── accelerator_scalar_logistic_function
+    │   │   ├── accelerator_model_pkg.vhd
+    │   │   ├── accelerator_model.vhd
+    │   │   └── accelerator_testbench.vhd
+    │   ├── accelerator_scalar_mean_function
+    │   │   ├── accelerator_model_pkg.vhd
+    │   │   ├── accelerator_model.vhd
+    │   │   └── accelerator_testbench.vhd
+    │   └── accelerator_scalar_oneplus_function
+    │       ├── accelerator_model_pkg.vhd
+    │       ├── accelerator_model.vhd
+    │       └── accelerator_testbench.vhd
+    └── vector
+        ├── accelerator_vector_deviation_function
+        │   ├── accelerator_model_pkg.vhd
+        │   ├── accelerator_model.vhd
+        │   └── accelerator_testbench.vhd
+        ├── accelerator_vector_logistic_function
+        │   ├── accelerator_model_pkg.vhd
+        │   ├── accelerator_model.vhd
+        │   └── accelerator_testbench.vhd
+        ├── accelerator_vector_mean_function
+        │   ├── accelerator_model_pkg.vhd
+        │   ├── accelerator_model.vhd
+        │   └── accelerator_testbench.vhd
+        └── accelerator_vector_oneplus_function
+            ├── accelerator_model_pkg.vhd
+            ├── accelerator_model.vhd
+            └── accelerator_testbench.vhd
+
+226 directories, 516 files

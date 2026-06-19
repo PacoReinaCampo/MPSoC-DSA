@@ -1,0 +1,573 @@
+application
+├── algebra
+│   ├── matrix
+│   │   ├── accelerator_matrix_convolution
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── accelerator_matrix_differentiation
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── accelerator_matrix_integration
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── accelerator_matrix_inverse
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── accelerator_matrix_multiplication
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── accelerator_matrix_product
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── accelerator_matrix_softmax
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── accelerator_matrix_summation
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── accelerator_matrix_transpose
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── accelerator_matrix_vector_convolution
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── accelerator_matrix_vector_product
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   └── accelerator_transpose_vector_product
+│   │       ├── accelerator_design.sv
+│   │       └── accelerator_testbench.sv
+│   ├── scalar
+│   │   ├── accelerator_scalar_multiplication
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   └── accelerator_scalar_summation
+│   │       ├── accelerator_design.sv
+│   │       └── accelerator_testbench.sv
+│   ├── tensor
+│   │   ├── accelerator_tensor_convolution
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── accelerator_tensor_differentiation
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── accelerator_tensor_integration
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── accelerator_tensor_inverse
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── accelerator_tensor_matrix_convolution
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── accelerator_tensor_matrix_product
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── accelerator_tensor_multiplication
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── accelerator_tensor_product
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── accelerator_tensor_softmax
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── accelerator_tensor_summation
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   └── accelerator_tensor_transpose
+│   │       ├── accelerator_design.sv
+│   │       └── accelerator_testbench.sv
+│   └── vector
+│       ├── accelerator_dot_product
+│       │   ├── accelerator_design.sv
+│       │   └── accelerator_testbench.sv
+│       ├── accelerator_vector_convolution
+│       │   ├── accelerator_design.sv
+│       │   └── accelerator_testbench.sv
+│       ├── accelerator_vector_cosine_similarity
+│       │   ├── accelerator_design.sv
+│       │   └── accelerator_testbench.sv
+│       ├── accelerator_vector_differentiation
+│       │   ├── accelerator_design.sv
+│       │   └── accelerator_testbench.sv
+│       ├── accelerator_vector_integration
+│       │   ├── accelerator_design.sv
+│       │   └── accelerator_testbench.sv
+│       ├── accelerator_vector_module
+│       │   ├── accelerator_design.sv
+│       │   └── accelerator_testbench.sv
+│       ├── accelerator_vector_multiplication
+│       │   ├── accelerator_design.sv
+│       │   └── accelerator_testbench.sv
+│       ├── accelerator_vector_softmax
+│       │   ├── accelerator_design.sv
+│       │   └── accelerator_testbench.sv
+│       └── accelerator_vector_summation
+│           ├── accelerator_design.sv
+│           └── accelerator_testbench.sv
+├── arithmetic
+│   ├── matrix
+│   │   ├── adder
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── divider
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── multiplier
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   └── subtractor
+│   │       ├── accelerator_design.sv
+│   │       └── accelerator_testbench.sv
+│   ├── scalar
+│   │   ├── adder
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── divider
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── multiplier
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   └── subtractor
+│   │       ├── accelerator_design.sv
+│   │       └── accelerator_testbench.sv
+│   ├── tensor
+│   │   ├── adder
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── divider
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   ├── multiplier
+│   │   │   ├── accelerator_design.sv
+│   │   │   └── accelerator_testbench.sv
+│   │   └── subtractor
+│   │       ├── accelerator_design.sv
+│   │       └── accelerator_testbench.sv
+│   └── vector
+│       ├── adder
+│       │   ├── accelerator_design.sv
+│       │   └── accelerator_testbench.sv
+│       ├── divider
+│       │   ├── accelerator_design.sv
+│       │   └── accelerator_testbench.sv
+│       ├── multiplier
+│       │   ├── accelerator_design.sv
+│       │   └── accelerator_testbench.sv
+│       └── subtractor
+│           ├── accelerator_design.sv
+│           └── accelerator_testbench.sv
+├── intelligence
+│   ├── modeling
+│   │   ├── ann
+│   │   │   ├── components
+│   │   │   │   ├── accelerator_masked_multi_head_attention
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_masked_scaled_dot_product_attention
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_multi_head_attention
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   └── accelerator_scaled_dot_product_attention
+│   │   │   │       ├── accelerator_design.sv
+│   │   │   │       └── accelerator_testbench.sv
+│   │   │   ├── controller
+│   │   │   │   ├── fnn
+│   │   │   │   │   └── accelerator_fnn
+│   │   │   │   │       ├── accelerator_design.sv
+│   │   │   │   │       └── accelerator_testbench.sv
+│   │   │   │   └── lstm
+│   │   │   │       └── accelerator_lstm
+│   │   │   │           ├── accelerator_design.sv
+│   │   │   │           └── accelerator_testbench.sv
+│   │   │   ├── functions
+│   │   │   │   ├── accelerator_layer_norm
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   └── accelerator_positional_encoding
+│   │   │   │       ├── accelerator_design.sv
+│   │   │   │       └── accelerator_testbench.sv
+│   │   │   ├── inputs
+│   │   │   │   ├── accelerator_inputs_vector
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_keys_vector
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_queries_vector
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   └── accelerator_values_vector
+│   │   │   │       ├── accelerator_design.sv
+│   │   │   │       └── accelerator_testbench.sv
+│   │   │   └── top
+│   │   │       ├── accelerator_controller
+│   │   │       │   ├── accelerator_design.sv
+│   │   │       │   └── accelerator_testbench.sv
+│   │   │       ├── accelerator_decoder
+│   │   │       │   ├── accelerator_design.sv
+│   │   │       │   └── accelerator_testbench.sv
+│   │   │       └── accelerator_encoder
+│   │   │           ├── accelerator_design.sv
+│   │   │           └── accelerator_testbench.sv
+│   │   ├── dnc
+│   │   │   ├── memory
+│   │   │   │   ├── accelerator_addressing
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_allocation_weighting
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_backward_weighting
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_forward_weighting
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_matrix_content_based_addressing
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_memory_matrix
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_memory_retention_vector
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_precedence_weighting
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_sort_vector
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_temporal_link_matrix
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_usage_vector
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   └── accelerator_vector_content_based_addressing
+│   │   │   │       ├── accelerator_design.sv
+│   │   │   │       └── accelerator_testbench.sv
+│   │   │   ├── read_heads
+│   │   │   │   ├── accelerator_read_content_weighting
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_read_vectors
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   └── accelerator_read_weighting
+│   │   │   │       ├── accelerator_design.sv
+│   │   │   │       └── accelerator_testbench.sv
+│   │   │   ├── top
+│   │   │   │   ├── accelerator_interface_matrix
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_interface_top
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_interface_vector
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_output_vector
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   └── accelerator_top
+│   │   │   │       ├── accelerator_design.sv
+│   │   │   │       └── accelerator_testbench.sv
+│   │   │   ├── trained
+│   │   │   │   └── accelerator_trained_top
+│   │   │   │       ├── accelerator_design.sv
+│   │   │   │       └── accelerator_testbench.sv
+│   │   │   └── write_heads
+│   │   │       ├── accelerator_write_content_weighting
+│   │   │       │   ├── accelerator_design.sv
+│   │   │       │   └── accelerator_testbench.sv
+│   │   │       └── accelerator_write_weighting
+│   │   │           ├── accelerator_design.sv
+│   │   │           └── accelerator_testbench.sv
+│   │   ├── fnn
+│   │   │   ├── convolutional
+│   │   │   │   └── accelerator_controller
+│   │   │   │       ├── accelerator_design.sv
+│   │   │   │       └── accelerator_testbench.sv
+│   │   │   └── standard
+│   │   │       └── accelerator_controller
+│   │   │           ├── accelerator_design.sv
+│   │   │           └── accelerator_testbench.sv
+│   │   ├── lstm
+│   │   │   ├── convolutional
+│   │   │   │   ├── accelerator_activation_gate_vector
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_controller
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_forget_gate_vector
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_hidden_gate_vector
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_input_gate_vector
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   ├── accelerator_output_gate_vector
+│   │   │   │   │   ├── accelerator_design.sv
+│   │   │   │   │   └── accelerator_testbench.sv
+│   │   │   │   └── accelerator_state_gate_vector
+│   │   │   │       ├── accelerator_design.sv
+│   │   │   │       └── accelerator_testbench.sv
+│   │   │   └── standard
+│   │   │       ├── accelerator_activation_gate_vector
+│   │   │       │   ├── accelerator_design.sv
+│   │   │       │   └── accelerator_testbench.sv
+│   │   │       ├── accelerator_controller
+│   │   │       │   ├── accelerator_design.sv
+│   │   │       │   └── accelerator_testbench.sv
+│   │   │       ├── accelerator_forget_gate_vector
+│   │   │       │   ├── accelerator_design.sv
+│   │   │       │   └── accelerator_testbench.sv
+│   │   │       ├── accelerator_hidden_gate_vector
+│   │   │       │   ├── accelerator_design.sv
+│   │   │       │   └── accelerator_testbench.sv
+│   │   │       ├── accelerator_input_gate_vector
+│   │   │       │   ├── accelerator_design.sv
+│   │   │       │   └── accelerator_testbench.sv
+│   │   │       ├── accelerator_output_gate_vector
+│   │   │       │   ├── accelerator_design.sv
+│   │   │       │   └── accelerator_testbench.sv
+│   │   │       └── accelerator_state_gate_vector
+│   │   │           ├── accelerator_design.sv
+│   │   │           └── accelerator_testbench.sv
+│   │   └── ntm
+│   │       ├── memory
+│   │       │   ├── accelerator_addressing
+│   │       │   │   ├── accelerator_design.sv
+│   │       │   │   └── accelerator_testbench.sv
+│   │       │   ├── accelerator_matrix_content_based_addressing
+│   │       │   │   ├── accelerator_design.sv
+│   │       │   │   └── accelerator_testbench.sv
+│   │       │   └── accelerator_vector_content_based_addressing
+│   │       │       ├── accelerator_design.sv
+│   │       │       └── accelerator_testbench.sv
+│   │       ├── read_heads
+│   │       │   └── accelerator_reading
+│   │       │       ├── accelerator_design.sv
+│   │       │       └── accelerator_testbench.sv
+│   │       ├── top
+│   │       │   ├── accelerator_interface_matrix
+│   │       │   │   ├── accelerator_design.sv
+│   │       │   │   └── accelerator_testbench.sv
+│   │       │   ├── accelerator_interface_top
+│   │       │   │   ├── accelerator_design.sv
+│   │       │   │   └── accelerator_testbench.sv
+│   │       │   ├── accelerator_interface_vector
+│   │       │   │   ├── accelerator_design.sv
+│   │       │   │   └── accelerator_testbench.sv
+│   │       │   ├── accelerator_output_vector
+│   │       │   │   ├── accelerator_design.sv
+│   │       │   │   └── accelerator_testbench.sv
+│   │       │   └── accelerator_top
+│   │       │       ├── accelerator_design.sv
+│   │       │       └── accelerator_testbench.sv
+│   │       ├── trained
+│   │       │   └── accelerator_trained_top
+│   │       │       ├── accelerator_design.sv
+│   │       │       └── accelerator_testbench.sv
+│   │       └── write_heads
+│   │           ├── accelerator_erasing
+│   │           │   ├── accelerator_design.sv
+│   │           │   └── accelerator_testbench.sv
+│   │           └── accelerator_writing
+│   │               ├── accelerator_design.sv
+│   │               └── accelerator_testbench.sv
+│   └── training
+│       ├── differentiation
+│       │   ├── accelerator_matrix_controller_differentiation
+│       │   │   ├── accelerator_design.sv
+│       │   │   └── accelerator_testbench.sv
+│       │   └── accelerator_vector_controller_differentiation
+│       │       ├── accelerator_design.sv
+│       │       └── accelerator_testbench.sv
+│       ├── fnn
+│       │   ├── accelerator_fnn_b_trainer
+│       │   │   ├── accelerator_design.sv
+│       │   │   └── accelerator_testbench.sv
+│       │   ├── accelerator_fnn_d_trainer
+│       │   │   ├── accelerator_design.sv
+│       │   │   └── accelerator_testbench.sv
+│       │   ├── accelerator_fnn_k_trainer
+│       │   │   ├── accelerator_design.sv
+│       │   │   └── accelerator_testbench.sv
+│       │   ├── accelerator_fnn_trainer
+│       │   │   ├── accelerator_design.sv
+│       │   │   └── accelerator_testbench.sv
+│       │   ├── accelerator_fnn_u_trainer
+│       │   │   ├── accelerator_design.sv
+│       │   │   └── accelerator_testbench.sv
+│       │   ├── accelerator_fnn_v_trainer
+│       │   │   ├── accelerator_design.sv
+│       │   │   └── accelerator_testbench.sv
+│       │   └── accelerator_fnn_w_trainer
+│       │       ├── accelerator_design.sv
+│       │       └── accelerator_testbench.sv
+│       ├── lstm
+│       │   ├── activation
+│       │   │   ├── accelerator_lstm_activation_b_trainer
+│       │   │   │   ├── accelerator_design.sv
+│       │   │   │   └── accelerator_testbench.sv
+│       │   │   ├── accelerator_lstm_activation_d_trainer
+│       │   │   │   ├── accelerator_design.sv
+│       │   │   │   └── accelerator_testbench.sv
+│       │   │   ├── accelerator_lstm_activation_k_trainer
+│       │   │   │   ├── accelerator_design.sv
+│       │   │   │   └── accelerator_testbench.sv
+│       │   │   ├── accelerator_lstm_activation_trainer
+│       │   │   │   ├── accelerator_design.sv
+│       │   │   │   └── accelerator_testbench.sv
+│       │   │   ├── accelerator_lstm_activation_u_trainer
+│       │   │   │   ├── accelerator_design.sv
+│       │   │   │   └── accelerator_testbench.sv
+│       │   │   ├── accelerator_lstm_activation_v_trainer
+│       │   │   │   ├── accelerator_design.sv
+│       │   │   │   └── accelerator_testbench.sv
+│       │   │   └── accelerator_lstm_activation_w_trainer
+│       │   │       ├── accelerator_design.sv
+│       │   │       └── accelerator_testbench.sv
+│       │   ├── forget
+│       │   │   ├── accelerator_lstm_forget_b_trainer
+│       │   │   │   ├── accelerator_design.sv
+│       │   │   │   └── accelerator_testbench.sv
+│       │   │   ├── accelerator_lstm_forget_d_trainer
+│       │   │   │   ├── accelerator_design.sv
+│       │   │   │   └── accelerator_testbench.sv
+│       │   │   ├── accelerator_lstm_forget_k_trainer
+│       │   │   │   ├── accelerator_design.sv
+│       │   │   │   └── accelerator_testbench.sv
+│       │   │   ├── accelerator_lstm_forget_trainer
+│       │   │   │   ├── accelerator_design.sv
+│       │   │   │   └── accelerator_testbench.sv
+│       │   │   ├── accelerator_lstm_forget_u_trainer
+│       │   │   │   ├── accelerator_design.sv
+│       │   │   │   └── accelerator_testbench.sv
+│       │   │   ├── accelerator_lstm_forget_v_trainer
+│       │   │   │   ├── accelerator_design.sv
+│       │   │   │   └── accelerator_testbench.sv
+│       │   │   └── accelerator_lstm_forget_w_trainer
+│       │   │       ├── accelerator_design.sv
+│       │   │       └── accelerator_testbench.sv
+│       │   ├── input
+│       │   │   ├── accelerator_lstm_input_b_trainer
+│       │   │   │   ├── accelerator_design.sv
+│       │   │   │   └── accelerator_testbench.sv
+│       │   │   ├── accelerator_lstm_input_d_trainer
+│       │   │   │   ├── accelerator_design.sv
+│       │   │   │   └── accelerator_testbench.sv
+│       │   │   ├── accelerator_lstm_input_k_trainer
+│       │   │   │   ├── accelerator_design.sv
+│       │   │   │   └── accelerator_testbench.sv
+│       │   │   ├── accelerator_lstm_input_trainer
+│       │   │   │   ├── accelerator_design.sv
+│       │   │   │   └── accelerator_testbench.sv
+│       │   │   ├── accelerator_lstm_input_u_trainer
+│       │   │   │   ├── accelerator_design.sv
+│       │   │   │   └── accelerator_testbench.sv
+│       │   │   ├── accelerator_lstm_input_v_trainer
+│       │   │   │   ├── accelerator_design.sv
+│       │   │   │   └── accelerator_testbench.sv
+│       │   │   └── accelerator_lstm_input_w_trainer
+│       │   │       ├── accelerator_design.sv
+│       │   │       └── accelerator_testbench.sv
+│       │   └── output
+│       │       ├── accelerator_lstm_output_b_trainer
+│       │       │   ├── accelerator_design.sv
+│       │       │   └── accelerator_testbench.sv
+│       │       ├── accelerator_lstm_output_d_trainer
+│       │       │   ├── accelerator_design.sv
+│       │       │   └── accelerator_testbench.sv
+│       │       ├── accelerator_lstm_output_k_trainer
+│       │       │   ├── accelerator_design.sv
+│       │       │   └── accelerator_testbench.sv
+│       │       ├── accelerator_lstm_output_trainer
+│       │       │   ├── accelerator_design.sv
+│       │       │   └── accelerator_testbench.sv
+│       │       ├── accelerator_lstm_output_u_trainer
+│       │       │   ├── accelerator_design.sv
+│       │       │   └── accelerator_testbench.sv
+│       │       ├── accelerator_lstm_output_v_trainer
+│       │       │   ├── accelerator_design.sv
+│       │       │   └── accelerator_testbench.sv
+│       │       └── accelerator_lstm_output_w_trainer
+│       │           ├── accelerator_design.sv
+│       │           └── accelerator_testbench.sv
+│       └── state
+│           ├── feedback
+│           │   ├── accelerator_state_matrix_feedforward
+│           │   │   ├── accelerator_design.sv
+│           │   │   └── accelerator_testbench.sv
+│           │   ├── accelerator_state_matrix_input
+│           │   │   ├── accelerator_design.sv
+│           │   │   └── accelerator_testbench.sv
+│           │   ├── accelerator_state_matrix_output
+│           │   │   ├── accelerator_design.sv
+│           │   │   └── accelerator_testbench.sv
+│           │   └── accelerator_state_matrix_state
+│           │       ├── accelerator_design.sv
+│           │       └── accelerator_testbench.sv
+│           ├── outputs
+│           │   ├── accelerator_state_vector_output
+│           │   │   ├── accelerator_design.sv
+│           │   │   └── accelerator_testbench.sv
+│           │   └── accelerator_state_vector_state
+│           │       ├── accelerator_design.sv
+│           │       └── accelerator_testbench.sv
+│           └── top
+│               └── accelerator_state_top
+│                   ├── accelerator_design.sv
+│                   └── accelerator_testbench.sv
+└── math
+    ├── matrix
+    │   ├── accelerator_matrix_deviation_function
+    │   │   ├── accelerator_design.sv
+    │   │   └── accelerator_testbench.sv
+    │   ├── accelerator_matrix_logistic_function
+    │   │   ├── accelerator_design.sv
+    │   │   └── accelerator_testbench.sv
+    │   ├── accelerator_matrix_mean_function
+    │   │   ├── accelerator_design.sv
+    │   │   └── accelerator_testbench.sv
+    │   └── accelerator_matrix_oneplus_function
+    │       ├── accelerator_design.sv
+    │       └── accelerator_testbench.sv
+    ├── scalar
+    │   ├── accelerator_scalar_deviation_function
+    │   │   ├── accelerator_design.sv
+    │   │   └── accelerator_testbench.sv
+    │   ├── accelerator_scalar_logistic_function
+    │   │   ├── accelerator_design.sv
+    │   │   └── accelerator_testbench.sv
+    │   ├── accelerator_scalar_mean_function
+    │   │   ├── accelerator_design.sv
+    │   │   └── accelerator_testbench.sv
+    │   └── accelerator_scalar_oneplus_function
+    │       ├── accelerator_design.sv
+    │       └── accelerator_testbench.sv
+    └── vector
+        ├── accelerator_vector_deviation_function
+        │   ├── accelerator_design.sv
+        │   └── accelerator_testbench.sv
+        ├── accelerator_vector_logistic_function
+        │   ├── accelerator_design.sv
+        │   └── accelerator_testbench.sv
+        ├── accelerator_vector_mean_function
+        │   ├── accelerator_design.sv
+        │   └── accelerator_testbench.sv
+        └── accelerator_vector_oneplus_function
+            ├── accelerator_design.sv
+            └── accelerator_testbench.sv
+
+226 directories, 344 files

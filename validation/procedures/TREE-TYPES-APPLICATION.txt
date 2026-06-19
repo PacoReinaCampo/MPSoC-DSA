@@ -1,0 +1,573 @@
+application
+├── algebra
+│   ├── matrix
+│   │   ├── accelerator_matrix_convolution
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── accelerator_matrix_differentiation
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── accelerator_matrix_integration
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── accelerator_matrix_inverse
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── accelerator_matrix_multiplication
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── accelerator_matrix_product
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── accelerator_matrix_softmax
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── accelerator_matrix_summation
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── accelerator_matrix_transpose
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── accelerator_matrix_vector_convolution
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── accelerator_matrix_vector_product
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   └── accelerator_transpose_vector_product
+│   │       ├── accelerator_design_pkg.vhd
+│   │       └── accelerator_design.vhd
+│   ├── scalar
+│   │   ├── accelerator_scalar_multiplication
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   └── accelerator_scalar_summation
+│   │       ├── accelerator_design_pkg.vhd
+│   │       └── accelerator_design.vhd
+│   ├── tensor
+│   │   ├── accelerator_tensor_convolution
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── accelerator_tensor_differentiation
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── accelerator_tensor_integration
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── accelerator_tensor_inverse
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── accelerator_tensor_matrix_convolution
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── accelerator_tensor_matrix_product
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── accelerator_tensor_multiplication
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── accelerator_tensor_product
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── accelerator_tensor_softmax
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── accelerator_tensor_summation
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   └── accelerator_tensor_transpose
+│   │       ├── accelerator_design_pkg.vhd
+│   │       └── accelerator_design.vhd
+│   └── vector
+│       ├── accelerator_dot_product
+│       │   ├── accelerator_design_pkg.vhd
+│       │   └── accelerator_design.vhd
+│       ├── accelerator_vector_convolution
+│       │   ├── accelerator_design_pkg.vhd
+│       │   └── accelerator_design.vhd
+│       ├── accelerator_vector_cosine_similarity
+│       │   ├── accelerator_design_pkg.vhd
+│       │   └── accelerator_design.vhd
+│       ├── accelerator_vector_differentiation
+│       │   ├── accelerator_design_pkg.vhd
+│       │   └── accelerator_design.vhd
+│       ├── accelerator_vector_integration
+│       │   ├── accelerator_design_pkg.vhd
+│       │   └── accelerator_design.vhd
+│       ├── accelerator_vector_module
+│       │   ├── accelerator_design_pkg.vhd
+│       │   └── accelerator_design.vhd
+│       ├── accelerator_vector_multiplication
+│       │   ├── accelerator_design_pkg.vhd
+│       │   └── accelerator_design.vhd
+│       ├── accelerator_vector_softmax
+│       │   ├── accelerator_design_pkg.vhd
+│       │   └── accelerator_design.vhd
+│       └── accelerator_vector_summation
+│           ├── accelerator_design_pkg.vhd
+│           └── accelerator_design.vhd
+├── arithmetic
+│   ├── matrix
+│   │   ├── adder
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── divider
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── multiplier
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   └── subtractor
+│   │       ├── accelerator_design_pkg.vhd
+│   │       └── accelerator_design.vhd
+│   ├── scalar
+│   │   ├── adder
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── divider
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── multiplier
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   └── subtractor
+│   │       ├── accelerator_design_pkg.vhd
+│   │       └── accelerator_design.vhd
+│   ├── tensor
+│   │   ├── adder
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── divider
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   ├── multiplier
+│   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   └── accelerator_design.vhd
+│   │   └── subtractor
+│   │       ├── accelerator_design_pkg.vhd
+│   │       └── accelerator_design.vhd
+│   └── vector
+│       ├── adder
+│       │   ├── accelerator_design_pkg.vhd
+│       │   └── accelerator_design.vhd
+│       ├── divider
+│       │   ├── accelerator_design_pkg.vhd
+│       │   └── accelerator_design.vhd
+│       ├── multiplier
+│       │   ├── accelerator_design_pkg.vhd
+│       │   └── accelerator_design.vhd
+│       └── subtractor
+│           ├── accelerator_design_pkg.vhd
+│           └── accelerator_design.vhd
+├── intelligence
+│   ├── modeling
+│   │   ├── ann
+│   │   │   ├── components
+│   │   │   │   ├── accelerator_masked_multi_head_attention
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_masked_scaled_dot_product_attention
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_multi_head_attention
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   └── accelerator_scaled_dot_product_attention
+│   │   │   │       ├── accelerator_design_pkg.vhd
+│   │   │   │       └── accelerator_design.vhd
+│   │   │   ├── controller
+│   │   │   │   ├── fnn
+│   │   │   │   │   └── accelerator_fnn
+│   │   │   │   │       ├── accelerator_design_pkg.vhd
+│   │   │   │   │       └── accelerator_design.vhd
+│   │   │   │   └── lstm
+│   │   │   │       └── accelerator_lstm
+│   │   │   │           ├── accelerator_design_pkg.vhd
+│   │   │   │           └── accelerator_design.vhd
+│   │   │   ├── functions
+│   │   │   │   ├── accelerator_layer_norm
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   └── accelerator_positional_encoding
+│   │   │   │       ├── accelerator_design_pkg.vhd
+│   │   │   │       └── accelerator_design.vhd
+│   │   │   ├── inputs
+│   │   │   │   ├── accelerator_inputs_vector
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_keys_vector
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_queries_vector
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   └── accelerator_values_vector
+│   │   │   │       ├── accelerator_design_pkg.vhd
+│   │   │   │       └── accelerator_design.vhd
+│   │   │   └── top
+│   │   │       ├── accelerator_controller
+│   │   │       │   ├── accelerator_design_pkg.vhd
+│   │   │       │   └── accelerator_design.vhd
+│   │   │       ├── accelerator_decoder
+│   │   │       │   ├── accelerator_design_pkg.vhd
+│   │   │       │   └── accelerator_design.vhd
+│   │   │       └── accelerator_encoder
+│   │   │           ├── accelerator_design_pkg.vhd
+│   │   │           └── accelerator_design.vhd
+│   │   ├── dnc
+│   │   │   ├── memory
+│   │   │   │   ├── accelerator_addressing
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_allocation_weighting
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_backward_weighting
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_forward_weighting
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_matrix_content_based_addressing
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_memory_matrix
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_memory_retention_vector
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_precedence_weighting
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_sort_vector
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_temporal_link_matrix
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_usage_vector
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   └── accelerator_vector_content_based_addressing
+│   │   │   │       ├── accelerator_design_pkg.vhd
+│   │   │   │       └── accelerator_design.vhd
+│   │   │   ├── read_heads
+│   │   │   │   ├── accelerator_read_content_weighting
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_read_vectors
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   └── accelerator_read_weighting
+│   │   │   │       ├── accelerator_design_pkg.vhd
+│   │   │   │       └── accelerator_design.vhd
+│   │   │   ├── top
+│   │   │   │   ├── accelerator_interface_matrix
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_interface_top
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_interface_vector
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_output_vector
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   └── accelerator_top
+│   │   │   │       ├── accelerator_design_pkg.vhd
+│   │   │   │       └── accelerator_design.vhd
+│   │   │   ├── trained
+│   │   │   │   └── accelerator_trained_top
+│   │   │   │       ├── accelerator_design_pkg.vhd
+│   │   │   │       └── accelerator_design.vhd
+│   │   │   └── write_heads
+│   │   │       ├── accelerator_write_content_weighting
+│   │   │       │   ├── accelerator_design_pkg.vhd
+│   │   │       │   └── accelerator_design.vhd
+│   │   │       └── accelerator_write_weighting
+│   │   │           ├── accelerator_design_pkg.vhd
+│   │   │           └── accelerator_design.vhd
+│   │   ├── fnn
+│   │   │   ├── convolutional
+│   │   │   │   └── accelerator_controller
+│   │   │   │       ├── accelerator_design_pkg.vhd
+│   │   │   │       └── accelerator_design.vhd
+│   │   │   └── standard
+│   │   │       └── accelerator_controller
+│   │   │           ├── accelerator_design_pkg.vhd
+│   │   │           └── accelerator_design.vhd
+│   │   ├── lstm
+│   │   │   ├── convolutional
+│   │   │   │   ├── accelerator_activation_gate_vector
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_controller
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_forget_gate_vector
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_hidden_gate_vector
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_input_gate_vector
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   ├── accelerator_output_gate_vector
+│   │   │   │   │   ├── accelerator_design_pkg.vhd
+│   │   │   │   │   └── accelerator_design.vhd
+│   │   │   │   └── accelerator_state_gate_vector
+│   │   │   │       ├── accelerator_design_pkg.vhd
+│   │   │   │       └── accelerator_design.vhd
+│   │   │   └── standard
+│   │   │       ├── accelerator_activation_gate_vector
+│   │   │       │   ├── accelerator_design_pkg.vhd
+│   │   │       │   └── accelerator_design.vhd
+│   │   │       ├── accelerator_controller
+│   │   │       │   ├── accelerator_design_pkg.vhd
+│   │   │       │   └── accelerator_design.vhd
+│   │   │       ├── accelerator_forget_gate_vector
+│   │   │       │   ├── accelerator_design_pkg.vhd
+│   │   │       │   └── accelerator_design.vhd
+│   │   │       ├── accelerator_hidden_gate_vector
+│   │   │       │   ├── accelerator_design_pkg.vhd
+│   │   │       │   └── accelerator_design.vhd
+│   │   │       ├── accelerator_input_gate_vector
+│   │   │       │   ├── accelerator_design_pkg.vhd
+│   │   │       │   └── accelerator_design.vhd
+│   │   │       ├── accelerator_output_gate_vector
+│   │   │       │   ├── accelerator_design_pkg.vhd
+│   │   │       │   └── accelerator_design.vhd
+│   │   │       └── accelerator_state_gate_vector
+│   │   │           ├── accelerator_design_pkg.vhd
+│   │   │           └── accelerator_design.vhd
+│   │   └── ntm
+│   │       ├── memory
+│   │       │   ├── accelerator_addressing
+│   │       │   │   ├── accelerator_design_pkg.vhd
+│   │       │   │   └── accelerator_design.vhd
+│   │       │   ├── accelerator_matrix_content_based_addressing
+│   │       │   │   ├── accelerator_design_pkg.vhd
+│   │       │   │   └── accelerator_design.vhd
+│   │       │   └── accelerator_vector_content_based_addressing
+│   │       │       ├── accelerator_design_pkg.vhd
+│   │       │       └── accelerator_design.vhd
+│   │       ├── read_heads
+│   │       │   └── accelerator_reading
+│   │       │       ├── accelerator_design_pkg.vhd
+│   │       │       └── accelerator_design.vhd
+│   │       ├── top
+│   │       │   ├── accelerator_interface_matrix
+│   │       │   │   ├── accelerator_design_pkg.vhd
+│   │       │   │   └── accelerator_design.vhd
+│   │       │   ├── accelerator_interface_top
+│   │       │   │   ├── accelerator_design_pkg.vhd
+│   │       │   │   └── accelerator_design.vhd
+│   │       │   ├── accelerator_interface_vector
+│   │       │   │   ├── accelerator_design_pkg.vhd
+│   │       │   │   └── accelerator_design.vhd
+│   │       │   ├── accelerator_output_vector
+│   │       │   │   ├── accelerator_design_pkg.vhd
+│   │       │   │   └── accelerator_design.vhd
+│   │       │   └── accelerator_top
+│   │       │       ├── accelerator_design_pkg.vhd
+│   │       │       └── accelerator_design.vhd
+│   │       ├── trained
+│   │       │   └── accelerator_trained_top
+│   │       │       ├── accelerator_design_pkg.vhd
+│   │       │       └── accelerator_design.vhd
+│   │       └── write_heads
+│   │           ├── accelerator_erasing
+│   │           │   ├── accelerator_design_pkg.vhd
+│   │           │   └── accelerator_design.vhd
+│   │           └── accelerator_writing
+│   │               ├── accelerator_design_pkg.vhd
+│   │               └── accelerator_design.vhd
+│   └── training
+│       ├── differentiation
+│       │   ├── accelerator_matrix_controller_differentiation
+│       │   │   ├── accelerator_design_pkg.vhd
+│       │   │   └── accelerator_design.vhd
+│       │   └── accelerator_vector_controller_differentiation
+│       │       ├── accelerator_design_pkg.vhd
+│       │       └── accelerator_design.vhd
+│       ├── fnn
+│       │   ├── accelerator_fnn_b_trainer
+│       │   │   ├── accelerator_design_pkg.vhd
+│       │   │   └── accelerator_design.vhd
+│       │   ├── accelerator_fnn_d_trainer
+│       │   │   ├── accelerator_design_pkg.vhd
+│       │   │   └── accelerator_design.vhd
+│       │   ├── accelerator_fnn_k_trainer
+│       │   │   ├── accelerator_design_pkg.vhd
+│       │   │   └── accelerator_design.vhd
+│       │   ├── accelerator_fnn_trainer
+│       │   │   ├── accelerator_design_pkg.vhd
+│       │   │   └── accelerator_design.vhd
+│       │   ├── accelerator_fnn_u_trainer
+│       │   │   ├── accelerator_design_pkg.vhd
+│       │   │   └── accelerator_design.vhd
+│       │   ├── accelerator_fnn_v_trainer
+│       │   │   ├── accelerator_design_pkg.vhd
+│       │   │   └── accelerator_design.vhd
+│       │   └── accelerator_fnn_w_trainer
+│       │       ├── accelerator_design_pkg.vhd
+│       │       └── accelerator_design.vhd
+│       ├── lstm
+│       │   ├── activation
+│       │   │   ├── accelerator_lstm_activation_b_trainer
+│       │   │   │   ├── accelerator_design_pkg.vhd
+│       │   │   │   └── accelerator_design.vhd
+│       │   │   ├── accelerator_lstm_activation_d_trainer
+│       │   │   │   ├── accelerator_design_pkg.vhd
+│       │   │   │   └── accelerator_design.vhd
+│       │   │   ├── accelerator_lstm_activation_k_trainer
+│       │   │   │   ├── accelerator_design_pkg.vhd
+│       │   │   │   └── accelerator_design.vhd
+│       │   │   ├── accelerator_lstm_activation_trainer
+│       │   │   │   ├── accelerator_design_pkg.vhd
+│       │   │   │   └── accelerator_design.vhd
+│       │   │   ├── accelerator_lstm_activation_u_trainer
+│       │   │   │   ├── accelerator_design_pkg.vhd
+│       │   │   │   └── accelerator_design.vhd
+│       │   │   ├── accelerator_lstm_activation_v_trainer
+│       │   │   │   ├── accelerator_design_pkg.vhd
+│       │   │   │   └── accelerator_design.vhd
+│       │   │   └── accelerator_lstm_activation_w_trainer
+│       │   │       ├── accelerator_design_pkg.vhd
+│       │   │       └── accelerator_design.vhd
+│       │   ├── forget
+│       │   │   ├── accelerator_lstm_forget_b_trainer
+│       │   │   │   ├── accelerator_design_pkg.vhd
+│       │   │   │   └── accelerator_design.vhd
+│       │   │   ├── accelerator_lstm_forget_d_trainer
+│       │   │   │   ├── accelerator_design_pkg.vhd
+│       │   │   │   └── accelerator_design.vhd
+│       │   │   ├── accelerator_lstm_forget_k_trainer
+│       │   │   │   ├── accelerator_design_pkg.vhd
+│       │   │   │   └── accelerator_design.vhd
+│       │   │   ├── accelerator_lstm_forget_trainer
+│       │   │   │   ├── accelerator_design_pkg.vhd
+│       │   │   │   └── accelerator_design.vhd
+│       │   │   ├── accelerator_lstm_forget_u_trainer
+│       │   │   │   ├── accelerator_design_pkg.vhd
+│       │   │   │   └── accelerator_design.vhd
+│       │   │   ├── accelerator_lstm_forget_v_trainer
+│       │   │   │   ├── accelerator_design_pkg.vhd
+│       │   │   │   └── accelerator_design.vhd
+│       │   │   └── accelerator_lstm_forget_w_trainer
+│       │   │       ├── accelerator_design_pkg.vhd
+│       │   │       └── accelerator_design.vhd
+│       │   ├── input
+│       │   │   ├── accelerator_lstm_input_b_trainer
+│       │   │   │   ├── accelerator_design_pkg.vhd
+│       │   │   │   └── accelerator_design.vhd
+│       │   │   ├── accelerator_lstm_input_d_trainer
+│       │   │   │   ├── accelerator_design_pkg.vhd
+│       │   │   │   └── accelerator_design.vhd
+│       │   │   ├── accelerator_lstm_input_k_trainer
+│       │   │   │   ├── accelerator_design_pkg.vhd
+│       │   │   │   └── accelerator_design.vhd
+│       │   │   ├── accelerator_lstm_input_trainer
+│       │   │   │   ├── accelerator_design_pkg.vhd
+│       │   │   │   └── accelerator_design.vhd
+│       │   │   ├── accelerator_lstm_input_u_trainer
+│       │   │   │   ├── accelerator_design_pkg.vhd
+│       │   │   │   └── accelerator_design.vhd
+│       │   │   ├── accelerator_lstm_input_v_trainer
+│       │   │   │   ├── accelerator_design_pkg.vhd
+│       │   │   │   └── accelerator_design.vhd
+│       │   │   └── accelerator_lstm_input_w_trainer
+│       │   │       ├── accelerator_design_pkg.vhd
+│       │   │       └── accelerator_design.vhd
+│       │   └── output
+│       │       ├── accelerator_lstm_output_b_trainer
+│       │       │   ├── accelerator_design_pkg.vhd
+│       │       │   └── accelerator_design.vhd
+│       │       ├── accelerator_lstm_output_d_trainer
+│       │       │   ├── accelerator_design_pkg.vhd
+│       │       │   └── accelerator_design.vhd
+│       │       ├── accelerator_lstm_output_k_trainer
+│       │       │   ├── accelerator_design_pkg.vhd
+│       │       │   └── accelerator_design.vhd
+│       │       ├── accelerator_lstm_output_trainer
+│       │       │   ├── accelerator_design_pkg.vhd
+│       │       │   └── accelerator_design.vhd
+│       │       ├── accelerator_lstm_output_u_trainer
+│       │       │   ├── accelerator_design_pkg.vhd
+│       │       │   └── accelerator_design.vhd
+│       │       ├── accelerator_lstm_output_v_trainer
+│       │       │   ├── accelerator_design_pkg.vhd
+│       │       │   └── accelerator_design.vhd
+│       │       └── accelerator_lstm_output_w_trainer
+│       │           ├── accelerator_design_pkg.vhd
+│       │           └── accelerator_design.vhd
+│       └── state
+│           ├── feedback
+│           │   ├── accelerator_state_matrix_feedforward
+│           │   │   ├── accelerator_design_pkg.vhd
+│           │   │   └── accelerator_design.vhd
+│           │   ├── accelerator_state_matrix_input
+│           │   │   ├── accelerator_design_pkg.vhd
+│           │   │   └── accelerator_design.vhd
+│           │   ├── accelerator_state_matrix_output
+│           │   │   ├── accelerator_design_pkg.vhd
+│           │   │   └── accelerator_design.vhd
+│           │   └── accelerator_state_matrix_state
+│           │       ├── accelerator_design_pkg.vhd
+│           │       └── accelerator_design.vhd
+│           ├── outputs
+│           │   ├── accelerator_state_vector_output
+│           │   │   ├── accelerator_design_pkg.vhd
+│           │   │   └── accelerator_design.vhd
+│           │   └── accelerator_state_vector_state
+│           │       ├── accelerator_design_pkg.vhd
+│           │       └── accelerator_design.vhd
+│           └── top
+│               └── accelerator_state_top
+│                   ├── accelerator_design_pkg.vhd
+│                   └── accelerator_design.vhd
+└── math
+    ├── matrix
+    │   ├── accelerator_matrix_deviation_function
+    │   │   ├── accelerator_design_pkg.vhd
+    │   │   └── accelerator_design.vhd
+    │   ├── accelerator_matrix_logistic_function
+    │   │   ├── accelerator_design_pkg.vhd
+    │   │   └── accelerator_design.vhd
+    │   ├── accelerator_matrix_mean_function
+    │   │   ├── accelerator_design_pkg.vhd
+    │   │   └── accelerator_design.vhd
+    │   └── accelerator_matrix_oneplus_function
+    │       ├── accelerator_design_pkg.vhd
+    │       └── accelerator_design.vhd
+    ├── scalar
+    │   ├── accelerator_scalar_deviation_function
+    │   │   ├── accelerator_design_pkg.vhd
+    │   │   └── accelerator_design.vhd
+    │   ├── accelerator_scalar_logistic_function
+    │   │   ├── accelerator_design_pkg.vhd
+    │   │   └── accelerator_design.vhd
+    │   ├── accelerator_scalar_mean_function
+    │   │   ├── accelerator_design_pkg.vhd
+    │   │   └── accelerator_design.vhd
+    │   └── accelerator_scalar_oneplus_function
+    │       ├── accelerator_design_pkg.vhd
+    │       └── accelerator_design.vhd
+    └── vector
+        ├── accelerator_vector_deviation_function
+        │   ├── accelerator_design_pkg.vhd
+        │   └── accelerator_design.vhd
+        ├── accelerator_vector_logistic_function
+        │   ├── accelerator_design_pkg.vhd
+        │   └── accelerator_design.vhd
+        ├── accelerator_vector_mean_function
+        │   ├── accelerator_design_pkg.vhd
+        │   └── accelerator_design.vhd
+        └── accelerator_vector_oneplus_function
+            ├── accelerator_design_pkg.vhd
+            └── accelerator_design.vhd
+
+226 directories, 344 files
