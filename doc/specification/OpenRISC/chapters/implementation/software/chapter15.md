@@ -321,19 +321,19 @@ sudo apt -y install libexpat-dev
 
 `INSERT HERE`
 
-#### 4004 GNU C
+#### i4004 GNU C
 
 `INSERT HERE`
 
-#### 4004 GNU C++
+#### i4004 GNU C++
 
 `INSERT HERE`
 
-#### 4004 GNU Go
+#### i4004 GNU Go
 
 `INSERT HERE`
 
-#### 4004 GNU Rust
+#### i4004 GNU Rust
 
 `INSERT HERE`
 

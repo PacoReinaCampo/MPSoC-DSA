@@ -30,7 +30,7 @@ This set of commands changes the directory to one associated with the Qflow tool
 
 #### 4004
 
-Designing an Application-Specific Integrated Circuit (ASIC) for the Intel 4004 architecture involves recreating the functionality of the world's first commercial microprocessor using modern semiconductor technology. This endeavor typically focuses on historical preservation, educational purposes, or exploring the challenges of implementing a very simple 4-bit architecture with contemporary design tools and fabrication processes. The process requires careful modeling of the original 4004's logic, timing, and instruction set, followed by synthesis, placement, and routing using an ASIC tool flow like Qflow, ultimately aiming for a functional silicon implementation that mirrors the behavior of the historical chip.
+Designing an Application-Specific Integrated Circuit (ASIC) for the Intel i4004 architecture involves recreating the functionality of the world's first commercial microprocessor using modern semiconductor technology. This endeavor typically focuses on historical preservation, educational purposes, or exploring the challenges of implementing a very simple 4-bit architecture with contemporary design tools and fabrication processes. The process requires careful modeling of the original 4004's logic, timing, and instruction set, followed by synthesis, placement, and routing using an ASIC tool flow like Qflow, ultimately aiming for a functional silicon implementation that mirrors the behavior of the historical chip.
 
 #### MSP430
 
@@ -59,7 +59,7 @@ These commands navigate to a directory configured for the SymbiFlow toolchain an
 
 #### 4004
 
-Modeling the Intel 4004 microprocessor on an FPGA involves implementing its 4-bit architecture using the configurable logic resources of a modern FPGA device. This approach allows researchers, students, and enthusiasts to study, experiment with, and demonstrate the functionality of this historically significant processor without needing original hardware. The process requires translating the 4004's logic into an HDL description, synthesizing it using FPGA tools (like SymbiFlow or vendor-specific tools), and programming the resulting bitstream onto an FPGA board, effectively creating a functional replica on a reconfigurable platform.
+Modeling the Intel i4004 microprocessor on an FPGA involves implementing its 4-bit architecture using the configurable logic resources of a modern FPGA device. This approach allows researchers, students, and enthusiasts to study, experiment with, and demonstrate the functionality of this historically significant processor without needing original hardware. The process requires translating the 4004's logic into an HDL description, synthesizing it using FPGA tools (like SymbiFlow or vendor-specific tools), and programming the resulting bitstream onto an FPGA board, effectively creating a functional replica on a reconfigurable platform.
 
 #### MSP430
 
@@ -79,11 +79,11 @@ Software development for embedded systems and custom hardware architectures invo
 
 ### 4004
 
-Software development for the Intel 4004 presents unique challenges due to its primitive 4-bit architecture, limited instruction set (only 46 instructions), small address space (4KB ROM, 640 bytes RAM), and lack of standard high-level language support. Programming is typically done in assembly language, requiring intimate knowledge of the hardware. Development often relies on cross-assemblers running on modern computers and simulators to test the code before potentially programming it onto physical EPROMs for use with original or replica 4004 hardware systems.
+Software development for the Intel i4004 presents unique challenges due to its primitive 4-bit architecture, limited instruction set (only 46 instructions), small address space (4KB ROM, 640 bytes RAM), and lack of standard high-level language support. Programming is typically done in assembly language, requiring intimate knowledge of the hardware. Development often relies on cross-assemblers running on modern computers and simulators to test the code before potentially programming it onto physical EPROMs for use with original or replica i4004 hardware systems.
 
-#### 4004 Tests
+#### i4004 Tests
 
-Testing software and hardware implementations for the 4004 architecture involves verifying the correct execution of its limited instruction set and basic functionalities. Tests typically consist of small assembly programs designed to exercise specific instructions (like arithmetic, logic, memory access, and control flow) and check for expected results in registers or memory. Given the simplicity of the architecture, these tests focus on fundamental correctness rather than complex scenarios, often executed within a simulator or on FPGA models due to the scarcity of original hardware.
+Testing software and hardware implementations for the i4004 architecture involves verifying the correct execution of its limited instruction set and basic functionalities. Tests typically consist of small assembly programs designed to exercise specific instructions (like arithmetic, logic, memory access, and control flow) and check for expected results in registers or memory. Given the simplicity of the architecture, these tests focus on fundamental correctness rather than complex scenarios, often executed within a simulator or on FPGA models due to the scarcity of original hardware.
 
 ##### ISA 4
 
@@ -91,15 +91,15 @@ Testing software and hardware implementations for the 4004 architecture involves
 
 The ISA 4 tests specifically target the validation of the 4-bit Instruction Set Architecture inherent to processors like the Intel 4004. These tests meticulously examine each instruction's behavior, including data manipulation within the 4-bit registers, accumulator operations, conditional and unconditional jumps, subroutine calls, and interactions with the limited memory and I/O capabilities. Ensuring the correct functionality of these fundamental operations is paramount for any implementation or emulation of this historical architecture.
 
-#### 4004 BareMetal
+#### i4004 BareMetal
 
-Bare-metal programming for the 4004 involves writing software that interacts directly with the microprocessor's hardware components without the abstraction layer of an operating system. This is the standard way of programming such a primitive device, giving the developer complete control over the CPU, memory, and I/O pins. Applications are typically small, self-contained, and focused on specific control tasks, requiring careful management of the extremely limited resources available on the 4004.
+Bare-metal programming for the i4004 involves writing software that interacts directly with the microprocessor's hardware components without the abstraction layer of an operating system. This is the standard way of programming such a primitive device, giving the developer complete control over the CPU, memory, and I/O pins. Applications are typically small, self-contained, and focused on specific control tasks, requiring careful management of the extremely limited resources available on the 4004.
 
 ##### C Language
 
 ...
 
-The C language support for 4004 in a bare metal environment involves writing software that runs directly on the hardware without an underlying operating system. This approach provides maximum control over the microcontroller's resources and is ideal for developing highly optimized and efficient applications. Using the C language, developers can leverage its simplicity and widespread support to create robust and portable code, suitable for a wide range of embedded applications on 4004 devices.
+The C language support for i4004 in a bare metal environment involves writing software that runs directly on the hardware without an underlying operating system. This approach provides maximum control over the microcontroller's resources and is ideal for developing highly optimized and efficient applications. Using the C language, developers can leverage its simplicity and widespread support to create robust and portable code, suitable for a wide range of embedded applications on i4004 devices.
 
 Hello QueenField in C Language:
 
@@ -112,13 +112,13 @@ int main() {
 }
 ```
 
-Compiling and running even a simple C program like "Hello QueenField!" for the 4004 in a bare-metal context is highly challenging and generally impractical due to the architecture's severe limitations. Standard C libraries assume capabilities far beyond the 4004's scope. Development would require a highly specialized, non-standard C cross-compiler targeting the 4004's instruction set and a custom runtime environment or simulator capable of handling basic output, likely mapping `printf` to specific I/O pin manipulations or simulated console output.
+Compiling and running even a simple C program like "Hello QueenField!" for the i4004 in a bare-metal context is highly challenging and generally impractical due to the architecture's severe limitations. Standard C libraries assume capabilities far beyond the 4004's scope. Development would require a highly specialized, non-standard C cross-compiler targeting the 4004's instruction set and a custom runtime environment or simulator capable of handling basic output, likely mapping `printf` to specific I/O pin manipulations or simulated console output.
 
 ##### C++ Language
 
 ...
 
-The C++ language support for 4004 in a bare metal environment enables developers to use object-oriented programming techniques while maintaining direct control over the hardware. This allows for more modular and maintainable code, benefiting from C++'s features such as classes, inheritance, and templates. Writing bare metal applications in C++ on 4004 combines the performance and efficiency of low-level programming with the flexibility and reusability of high-level abstractions, making it a powerful option for complex embedded systems.
+The C++ language support for i4004 in a bare metal environment enables developers to use object-oriented programming techniques while maintaining direct control over the hardware. This allows for more modular and maintainable code, benefiting from C++'s features such as classes, inheritance, and templates. Writing bare metal applications in C++ on i4004 combines the performance and efficiency of low-level programming with the flexibility and reusability of high-level abstractions, making it a powerful option for complex embedded systems.
 
 Hello QueenField in C++ Language:
 
@@ -131,7 +131,7 @@ int main() {
 }
 ```
 
-Using C++ for bare-metal development on the 4004 is even more theoretical and challenging than using C. The overhead associated with C++ features like classes, virtual functions, exceptions, and the iostream library is far too significant for the 4004's minuscule memory and processing capabilities. A practical implementation would require an extremely restricted subset of C++, a highly specialized cross-compiler, and extensive manual optimization to fit within the hardware constraints, making assembly language the only truly viable option for this architecture.
+Using C++ for bare-metal development on the i4004 is even more theoretical and challenging than using C. The overhead associated with C++ features like classes, virtual functions, exceptions, and the iostream library is far too significant for the 4004's minuscule memory and processing capabilities. A practical implementation would require an extremely restricted subset of C++, a highly specialized cross-compiler, and extensive manual optimization to fit within the hardware constraints, making assembly language the only truly viable option for this architecture.
 
 ### MSP430
 

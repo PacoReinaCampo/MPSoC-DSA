@@ -722,7 +722,7 @@ The MSP430 Machine mode is the highest privilege level in the MSP430 microcontro
 
 `INSERT HERE`
 
-### 4004 ISA
+### i4004 ISA
 
 `INSERT HERE`
 
@@ -730,7 +730,7 @@ The MSP430 Machine mode is the highest privilege level in the MSP430 microcontro
 
 `INSERT HERE`
 
-##### 4004 4
+##### i4004 4
 
 ...
 
@@ -744,25 +744,25 @@ The MSP430 Machine mode is the highest privilege level in the MSP430 microcontro
 
 `INSERT HERE`
 
-##### 4004 User
+##### i4004 User
 
 ...
 
 `INSERT HERE`
 
-##### 4004 Supervisor
+##### i4004 Supervisor
 
 ...
 
 `INSERT HERE`
 
-##### 4004 Hypervisor
+##### i4004 Hypervisor
 
 ...
 
 `INSERT HERE`
 
-##### 4004 Machine
+##### i4004 Machine
 
 ...
 

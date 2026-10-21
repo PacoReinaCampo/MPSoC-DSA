@@ -14,7 +14,7 @@
 | validation    | `IEEE STD 1076-2019`   | IP-Validator    | OSVVM          |
 | rtl/src       | `IEEE STD 1076-2019`   | IP-Developer    | VHDL           |
 |               | `IEEE STD 1364-2005`   | IP-Developer    | Verilog        |
-| verification  | `IEEE STD 1800.2-2020` | IP-Verifyier    | UVM            |
+| verification  | `IEEE STD 1800.2-2020` | IP-Verifier     | UVM            |
 | configuration | `IEEE STD 1666-2011`   | IP-Configurator | SystemC        |
 | certification | `RTCA DO-254`          | IP-Certifier    | Hardware       |
 |               | `RTCA DO-178C`         | IP-Certifier    | Software       |
